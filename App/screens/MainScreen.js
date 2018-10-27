@@ -4,6 +4,7 @@ import Mapbox from '@mapbox/react-native-mapbox-gl'
 import Modal from '../components/Modal'
 import { withNavigation } from 'react-navigation'
 import PropTypes from 'prop-types'
+import Header from '../components/Header'
 
 Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB01GxzIm44_FlvyFQ')
 /*
@@ -14,6 +15,13 @@ Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB0
         </Mapbox.MapView>
 */
 class MainScreen extends Component {
+
+
+  static navigationOptions = ({ navigation }) => ({
+    gesturesEnabled: true,
+    header: <Header navigation={navigation} />
+})
+
 
   static propTypes = {
     navigation: PropTypes.object
