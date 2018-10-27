@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { StyleSheet, View} from 'react-native'
 import Mapbox from '@mapbox/react-native-mapbox-gl'
-import Draggable from '../components/Draggable'
+import Modal from '../components/Modal'
 
 Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB01GxzIm44_FlvyFQ')
 /*
@@ -14,7 +14,8 @@ Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB0
 export default class App extends Component {
   render() {
     return <View style={styles.container}>
-        <Draggable />
+        <View style={{flex:1, backgroundColor:'blue'}}></View>
+        <Modal />
     </View>
   }
 }

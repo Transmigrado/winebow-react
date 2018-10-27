@@ -5,7 +5,6 @@ import { PropTypes } from 'prop-types'
 export default class Card extends Component {
     static propTypes = {
         children: PropTypes.any,
-        content: PropTypes.any,
         containerStyle: PropTypes.any,
         cardStyle: PropTypes.any,
         isShadowless: PropTypes.bool
@@ -16,7 +15,7 @@ export default class Card extends Component {
         const borderStyle = isShadowless ? defaultStyles.shadowlessCard : defaultStyles.card
         return <View style={[defaultStyles.container, this.props.containerStyle]}>
             <View style={[defaultStyles.card, borderStyle, this.props.cardStyle]}>
-                {this.props.children || this.props.content}
+                {this.props.children}
             </View>
         </View>
     }
