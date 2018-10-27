@@ -37,8 +37,8 @@ const defaultStyles = StyleSheet.create({
         shadowRadius: 6,
         shadowOpacity: 0.1,
         shadowOffset: { width: 0, height: -5 },
-        backgroundColor: 'white',
         elevation: 5,
+        backgroundColor: 'white',
         paddingHorizontal: 18,
         paddingVertical: 10,
         marginTop:20

@@ -21,7 +21,11 @@ class MainScreen extends Component {
 
   render() {
     return <View style={styles.container}>
-        <View style={{flex:1}}></View>
+         <Mapbox.MapView
+            zoomLevel={10}
+            centerCoordinate={[11.256, 43.770]}
+            style={styles.container}>
+        </Mapbox.MapView>
         <Modal />
     </View>
   }

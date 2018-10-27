@@ -17,7 +17,7 @@ export default class List extends Component {
        onSelect: PropTypes.func
     }
     _onPress = ()=>{
-        this.props.onSelect()
+        this.props.onSelect(1)
     }
     renderItem = ({item, index}) => {
 
@@ -46,6 +46,7 @@ export default class List extends Component {
                     data={[{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'}]}
                     renderItem={({item, index}) => this.renderItem({item, index})}
                     numColumns={2}
+                    style={{marginBottom:160}}
                     />
                 </View>
     }

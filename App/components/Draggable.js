@@ -19,9 +19,12 @@ export default class Draggable extends Component {
   constructor() {
     super();
     this.state = {
-      pan: new Animated.ValueXY()
-    };
+      pan: new Animated.ValueXY(),
+      expanded : false
+    }
   }
+
+  y = 0
 
   componentWillMount() {
   
@@ -32,32 +35,43 @@ export default class Draggable extends Component {
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onPanResponderMove: (e, gesture)=>{
-        this.props.onDragged(this.view.props.style[0].top + this.state.pan.y._value)
+        
+        this.y = this.view.props.style[0].top + this.state.pan.y._value 
+        this.props.onDragged(this.y)
+
         Animated.event([
           null, { dy: this.state.pan.y }
         ])(e,gesture)
       },
       onPanResponderRelease: () => {
-        this.props.onDraggedEnd()
-        Animated.spring(this.state.pan, {
+        const expanded = this.y < 200
+        this.setState({expanded})
+        this.props.onDraggedEnd(expanded)
+        
+        Animated.timing(this.state.pan, {
           toValue: { x: 0, y: 0 },
           friction: 0
-        }).start();
+        }).start()
       }
     })
   }
 
   render() {
+
+    const { expanded } = this.state
     const panStyle = {
       transform: this.state.pan.getTranslateTransform()
     }
+    const top =  (expanded)? 50  : Dimensions.get('window').height - 160
+    const myStyle = {...styles.container, ...{ top }}
+
     return (
         <Animated.View
           {...this.panResponder.panHandlers}
-          style={[styles.container, panStyle]}
+          style={[myStyle, panStyle]}
           ref= {ref => this.view = ref}
         >
-            <Card />
+
         </Animated.View>
     );
   }
@@ -65,9 +79,11 @@ export default class Draggable extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    width:'100%',
+    height: 40,
     position: 'absolute',
     left: 0,
-    top: Dimensions.get('window').height - 180,
+    top: Dimensions.get('window').height - 160
   },
 })
 

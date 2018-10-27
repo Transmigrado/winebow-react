@@ -1,53 +1,48 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, Image, SectionList, TouchableOpacity, Dimensions } from 'react-native'
+import { StyleSheet, View, Text, Image, FlatList, TouchableOpacity, Dimensions } from 'react-native'
 import PropTypes from 'prop-types'
 
-
-export default class Detail extends Component {
+export default class WineYardDetail extends Component {
     
 
     static propTypes = {
        onSelect: PropTypes.func
     }
     _onPress = ()=>{
-        this.props.onSelect(2)
+        this.props.onSelect()
     }
     renderItem = ({item, index}) => {
 
-        const width = Dimensions.get('window').width
-      
+        const width =  Math.floor((Dimensions.get('window').width / 2))
        
-       return  <TouchableOpacity onPress={this._onPress} style={[{width: width, height: 130},styles.item]}>
+       
+       return  <TouchableOpacity onPress={this._onPress} style={[{width: width, height: width},styles.item]}>
                    <Image
-                style={[styles.itemImage,{width: '100%', height: 120, left:20 }]}
+                style={[styles.itemImage,{width: width - 25, height: width - 25}]}
                 source={require('./assets/chile.jpg')}
                 />
            </TouchableOpacity>
     }
 
     renderHeader = ()=>{
+       
         return  <View style={styles.titleContent}>
-        <Text style={styles.title}>Countries</Text>
+                  <Image
+                style={[styles.itemImage,{width: '100%', height:160}]}
+                source={require('./assets/chile.jpg')}
+                />
        </View>
     }
 
     render() {
         
         return <View style={styles.container}>
-                <SectionList
-  renderItem={({item, index, section}) => this.renderItem({item, index, section})}
-  renderSectionHeader={({section:{index}}) => {
-    if(index == 0){
-        return this.renderHeader()
-    }
-    return <Text style={{fontWeight: 'bold'}}>HOLA</Text>
-  }}
-  sections={[
-    {title: 'Title1',index:0, data: ['item1', 'item2']},
-    {title: 'Title2',index:1, data: ['item3', 'item4']},
-  ]}
-  keyExtractor={(item, index) => item + index}
-/>
+                <FlatList
+                    ListHeaderComponent = {this.renderHeader()}
+                    data={[{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'}]}
+                    renderItem={({item, index}) => this.renderItem({item, index})}
+                    numColumns={1}
+                    />
                 </View>
     }
 }
@@ -76,7 +71,6 @@ const styles = StyleSheet.create({
     },
     item:{
         flex:1,
-        paddingHorizontal: 20
     },
     itemImage:{
         borderRadius: 6,
