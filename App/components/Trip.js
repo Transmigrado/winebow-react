@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 import { PropTypes } from 'prop-types'
 
-export default class Card extends Component {
+export default class Trip extends Component {
     static propTypes = {
         children: PropTypes.any,
         containerStyle: PropTypes.any,
@@ -32,7 +32,8 @@ const defaultStyles = StyleSheet.create({
     card: {
         width: 152,
         height: 40,
-        borderRadius: 6,
+        borderTopLeftRadius: 6,
+        borderTopRightRadius: 6 ,
         shadowColor: '#010101',
         shadowRadius: 6,
         shadowOpacity: 0.1,
@@ -41,7 +42,7 @@ const defaultStyles = StyleSheet.create({
         backgroundColor: 'white',
         paddingHorizontal: 18,
         paddingVertical: 10,
-        marginTop:20
+        marginTop:-50
     },
     shadowlessCard: {
         shadowRadius: 0,

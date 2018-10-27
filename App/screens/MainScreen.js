@@ -30,8 +30,8 @@ class MainScreen extends Component {
   render() {
     return <View style={styles.container}>
          <Mapbox.MapView
-            zoomLevel={10}
-            centerCoordinate={[11.256, 43.770]}
+            zoomLevel={1.5}
+            centerCoordinate={[0,0]}
             style={styles.container}>
         </Mapbox.MapView>
         <Modal />

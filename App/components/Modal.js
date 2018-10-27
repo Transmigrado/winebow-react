@@ -4,12 +4,13 @@ import Draggable from './Draggable'
 import List from './List'
 import Detail from './Detail'
 import WineYardDetail from './WineYardDetail'
+import Trip from './Trip'
 
 export default class Modal extends Component {
    
     state = {
         mode: 0,
-        y: new Animated.Value(Dimensions.get('window').height - 120),
+        y: new Animated.Value(Dimensions.get('window').height - 80),
         animated: false
     }
     onSelect = mode =>{
@@ -33,7 +34,7 @@ export default class Modal extends Component {
         Animated.timing(                  
             this.state.y,            
             {
-              toValue: (expanded)? 100 : Dimensions.get('window').height - 120,                   
+              toValue: (expanded)? 100 : Dimensions.get('window').height - 80,                   
               duration: 500,              
             }
           ).start();   
@@ -44,15 +45,16 @@ export default class Modal extends Component {
      
 
         return <React.Fragment style={styles.container}>
-            <Draggable 
-                onDraggedEnd={this._onDraggedEnd} 
-                onDragged={this._onDragged} />
+           
             <Animated.View style={[styles.content,{ top : y }]}>
+                <Trip style={{}} />
                 {mode == 0 && <List onSelect={this.onSelect} />}
                 {mode == 1 && <Detail onSelect={this.onSelect} />}
                 {mode == 2 && <WineYardDetail onSelect={this.onSelect} />}
             </Animated.View>
-           
+            <Draggable 
+                onDraggedEnd={this._onDraggedEnd} 
+                onDragged={this._onDragged} />
         </React.Fragment>
     }
 }

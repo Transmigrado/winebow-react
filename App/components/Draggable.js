@@ -6,7 +6,7 @@ import {
   Dimensions
 } from "react-native";
 
-import Card from './Card'
+
 import PropTypes from 'prop-types'
 
 export default class Draggable extends Component {
@@ -62,7 +62,7 @@ export default class Draggable extends Component {
     const panStyle = {
       transform: this.state.pan.getTranslateTransform()
     }
-    const top =  (expanded)? 50  : Dimensions.get('window').height - 160
+    const top =  (expanded)? 50  : Dimensions.get('window').height - 120
     const myStyle = {...styles.container, ...{ top }}
 
     return (
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     height: 40,
     position: 'absolute',
     left: 0,
-    top: Dimensions.get('window').height - 160
+    top: Dimensions.get('window').height - 120
   },
 })
 
