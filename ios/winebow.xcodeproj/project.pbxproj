@@ -1035,6 +1035,7 @@
 				PRODUCT_NAME = winebow;
 				PROVISIONING_PROFILE = "7d247edc-101d-4b25-96ca-6464cc989593";
 				PROVISIONING_PROFILE_SPECIFIER = WineBow;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1062,6 +1063,7 @@
 				PRODUCT_NAME = winebow;
 				PROVISIONING_PROFILE = "7d247edc-101d-4b25-96ca-6464cc989593";
 				PROVISIONING_PROFILE_SPECIFIER = WineBow;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
