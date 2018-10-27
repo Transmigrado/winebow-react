@@ -11,7 +11,7 @@ Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB0
             style={styles.container}>
         </Mapbox.MapView>
 */
-export default class App extends Component {
+export default class MainScreen extends Component {
   render() {
     return <View style={styles.container}>
         <View style={{flex:1}}></View>

@@ -1,16 +1,9 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, Image, FlatList, TouchableOpacity, Dimensions } from 'react-native'
+import { StyleSheet, View, Text, Image, SectionList, TouchableOpacity, Dimensions } from 'react-native'
 import PropTypes from 'prop-types'
 
-/*
- <Image
-                style={[styles.itemImage,{width: width - 25, height: width - 25}]}
-                source={require('./assets/chile.jpg')}
-                />
-                <Text>{index}</Text>
-                <Text>4 viñas</Text>
-*/
-export default class List extends Component {
+
+export default class Detail extends Component {
     
 
     static propTypes = {
@@ -41,12 +34,20 @@ export default class List extends Component {
     render() {
         
         return <View style={styles.container}>
-                <FlatList
-                    ListHeaderComponent = {this.renderHeader()}
-                    data={[{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'}]}
-                    renderItem={({item, index}) => this.renderItem({item, index})}
-                    numColumns={2}
-                    />
+                <SectionList
+  renderItem={({item, index, section}) => <Text key={index}>{item}</Text>}
+  renderSectionHeader={({section:{index}}) => {
+    if(index == 0){
+        return this.renderHeader()
+    }
+    return <Text style={{fontWeight: 'bold'}}>HOLA</Text>
+  }}
+  sections={[
+    {title: 'Title1',index:0, data: ['item1', 'item2']},
+    {title: 'Title2',index:1, data: ['item3', 'item4']},
+  ]}
+  keyExtractor={(item, index) => item + index}
+/>
                 </View>
     }
 }
