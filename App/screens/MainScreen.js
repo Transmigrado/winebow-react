@@ -14,7 +14,7 @@ Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB0
 export default class App extends Component {
   render() {
     return <View style={styles.container}>
-        <View style={{flex:1, backgroundColor:'blue'}}></View>
+        <View style={{flex:1}}></View>
         <Modal />
     </View>
   }

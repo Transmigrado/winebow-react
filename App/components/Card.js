@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 import { PropTypes } from 'prop-types'
 
 export default class Card extends Component {
@@ -15,7 +15,7 @@ export default class Card extends Component {
         const borderStyle = isShadowless ? defaultStyles.shadowlessCard : defaultStyles.card
         return <View style={[defaultStyles.container, this.props.containerStyle]}>
             <View style={[defaultStyles.card, borderStyle, this.props.cardStyle]}>
-                {this.props.children}
+                <Text>Hola</Text>
             </View>
         </View>
     }
@@ -26,19 +26,21 @@ const defaultStyles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 20,
         paddingTop: 10,
-        paddingBottom: 15
+        paddingBottom: 15,
+        alignItems:'center'
     },
     card: {
-        width: '100%',
+        width: 152,
         borderRadius: 6,
         shadowColor: '#010101',
         shadowRadius: 6,
         shadowOpacity: 0.1,
-        shadowOffset: { width: 0, height: 5 },
+        shadowOffset: { width: 0, height: -5 },
         backgroundColor: 'white',
         elevation: 5,
         paddingHorizontal: 18,
         paddingVertical: 19,
+        marginTop:20
     },
     shadowlessCard: {
         shadowRadius: 0,

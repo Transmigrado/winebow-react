@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 import Draggable from './Draggable'
+import List from './List'
 
 export default class Modal extends Component {
    
@@ -9,7 +10,7 @@ export default class Modal extends Component {
         return <View style={styles.container}>
             <Draggable />
             <View style={styles.content}>
-            <Text>Hola</Text>
+                <List />
             </View>
            
         </View>
@@ -22,11 +23,12 @@ const styles = StyleSheet.create({
         width:'100%',
         height:'100%',
         position:'absolute',
-        backgroundColor:'red'
+        backgroundColor:'transparent'
     },
     content: {
         flex:1,
         width:'100%',
-        backgroundColor:'white'
+        backgroundColor:'white',
+        marginTop: 40
     }
 })

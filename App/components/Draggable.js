@@ -45,9 +45,7 @@ export default class Draggable extends Component {
           {...this.panResponder.panHandlers}
           style={panStyle}
         >
-            <Card>
-                <Text>Regiones</Text>
-            </Card>
+            <Card />
         </Animated.View>
     );
   }
