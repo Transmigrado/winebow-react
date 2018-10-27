@@ -1,28 +1,23 @@
 import React, {Component} from 'react'
 import { StyleSheet, View} from 'react-native'
+import Mapbox from '@mapbox/react-native-mapbox-gl'
 
+Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB01GxzIm44_FlvyFQ')
 
 export default class App extends Component {
   render() {
-    return <View style={styles.container}></View>
+    return <View style={styles.container}>
+       <Mapbox.MapView
+            zoomLevel={10}
+            centerCoordinate={[11.256, 43.770]}
+            style={styles.container}>
+        </Mapbox.MapView>
+    </View>
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+    flex: 1
   },
 });
