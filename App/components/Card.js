@@ -15,7 +15,7 @@ export default class Card extends Component {
         const borderStyle = isShadowless ? defaultStyles.shadowlessCard : defaultStyles.card
         return <View style={[defaultStyles.container, this.props.containerStyle]}>
             <View style={[defaultStyles.card, borderStyle, this.props.cardStyle]}>
-                <Text>Hola</Text>
+                <Text style={{fontSize:20}}>Regiones</Text>
             </View>
         </View>
     }
@@ -31,6 +31,7 @@ const defaultStyles = StyleSheet.create({
     },
     card: {
         width: 152,
+        height: 40,
         borderRadius: 6,
         shadowColor: '#010101',
         shadowRadius: 6,
@@ -39,7 +40,7 @@ const defaultStyles = StyleSheet.create({
         backgroundColor: 'white',
         elevation: 5,
         paddingHorizontal: 18,
-        paddingVertical: 19,
+        paddingVertical: 10,
         marginTop:20
     },
     shadowlessCard: {

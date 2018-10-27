@@ -31,7 +31,8 @@ pod 'React', path: '../node_modules/react-native', subspecs: [
 
 # Mapbox
 pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-mapbox-gl'
-
+pod 'Fabric'
+pod 'Crashlytics'
   target 'winebowTests' do
     inherit! :search_paths
     # Pods for testing
