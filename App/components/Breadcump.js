@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     arrow:{
+        color:'#737373',
         marginLeft: 8,
         marginRight : 8
     }

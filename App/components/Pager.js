@@ -4,8 +4,7 @@ import { IndicatorViewPager, PagerDotIndicator} from 'rn-viewpager';
 
 export default class Pager extends Component {
     render() {
-        return (
-            <View style={{flex:1}}>
+        return <View style={{flex:1, height:200}}>
                 <IndicatorViewPager
                     style={{height:200}}
                     indicator={this._renderDotIndicator()}
@@ -32,7 +31,6 @@ export default class Pager extends Component {
 
             
             </View>
-        );
     }
 
     _renderDotIndicator() {

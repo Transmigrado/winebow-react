@@ -3,7 +3,8 @@ import { StyleSheet, View, Text, Image, FlatList, TouchableOpacity, Dimensions }
 import PropTypes from 'prop-types'
 import { withNavigation} from 'react-navigation'
 import WineyardItem from './Item/WineyardItem'
-import Breadcumpt from './Breadcump'
+import Breadcump from './Breadcump'
+
 
 class WineYardDetail extends Component {
     
@@ -29,7 +30,7 @@ class WineYardDetail extends Component {
                 source={require('./assets/chile.jpg')}
                 />
                 <View>
-                    <Breadcumpt path={["World","Chile", "Colchagua Valley"]} style={{marginTop:10, marginBottom:10}} />
+                    <Breadcump path={["World","Chile", "Colchagua Valley"]} style={{marginTop:10, marginBottom:10}} />
                     <Text >Colchagua is a large and varied wine region located in the southern portion of Chile's broader Central Valley. It spans almost the entire width of the country, but most of its vineyards are found in warmer pockets nestled against the foothills of the Cordillera and near the interior Tinguiririca River.</Text>
                 </View>
                 
