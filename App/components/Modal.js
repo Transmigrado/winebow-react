@@ -5,14 +5,25 @@ import List from './List'
 import Detail from './Detail'
 import WineYardDetail from './WineYardDetail'
 import Trip from './Trip'
+import PropTypes from 'prop-types'
 
 export default class Modal extends Component {
    
+    static propTypes = {
+       onMount : PropTypes.func
+    }
+
     state = {
         mode: 0,
         y: new Animated.Value(Dimensions.get('window').height - 80),
         animated: false
     }
+
+    componentDidMount(){
+        const { onMount } = this.props
+        onMount()
+    }
+
     onSelect = mode =>{
         console.log(mode)
         this.setState({ mode })
