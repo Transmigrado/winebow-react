@@ -42,9 +42,10 @@ class WineYardDetail extends Component {
         return <View style={styles.container}>
                 <FlatList
                     ListHeaderComponent = {this.renderHeader()}
-                    data={[{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'}]}
+                    data={[{key: 'a'}, {key: 'b'}]}
                     renderItem={({item, index}) => this.renderItem({item, index})}
                     numColumns={1}
+                    style={{marginBottom:160}}
                     />
                 </View>
     }

@@ -41,10 +41,11 @@ renderHeader = ()=>{
     return <View style={styles.container}>
      
         <FlatList
-                    ListHeaderComponent = {this.renderHeader()}
-                    data={[{key: 'a'}, {key: 'b'}]}
-                    renderItem={({item, index}) => this.renderItem({item, index})}
-                    />
+            ListHeaderComponent = {this.renderHeader()}
+            data={[{key: 'a'}, {key: 'b'}]}
+            renderItem={({item, index}) => this.renderItem({item, index})}
+            numColumns={2}
+            />
       
     </View>
   }
