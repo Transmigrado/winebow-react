@@ -1,5 +1,13 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, Image, FlatList, TouchableOpacity, Dimensions } from 'react-native'
+import { StyleSheet, 
+    View, 
+    Text, 
+    Image, 
+    FlatList, 
+    TouchableOpacity, 
+    Dimensions, 
+    Platform } from 'react-native'
+
 import PropTypes from 'prop-types'
 
 /*
@@ -33,20 +41,31 @@ export default class List extends Component {
     }
 
     renderHeader = ()=>{
+        if(Platform.isPad){
+            return null
+        }
         return  <View style={styles.titleContent}>
         <Text style={styles.title}>Countries</Text>
        </View>
     }
 
     render() {
+
+        const props = { numColumns: 2}
+
+        if(Platform.isPad){
+            props.horizontal = true
+            delete props.numColumns
+        }
         
         return <View style={styles.container}>
                 <FlatList
                     ListHeaderComponent = {this.renderHeader()}
                     data={[{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'}]}
                     renderItem={({item, index}) => this.renderItem({item, index})}
-                    numColumns={2}
                     style={{marginBottom:160}}
+                    horizontal={Platform.isPad}
+                    {...props}
                     />
                 </View>
     }
