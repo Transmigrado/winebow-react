@@ -68,9 +68,7 @@ class Header extends React.Component {
                         {this.props.left && this.renderLeftIcon(this.props.left, this.props.onPressLeft)}
                     </View>
                     <View style={styles.center}>
-                        <Text style={styles.title}>
-                            {this.props.title}
-                        </Text>
+                        <Image source={require('./assets/logo.png')} />
                     </View>
                     <View style={styles.right}>
                         {this.props.right && this.renderRight(this.props.right, this.props.onPressRight)}

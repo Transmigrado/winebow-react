@@ -39,7 +39,8 @@ export const getCountries = state => {
 
     if( state.data !== undefined){
       state.data.forEach( country => {
-        data.push({name : country.name, count: getWineriesCount(country)})
+        const { name, slug} = country
+        data.push({name, slug, count: getWineriesCount(country)})
       })
     }
 

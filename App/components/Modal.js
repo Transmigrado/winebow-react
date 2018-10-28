@@ -26,7 +26,7 @@ export default class Modal extends Component {
     }
 
     onSelect = mode =>{
-        console.log(mode)
+   
         this.setState({ mode })
     }
 

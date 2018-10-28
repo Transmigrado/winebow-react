@@ -21,18 +21,19 @@ export default class List extends Component {
         this.props.onSelect(1)
     }
     renderItem = ({item, index}) => {
-        console.log(item)
+        
+        const { name, slug, count } = item
         const width =  Math.floor((Dimensions.get('window').width / 2))
         const itemStyle = (index % 2 == 0)? {left:20} : {left:5}
        
-       return  <TouchableOpacity onPress={this._onPress} style={[{width: width, height: width},styles.item, itemStyle]}>
+       return  <TouchableOpacity key={slug} onPress={this._onPress} style={[{width: width, height: width},styles.item, itemStyle]}>
                    <Image
                 style={[styles.itemImage,{width: width - 25, height: width - 25}]}
                 source={require('./assets/chile.jpg')}
                 />
                 <View style={[styles.itemContent,{width: width - 25, height: width - 25}]}>
-                    <Text style={[styles.text,styles.textBold]}>{item.name}</Text>
-                    <Text style={styles.text}>{`${item.count} wineries`}</Text>
+                    <Text style={[styles.text,styles.textBold]}>{name}</Text>
+                    <Text style={styles.text}>{`${count} wineries`}</Text>
                 </View>
            </TouchableOpacity>
     }
