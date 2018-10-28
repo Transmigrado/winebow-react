@@ -44,7 +44,7 @@ export default class Modal extends Component {
         const { mode, y, animated } = this.state
      
 
-        return <React.Fragment style={styles.container}>
+        return <React.Fragment>
            
             <Animated.View style={[styles.content,{ top : y }]}>
                 <Trip style={{}} />
@@ -72,6 +72,6 @@ const styles = StyleSheet.create({
         shadowRadius: 6,
         shadowOpacity: 0.1,
         shadowOffset: { width: 0, height: -5 },
-        elevation: 5,
+        elevation: 5
     }
 })

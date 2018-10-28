@@ -22,10 +22,20 @@ export default class Detail extends Component {
                 style={[styles.itemImage,{width: '100%', height: 120, left:20 }]}
                 source={require('./assets/chile.jpg')}
                 />
+                 <View style={[styles.itemContent,{width: '100%', height: 120}]}>
+                    <Text style={[styles.text,styles.textBold]}>Casablanca Valley</Text>
+                    <Text style={styles.text}>4 wineries</Text>
+                </View>
            </TouchableOpacity>
     }
 
-    renderHeader = ()=>{
+    renderHeader = index =>{
+        if(index === 1){
+            return  <View style={styles.titleContent}>
+                    <Text style={styles.subtitle}>Wineyards and Wineries</Text>
+                    <View style={styles.bottomLine}></View>
+           </View>
+        }
         return  <View style={styles.titleContent}>
         <Text style={styles.title}>Countries</Text>
        </View>
@@ -36,17 +46,13 @@ export default class Detail extends Component {
         return <View style={styles.container}>
                 <SectionList
   renderItem={({item, index, section}) => this.renderItem({item, index, section})}
-  renderSectionHeader={({section:{index}}) => {
-    if(index == 0){
-        return this.renderHeader()
-    }
-    return <Text style={{fontWeight: 'bold'}}>HOLA</Text>
-  }}
+  renderSectionHeader={({section:{index}}) => this.renderHeader(index)}
   sections={[
     {title: 'Title1',index:0, data: ['item1', 'item2']},
     {title: 'Title2',index:1, data: ['item3', 'item4']},
   ]}
   keyExtractor={(item, index) => item + index}
+  style={{marginBottom:200}}
 />
                 </View>
     }
@@ -69,10 +75,14 @@ const styles = StyleSheet.create({
     titleContent:{
         paddingHorizontal: 20,
         paddingTop: 23,
-        paddingBottom: 12
+        paddingBottom: 12,
+        backgroundColor:'white'
     },
     title:{
         fontSize: 30
+    },
+    subtitle:{
+        fontSize: 16
     },
     item:{
         flex:1,
@@ -82,5 +92,25 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         top:12.5,
         position:'absolute'
+    },
+    itemContent:{
+        justifyContent:'flex-end',
+        top:12.5,
+        borderRadius: 10,
+        padding:10,
+        backgroundColor:'rgba(0,0,0,0.1)',
+    },
+    bottomLine:{
+        width:'100%',
+        marginTop:10,
+        borderBottomColor: '#bbb',
+        borderBottomWidth: StyleSheet.hairlineWidth,
+    },
+    text:{
+        color:'white',
+        fontSize:16
+    },
+    textBold:{
+        fontWeight: 'bold'
     }
 })

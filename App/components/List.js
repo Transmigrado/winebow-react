@@ -37,6 +37,10 @@ export default class List extends Component {
                 style={[styles.itemImage,{width: width - 25, height: width - 25}]}
                 source={require('./assets/chile.jpg')}
                 />
+                <View style={[styles.itemContent,{width: width - 25, height: width - 25}]}>
+                    <Text style={[styles.text,styles.textBold]}>Chile</Text>
+                    <Text style={styles.text}>4 wineries</Text>
+                </View>
            </TouchableOpacity>
     }
 
@@ -61,7 +65,7 @@ export default class List extends Component {
         return <View style={styles.container}>
                 <FlatList
                     ListHeaderComponent = {this.renderHeader()}
-                    data={[{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'},{key: 'a'}, {key: 'b'}]}
+                    data={[{key: 'a'}, {key: 'b'}]}
                     renderItem={({item, index}) => this.renderItem({item, index})}
                     style={{marginBottom:160}}
                     horizontal={Platform.isPad}
@@ -96,9 +100,24 @@ const styles = StyleSheet.create({
     item:{
         flex:1,
     },
+    
     itemImage:{
-        borderRadius: 6,
+        borderRadius: 10,
         top:12.5,
         position:'absolute'
+    },
+    itemContent:{
+        justifyContent:'flex-end',
+        top:12.5,
+        borderRadius: 10,
+        padding:10,
+        backgroundColor:'rgba(0,0,0,0.1)'
+    },
+    text:{
+        color:'white',
+        fontSize:16
+    },
+    textBold:{
+        fontWeight: 'bold'
     }
 })
