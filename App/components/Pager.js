@@ -1,6 +1,6 @@
-import {StyleSheet, View, Text} from 'react-native';
+import { View, Text, Image} from 'react-native';
 import React, {Component} from 'react';
-import {PagerTabIndicator, IndicatorViewPager, PagerTitleIndicator, PagerDotIndicator} from 'rn-viewpager';
+import { IndicatorViewPager, PagerDotIndicator} from 'rn-viewpager';
 
 export default class Pager extends Component {
     render() {
@@ -11,51 +11,28 @@ export default class Pager extends Component {
                     indicator={this._renderDotIndicator()}
                 >
                     <View style={{backgroundColor:'cadetblue'}}>
-                        <Text>page one</Text>
+                         <Image
+                style={{width: '100%', height: '100%'}}
+                source={require('./assets/chile.jpg')}
+                />  
                     </View>
                     <View style={{backgroundColor:'cornflowerblue'}}>
-                        <Text>page two</Text>
+                    <Image
+                style={{width: '100%', height: '100%'}}
+                source={require('./assets/chile.jpg')}
+                />  
                     </View>
                     <View style={{backgroundColor:'#1AA094'}}>
-                        <Text>page three</Text>
+                    <Image
+                style={{width: '100%', height: '100%'}}
+                source={require('./assets/chile.jpg')}
+                />  
                     </View>
                 </IndicatorViewPager>
 
-                <IndicatorViewPager
-					style={{flex:1, paddingTop:20, backgroundColor:'white'}}
-                    indicator={this._renderTitleIndicator()}
-                >
-                    <View style={{backgroundColor:'cadetblue'}}>
-                        <Text>page one</Text>
-                    </View>
-                    <View style={{backgroundColor:'cornflowerblue'}}>
-                        <Text>page two</Text>
-                    </View>
-                    <View style={{backgroundColor:'#1AA094'}}>
-                        <Text>page three</Text>
-                    </View>
-                </IndicatorViewPager>
-                
-                <IndicatorViewPager
-					style={{flex:1, paddingTop:20, backgroundColor:'white'}}
-                 
-                >
-                    <View style={{backgroundColor:'cadetblue'}}>
-                        <Text>page one</Text>
-                    </View>
-                    <View style={{backgroundColor:'cornflowerblue'}}>
-                        <Text>page two</Text>
-                    </View>
-                    <View style={{backgroundColor:'#1AA094'}}>
-                        <Text>page three</Text>
-                    </View>
-                </IndicatorViewPager>
+            
             </View>
         );
-    }
-
-    _renderTitleIndicator() {
-        return <PagerTitleIndicator titles={['one', 'two', 'three']} />;
     }
 
     _renderDotIndicator() {

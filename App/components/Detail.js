@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Text, Image, SectionList, TouchableOpacity, Dimensions } from 'react-native'
 import PropTypes from 'prop-types'
+import WineyardItem from './Item/WineyardItem'
 
 
 export default class Detail extends Component {
@@ -12,10 +13,13 @@ export default class Detail extends Component {
     _onPress = ()=>{
         this.props.onSelect(2)
     }
-    renderItem = ({item, index}) => {
+    renderItem = ({item, index, section}) => {
 
         const width = Dimensions.get('window').width
-      
+        
+        if(section.index === 1){
+            return <WineyardItem />
+        }
        
        return  <TouchableOpacity onPress={this._onPress} style={[{width: width, height: 130},styles.item]}>
                    <Image

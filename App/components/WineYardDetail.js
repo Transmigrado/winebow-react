@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, Image, FlatList, TouchableOpacity, Dimensions } from 'react-native'
 import PropTypes from 'prop-types'
 import { withNavigation} from 'react-navigation'
+import Card from '../components/Card'
+import WineyardItem from './Item/WineyardItem'
 
 class WineYardDetail extends Component {
     
@@ -13,17 +15,12 @@ class WineYardDetail extends Component {
     _onPress = ()=>{
        this.props.navigation.navigate('WineDetail')
     }
+
+
     renderItem = ({item, index}) => {
 
-        const width =  Math.floor((Dimensions.get('window').width / 2))
-       
-       
-       return  <TouchableOpacity onPress={this._onPress} style={[{width: width, height: width},styles.item]}>
-                   <Image
-                style={[styles.itemImage,{width: width - 25, height: width - 25}]}
-                source={require('./assets/chile.jpg')}
-                />
-           </TouchableOpacity>
+  
+        return <WineyardItem />
     }
 
     renderHeader = ()=>{

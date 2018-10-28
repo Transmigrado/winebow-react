@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { StyleSheet, View} from 'react-native'
 import Header from '../components/Header'
-
+import Pager from '../components/Pager'
 
 export default class WineScreen extends Component {
 
@@ -13,7 +13,7 @@ export default class WineScreen extends Component {
 
   render() {
     return <View style={styles.container}>
-       
+        <Pager />
     </View>
   }
 }
