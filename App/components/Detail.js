@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, Image, SectionList, TouchableOpacity, Dimension
 import PropTypes from 'prop-types'
 import WineyardItem from './Item/WineyardItem'
 
-
 export default class Detail extends Component {
     
 
@@ -13,6 +12,8 @@ export default class Detail extends Component {
     _onPress = ()=>{
         this.props.onSelect(2)
     }
+
+
     renderItem = ({item, index, section}) => {
 
         const width = Dimensions.get('window').width
@@ -61,6 +62,8 @@ export default class Detail extends Component {
                 </View>
     }
 }
+
+
 
 const styles = StyleSheet.create({
     container: {

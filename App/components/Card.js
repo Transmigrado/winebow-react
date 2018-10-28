@@ -5,18 +5,18 @@ import { PropTypes } from 'prop-types'
 export default class Card extends Component {
     static propTypes = {
         children: PropTypes.any,
-        content: PropTypes.any,
         containerStyle: PropTypes.any,
         cardStyle: PropTypes.any,
-        isShadowless: PropTypes.bool
+        isShadowless: PropTypes.bool,
+        style: PropTypes.object
     }
 
     render() {
-        const { isShadowless } = this.props
+        const { isShadowless, style } = this.props
         const borderStyle = isShadowless ? defaultStyles.shadowlessCard : defaultStyles.card
-        return <View style={[defaultStyles.container, this.props.containerStyle]}>
+        return <View style={[style, defaultStyles.container, this.props.containerStyle]}>
             <View style={[defaultStyles.card, borderStyle, this.props.cardStyle]}>
-                {this.props.children || this.props.content}
+                {this.props.children}
             </View>
         </View>
     }
@@ -24,7 +24,6 @@ export default class Card extends Component {
 
 const defaultStyles = StyleSheet.create({
     container: {
-        flex: 1,
         paddingHorizontal: 20,
         paddingTop: 10,
         paddingBottom: 15
@@ -34,12 +33,10 @@ const defaultStyles = StyleSheet.create({
         borderRadius: 6,
         shadowColor: '#010101',
         shadowRadius: 6,
-        shadowOpacity: 0.1,
+        shadowOpacity: 0.2,
         shadowOffset: { width: 0, height: 5 },
         backgroundColor: 'white',
-        elevation: 5,
-        paddingHorizontal: 18,
-        paddingVertical: 19,
+        elevation: 5
     },
     shadowlessCard: {
         shadowRadius: 0,

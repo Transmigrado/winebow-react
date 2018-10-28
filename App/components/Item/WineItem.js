@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
 import PropTypes from 'prop-types'
 import Card from '../Card'
-import { withNavigation } from 'react-navigation'
 
-class WineyardItem extends Component {
+export default class WineItem extends Component {
     
     static propTypes = {
         navigation: PropTypes.object
@@ -33,8 +32,6 @@ class WineyardItem extends Component {
         </TouchableOpacity>
     }
 }
-
-export default withNavigation(WineyardItem)
 
 const styles = StyleSheet.create({
     container:{
