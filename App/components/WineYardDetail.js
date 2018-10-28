@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, Image, FlatList, TouchableOpacity, Dimensions } from 'react-native'
 import PropTypes from 'prop-types'
 import { withNavigation} from 'react-navigation'
-import Card from '../components/Card'
 import WineyardItem from './Item/WineyardItem'
+import Breadcumpt from './Breadcump'
 
 class WineYardDetail extends Component {
     
@@ -18,8 +18,6 @@ class WineYardDetail extends Component {
 
 
     renderItem = ({item, index}) => {
-
-  
         return <WineyardItem />
     }
 
@@ -30,7 +28,11 @@ class WineYardDetail extends Component {
                 style={[styles.itemImage,{width: '100%', height:160}]}
                 source={require('./assets/chile.jpg')}
                 />
-                <Text style={{marginTop:180}}>Colchagua is a large and varied wine region located in the southern portion of Chile's broader Central Valley. It spans almost the entire width of the country, but most of its vineyards are found in warmer pockets nestled against the foothills of the Cordillera and near the interior Tinguiririca River.</Text>
+                <View>
+                    <Breadcumpt path={["World","Chile", "Colchagua Valley"]} style={{marginTop:10, marginBottom:10}} />
+                    <Text >Colchagua is a large and varied wine region located in the southern portion of Chile's broader Central Valley. It spans almost the entire width of the country, but most of its vineyards are found in warmer pockets nestled against the foothills of the Cordillera and near the interior Tinguiririca River.</Text>
+                </View>
+                
        </View>
     }
 
@@ -75,8 +77,6 @@ const styles = StyleSheet.create({
         flex:1,
     },
     itemImage:{
-        borderRadius: 6,
-        top:12.5,
-        position:'absolute'
+        borderRadius: 6
     }
 })

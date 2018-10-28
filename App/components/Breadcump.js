@@ -7,17 +7,23 @@ import PropTypes from 'prop-types'
 export default class BreadCump extends Component {
     
     static propTypes = {
-        path: PropTypes.array
+        path: PropTypes.array,
+        style: PropTypes.object
     }
     
-    renderPath = item => {
-
+    renderPath = (text, index) => {
+        const isLast = index >= this.props.path.length - 1
+        const style = (isLast) ? styles.lastText :  styles.text
+        return <View style={styles.path} key={text}>
+             <Text style={style} >{text}</Text>
+             {!isLast &&<Text style={styles.arrow}>></Text>}
+        </View>
     }
  
     render() {
-        const { path } = this.props
+        const { path , style} = this.props
 
-        return <View style={styles.container}>
+        return <View style={[styles.container, style]}>
             {path.map(this.renderPath)}
         </View>
     }
@@ -26,6 +32,22 @@ export default class BreadCump extends Component {
 
 const styles = StyleSheet.create({
     container:{
-        flex:1
+        width:'100%',
+        flexDirection: 'row'
+    },
+    text:{
+        color: '#AB3F66',
+        fontSize: 16
+    },
+    lastText:{
+        color:'#737373',
+        fontSize: 16
+    },
+    path:{
+        flexDirection: 'row'
+    },
+    arrow:{
+        marginLeft: 8,
+        marginRight : 8
     }
 })
