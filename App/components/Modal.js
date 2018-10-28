@@ -10,7 +10,8 @@ import PropTypes from 'prop-types'
 export default class Modal extends Component {
    
     static propTypes = {
-       onMount : PropTypes.func
+       onMount : PropTypes.func,
+       countries: PropTypes.array
     }
 
     state = {
@@ -52,14 +53,15 @@ export default class Modal extends Component {
     }
 
     render() {
-        const { mode, y, animated } = this.state
-     
 
+        const { countries } = this.props
+        const { mode, y } = this.state
+     
         return <React.Fragment>
            
             <Animated.View style={[styles.content,{ top : y }]}>
                 <Trip style={{}} />
-                {mode == 0 && <List onSelect={this.onSelect} />}
+                {mode == 0 && <List countries={countries} onSelect={this.onSelect} />}
                 {mode == 1 && <Detail onSelect={this.onSelect} />}
                 {mode == 2 && <WineYardDetail onSelect={this.onSelect} />}
             </Animated.View>

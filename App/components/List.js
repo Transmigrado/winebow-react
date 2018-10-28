@@ -10,25 +10,18 @@ import { StyleSheet,
 
 import PropTypes from 'prop-types'
 
-/*
- <Image
-                style={[styles.itemImage,{width: width - 25, height: width - 25}]}
-                source={require('./assets/chile.jpg')}
-                />
-                <Text>{index}</Text>
-                <Text>4 viñas</Text>
-*/
 export default class List extends Component {
     
 
     static propTypes = {
+       countries: PropTypes.array,
        onSelect: PropTypes.func
     }
     _onPress = ()=>{
         this.props.onSelect(1)
     }
     renderItem = ({item, index}) => {
-
+        console.log(item)
         const width =  Math.floor((Dimensions.get('window').width / 2))
         const itemStyle = (index % 2 == 0)? {left:20} : {left:5}
        
@@ -38,8 +31,8 @@ export default class List extends Component {
                 source={require('./assets/chile.jpg')}
                 />
                 <View style={[styles.itemContent,{width: width - 25, height: width - 25}]}>
-                    <Text style={[styles.text,styles.textBold]}>Chile</Text>
-                    <Text style={styles.text}>4 wineries</Text>
+                    <Text style={[styles.text,styles.textBold]}>{item.name}</Text>
+                    <Text style={styles.text}>{`${item.count} wineries`}</Text>
                 </View>
            </TouchableOpacity>
     }
@@ -55,6 +48,8 @@ export default class List extends Component {
 
     render() {
 
+        const { countries } = this.props
+
         const props = { numColumns: 2}
 
         if(Platform.isPad){
@@ -65,7 +60,7 @@ export default class List extends Component {
         return <View style={styles.container}>
                 <FlatList
                     ListHeaderComponent = {this.renderHeader()}
-                    data={[{key: 'a'}, {key: 'b'}]}
+                    data={countries}
                     renderItem={({item, index}) => this.renderItem({item, index})}
                     style={{marginBottom:160}}
                     horizontal={Platform.isPad}
