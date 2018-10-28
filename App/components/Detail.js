@@ -19,10 +19,10 @@ export default class Detail extends Component {
        
        return  <TouchableOpacity onPress={this._onPress} style={[{width: width, height: 130},styles.item]}>
                    <Image
-                style={[styles.itemImage,{width: '100%', height: 120, left:20 }]}
+                style={[styles.itemImage,{width: '100%', height: 120, top:5, left:20 }]}
                 source={require('./assets/chile.jpg')}
                 />
-                 <View style={[styles.itemContent,{width: '100%', height: 120}]}>
+                 <View style={[styles.itemContent,{width: '100%', height: 120, top:5, left:0}]}>
                     <Text style={[styles.text,styles.textBold]}>Casablanca Valley</Text>
                     <Text style={styles.text}>4 wineries</Text>
                 </View>
@@ -52,7 +52,7 @@ export default class Detail extends Component {
     {title: 'Title2',index:1, data: ['item3', 'item4']},
   ]}
   keyExtractor={(item, index) => item + index}
-  style={{marginBottom:200}}
+  style={{marginBottom: 170}}
 />
                 </View>
     }
