@@ -1,38 +1,34 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+
+def react_pod
+    pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    'Core',
+    'CxxBridge', # Include this for RN >= 0.47
+    'DevSupport', # Include this to enable In-App Devmenu if RN >= 0.43
+    'RCTText',
+    'RCTNetwork',
+    'RCTActionSheet',
+    'RCTWebSocket', # needed for debugging
+    'RCTImage',
+    'RCTLinkingIOS',
+    'RCTAnimation'
+    ]
+end
+
 target 'winebow' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
 # Flexbox Layout Manager Used By React Native
+react_pod
+pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga/Yoga.podspec'
-
-# React Native
-pod 'React', path: '../node_modules/react-native', subspecs: [
-# Comment out any unneeded subspecs to reduce bundle size.
-'Core',
-'DevSupport',
-'RCTActionSheet',
-'RCTAnimation',
-'RCTBlob',
-'RCTCameraRoll',
-'RCTGeolocation',
-'RCTImage',
-'RCTNetwork',
-'RCTPushNotification',
-'RCTSettings',
-'RCTTest',
-'RCTText',
-'RCTVibration',
-'RCTWebSocket',
-'RCTLinkingIOS'
-]
-
-# Mapbox
 pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-mapbox-gl'
 pod 'Fabric'
 pod 'Crashlytics'
+
 
 
 end
