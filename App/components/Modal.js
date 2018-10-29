@@ -44,7 +44,7 @@ export default class Modal extends Component {
     }
 
     _onDraggedEnd = expanded => {
-        this.setState({ animated : true })
+        this.setState({ animated : true , expanded})
         Animated.timing(                  
             this.state.y,            
             {
@@ -57,12 +57,12 @@ export default class Modal extends Component {
     render() {
 
         const { countries, path } = this.props
-        const { mode, y } = this.state
+        const { mode, y, expanded } = this.state
      
         return <React.Fragment>
            
             <Animated.View style={[styles.content,{ top : y }]}>
-                <Trip style={{}} />
+                <Trip expanded={expanded} style={{}} />
                 {mode == 0 && <List countries={countries} onSelect={this.onSelect} />}
                 {mode == 1 && <DetailContainer path={path} onSelect={this.onSelect} />}
                 {mode == 2 && <WineYardDetail onSelect={this.onSelect} />}

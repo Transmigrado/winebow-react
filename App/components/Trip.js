@@ -7,19 +7,29 @@ export default class Trip extends Component {
         children: PropTypes.any,
         containerStyle: PropTypes.any,
         cardStyle: PropTypes.any,
-        isShadowless: PropTypes.bool
+        isShadowless: PropTypes.bool,
+        expanded: PropTypes.bool,
     }
 
+    renderUpArrow = ()=>{
+        return <Image style={{width:12,height:8}} source={require('./assets/up_arrow.png')} />
+    }
+
+    renderDownArrow = ()=>{
+        return <Image style={{width:12,height:8}} source={require('./assets/down_arrow.png')} />
+    }
+
+
     render() {
-        const { isShadowless } = this.props
+        const { isShadowless, expanded } = this.props
         const borderStyle = isShadowless ? defaultStyles.shadowlessCard : defaultStyles.card
         return <View style={[defaultStyles.container, this.props.containerStyle]}>
             <View style={[defaultStyles.card, borderStyle, this.props.cardStyle]}>
                 <Text style={defaultStyles.title}>Regions</Text>
                 <View style={{width: 20, height: 30, justifyContent:'center'}}>
-                <Image style={{width:12,height:8}} source={require('./assets/up_arrow.png')} />
+                    {expanded && this.renderDownArrow()}
+                    {!expanded && this.renderUpArrow()}
                 </View>
-                
             </View>
         </View>
     }
