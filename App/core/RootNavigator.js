@@ -5,6 +5,7 @@ import {
 
 import MainScreen from '../screens/MainScreen'
 import WineScreen from '../screens/WineScreen'
+import LoginScreen from '../screens/LoginScreen'
 
 
 const Main = createStackNavigator({
@@ -13,7 +14,7 @@ const Main = createStackNavigator({
   },{ initialRouteName:"Main" });
 
 export default createSwitchNavigator({
-    Main: {
-        screen: Main,
-    }}
-    ,{ initialRouteName:"Main" })
+    Main: { screen: Main },
+    Login:{ screen : LoginScreen}
+    }
+    ,{ initialRouteName:"Login" })
