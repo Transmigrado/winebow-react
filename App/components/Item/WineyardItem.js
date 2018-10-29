@@ -14,6 +14,7 @@ class WineyardItem extends Component {
     }
 
     render() {
+        const { name } = this.props
         
         return <TouchableOpacity onPress={this._onPress} style={styles.container}>
             <View style={styles.content}>

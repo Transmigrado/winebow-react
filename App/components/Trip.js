@@ -15,7 +15,7 @@ export default class Trip extends Component {
         const borderStyle = isShadowless ? defaultStyles.shadowlessCard : defaultStyles.card
         return <View style={[defaultStyles.container, this.props.containerStyle]}>
             <View style={[defaultStyles.card, borderStyle, this.props.cardStyle]}>
-                <Text style={defaultStyles.title}>Regiones</Text>
+                <Text style={defaultStyles.title}>Regions</Text>
             </View>
         </View>
     }

@@ -45,7 +45,6 @@ const getWineriesCount = country => {
 
 export const getCountries = state => {
 
-
     if( state.data !== undefined){
       return state.data.map( country => {
         const { name, slug} = country
@@ -61,19 +60,27 @@ export const getPath = state => state.path
 export const getRegions = (state, name) => {
 
   if( state.data !== undefined){
-    let region = []
+    const data = {}
+    let regions = []
+    let wineries = []
    
     state.data.forEach(country => {
-       
         if(country.name === name){
-          region = country.Regions
+          regions = country.Regions
         }
     })
 
-    return region
+    data.regions = regions
+    
+    regions.forEach(region => {
+      wineries = wineries.concat(region.Wineries)
+    })
+    data.wineries = wineries
+
+    return data
   }
 
-  return []
+  return {}
 
 }
 

@@ -9,11 +9,14 @@ export default class Detail extends Component {
     static propTypes = {
        onSelect: PropTypes.func,
        path: PropTypes.array,
-       regions: PropTypes.array,
+       regions: PropTypes.object,
     }
 
     static defaultProps = {
-        regions: []
+        regions: {
+            regions : [],
+            wineries: []
+        }
     }
     _onPress = ()=>{
         this.props.onSelect(2)
@@ -34,8 +37,8 @@ export default class Detail extends Component {
                 source={require('./assets/chile.jpg')}
                 />
                  <View style={[styles.itemContent,{width: '100%', height: 120, top:5, left:0}]}>
-                    <Text style={[styles.text,styles.textBold]}>Casablanca Valley</Text>
-                    <Text style={styles.text}>4 wineries</Text>
+                    <Text style={[styles.text,styles.textBold]}>{item.name}</Text>
+                    <Text style={styles.text}>{`${item.Wineries.length} wineries`}</Text>
                 </View>
            </TouchableOpacity>
     }
@@ -64,8 +67,8 @@ export default class Detail extends Component {
   renderItem={({item, index, section}) => this.renderItem({item, index, section})}
   renderSectionHeader={({section:{index}}) => this.renderHeader(index)}
   sections={[
-    {index:0, data: regions},
-    {index:1, data: ['item3', 'item4']},
+    {index:0, data: regions.regions},
+    {index:1, data: regions.wineries},
   ]}
   keyExtractor={(item, index) => item + index}
   style={{marginBottom: 170}}
@@ -73,8 +76,6 @@ export default class Detail extends Component {
                 </View>
     }
 }
-
-
 
 const styles = StyleSheet.create({
     container: {

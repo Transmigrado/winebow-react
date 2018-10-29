@@ -75,7 +75,6 @@ export default class Modal extends Component {
 }
 
 const styles = StyleSheet.create({
-    
     content: {
         flex:1,
         width:Dimensions.get('window').width,
