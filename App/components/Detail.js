@@ -18,8 +18,10 @@ export default class Detail extends Component {
             wineries: []
         }
     }
-    _onPress = ()=>{
-        this.props.onSelect(2)
+    
+    _onPress = index =>{
+        
+        this.props.onSelect(2, this.props.regions.regions[index].name, this.props.regions.regions[index])
     }
 
 
@@ -31,7 +33,7 @@ export default class Detail extends Component {
             return <WineyardItem item={item} />
         }
        
-       return  <TouchableOpacity onPress={this._onPress} style={[{width: width, height: 130},styles.item]}>
+       return  <TouchableOpacity onPress={()=>{this._onPress(index)}} style={[{width: width, height: 130},styles.item]}>
                    <Image
                 style={[styles.itemImage,{width: '100%', height: 120, top:5, left:20 }]}
                 source={require('./assets/chile.jpg')}

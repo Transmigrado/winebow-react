@@ -17,7 +17,7 @@ export const addPath = (dispatch, path) => {
 
 const INITIAL_STATE = {
   data : [],
-  path: []
+  path: ['World']
 }
 
 reducer = (state = INITIAL_STATE, action) => {

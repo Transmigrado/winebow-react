@@ -27,10 +27,12 @@ export default class Modal extends Component {
         onMount()
     }
 
-    onSelect = (mode, path) =>{
+    onSelect = (mode, path, item) =>{
         const { addPath } = this.props
         addPath(path)
-        this.setState({ mode })
+
+
+        this.setState({ mode, item })
     }
 
     _onDragged = y =>{
@@ -56,8 +58,8 @@ export default class Modal extends Component {
 
     render() {
 
-        const { countries, path } = this.props
-        const { mode, y, expanded } = this.state
+        const { countries, path  } = this.props
+        const { mode, y, expanded, item } = this.state
      
         return <React.Fragment>
            
@@ -65,7 +67,7 @@ export default class Modal extends Component {
                 <Trip expanded={expanded} style={{}} />
                 {mode == 0 && <List countries={countries} onSelect={this.onSelect} />}
                 {mode == 1 && <DetailContainer path={path} onSelect={this.onSelect} />}
-                {mode == 2 && <WineYardDetail onSelect={this.onSelect} />}
+                {mode == 2 && <WineYardDetail item={item} path={path} onSelect={this.onSelect} />}
             </Animated.View>
             <Draggable 
                 onDraggedEnd={this._onDraggedEnd} 
