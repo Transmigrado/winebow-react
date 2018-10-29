@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Animated, Dimensions } from 'react-native'
 import Draggable from './Draggable'
 import List from './List'
-import Detail from './Detail'
+import DetailContainer from '../containers/DetailContainer'
 import WineYardDetail from './WineYardDetail'
 import Trip from './Trip'
 import PropTypes from 'prop-types'
@@ -34,7 +34,6 @@ export default class Modal extends Component {
     }
 
     _onDragged = y =>{
-     
         Animated.timing(                  
             this.state.y,            
             {
@@ -65,7 +64,7 @@ export default class Modal extends Component {
             <Animated.View style={[styles.content,{ top : y }]}>
                 <Trip style={{}} />
                 {mode == 0 && <List countries={countries} onSelect={this.onSelect} />}
-                {mode == 1 && <Detail path={path} onSelect={this.onSelect} />}
+                {mode == 1 && <DetailContainer path={path} onSelect={this.onSelect} />}
                 {mode == 2 && <WineYardDetail onSelect={this.onSelect} />}
             </Animated.View>
             <Draggable 

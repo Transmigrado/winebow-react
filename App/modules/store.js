@@ -58,6 +58,25 @@ export const getCountries = state => {
 
 export const getPath = state => state.path
 
+export const getRegions = (state, name) => {
+
+  if( state.data !== undefined){
+    let region = []
+   
+    state.data.forEach(country => {
+       
+        if(country.name === name){
+          region = country.Regions
+        }
+    })
+
+    return region
+  }
+
+  return []
+
+}
+
 export const store = createStore(
                   reducer, 
                   [ ],

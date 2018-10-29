@@ -8,7 +8,12 @@ export default class Detail extends Component {
 
     static propTypes = {
        onSelect: PropTypes.func,
-       path: PropTypes.array
+       path: PropTypes.array,
+       regions: PropTypes.array,
+    }
+
+    static defaultProps = {
+        regions: []
     }
     _onPress = ()=>{
         this.props.onSelect(2)
@@ -52,14 +57,15 @@ export default class Detail extends Component {
 
     render() {
         
+        const { regions } = this.props
 
         return <View style={styles.container}>
                 <SectionList
   renderItem={({item, index, section}) => this.renderItem({item, index, section})}
   renderSectionHeader={({section:{index}}) => this.renderHeader(index)}
   sections={[
-    {title: 'Title1',index:0, data: ['item1', 'item2']},
-    {title: 'Title2',index:1, data: ['item3', 'item4']},
+    {index:0, data: regions},
+    {index:1, data: ['item3', 'item4']},
   ]}
   keyExtractor={(item, index) => item + index}
   style={{marginBottom: 170}}
