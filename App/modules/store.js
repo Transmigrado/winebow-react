@@ -35,16 +35,16 @@ const getWineriesCount = country => {
 }
 
 export const getCountries = state => {
-   const data = []
+
 
     if( state.data !== undefined){
-      state.data.forEach( country => {
+      return state.data.map( country => {
         const { name, slug} = country
-        data.push({name, slug, count: getWineriesCount(country)})
+        return {name, slug, count: getWineriesCount(country)}
       })
     }
 
-   return data
+   return []
 }
 
 export const store = createStore(
