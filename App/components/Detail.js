@@ -28,7 +28,7 @@ export default class Detail extends Component {
         const width = Dimensions.get('window').width
         
         if(section.index === 1){
-            return <WineyardItem />
+            return <WineyardItem item={item} />
         }
        
        return  <TouchableOpacity onPress={this._onPress} style={[{width: width, height: 130},styles.item]}>

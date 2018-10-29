@@ -4,8 +4,13 @@ import Header from '../components/Header'
 import Pager from '../components/Pager'
 import Breadcump from '../components/Breadcump'
 import WineyardItem from '../components/Item/WineyardItem'
+import PropTypes from 'prop-types'
 
 export default class WineScreen extends Component {
+
+  static propTypes = {
+    navigation: PropTypes.object
+ }
 
   static navigationOptions = ({ navigation }) => ({
     gesturesEnabled: true,
@@ -30,14 +35,20 @@ renderItem = ({item, index}) => {
 
 renderHeader = ()=>{
   
+  const { navigation } = this.props;
+  const item = navigation.getParam('item', {});
+
   return  <View>
        <Pager />
     <Breadcump path={["World","Chile", "Colchagua Valley"]} style={{margin:10}} />
-        <WineyardItem />
+        <WineyardItem item={item} />
  </View>
 }
 
   render() {
+
+   
+
     return <View style={styles.container}>
      
         <FlatList

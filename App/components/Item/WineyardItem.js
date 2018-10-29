@@ -7,27 +7,30 @@ import { withNavigation } from 'react-navigation'
 class WineyardItem extends Component {
     
     static propTypes = {
-        navigation: PropTypes.object
+        navigation: PropTypes.object,
+        item: PropTypes.object
      }
     _onPress = ()=>{
-        this.props.navigation.navigate('WineDetail')
+        const { item, navigation } = this.props
+        navigation.navigate('WineDetail', { item })
     }
 
     render() {
-        const { name } = this.props
+        const { item } = this.props
         
         return <TouchableOpacity onPress={this._onPress} style={styles.container}>
             <View style={styles.content}>
                     <Card style={{width:140,height:120, marginLeft:-20}}>
                 <Image
+                        resizeMode="contain"
                         style={{width: 100, height: 100, borderRadius: 6, }}
-                        source={require('../assets/wineyard.png')}
+                        source={{uri:item.logo}}
                         />
             </Card>
-            <View>
-                <Text>TerraNoble</Text>
+            <View style={{marginTop: 10}}>
+                <Text>{item.name}</Text>
                 <Text>Country: Chile</Text>
-                <Text>Region: Colchagua Valley</Text>
+                <Text>{`Region:${item.region}`}</Text>
             </View>
         </View>
          <View style={styles.bottomLine}></View>

@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-navigation'
 import { View, Text, TouchableOpacity, Image, ViewPropTypes, Keyboard } from 'react-native'
 
 
-const ITEM_WIDTH = 65
+const ITEM_WIDTH = 30
 const ITEM_MARGIN = 10
 
 const BUTTON_SIZE = 44
@@ -48,9 +48,9 @@ class Header extends React.Component {
         </TouchableOpacity>
     }
 
-    renderRight = (text, callback) => {
+    renderRight = callback => {
         return <TouchableOpacity id="right" onPress={callback}>
-            <Text style={styles.rightFont}>{text}</Text>
+            <Image source={require('../assets/pdf.png')} />
         </TouchableOpacity>
     }
 
@@ -71,7 +71,7 @@ class Header extends React.Component {
                         <Image source={require('./assets/logo.png')} />
                     </View>
                     <View style={styles.right}>
-                        {this.props.right && this.renderRight(this.props.right, this.props.onPressRight)}
+                        { this.renderRight(this.props.right, this.props.onPressRight)}
                     </View>
                 </View>
             </SafeAreaView>
@@ -105,7 +105,7 @@ const styles = {
     right: {
         width: ITEM_WIDTH,
         marginRight: ITEM_MARGIN,
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
     rightFont: {
         color: '#030303',
