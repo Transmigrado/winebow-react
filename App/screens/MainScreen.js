@@ -39,11 +39,16 @@ class MainScreen extends Component {
   render() {
     return <View style={styles.container}>
          <Mapbox.MapView
-            zoomLevel={1.5}
-            centerCoordinate={[0,0]}
-            showUserLocation={true}
+            zoomLevel={1.4}
+            centerCoordinate={[-30,0]}
             style={styles.container}>
              {this.renderAnnotations()}
+             <Mapbox.ShapeSource id="smileyFaceSource" shape={require('../../App/geosjon.json')}>
+            <Mapbox.FillLayer
+              id="smileyFaceFill"
+              style={layerStyles.smileyFace}
+            />
+          </Mapbox.ShapeSource>
         </Mapbox.MapView>
         <ModalContainer />
     </View>
@@ -62,5 +67,14 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: 'orange',
     transform: [{ scale: 0.6 }],
+  },
+  
+});
+
+const layerStyles = Mapbox.StyleSheet.create({
+  smileyFace: {
+    fillAntialias: true,
+    fillColor: 'rgba(136, 149, 107, 0.84)',
+    fillOutlineColor: 'rgba(136, 149, 107, 0.84)',
   },
 });

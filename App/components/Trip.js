@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View, Text,Image } from 'react-native'
 import { PropTypes } from 'prop-types'
 
 export default class Trip extends Component {
@@ -16,6 +16,10 @@ export default class Trip extends Component {
         return <View style={[defaultStyles.container, this.props.containerStyle]}>
             <View style={[defaultStyles.card, borderStyle, this.props.cardStyle]}>
                 <Text style={defaultStyles.title}>Regions</Text>
+                <View style={{width: 20, height: 30, justifyContent:'center'}}>
+                <Image style={{width:12,height:8}} source={require('./assets/up_arrow.png')} />
+                </View>
+                
             </View>
         </View>
     }
@@ -40,7 +44,9 @@ const defaultStyles = StyleSheet.create({
         shadowOffset: { width: 0, height: -5 },
         elevation: 5,
         backgroundColor: 'white',
-        marginTop:-40
+        marginTop: -40,
+        flexDirection:"row",
+        justifyContent:"space-between"
     },
     shadowlessCard: {
         shadowRadius: 0,
