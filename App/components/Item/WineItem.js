@@ -6,40 +6,43 @@ import Card from '../Card'
 export default class WineItem extends Component {
     
     static propTypes = {
-        navigation: PropTypes.object
+        item: PropTypes.object,
+
      }
     _onPress = ()=>{
-        this.props.navigation.navigate('WineDetail')
+        
     }
 
     render() {
-        
+        const { item } = this.props
+
         return <TouchableOpacity onPress={this._onPress} style={styles.container}>
             <View style={styles.content}>
-                    <Card style={{width:140,height:120, marginLeft:-20}}>
+                    <Card style={{width:'100%',height:200}}>
                 <Image
-                        style={{width: 100, height: 100, borderRadius: 6, }}
-                        source={require('../assets/wineyard.png')}
+                        resizeMode="contain"
+                        style={{width: '100%', height: 200, borderRadius: 6, }}
+                        source={{uri:item.logo}}
                         />
             </Card>
             <View>
-                <Text>TerraNoble</Text>
-                <Text>Country: Chile</Text>
-                <Text>Region: Colchagua Valley</Text>
+                <Text style={{ color: '#AB3F66', fontWeight:'bold'}}>{item.name}</Text>
+                <Text>{item.variety}</Text>
             </View>
         </View>
-         <View style={styles.bottomLine}></View>
+  
         </TouchableOpacity>
     }
 }
 
 const styles = StyleSheet.create({
     container:{
-        paddingHorizontal: 20,
+        flex: 0.5,
+        width:'100%',
     },
     content: {
         flex:1,
-        flexDirection:'row',
+        flexDirection:'column',
         width:'100%',
         paddingVertical: 10
         
@@ -54,11 +57,5 @@ const styles = StyleSheet.create({
     },
     item:{
         flex:1,
-       
-    },
-    bottomLine:{
-        width:'100%',
-        borderBottomColor: '#bbb',
-        borderBottomWidth: StyleSheet.hairlineWidth,
     }
 })

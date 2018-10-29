@@ -44,7 +44,7 @@ class Header extends React.Component {
     renderLeftIcon = (icon, callback) => {
         const handler = callback || this.goBack
         return <TouchableOpacity id="left" onPress={handler} style={styles.touchableArea} testID="closeModal">
-            
+                <Image source={require('./assets/back.png')} />
         </TouchableOpacity>
     }
 
