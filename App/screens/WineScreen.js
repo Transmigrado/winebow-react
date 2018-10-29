@@ -30,7 +30,7 @@ renderHeader = ()=>{
   return  <View>
        <Pager />
     <Breadcump path={["World","Chile", "Colchagua Valley"]} style={{margin:10}} />
-        <WineyardItem item={item} />
+        <WineyardItem bigTitle={true} item={item} />
  </View>
 }
 

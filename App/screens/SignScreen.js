@@ -1,13 +1,22 @@
 import React, {Component} from 'react'
-import { StyleSheet, View, Image} from 'react-native'
+import { StyleSheet, View, Text, Image} from 'react-native'
+import Mapbox from '@mapbox/react-native-mapbox-gl'
 import PropTypes from 'prop-types'
 import LigthButton from '../components/LigthButton'
 import InputText from '../components/InputText'
 import TextButton from '../components/TextButton'
 import { withNavigation } from 'react-navigation'
 
+Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB01GxzIm44_FlvyFQ')
 
-class LoginScreen extends Component {
+/*
+ <Mapbox.MapView
+            zoomLevel={1.4}
+            centerCoordinate={[-30,0]}
+            style={styles.container}>         
+        </Mapbox.MapView>
+        */
+class SignScreen extends Component {
 
   static navigationOptions = ({ navigation }) => ({
     gesturesEnabled: true,
@@ -23,21 +32,29 @@ class LoginScreen extends Component {
  }
 
  onPressSign = ()=>{
-  this.props.navigation.navigate('Sign')
-}
+    this.props.navigation.goBack(null)
+ }
 
   render() {
     return <View style={styles.container}>
          <Image source={require('../components/assets/background.png')} style={{position:'absolute', width:'100%', height:'100%'}} />
         <View style={styles.content}>
-        <Image source={require('../components/assets/mainlogo.png')} style={{marginBottom: 40}} />
+       
             <View style={styles.box}>
+                <Text style={{fontSize: 30, textAlign:'center', marginBottom: 10}}>
+                    Join our growing community
+                </Text>
+                <Text style={{fontSize: 14, textAlign:'center',marginTop: 10, marginBottom: 30}}>
+                To require access enter your data and our team will contact you
+                </Text>
+                <InputText />
+                <InputText />
                 <InputText />
                 <LigthButton onPress={this.onPressLogin}  style={{marginTop: 20, marginBottom:10}}>
-                Login
+                Request Access
                 </LigthButton>
                 <TextButton onPress={this.onPressSign}>
-                Doesn't have and account?
+                Already have an acount?
                     </TextButton>
             </View>
            
@@ -46,7 +63,7 @@ class LoginScreen extends Component {
   }
 }
 
-export default withNavigation(LoginScreen)
+export default withNavigation(SignScreen)
 
 const styles = StyleSheet.create({
   container: {

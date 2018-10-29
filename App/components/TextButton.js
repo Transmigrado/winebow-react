@@ -4,13 +4,14 @@ import { PropTypes } from 'prop-types'
 
 export default class TextButton extends Component {
     static propTypes = {
-        children: PropTypes.any
+        children: PropTypes.any,
+        onPress: PropTypes.func
     }
 
     render() {
-        const {  children } = this.props
+        const {  children, onPress } = this.props
         return <View style={styles.container}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity onPress={onPress} style={styles.button}>
                 <Text style={styles.text}>
                     {children}
                 </Text>

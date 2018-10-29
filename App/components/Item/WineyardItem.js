@@ -8,16 +8,23 @@ class WineyardItem extends Component {
     
     static propTypes = {
         navigation: PropTypes.object,
-        item: PropTypes.object
+        item: PropTypes.object,
+        bigTitle: PropTypes.bool
      }
+
+
+    static defaultProps = {
+        bigTitle: false
+    }
     _onPress = ()=>{
         const { item, navigation } = this.props
         navigation.navigate('WineDetail', { item })
     }
 
     render() {
-        const { item } = this.props
-        
+        const { item, bigTitle } = this.props
+        const titleStyle = (bigTitle) ? { fontSize: 24, fontWeight: 'bold'} : {}
+
         return <TouchableOpacity onPress={this._onPress} style={styles.container}>
             <View style={styles.content}>
                     <Card style={{width:140,height:120, marginLeft:-20}}>
@@ -28,7 +35,7 @@ class WineyardItem extends Component {
                         />
             </Card>
             <View style={{marginTop: 10}}>
-                <Text>{item.name}</Text>
+                <Text style={titleStyle}>{item.name}</Text>
                 <Text>Country: Chile</Text>
                 <Text>{`Region:${item.region}`}</Text>
             </View>

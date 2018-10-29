@@ -25,7 +25,7 @@ export default class WineItem extends Component {
                         source={{uri:item.logo}}
                         />
             </Card>
-            <View>
+            <View style={{paddingHorizontal: 20, marginTop: 20}}>
                 <Text style={{ color: '#AB3F66', fontWeight:'bold'}}>{item.name}</Text>
                 <Text>{item.variety}</Text>
             </View>
