@@ -11,6 +11,8 @@ export default class Modal extends Component {
    
     static propTypes = {
        onMount : PropTypes.func,
+       addPath : PropTypes.func,
+       path: PropTypes.array,
        countries: PropTypes.array
     }
 
@@ -25,8 +27,9 @@ export default class Modal extends Component {
         onMount()
     }
 
-    onSelect = mode =>{
-   
+    onSelect = (mode, path) =>{
+        const { addPath } = this.props
+        addPath(path)
         this.setState({ mode })
     }
 
@@ -54,7 +57,7 @@ export default class Modal extends Component {
 
     render() {
 
-        const { countries } = this.props
+        const { countries, path } = this.props
         const { mode, y } = this.state
      
         return <React.Fragment>
@@ -62,7 +65,7 @@ export default class Modal extends Component {
             <Animated.View style={[styles.content,{ top : y }]}>
                 <Trip style={{}} />
                 {mode == 0 && <List countries={countries} onSelect={this.onSelect} />}
-                {mode == 1 && <Detail onSelect={this.onSelect} />}
+                {mode == 1 && <Detail path={path} onSelect={this.onSelect} />}
                 {mode == 2 && <WineYardDetail onSelect={this.onSelect} />}
             </Animated.View>
             <Draggable 

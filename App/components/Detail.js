@@ -7,7 +7,8 @@ export default class Detail extends Component {
     
 
     static propTypes = {
-       onSelect: PropTypes.func
+       onSelect: PropTypes.func,
+       path: PropTypes.array
     }
     _onPress = ()=>{
         this.props.onSelect(2)
@@ -35,6 +36,9 @@ export default class Detail extends Component {
     }
 
     renderHeader = index =>{
+
+        const { path } = this.props
+
         if(index === 1){
             return  <View style={styles.titleContent}>
                     <Text style={styles.subtitle}>Wineyards and Wineries</Text>
@@ -42,12 +46,13 @@ export default class Detail extends Component {
            </View>
         }
         return  <View style={styles.titleContent}>
-        <Text style={styles.title}>Countries</Text>
+        <Text style={styles.title}>{path}</Text>
        </View>
     }
 
     render() {
         
+
         return <View style={styles.container}>
                 <SectionList
   renderItem={({item, index, section}) => this.renderItem({item, index, section})}

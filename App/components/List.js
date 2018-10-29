@@ -17,8 +17,9 @@ export default class List extends Component {
        countries: PropTypes.array,
        onSelect: PropTypes.func
     }
-    _onPress = ()=>{
-        this.props.onSelect(1)
+    _onPress = index =>{
+        const country = this.props.countries[index]
+        this.props.onSelect(1, country.name)
     }
     renderItem = ({item, index}) => {
         
@@ -26,7 +27,7 @@ export default class List extends Component {
         const width =  Math.floor((Dimensions.get('window').width / 2))
         const itemStyle = (index % 2 == 0)? {left:20} : {left:5}
        
-       return  <TouchableOpacity key={slug} onPress={this._onPress} style={[{width: width, height: width},styles.item, itemStyle]}>
+       return  <TouchableOpacity key={slug} onPress={()=>{this._onPress(index)}} style={[{width: width, height: width},styles.item, itemStyle]}>
                    <Image
                 style={[styles.itemImage,{width: width - 25, height: width - 25}]}
                 source={require('./assets/chile.jpg')}

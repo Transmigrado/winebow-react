@@ -2,12 +2,17 @@ import { createStore } from 'redux'
 
 const ACTION = {
   LOAD : 'store.loaded',
-  RESPONSE : 'store.response'
+  RESPONSE : 'store.response',
+  SELECT : 'store.select'
 }
 
 export const fetchDataThunk = dispatch => {
   const data = require('../data.json')
   dispatch({type:ACTION.LOAD, data})
+}
+
+export const addPath = (dispatch, path) => {
+  dispatch({type:ACTION.SELECT, path})
 }
 
 const INITIAL_STATE = {
@@ -17,6 +22,10 @@ const INITIAL_STATE = {
 
 reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case ACTION.SELECT:
+      const path = state.path
+      path.push(action.path)
+      return {...state, path}
     case ACTION.LOAD:
       return {...state, data:action.data}
     default:
@@ -46,6 +55,8 @@ export const getCountries = state => {
 
    return []
 }
+
+export const getPath = state => state.path
 
 export const store = createStore(
                   reducer, 
