@@ -32,7 +32,7 @@ class LoginScreen extends Component {
         <View style={styles.content}>
         <Image source={require('../components/assets/mainlogo.png')} style={{marginBottom: 40}} />
             <View style={styles.box}>
-                <InputText />
+                <InputText placeholder="Email" />
                 <LigthButton onPress={this.onPressLogin}  style={{marginTop: 20, marginBottom:10}}>
                 Login
                 </LigthButton>

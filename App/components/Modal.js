@@ -28,10 +28,13 @@ export default class Modal extends Component {
     }
 
     onSelect = (mode, path, item) =>{
-        const { addPath } = this.props
-        addPath(path)
 
-
+        if(path != null){
+            const { addPath } = this.props
+            addPath(path)
+    
+        }
+        
         this.setState({ mode, item })
     }
 

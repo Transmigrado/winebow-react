@@ -9,12 +9,13 @@ export default class InputText extends React.Component {
         maskLabel: PropTypes.string,
         style: ViewPropTypes.style,
         onChangeText: PropTypes.func,
-        value: PropTypes.string
+        value: PropTypes.string,
+        placeholder: PropTypes.string
     }
     static defaultProps = {
         unmaskLabel: 'Show',
         maskLabel: 'Hide',
-
+        placeholder: ''
     }
 
     state = {
@@ -48,6 +49,7 @@ export default class InputText extends React.Component {
     }
 
     render() {
+        const { placeholder } = this.props
         const { maskPassword, selection, value } = this.state
         const showSecureText = Number(maskPassword)
         const showNotSecureText = 1 - showSecureText
@@ -66,7 +68,7 @@ export default class InputText extends React.Component {
                     autoFocus={false}
                     blurOnSubmit={false}
                     onChangeText={this.onChangeText}
-                    placeholder="email"
+                    placeholder={placeholder}
                     ref={ref => this.textInputRef = ref}
                 />
                  <View style={styles.bottomLine}></View>

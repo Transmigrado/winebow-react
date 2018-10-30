@@ -574,7 +574,7 @@
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = JQLYR6R79M;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1017,7 +1017,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = JQLYR6R79M;
@@ -1033,8 +1033,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daf.winebow;
 				PRODUCT_NAME = winebow;
-				PROVISIONING_PROFILE = "7d247edc-101d-4b25-96ca-6464cc989593";
-				PROVISIONING_PROFILE_SPECIFIER = WineBow;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1046,7 +1046,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JQLYR6R79M;
 				ENABLE_BITCODE = NO;
@@ -1061,8 +1061,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daf.winebow;
 				PRODUCT_NAME = winebow;
-				PROVISIONING_PROFILE = "7d247edc-101d-4b25-96ca-6464cc989593";
-				PROVISIONING_PROFILE_SPECIFIER = WineBow;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};

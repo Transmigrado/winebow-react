@@ -5,7 +5,7 @@ import { withNavigation} from 'react-navigation'
 import WineyardItem from './Item/WineyardItem'
 import Breadcump from './Breadcump'
 import WineyardHeader from '../components/Item/WineyardHeader'
-
+import BackButton from '../components/BackButton'
 
 class WineYardDetail extends Component {
     
@@ -20,6 +20,9 @@ class WineYardDetail extends Component {
        this.props.navigation.navigate('WineDetail')
     }
 
+    _onBack = ()=>{
+        this.props.onSelect(1, null, this.props.item)
+    }
 
     renderItem = ({item, index}) => {
         return <WineyardItem item={item}  />
@@ -29,6 +32,11 @@ class WineYardDetail extends Component {
         
         const { path, item } = this.props
         return  <View style={styles.titleContent}>
+                <View style={{flexDirection:'row', paddingBottom: 10, justifyContent:'flex-end'}}>
+                <BackButton onPress={this._onBack} style={{marginTop: 10}} />
+
+                </View>
+               
                 <View style={{width: '100%', height:160}}>
                     <Image
                     style={[styles.itemImage,{position:'absolute', width: '100%', height:160}]}
@@ -37,6 +45,7 @@ class WineYardDetail extends Component {
                     <View style={[styles.itemContent,{width: '100%', height: 160, top:0, left:0}]}>
                     <Text style={[styles.text,styles.textBold]}>{item.name}</Text>
                     <Text style={styles.text}>{`${item.Wineries.length} wineries`}</Text>
+                    
                 </View>
                 </View>
                 <View>

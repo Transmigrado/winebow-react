@@ -47,9 +47,9 @@ class SignScreen extends Component {
                 <Text style={{fontSize: 14, textAlign:'center',marginTop: 10, marginBottom: 30}}>
                 To require access enter your data and our team will contact you
                 </Text>
-                <InputText />
-                <InputText />
-                <InputText />
+                
+                <InputText placeholder="Name" />
+                <InputText placeholder="Email" style={{marginTop: 10}} />
                 <LigthButton onPress={this.onPressLogin}  style={{marginTop: 20, marginBottom:10}}>
                 Request Access
                 </LigthButton>

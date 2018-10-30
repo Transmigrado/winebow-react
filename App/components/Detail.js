@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, Image, SectionList, TouchableOpacity, Dimensions } from 'react-native'
 import PropTypes from 'prop-types'
 import WineyardItem from './Item/WineyardItem'
-
+import BackButton from '../components/BackButton'
 export default class Detail extends Component {
     
 
@@ -22,6 +22,10 @@ export default class Detail extends Component {
     _onPress = index =>{
         
         this.props.onSelect(2, this.props.regions.regions[index].name, this.props.regions.regions[index])
+    }
+    
+    _onBack = ()=>{
+        this.props.onSelect(0)
     }
 
 
@@ -55,8 +59,9 @@ export default class Detail extends Component {
                     <View style={styles.bottomLine}></View>
            </View>
         }
-        return  <View style={styles.titleContent}>
-        <Text style={styles.title}>{path[1]}</Text>
+        return  <View style={[styles.titleContent, { flexDirection:'row', justifyContent: 'space-between'}]}>
+                <Text style={styles.title}>{path[1]}</Text>
+                <BackButton onPress={this._onBack} style={{marginTop: 10}} />
        </View>
     }
 
