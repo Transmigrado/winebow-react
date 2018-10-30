@@ -21,6 +21,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		4FB6CCE42188DA9900A106A8 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FB6CCD52188DA4700A106A8 /* style.json */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		C76606C54E70C8FCB80C9D1F /* libPods-winebow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D01D6D9CF3EC34680FEEB0 /* libPods-winebow.a */; };
@@ -308,6 +309,13 @@
 		2C3FE6270E0CDF6DC1AFD269 /* Pods-winebowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-winebowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-winebowTests/Pods-winebowTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		38981FA224D944947EFF945C /* libPods-winebowTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-winebowTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FB6CCD52188DA4700A106A8 /* style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+		4FB6CCD72188DA4700A106A8 /* port-8.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "port-8.svg"; sourceTree = "<group>"; };
+		4FB6CCD82188DA4700A106A8 /* hatch_36px-2pxSp-0.5pt.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "hatch_36px-2pxSp-0.5pt.svg"; sourceTree = "<group>"; };
+		4FB6CCD92188DA4700A106A8 /* hatch_36px-circle2-0.5pt.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "hatch_36px-circle2-0.5pt.svg"; sourceTree = "<group>"; };
+		4FB6CCDA2188DA4700A106A8 /* hatch_36px-3pxSp-0.5pt.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "hatch_36px-3pxSp-0.5pt.svg"; sourceTree = "<group>"; };
+		4FB6CCDB2188DA4700A106A8 /* hatch_36px-circle-0.5pt.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "hatch_36px-circle-0.5pt.svg"; sourceTree = "<group>"; };
+		4FB6CCDC2188DA4700A106A8 /* license.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -418,6 +426,7 @@
 		13B07FAE1A68108700A75B9A /* winebow */ = {
 			isa = PBXGroup;
 			children = (
+				4FB6CCD42188DA4700A106A8 /* assets */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -460,6 +469,29 @@
 				38981FA224D944947EFF945C /* libPods-winebowTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4FB6CCD42188DA4700A106A8 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				4FB6CCD52188DA4700A106A8 /* style.json */,
+				4FB6CCD62188DA4700A106A8 /* icons */,
+				4FB6CCDC2188DA4700A106A8 /* license.txt */,
+			);
+			name = assets;
+			path = ../assets;
+			sourceTree = "<group>";
+		};
+		4FB6CCD62188DA4700A106A8 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				4FB6CCD72188DA4700A106A8 /* port-8.svg */,
+				4FB6CCD82188DA4700A106A8 /* hatch_36px-2pxSp-0.5pt.svg */,
+				4FB6CCD92188DA4700A106A8 /* hatch_36px-circle2-0.5pt.svg */,
+				4FB6CCDA2188DA4700A106A8 /* hatch_36px-3pxSp-0.5pt.svg */,
+				4FB6CCDB2188DA4700A106A8 /* hatch_36px-circle-0.5pt.svg */,
+			);
+			path = icons;
 			sourceTree = "<group>";
 		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
@@ -913,6 +945,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FB6CCE42188DA9900A106A8 /* style.json in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
