@@ -72,7 +72,7 @@ DEPENDENCIES:
   - yoga (from `../node_modules/react-native/ReactCommon/yoga/Yoga.podspec`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - boost-for-react-native
     - Crashlytics
     - DoubleConversion
@@ -102,4 +102,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 466a751f93d39c3cbbdc48c2e155795706b6ca82
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

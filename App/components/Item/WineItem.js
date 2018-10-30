@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text, Image, TouchableOpacity, Linking } from 'react-native'
 import PropTypes from 'prop-types'
 import Card from '../Card'
 
@@ -9,8 +9,9 @@ export default class WineItem extends Component {
         item: PropTypes.object,
 
      }
-    _onPress = ()=>{
-        
+    _onPress = () =>{
+        const { item } = this.props
+        Linking.openURL(item.url);
     }
 
     render() {
