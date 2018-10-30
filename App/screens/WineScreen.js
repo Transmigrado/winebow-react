@@ -24,6 +24,38 @@ class WineScreen extends Component {
     gesturesEnabled: true,
     header: <Header left="back" navigation={navigation} />
 })
+
+state = {
+  description: ''
+}
+
+componentDidMount(){
+  const { navigation } = this.props
+  const item = navigation.getParam('item', {})
+  const doc = new DomParser().parseFromString(item.description,'text/html')
+
+  const elements = []
+  const current = {content:[], title:''}
+
+  Object.keys(doc.childNodes).forEach( key => {
+    const obj = doc.childNodes[key]
+    
+    console.log(obj)
+
+    if(typeof obj === "object" && obj !== null){
+        const { nodeName } = obj
+        if(nodeName == "h4"){
+          elements.push({...current})
+        }
+    }else{
+      elements.push({...current})
+    }
+  })
+
+  console.log(elements)
+ 
+}
+
 renderItem = ({item, index}) => {
 
  return  <WineItem item={item} />
@@ -31,19 +63,17 @@ renderItem = ({item, index}) => {
 
 renderHeader = ()=>{
   
-  const { navigation, path } = this.props;
+  const { navigation, path } = this.props
   const item = navigation.getParam('item', {})
+  const { description } = this.state
 
-  const doc = new DomParser().parseFromString(item.description,'text/html')
-
-  console.log(doc)
-
+ 
   return  <View>
        <Pager />
     <Breadcump path={path} style={{margin:10}} />
         <WineyardItem bigTitle={true} item={item} />
         <View style={{paddingHorizontal: 20, marginTop: 10}}>
-        <Text>hola</Text>
+        <Text>{description}</Text>
         <Text style={{fontSize: 30,marginTop:10, fontWeight:'bold'}}>Wines</Text>
         </View>
         
