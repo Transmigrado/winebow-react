@@ -34,7 +34,7 @@ class WineyardItem extends Component {
                         source={{uri:item.logo}}
                         />
             </Card>
-            <View style={{marginTop: 10}}>
+            <View style={{marginTop: 10, marginRight: 100}}>
                 <Text style={titleStyle}>{item.name}</Text>
                 <Text>Country: Chile</Text>
                 <Text>{`Region:${item.region}`}</Text>

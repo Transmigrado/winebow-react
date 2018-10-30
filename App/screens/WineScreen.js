@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
+import { connect } from 'react-redux'
+import { compose } from 'redux'
 import { StyleSheet, View, FlatList, Platform, Dimensions, TouchableOpacity, Image, Text} from 'react-native'
+import * as store from '../modules/store'
 import Header from '../components/Header'
 import Pager from '../components/Pager'
 import Breadcump from '../components/Breadcump'
@@ -7,10 +10,12 @@ import WineyardItem from '../components/Item/WineyardItem'
 import PropTypes from 'prop-types'
 import WineItem from '../components/Item/WineItem'
 
-export default class WineScreen extends Component {
+
+class WineScreen extends Component {
 
   static propTypes = {
-    navigation: PropTypes.object
+    navigation: PropTypes.object,
+    path: PropTypes.array
  }
 
   static navigationOptions = ({ navigation }) => ({
@@ -24,13 +29,18 @@ renderItem = ({item, index}) => {
 
 renderHeader = ()=>{
   
-  const { navigation } = this.props;
+  const { navigation, path } = this.props;
   const item = navigation.getParam('item', {});
 
   return  <View>
        <Pager />
-    <Breadcump path={["World","Chile", "Colchagua Valley"]} style={{margin:10}} />
+    <Breadcump path={path} style={{margin:10}} />
         <WineyardItem bigTitle={true} item={item} />
+        <View style={{paddingHorizontal: 20, marginTop: 10}}>
+        <Text>{item.description.replace('<p>','').replace('</p>','').replace('&nbsp;','')}</Text>
+        <Text style={{fontSize: 30,marginTop:10, fontWeight:'bold'}}>Wines</Text>
+        </View>
+        
  </View>
 }
 
@@ -52,6 +62,26 @@ renderHeader = ()=>{
     </View>
   }
 }
+
+
+
+
+const mapStateToProps = (state, ownProps) => ({
+    path: store.getPath(state)
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    onMount: () => {
+        
+    },
+    addPath: path => {
+       
+    }
+})
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps)
+)(WineScreen)
 
 
 const styles = StyleSheet.create({

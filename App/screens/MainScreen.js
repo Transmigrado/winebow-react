@@ -41,8 +41,9 @@ class MainScreen extends Component {
          <Mapbox.MapView
             zoomLevel={1.4}
             centerCoordinate={[-30,0]}
+            styleURL='asset://style.json'
             style={styles.container}>
-             {this.renderAnnotations()}
+           
              <Mapbox.ShapeSource id="smileyFaceSource" shape={require('../../App/geosjon.json')}>
             <Mapbox.FillLayer
               id="smileyFaceFill"

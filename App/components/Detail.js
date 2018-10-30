@@ -56,7 +56,7 @@ export default class Detail extends Component {
            </View>
         }
         return  <View style={styles.titleContent}>
-        <Text style={styles.title}>{path}</Text>
+        <Text style={styles.title}>{path[1]}</Text>
        </View>
     }
 
