@@ -1,122 +1,128 @@
-import React, { Component } from 'react'
-import { StyleSheet, View, Text, Image, FlatList, TouchableOpacity, Dimensions } from 'react-native'
+import React, {Component} from 'react'
+import { connect } from 'react-redux'
+import { compose } from 'redux'
+import { StyleSheet, View, FlatList, Platform, Dimensions, TouchableOpacity, Image, Text} from 'react-native'
+import * as store from '../modules/store'
+import Header from '../components/Header'
+import Pager from '../components/Pager'
+import Breadcump from '../components/Breadcump'
+import WineyardItem from '../components/Item/WineyardItem'
 import PropTypes from 'prop-types'
-import { withNavigation} from 'react-navigation'
-import WineyardItem from './Item/WineyardItem'
-import Breadcump from './Breadcump'
-import WineyardHeader from '../components/Item/WineyardHeader'
-import BackButton from '../components/BackButton'
+import WineItem from '../components/Item/WineItem'
+import parser  from 'react-native-html-parser'
 
-class WineYardDetail extends Component {
-    
+const DomParser = parser.DOMParser
 
-    static propTypes = {
-       onSelect: PropTypes.func,
-       navigation: PropTypes.object,
-       path: PropTypes.array,
-       item: PropTypes.object
-    }
-    _onPress = ()=>{
-       this.props.navigation.navigate('WineDetail')
-    }
+class WineyardDetail extends Component {
 
-    _onBack = ()=>{
-        this.props.onSelect(1, null, this.props.item)
-    }
+  static propTypes = {
+    navigation: PropTypes.object,
+    path: PropTypes.array
+ }
 
-    renderItem = ({item, index}) => {
-        return <WineyardItem item={item}  />
-    }
+  static navigationOptions = ({ navigation }) => ({
+    gesturesEnabled: true,
+    header: <Header left="back" navigation={navigation} />
+})
 
-    renderHeader = ()=>{
-        
-        const { path, item } = this.props
-        return  <View style={styles.titleContent}>
-                <View style={{flexDirection:'row', paddingBottom: 10, justifyContent:'flex-end'}}>
-                <BackButton onPress={this._onBack} style={{marginTop: 10}} />
-
-                </View>
-               
-                <View style={{width: '100%', height:160}}>
-                    <Image
-                    style={[styles.itemImage,{position:'absolute', width: '100%', height:160}]}
-                    source={require('./assets/chile.jpg')}
-                    />
-                    <View style={[styles.itemContent,{width: '100%', height: 160, top:0, left:0}]}>
-                    <Text style={[styles.text,styles.textBold]}>{item.name}</Text>
-                    <Text style={styles.text}>{`${item.Wineries.length} wineries`}</Text>
-                    
-                </View>
-                </View>
-                <View>
-                    <Breadcump path={path} style={{marginTop:10, marginBottom:10}} />
-                    <Text>{item.description.replace('<p>','').replace('</p>','').replace('&nbsp;','')}</Text>
-                    <WineyardHeader />
-                </View>
-                
-       </View>
-    }
-
-    render() {
-        const {  item } = this.props
-     
-
-        return <View style={styles.container}>
-                <FlatList
-                    ListHeaderComponent = {this.renderHeader()}
-                    data={item.Wineries}
-                    renderItem={({item, index}) => this.renderItem({item, index})}
-                    numColumns={1}
-                    style={{marginBottom:160}}
-                    />
-                </View>
-    }
+state = {
+  description: ''
 }
 
-export default withNavigation(WineYardDetail)
+componentDidMount(){
+  const { navigation } = this.props
+  const item = navigation.getParam('item', {})
+  const doc = new DomParser().parseFromString(item.description,'text/html')
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        width:'100%',
-        height:'100%',
-        position:'absolute',
-        backgroundColor:'transparent'
+  const elements = []
+  const current = {content:[], title:''}
+
+  Object.keys(doc.childNodes).forEach( key => {
+    const obj = doc.childNodes[key]
+    
+    console.log(obj)
+
+    if(typeof obj === "object" && obj !== null){
+        const { nodeName } = obj
+        if(nodeName == "h4"){
+          elements.push({...current})
+        }
+    }else{
+      elements.push({...current})
+    }
+  })
+
+  console.log(elements)
+ 
+}
+
+renderItem = ({item, index}) => {
+
+ return  <WineItem item={item} />
+}
+
+renderHeader = ()=>{
+  
+  const { navigation, path } = this.props
+  const item = navigation.getParam('item', {})
+  const { description } = this.state
+
+ 
+  return  <View>
+       <Pager />
+    <Breadcump path={path} style={{margin:10}} />
+        <WineyardItem bigTitle={true} item={item} />
+        <View style={{paddingHorizontal: 20, marginTop: 10}}>
+        <Text>{description}</Text>
+        <Text style={{fontSize: 30,marginTop:10, fontWeight:'bold'}}>Wines</Text>
+        </View>
+        
+ </View>
+}
+
+  render() {
+
+    const { navigation } = this.props;
+    const item = navigation.getParam('item', {});
+    
+
+    return <View style={styles.container}>
+     
+        <FlatList
+            ListHeaderComponent = {this.renderHeader()}
+            data={item.Wines}
+            renderItem={({item, index}) => this.renderItem({item, index})}
+            numColumns={2}
+            />
+      
+    </View>
+  }
+}
+
+
+
+
+const mapStateToProps = (state, ownProps) => ({
+    path: store.getPath(state)
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    onMount: () => {
+        
     },
-    content: {
-        flex:1,
-        width:'100%',
-        backgroundColor:'white',
-        marginTop: 40
-    },
-    titleContent:{
-        paddingHorizontal: 20,
-        paddingTop: 23,
-        paddingBottom: 12
-    },
-    title:{
-        fontSize: 30
-    },
-    item:{
-        flex:1,
-    },
-    itemImage:{
-        borderRadius: 6
-    },
-    itemContent:{
-        justifyContent:'center',
-        alignItems:'center',
-        top:12.5,
-        borderRadius: 10,
-        padding:10,
-        backgroundColor:'rgba(0,0,0,0.2)'
-    },
-    text:{
-        color:'white',
-        fontSize:16
-    },
-    textBold:{
-        fontWeight: 'bold',
-        fontSize: 32
+    addPath: path => {
+       
     }
 })
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps)
+)(WineyardDetail)
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor:'white'
+  },
+});

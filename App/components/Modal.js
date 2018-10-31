@@ -3,7 +3,7 @@ import { StyleSheet, View, Animated, Dimensions } from 'react-native'
 import Draggable from './Draggable'
 import List from './List'
 import DetailContainer from '../containers/DetailContainer'
-import WineYardDetail from './WineYardDetail'
+import RegionDetail from './RegionDetail'
 import Trip from './Trip'
 import PropTypes from 'prop-types'
 import Device from 'react-native-device-detection'
@@ -75,7 +75,7 @@ export default class Modal extends Component {
                 <Trip expanded={expanded} style={{}} />
                 {mode == 0 && <List countries={countries} onSelect={this.onSelect} />}
                 {mode == 1 && <DetailContainer path={path} onSelect={this.onSelect} />}
-                {mode == 2 && <WineYardDetail item={item} path={path} onSelect={this.onSelect} />}
+                {mode == 2 && <RegionDetail item={item} path={path} onSelect={this.onSelect} />}
             </Animated.View>
             <Draggable 
                 onDraggedEnd={this._onDraggedEnd} 
