@@ -6,6 +6,8 @@ import DetailContainer from '../containers/DetailContainer'
 import WineYardDetail from './WineYardDetail'
 import Trip from './Trip'
 import PropTypes from 'prop-types'
+import Device from 'react-native-device-detection'
+
 
 export default class Modal extends Component {
    
@@ -39,10 +41,11 @@ export default class Modal extends Component {
     }
 
     _onDragged = y =>{
+        
         Animated.timing(                  
             this.state.y,            
             {
-              toValue: y + 40 ,                   
+              toValue:  y + 40 ,                   
               duration: 0,              
             }
           ).start();   
@@ -53,7 +56,7 @@ export default class Modal extends Component {
         Animated.timing(                  
             this.state.y,            
             {
-              toValue: (expanded)? 100 : Dimensions.get('window').height - 80,                   
+              toValue: (expanded)? ((Device.isTablet)? Dimensions.get('window').height - 560: 100) : Dimensions.get('window').height - 80,                   
               duration: 500,              
             }
           ).start();   
@@ -63,10 +66,12 @@ export default class Modal extends Component {
 
         const { countries, path  } = this.props
         const { mode, y, expanded, item } = this.state
+        const widthScreen = Dimensions.get('window').width
+        const style = ( Device.isTablet) ? { marginLeft: 20, marginRigth: 20, width: widthScreen - 40} : {width: widthScreen}
      
         return <React.Fragment>
            
-            <Animated.View style={[styles.content,{ top : y }]}>
+            <Animated.View style={[styles.content, style,{ top : y }]}>
                 <Trip expanded={expanded} style={{}} />
                 {mode == 0 && <List countries={countries} onSelect={this.onSelect} />}
                 {mode == 1 && <DetailContainer path={path} onSelect={this.onSelect} />}
@@ -82,7 +87,6 @@ export default class Modal extends Component {
 const styles = StyleSheet.create({
     content: {
         flex:1,
-        width:Dimensions.get('window').width,
         height:Dimensions.get('window').height,
         position:'absolute',
         backgroundColor:'white',

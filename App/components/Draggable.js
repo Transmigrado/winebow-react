@@ -8,6 +8,9 @@ import {
 
 
 import PropTypes from 'prop-types'
+import Device from 'react-native-device-detection'
+
+const heightScreen =  Dimensions.get('window').height
 
 export default class Draggable extends Component {
 
@@ -44,7 +47,9 @@ export default class Draggable extends Component {
         ])(e,gesture)
       },
       onPanResponderRelease: () => {
-        const expanded = this.y < 200
+
+        const expanded = (Device.isTablet) ? heightScreen - this.y > 400: this.y < 200
+
         this.setState({expanded})
         this.props.onDraggedEnd(expanded)
         
@@ -62,7 +67,7 @@ export default class Draggable extends Component {
     const panStyle = {
       transform: this.state.pan.getTranslateTransform()
     }
-    const top =  (expanded)? 50  : Dimensions.get('window').height - 120
+    const top =  (expanded) ? ((Device.isTablet) ? heightScreen - 590 : 50) : (heightScreen - 120)
     const myStyle = {...styles.container, ...{ top }}
 
     return (
@@ -83,7 +88,7 @@ const styles = StyleSheet.create({
     height: 40,
     position: 'absolute',
     left: 0,
-    top: Dimensions.get('window').height - 120
+    top: heightScreen - 120
   },
 })
 

@@ -5,6 +5,8 @@ import { withNavigation } from 'react-navigation'
 import PropTypes from 'prop-types'
 import Header from '../components/Header'
 import ModalContainer from '../containers/ModalContainer'
+import Sidebar from '../components/Sidebar'
+import WineScreen from '../screens/WineScreen'
 
 Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB01GxzIm44_FlvyFQ')
 
@@ -52,6 +54,9 @@ class MainScreen extends Component {
           </Mapbox.ShapeSource>
         </Mapbox.MapView>
         <ModalContainer />
+        <Sidebar>
+          <WineScreen />
+        </Sidebar>
     </View>
   }
 }

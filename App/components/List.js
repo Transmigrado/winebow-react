@@ -9,6 +9,7 @@ import { StyleSheet,
     Platform } from 'react-native'
 
 import PropTypes from 'prop-types'
+import Device from 'react-native-device-detection'
 
 export default class List extends Component {
     
@@ -24,8 +25,10 @@ export default class List extends Component {
     renderItem = ({item, index}) => {
         
         const { name, slug, count } = item
-        const width =  Math.floor((Dimensions.get('window').width / 2))
-        const itemStyle = (index % 2 == 0)? {left:20} : {left:5}
+        const width =  (Device.isTablet) ? 200 : Math.floor((Dimensions.get('window').width / 2))
+        const itemStyle = (Device.isTablet) ? {} : ((index % 2 == 0)? {left:20} : {left:5})
+
+        
        
        return  <TouchableOpacity key={slug} onPress={()=>{this._onPress(index)}} style={[{width: width, height: width},styles.item, itemStyle]}>
                    <Image
@@ -39,8 +42,8 @@ export default class List extends Component {
            </TouchableOpacity>
     }
 
-    renderHeader = ()=>{
-        if(Platform.isPad){
+    renderHeader = show =>{
+        if(!show){
             return null
         }
         return  <View style={styles.titleContent}>
@@ -54,14 +57,15 @@ export default class List extends Component {
 
         const props = { numColumns: 2}
 
-        if(Platform.isPad){
+        if(Device.isTablet){
             props.horizontal = true
             delete props.numColumns
         }
         
         return <View style={styles.container}>
+                {Device.isTablet && this.renderHeader(true)}
                 <FlatList
-                    ListHeaderComponent = {this.renderHeader()}
+                    ListHeaderComponent = {this.renderHeader(!Device.isTablet)}
                     data={countries}
                     renderItem={({item, index}) => this.renderItem({item, index})}
                     style={{marginBottom:160}}
@@ -95,7 +99,7 @@ const styles = StyleSheet.create({
         fontSize: 30
     },
     item:{
-        flex:1,
+        flex:1
     },
     
     itemImage:{
