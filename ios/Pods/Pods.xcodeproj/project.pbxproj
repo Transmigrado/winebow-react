@@ -7,250 +7,250 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		007BA7A8C20F66C23AB84252BD666C21 /* FilterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B1966B7B0DE630BF94A81A73AD90E0 /* FilterParser.m */; };
-		009163122DE22D16202326A794CAAD89 /* RCTMGLRasterSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BC97005B0A668BE31415B5CE134441F6 /* RCTMGLRasterSource.m */; };
-		00968AAB52170AD563B64C064B5E1FB4 /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 34AF069A3BF78B3297505EDA3A06EE53 /* utils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		03EADFBB446767DC9CEEA190CFA3698A /* log_severity.h in Headers */ = {isa = PBXBuildFile; fileRef = E30AAD6FD5EB3B1E0BD2C265D70A91D8 /* log_severity.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0647B36E60B72A167A8B10296A080BFE /* double-conversion.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9C16647103014DD2937D0014E1ABCB9B /* double-conversion.cc */; };
-		07A6705A61E31BA55CAA908D3EB407F7 /* utilities.cc in Sources */ = {isa = PBXBuildFile; fileRef = 268E082632203A2619D39C5F7BF6B120 /* utilities.cc */; };
-		0D60E7088C1747E8579E2830BA3EB796 /* logging.cc in Sources */ = {isa = PBXBuildFile; fileRef = 1C469995B8BB611D1EFB131A4A6CF51B /* logging.cc */; };
-		0D71914EAF949F440094CC722008724F /* RCTMGLRasterSourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C88ECD29F5B96E24E161184C44AE2730 /* RCTMGLRasterSourceManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0FD2DCC5A8DA5059131028F04BE5E62F /* RCTMGLRasterLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7802298F3FDF464834D57F6DCF6550 /* RCTMGLRasterLayer.m */; };
-		0FF33E441FDCA61AE8B581198106107E /* ViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BA7C532C426D1FB49357F98AB22C4D49 /* ViewManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		10BFBADAA94BF65C795ECB9ED9A05142 /* bignum.cc in Sources */ = {isa = PBXBuildFile; fileRef = 729115E1CD5EB0D0015139431991D602 /* bignum.cc */; };
-		1283453D5BDBDFAA23BB2ED6281464AC /* YGLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7CEF1410FD0D90FDA3E0212A790FA2C /* YGLayout.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		1852E1A69CF3885BE12FDE3E83C0A5C3 /* RCTMGLStyleValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FAA53000030BEE63FEFC16D393D08F1 /* RCTMGLStyleValue.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		194AB06DF16AEA33DDDF5C00F99A3396 /* MGLFaux3DUserLocationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE86CDD785FD5E56BD9498859243268A /* MGLFaux3DUserLocationAnnotationView.m */; };
-		1BABC3F06BF5B47BD6BD4E8182B77226 /* ViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5A7A8956C6F1F21C82F8E64F2C8EE0 /* ViewManager.m */; };
-		1CCC9D57360DCB87DA4C03602A4CB30F /* YGLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F909DD6881781926925E9067330D9F /* YGLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1DE6D2E83BE92A3256CB4501129E3479 /* RCTMGLImageQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FE51B2377930808E9B0E31766481C9 /* RCTMGLImageQueue.m */; };
-		20DF98AF7C06B61D6DDE60B3BA271EC1 /* demangle.cc in Sources */ = {isa = PBXBuildFile; fileRef = 99C9C65EDE04C4AD2FEA90DB1024A7D5 /* demangle.cc */; };
-		20E6B8501503BB9F1EE6BD9953FA2261 /* Yoga-internal.h in Headers */ = {isa = PBXBuildFile; fileRef = C6FF272BE25514CC6E2194D10BEC28B3 /* Yoga-internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		21ACD4967FABBF74822B9716777608E7 /* RCTMGLImageSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F12F003AFD3A8F43915091CE7E9DC61 /* RCTMGLImageSourceManager.m */; };
-		2559E805CC64561BE7DAECE135197494 /* RCTMGLImageSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 345393C42901F476A426C5242EC7D06B /* RCTMGLImageSource.m */; };
-		265517E635394A11C39AFEDE51DAB28E /* signalhandler.cc in Sources */ = {isa = PBXBuildFile; fileRef = 25C4F997512B41A58EBCE9793B691FF5 /* signalhandler.cc */; };
-		26976DC8A1659EE705AAD8A8BC4135F9 /* logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 1910D7969125F09860E477500DBD7C65 /* logging.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		26B784C31936BDF7B02875B2DD8B1DBA /* RCTMGLMapTouchEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD765E386F957A0FEEEA71FB50E95A6 /* RCTMGLMapTouchEvent.m */; };
-		2773E3CB1D8D46DC13FC842CE4A2E856 /* RCTMGLVectorSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 40269D3A1FD3AB85D0BC32E469058032 /* RCTMGLVectorSource.m */; };
-		291645643DFB7C2BD8305E4B3B27252C /* vlog_is_on.h in Headers */ = {isa = PBXBuildFile; fileRef = 196DA02ED9A588F5C02850309A86D5D3 /* vlog_is_on.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		29A5B934AAE49BCE58D2867FC691771F /* vlog_is_on.cc in Sources */ = {isa = PBXBuildFile; fileRef = 0F7965B90975B7FB13F79C3DC4F2D60C /* vlog_is_on.cc */; };
-		2B1B1B68895999B6051513A79C327823 /* RCTMGLLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E59115FA51BE39330E989F4BCEF9A7D0 /* RCTMGLLineLayer.m */; };
-		2B1E7DD0BC8F877174765FD7A2690DD4 /* RCTMGLShapeSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDAA63788D45705B07BC3435FD41AAC /* RCTMGLShapeSourceManager.m */; };
-		2C3C85F0A81E9E9C24D649B3BCB503D1 /* RCTMGLSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF47ED9E5712A248B9E801BAA635017 /* RCTMGLSource.m */; };
-		2D7F1DF56E7708DE2F4DD1954951BA81 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4130E467ACABA2FFAED7DA766768BE02 /* Utils.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		2F56D71D9AB20BA9AE20052F780BC12C /* RCTMGLShapeSourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 444A918AFB2C2F32EB0D6A8901BEC606 /* RCTMGLShapeSourceManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2FE95085DB4F3D659AF3EBD21186DE28 /* MGLUserLocationHeadingIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D7EA2A5022CE2B7E508DA4901DA91E0 /* MGLUserLocationHeadingIndicator.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3182E057FAC4C1D6DE4C16379B644FF8 /* RCTMGLStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = AC33CAA15BF0397A2C9FCCE52C2D2EB1 /* RCTMGLStyle.m */; };
-		31E0DED3C17288F2DA39CA16B2EA2E48 /* Bits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7565E487582311C0EF85F3A964430108 /* Bits.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
-		33512028B54100BFF01753F7DC40ECEB /* Yoga.h in Headers */ = {isa = PBXBuildFile; fileRef = 31639322FB6BFDAB45BC4D7DE43005BE /* Yoga.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		346A9D824EFB2D0D209ADBA8C47A43E7 /* fast-dtoa.h in Headers */ = {isa = PBXBuildFile; fileRef = EAEB3C200BD4CABE09E308647D1F7CE0 /* fast-dtoa.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		34E4DBC519DA259F5AAF22BB99DBBDC6 /* YGConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 944D063A7BFC57ED2B6AB93FE8787A17 /* YGConfig.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		36224A27E92C521E6B4EF933D3C72DAB /* react-native-mapbox-gl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BED083EE2C225C1D18298F40B1D1060B /* react-native-mapbox-gl-dummy.m */; };
-		36245DBEF9BC43213A2E207689F396E4 /* RCTMGLCallout.m in Sources */ = {isa = PBXBuildFile; fileRef = 300583971CC6CD680C140F8F72502B14 /* RCTMGLCallout.m */; };
-		39C09C0F8C237745D20DD07599A1A607 /* RCTMGLMapTouchEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 751A15DE219D30D4E1ECA04E0335836C /* RCTMGLMapTouchEvent.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3E75CE82A75638357D63F42E6F79E5ED /* fixed-dtoa.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4666198823A67FE9B446E31F02D78D33 /* fixed-dtoa.cc */; };
-		3EE2D35B56DE13D283D023F15AF30AC9 /* YGConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 66FD5A09768EBF820FD4C49A98358CB7 /* YGConfig.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3F94C6DBDE2C4AF82E130821C5F9A56C /* bignum-dtoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 85A20E13B0D6D13D101241679B9A999E /* bignum-dtoa.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		408B18CF7AE22A526AB36D59943E5967 /* RCTMGLVectorSource.h in Headers */ = {isa = PBXBuildFile; fileRef = FFB47880663DCAE290632F095EB00C8A /* RCTMGLVectorSource.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4329D6844A85A2EB41B8B33362CB6714 /* RCTMGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 8212DD9A856903584CFC85C0EC88FD39 /* RCTMGL.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4B8A4A674F2ABFC571F6996DE71E7FE3 /* RCTMGL.m in Sources */ = {isa = PBXBuildFile; fileRef = AF392BBDE2902227E22CC62083D156B0 /* RCTMGL.m */; };
-		4CD82ABF24B6B18F733E4E11C057FCFF /* RCTMGLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3C4116E7DAE774805F2686ABF4859 /* RCTMGLUtils.m */; };
-		4F233435E6CD0FE164769BB2A3CDA927 /* yoga-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 83528B0416709A931DDC98C87199F8D8 /* yoga-dummy.m */; };
-		5201CE1390F1062E0AE3A648B4EED0F8 /* YGStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 830DCA0A7108CB907D1ADFCF6B3D9DBC /* YGStyle.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		52DE6C4591B10C70808BF7190A987442 /* MGLUserLocationHeadingBeamLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A7E8A4A3E15A2C6435C82617061876 /* MGLUserLocationHeadingBeamLayer.m */; };
-		5583ABB704FCF437CF6AC82EE3392B3A /* RCTMGLPointAnnotationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B79F92C2255348A1559363F3578D9AD4 /* RCTMGLPointAnnotationManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		56CCD5EAA9AFFB4469F85BA2873FD402 /* RCTMGLSymbolLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B7500FD4364910E7FE13CD5F0E21C /* RCTMGLSymbolLayerManager.m */; };
-		5AB0F1D1483A6F469C96479703835D88 /* RCTMGLShapeSource.h in Headers */ = {isa = PBXBuildFile; fileRef = DE1D17944F262D5094881C3686019E37 /* RCTMGLShapeSource.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5B375F85991E4620F8320D0876AEBDA7 /* RCTConvert+Mapbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EDE71CEA903B368C04291A0D34421C /* RCTConvert+Mapbox.m */; };
-		5C644207925BA75F815588A267D7D413 /* diy-fp.cc in Sources */ = {isa = PBXBuildFile; fileRef = 1D5ADE3AABFE5C1BB8D310C1C8D741C2 /* diy-fp.cc */; };
-		5EDE80FA46D14D918ED9EBFE7215BFA8 /* RCTMGLFillLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C8E44D2CFACD026F453A26EB6FCB30 /* RCTMGLFillLayer.m */; };
-		5F595F8B9C90A234BC17B0205A1DD8ED /* RCTMGLRasterLayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 665BEA4C2569F831BE6DA4E34540BA9B /* RCTMGLRasterLayerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		60DE16338D1ED8B3DDE849041EF561F9 /* Yoga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8085ACDEAF5A12B8F81A9AC5FEB0EB41 /* Yoga.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		634E855136F89F4E1F7A9C55B632C694 /* RCTMGLBackgroundLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4111A9591B90AD9914CFC413B20483 /* RCTMGLBackgroundLayerManager.m */; };
-		634F2BB85D6E2B907773F54164785EE7 /* RNMBImageUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 74A118086FEC50832A58F673E082B6DA /* RNMBImageUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		670EBD0F02B929D44BF2B8E87A9CF317 /* FilterList.h in Headers */ = {isa = PBXBuildFile; fileRef = 43D0F5052AAEBC27E0C1269DE9D22379 /* FilterList.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		686FBE0030C7E683C03D6C29C0EEAA6C /* RCTMGLImageQueueOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = EA496EE743F605247FE13C722E72121B /* RCTMGLImageQueueOperation.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6887D3E0CE12AC444B62FC164CCC367D /* YGFloatOptional.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 957687BCA33F26B4837710086577350B /* YGFloatOptional.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		693991B7D8256B8CDB6AC8ECEB5E7DAC /* RCTMGLCircleLayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 230FF409C8BFEE4720C48BB862171E22 /* RCTMGLCircleLayerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6BEC8D440751B334001D53D446F7D79E /* StringBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 367399D2A9E76F67B7B2B38CD3FD9243 /* StringBase.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
-		6C1D27D0976D88CF27729B87CA03C74E /* RCTMGLEventTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = F00BB32D19F0BA11D4041DC2730D5533 /* RCTMGLEventTypes.m */; };
-		6C93AE33EAD1EE797561A88A1A845EFD /* RCTMGLCircleLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E62E5052B017E0CE3386EEEB70E7E3B /* RCTMGLCircleLayerManager.m */; };
-		6D8A8344D2090ECC0ADAC65C469502B0 /* RCTMGLLineLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = A9BE92AD105A162E8E5DE27407175B74 /* RCTMGLLineLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		71511CAAB0502B347329DA5755D7C95C /* YGNodePrint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1148820B2C23C991189F8EF454AA6EAD /* YGNodePrint.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		716A66280180A58DEEE8FD98B58557D9 /* MallocImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8634294F051E043645C49A4BB538F5E8 /* MallocImpl.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
-		73A9936349F8B81E7810985C6B3C3BE8 /* CameraStop.m in Sources */ = {isa = PBXBuildFile; fileRef = A314E659A7BBD39D01350D185B722709 /* CameraStop.m */; };
-		7521F60568F92179F0C2D2C5FF0D586D /* RCTMGLEventProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6AB9B16F2E41FB24D20B1E815565CB /* RCTMGLEventProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7733A44DE685DFFEC3B84B679F668948 /* RCTMGLCalloutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EF168E6A6F28D40475EDCFDFCDE9C3CE /* RCTMGLCalloutManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		77C49E8E80E71F373A644797B6EE19B1 /* YGNodePrint.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F571F69C74F67AB121D03E36057081C /* YGNodePrint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7B90AFBECBD1541E4D590044A71C8FE8 /* RCTMGLMapViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 23D60BD01EBDF6E1D14E0CE67AB7118A /* RCTMGLMapViewManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7D34F38BB981C5FC6B124EFD27B5606A /* MGLUserLocationHeadingBeamLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 300FFAE695D76ED3E4A04E11EE44E383 /* MGLUserLocationHeadingBeamLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		84D7B67D8CABDCAF51C79E5BE7B31BC9 /* RCTMGLLightManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74EA6B8612CB0F83D9913416B78059 /* RCTMGLLightManager.m */; };
-		861A8F4849C18112A8ECE2F2F9D4AB46 /* RCTMGLVectorSourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7369DEC172AD28E5B22A70491BBF3987 /* RCTMGLVectorSourceManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		863FE28B0D15B6800BCFBB5569F8CB16 /* YGMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 566817A028D1C46290A12E6114D4153D /* YGMacros.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		86439AAFB0F7DAFC02DD4E8626D0FCD5 /* RCTMGLCallout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F95891BCEF709BD35C63FB59BD48FD2 /* RCTMGLCallout.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		86EE02750E3575145BCC9AFD17A48817 /* RCTMGLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 25C9B194CB1508B5EC910FCEB850F5C7 /* RCTMGLUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		88C27E666A38F8011CB36A68F7CA66EF /* RCTMGLMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0807EF6063E6BABED63C6C895DEFB3B9 /* RCTMGLMapView.m */; };
-		8AC4AF3F7DB36944D70CD636983C6D09 /* RCTMGLImageSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 905F51901D9E7A187BB54DF8A87CCBD5 /* RCTMGLImageSource.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8AC9A2361D18D5BA2E492EB54720D595 /* RCTMGLSymbolLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC547CF5A6DE6117AC1CE453E18EF9 /* RCTMGLSymbolLayer.m */; };
-		8C90D8B1034F43A96853EF094962485A /* RCTMGLRasterSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F2D709398D9DA1A1E2615819759DD17 /* RCTMGLRasterSource.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8CC1F6F523A999010B0341473E44B634 /* Pods-winebow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA7BB397F61F0FA0F114118CE8BEEEE /* Pods-winebow-dummy.m */; };
-		8D06504174096E16B183F0C406A889C2 /* RCTMGLRasterSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9077E6D2195F3B31FCBD2CDA6D4E4ED /* RCTMGLRasterSourceManager.m */; };
-		8E3506A9012CD326CC7209BDD772EBA2 /* strtod.cc in Sources */ = {isa = PBXBuildFile; fileRef = 88394F11A6265FBFB702ECB161EAC1D3 /* strtod.cc */; };
-		8ECF9844A5E6A34C6F02862477127998 /* BitsFunctexcept.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A35AD1A873C720A6EC72015EA72028B4 /* BitsFunctexcept.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
-		93B8B469419290E07079FE85DF046BE7 /* RCTMGLRasterLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 77124C85A7B16684E383365A3A03B0B5 /* RCTMGLRasterLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		94C8C4D181800831574BF825EB29CDD0 /* RCTMGLMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 687E1BADB994A3E4EA941267A8B47472 /* RCTMGLMapView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		94F3C37724B2B9C6FF249FBFA7D5D75F /* MGLModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A531C2029F6F6550B49860C7B8E60288 /* MGLModule.m */; };
-		96A5928DCA28A7AAA655936010A9B701 /* cached-powers.cc in Sources */ = {isa = PBXBuildFile; fileRef = 613ED9471918ED9B3015F49520B767E0 /* cached-powers.cc */; };
-		975AF349096C0C5F3602AC086664FCB6 /* RCTMGLCalloutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6FBFC9152C6D6078DBC83815136003 /* RCTMGLCalloutManager.m */; };
-		98758D9C266747295D420A8644A58C1B /* RCTMGLFillExtrusionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1292FBB6536DB4A9987C8254BB85D2F5 /* RCTMGLFillExtrusionLayer.m */; };
-		989D48A51051A9BAF425F714590724EE /* Demangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67C527B8A91B6589ED5455BEAD780D05 /* Demangle.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
-		990F1007BA359B81BC583522329B3A6B /* cached-powers.h in Headers */ = {isa = PBXBuildFile; fileRef = B3CCDC5BA607D8DAC6D225549DA04F26 /* cached-powers.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A140C3C4947EA12022BF5EEEEFEB9238 /* RCTMGLCircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2E49D12C6EA26647094061F7564DD9 /* RCTMGLCircleLayer.m */; };
-		A17FBB25D8BD5B00DE9C776D4548B771 /* Unicode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A0AB32E8000D72EA52ACCC50221A5 /* Unicode.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
-		A309E8FC72B524C2C34103E9B947C313 /* RCTMGLEventTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AB398C2E6A7A84EB48BE03D19812782 /* RCTMGLEventTypes.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A30DFF55EFFEE860C896D2666F3F682A /* RCTMGLFillLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F20E057DDDDC9CB5879C8DD32A8C59A8 /* RCTMGLFillLayerManager.m */; };
-		A39BA95A106AE7B7E9F0EFF8BF82E499 /* RCTMGLEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = EA8878A7809BF73DEC240F70552B57BF /* RCTMGLEvent.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A57427A9A4AD05377FB4932B86637535 /* RCTMGLLightManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BE454AC2C1FA757B625BB463493DA0EE /* RCTMGLLightManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A65D20868C4440C305CC66CD18413E73 /* double-conversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 8716AABD4DBE43165C5258EFCBABC227 /* double-conversion.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A90B211D54295C670306963F24C08D8D /* RCTMGLPointAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = F8798171BF095F874B12B53AE366328C /* RCTMGLPointAnnotation.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A95DE6E1568FA9B5F9DA0A75863C50E9 /* YGStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0764BD338C8A04E7A1D48AA14C953A1D /* YGStyle.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AAC1A397EA43B1BDA3321F43667D2D46 /* RCTMGLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 052D4DE1593AC13C6D998ED5C2EAF81C /* RCTMGLLayer.m */; };
-		ABEE393BFBC3A2A88D0490EEF44D0CC1 /* RCTMGLPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B0B51FE2BDB68ED11EA63ECACCAF4 /* RCTMGLPointAnnotation.m */; };
-		AF2C610180178A11FB092AB99A2FA911 /* MGLOfflineModule.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEE1D79373DF8B6422EF612A0CE92F8 /* MGLOfflineModule.m */; };
-		B1652389AD5E6D0AB4D9FEC75F47DB60 /* RCTMGLSymbolLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = FE666EAD5936D10D3F44D339FC5A54E6 /* RCTMGLSymbolLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B177BD95FBAFA38936BF8134758C9A4E /* MGLOfflineModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 5315ECA56D9586838E17651789F278A7 /* MGLOfflineModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B32323E05D7CEED5F3E5EA01DC4F6805 /* symbolize.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3CEA219942418912AD43528D0A47ED12 /* symbolize.cc */; };
-		B83BFA1246BE69A2FC00B3DEA4698B14 /* FilterParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 970ED7CF3F3C4ED966D0FE511EBA6610 /* FilterParser.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B8E24DD8DB2663B12E009E5B6EC1EF9A /* RCTMGLStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = E0F29B776B67897FE825DDDC7B821983 /* RCTMGLStyle.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B988EF5BE778F4F11DD95F505259B4F7 /* RCTMGLFillLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 090F3877E49B0A06364BF8329337246E /* RCTMGLFillLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BAFF3781E5B3A748F808079369CA2203 /* DoubleConversion-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D309B8138060A28ADC460DEF4C3F3A6D /* DoubleConversion-dummy.m */; };
-		BBEAD9A7138905F3F40C6CBC8634FF5D /* CameraUpdateQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 8759D85973E6B164234AA0E959631E9E /* CameraUpdateQueue.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BE0884982D8E1D0E723A56D172637840 /* MGLModule.h in Headers */ = {isa = PBXBuildFile; fileRef = D93B82A12B53E6A20006B2B661117528 /* MGLModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BE1100B5D752D5004CCCA809441461AA /* RCTMGLSource.h in Headers */ = {isa = PBXBuildFile; fileRef = A68A46DE19583D4EB4F02881C6412841 /* RCTMGLSource.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BE797B79306D3DB5C0065CDFF4BD3693 /* RCTMGLStyleValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 196449593BF0966C7D42E886051F4F4E /* RCTMGLStyleValue.m */; };
-		BF20903FCE4AA6D10B661B7F3B7B5327 /* RCTMGLShapeSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D52B7308791F19EA1752F6F4220604B7 /* RCTMGLShapeSource.m */; };
-		C025F6F9EAFB6A399BDA6A629ECD3869 /* RCTMGLBackgroundLayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8A696DC070805C4A03B26051C34DCA /* RCTMGLBackgroundLayerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C370CC91D42BB517A8767ECED8C316F6 /* RCTMGLFillLayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C517DA81EA853A8BE945DC1A7F4BD6E0 /* RCTMGLFillLayerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C3EF552B51A8DF2146E45555F766C39D /* bignum.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F63A432F26512C532AD0556C2CFDAC6 /* bignum.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C3F1064A2D6EF6DBC0362B857135D9E4 /* RCTMGLLineLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3838076FB9AEBA02672D95A7FCB2F395 /* RCTMGLLineLayerManager.m */; };
-		C5CEFF000E048A7B6819CD6BFA4342D9 /* MGLUserLocationHeadingArrowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545585A3BD334A040805D79E5956E61 /* MGLUserLocationHeadingArrowLayer.m */; };
-		C5D266F989E380648A84E051F0F38576 /* Conv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF81834F482E39282E7ED985661FEA03 /* Conv.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
-		C73F4A73A51BEF6D5100F09989EC2A47 /* json.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27DA0AEDC5BD00692AB1B721D4228774 /* json.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
-		C888C74972178724F09C3A6799616CF0 /* CameraUpdateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E9618A3B2342B0A872FC66039D2839 /* CameraUpdateItem.m */; };
-		CA5279AB4FA90E1C4C33804397122747 /* RCTMGLLight.h in Headers */ = {isa = PBXBuildFile; fileRef = 56DAE96D0EE676A05803A93E61A31019 /* RCTMGLLight.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CA955876D7E74642B8914E63AE52D998 /* CameraMode.h in Headers */ = {isa = PBXBuildFile; fileRef = D231F7D1989EBD8C884A85B96DCEC668 /* CameraMode.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CAE68D0FA3363055D565C15B42CEBE8F /* glog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9A997D62BE1F11EAC208BAE70A6767 /* glog-dummy.m */; };
-		CB883D5E04A0DFA049AEB1D0E76D1181 /* RCTMGLBackgroundLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1814F6C25289936537B7B7A11EBC0A8A /* RCTMGLBackgroundLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CBF415FB7BC5BAB0427C4234F4305DF5 /* stl_logging.h in Headers */ = {isa = PBXBuildFile; fileRef = CBAC684FA993280045D7AD73D1D8D2D7 /* stl_logging.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CCC333C9CF73C76908817E680DB945E2 /* RCTMGLVectorSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28774082BC61BC5C11B58C81E70E5A11 /* RCTMGLVectorSourceManager.m */; };
-		CE83760A8C87B5DD06DAB8025F9EBDF9 /* RCTMGLMapViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E5F66B10D36AA46DC3171052A33EB2 /* RCTMGLMapViewManager.m */; };
-		CF52F4B3DAF453AFB736429BBA66DED1 /* RCTMGLFillExtrusionLayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FDCE3F28B3BA5149E067BB5E804B43E3 /* RCTMGLFillExtrusionLayerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D0B6D184143B2EDA022D3F4E8973932B /* RCTMGLFillExtrusionLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = AD0ACAE168DC8F71D94D26A9D5F3CB6D /* RCTMGLFillExtrusionLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D1F1F2B44AF9D5C0A066145AB2565950 /* YGNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 157D43367DFDEFB7148874FB1979E92C /* YGNode.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		D456C3B155E79967F1B26852F9F70650 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = D37452232A016DF061F577B62E1247F1 /* Utils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D658A9669CE3866311813D5777D67558 /* CameraMode.m in Sources */ = {isa = PBXBuildFile; fileRef = B84F63A8F252124F9F0709A07C88F16B /* CameraMode.m */; };
-		D6E5F35851CCA5931BA610D097B312F8 /* dynamic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82CFAD8BA369101EF1214F0B9F58129A /* dynamic.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
-		D9984539E6BD2C0A7531E8D4A8B68960 /* RCTMGLRasterLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 699AC0115F6AC1A0B6948CAAA85B521D /* RCTMGLRasterLayerManager.m */; };
-		D9A0B2C24D1ECFFB118FFBDB93D444D0 /* FilterList.m in Sources */ = {isa = PBXBuildFile; fileRef = 084D3ED63543BC11F5702A69A3DAA8B8 /* FilterList.m */; };
-		D9B381BF1DE72A9FEC0FEEE1138FFE09 /* fast-dtoa.cc in Sources */ = {isa = PBXBuildFile; fileRef = C222F54D615DE033B0BE6CBF188A24DC /* fast-dtoa.cc */; };
-		DB6CA44915D76E2919FD838918171154 /* CameraUpdateQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E9F86D307DA0FD775A68B2A18BCF89 /* CameraUpdateQueue.m */; };
-		DCE6D61587F65864FB1D513CB6CAD6D6 /* raw_logging.cc in Sources */ = {isa = PBXBuildFile; fileRef = F1FFE87C83A766B6D13F49C4411D14BA /* raw_logging.cc */; };
-		DD77167993531CDFC0F1DC3FD0364085 /* diy-fp.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C9841DB9CFFFB22C549AA9BE58E85E7 /* diy-fp.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DD89EBE219391D7B5414EE025F4F2551 /* YGNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 0688CE90C20C5800F3F719E447FC209B /* YGNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DE2661160E38621493C3AE93CA969B4F /* RCTMGLLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE09FAE4B7BDEC26BAE772A61A078C5 /* RCTMGLLight.m */; };
-		DEF3604E5DE35660C8C15A00961F0593 /* RCTMGLLineLayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A28858D7D110C27DAB6F673C6CE52B29 /* RCTMGLLineLayerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DEF7C519FD8BEBD0C8897E8D29C404B2 /* MGLSnapshotModule.h in Headers */ = {isa = PBXBuildFile; fileRef = C5DB5DC056C09B3B65F380637BB869D6 /* MGLSnapshotModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DF66F8F373A8982125F44B3A30E7745F /* RCTMGLBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D853EA033E59409A47F910ADF3A62ABA /* RCTMGLBackgroundLayer.m */; };
-		E07928ECAEBD83599F558A068F5F01B6 /* YGFloatOptional.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F0C43D691809289116001FB2FCC5C32 /* YGFloatOptional.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E14D4D9E3213D9FE91E894834FAD8C7D /* RCTConvert+Mapbox.h in Headers */ = {isa = PBXBuildFile; fileRef = D8E486D357D738D017A7E8E9FFD35A54 /* RCTConvert+Mapbox.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E15A45B4E32928702461E83BC9CC2C7A /* MGLFaux3DUserLocationAnnotationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 09EFD5C4C25FA694EC6731D95D33B48D /* MGLFaux3DUserLocationAnnotationView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E2959EE9D7A5990DFDD17825629C0042 /* bignum-dtoa.cc in Sources */ = {isa = PBXBuildFile; fileRef = F2730CAF26DD402E2237F9651007DD4C /* bignum-dtoa.cc */; };
-		E776AD5B499AED958B191CE3FC7472C8 /* fixed-dtoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 476DAB1411AD4F21B42C1B18D1E1E341 /* fixed-dtoa.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E7D6DF3DF30A76F2B61CFCE197948869 /* YGEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 57B005E481B7B5B6EFE142F7995848F8 /* YGEnums.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E8C74830573A64DBFC838AEC290A36BA /* RCTMGLImageQueueOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F20B1CE13D2107185772577D9831D8B /* RCTMGLImageQueueOperation.m */; };
-		E98E9C6BFF87332EE8E239F22BE61622 /* RNMBImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A1A7CFAA3C3855F60713FFA1663BEF /* RNMBImageUtils.m */; };
-		E9BCDC479BAAC94DB6A3E29C7D8DBA32 /* YGEnums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDA185159F925EF3448C48B863B85DC0 /* YGEnums.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		ED7B87800CF7FA43901C4B3E4E1058E3 /* RCTMGLImageSourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B1940B8A5AF431B59DB288E442D25B9 /* RCTMGLImageSourceManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		EE498D5CBDFC9AA217A1CE8ADF5E440E /* CameraUpdateItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 437BD0D082D76D779CBC5DD87E10E0B4 /* CameraUpdateItem.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		EFAF34D62A9FD5E2D9836EE12A8EAC58 /* MGLSnapshotModule.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4617639030AE6C0F1BDCF0A4682109 /* MGLSnapshotModule.m */; };
-		EFCC6383C9526EDBF9B91AA1E22C297B /* RCTMGLEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 466AE7C5D57072E98BF61E840A4C249C /* RCTMGLEvent.m */; };
-		F0426BF67338815DAFB8955F520B69DD /* RCTMGLCircleLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = A3563743205C770A15BE91AFBD86EE74 /* RCTMGLCircleLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F0889DA74C516D7161B7872542752680 /* raw_logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 72528247807A6482B7AC4BB9915F2E86 /* raw_logging.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F4734E3A825EC4B63DB0A4945204636C /* RCTMGLFillExtrusionLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94931E2FB86525545C67EF2C921B52C2 /* RCTMGLFillExtrusionLayerManager.m */; };
-		F74026C50F520077D6D99350F7E6B8E3 /* CameraStop.h in Headers */ = {isa = PBXBuildFile; fileRef = 010A31240632877450F41556E5F5B547 /* CameraStop.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F89E1E212E797FF2613CDBB79714BE68 /* Folly-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C9E06E2075F79938D35ADA10622C /* Folly-dummy.m */; };
-		F8FCD5CA94A9C5673C936E30B5B49470 /* MGLUserLocationHeadingArrowLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0633409D9E789675FB12F0D25A262AF1 /* MGLUserLocationHeadingArrowLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F942AB1D2E98D65F3B60F5E3544BC224 /* RCTMGLImageQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50365C4CCF26836EB493A107D2B97854 /* RCTMGLImageQueue.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FAD10086B36A94C4118846E37AAB7BD1 /* RCTMGLPointAnnotationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E0B25AEF672D3B22353B8BF803BDA /* RCTMGLPointAnnotationManager.m */; };
-		FC19583DAEBC9A84D3C55A95A406AF63 /* ieee.h in Headers */ = {isa = PBXBuildFile; fileRef = C6E9614C1D1D4A5DFFE928A648E59E0D /* ieee.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FC8676468FA2D3D751CC1205C00C485F /* strtod.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D16CB5AE50AFB5B58A5598A9ABFFB8E /* strtod.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FE8E661E85E7547BAB0D817069DF252E /* RCTMGLSymbolLayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C43B0AE46E2CF351E248A8BE77434E3B /* RCTMGLSymbolLayerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FEAEABEF15738B649A2E4F7AF843EEB3 /* RCTMGLLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = E6BF0AC67598839994713272421FF31C /* RCTMGLLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0055A0667B531674B803545EED2F650E /* MGLFaux3DUserLocationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE86CDD785FD5E56BD9498859243268A /* MGLFaux3DUserLocationAnnotationView.m */; };
+		01EA4C5AF0C883C0D4F29DD3055BA3CC /* RNMBImageUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 74A118086FEC50832A58F673E082B6DA /* RNMBImageUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		02DACB07B74143F0BCEB7C206EA15CFC /* YGConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 944D063A7BFC57ED2B6AB93FE8787A17 /* YGConfig.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		05C6B60D7042DBB931FA0603F26E562F /* RCTMGL.m in Sources */ = {isa = PBXBuildFile; fileRef = AF392BBDE2902227E22CC62083D156B0 /* RCTMGL.m */; };
+		077472FA8C12EFF42FD4A5AA09FC9B75 /* YGFloatOptional.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 957687BCA33F26B4837710086577350B /* YGFloatOptional.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		0782A019B9A9D40E1146C06008C0AE7D /* RCTMGLSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF47ED9E5712A248B9E801BAA635017 /* RCTMGLSource.m */; };
+		098E7DB1FE4D2156C9F4AABC96D2C01D /* RCTMGLLight.h in Headers */ = {isa = PBXBuildFile; fileRef = 56DAE96D0EE676A05803A93E61A31019 /* RCTMGLLight.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		09CAA2CED2F02E36DD54F007CE37E908 /* RCTMGLRasterSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9077E6D2195F3B31FCBD2CDA6D4E4ED /* RCTMGLRasterSourceManager.m */; };
+		0B50C129BCB9439CEC5DC12581089B5E /* MGLOfflineModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 5315ECA56D9586838E17651789F278A7 /* MGLOfflineModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0CFADB80D43C8B0C05735F5DA3F7AECD /* double-conversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 8716AABD4DBE43165C5258EFCBABC227 /* double-conversion.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		10E6B2B11CEF805800322A65DA206573 /* RCTMGLMapViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 23D60BD01EBDF6E1D14E0CE67AB7118A /* RCTMGLMapViewManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		11A6E9534C0E349BA1203A38BB0F81B2 /* RCTMGLEventTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = F00BB32D19F0BA11D4041DC2730D5533 /* RCTMGLEventTypes.m */; };
+		1310CF9D278BC05E7752C6FC1B1C29D1 /* RCTMGLFillLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C8E44D2CFACD026F453A26EB6FCB30 /* RCTMGLFillLayer.m */; };
+		142C1BDE759ADA485A21705E44391D2B /* diy-fp.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C9841DB9CFFFB22C549AA9BE58E85E7 /* diy-fp.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1681D7AF6AEFF4B955C15CC27BED1D60 /* YGLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7CEF1410FD0D90FDA3E0212A790FA2C /* YGLayout.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		193D9AEAC70A9CDD1C4AA681CCB59026 /* Bits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7565E487582311C0EF85F3A964430108 /* Bits.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		1CD4534AEB6214E76E000EB152D3695A /* cached-powers.h in Headers */ = {isa = PBXBuildFile; fileRef = B3CCDC5BA607D8DAC6D225549DA04F26 /* cached-powers.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2122456E55DF9A0A295B77E51C19A494 /* raw_logging.cc in Sources */ = {isa = PBXBuildFile; fileRef = F1FFE87C83A766B6D13F49C4411D14BA /* raw_logging.cc */; };
+		22B31EE82BFFF736FD2CD69A3F2AB5AE /* Yoga-internal.h in Headers */ = {isa = PBXBuildFile; fileRef = C6FF272BE25514CC6E2194D10BEC28B3 /* Yoga-internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		22E7A9A286FF4632853D595170A09E0A /* RCTMGLLineLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3838076FB9AEBA02672D95A7FCB2F395 /* RCTMGLLineLayerManager.m */; };
+		24A703DB1BB759EE22B5BB833959BFF0 /* RCTMGLFillExtrusionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1292FBB6536DB4A9987C8254BB85D2F5 /* RCTMGLFillExtrusionLayer.m */; };
+		24F51A4F1DA6E351DDF90F1F70CF2E88 /* bignum-dtoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 85A20E13B0D6D13D101241679B9A999E /* bignum-dtoa.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2585119463C7AD4C7D2EE8B90C46D4FF /* RCTMGLRasterSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F2D709398D9DA1A1E2615819759DD17 /* RCTMGLRasterSource.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		25C427AA2CC959CB0B875A3F205E8C98 /* glog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9A997D62BE1F11EAC208BAE70A6767 /* glog-dummy.m */; };
+		2934F8A63251615A9BD9A3AD5DFE69DB /* vlog_is_on.h in Headers */ = {isa = PBXBuildFile; fileRef = 196DA02ED9A588F5C02850309A86D5D3 /* vlog_is_on.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2DB554F0462F4F405313655A6BB86674 /* YGFloatOptional.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F0C43D691809289116001FB2FCC5C32 /* YGFloatOptional.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2F0CB23EE249AD23440EB003FED158BB /* diy-fp.cc in Sources */ = {isa = PBXBuildFile; fileRef = 1D5ADE3AABFE5C1BB8D310C1C8D741C2 /* diy-fp.cc */; };
+		315CF4D1770B02A307CD657DDA39BAE2 /* RCTMGLFillExtrusionLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94931E2FB86525545C67EF2C921B52C2 /* RCTMGLFillExtrusionLayerManager.m */; };
+		34B3AA64896D257483AE77EEA64531D9 /* MGLModule.h in Headers */ = {isa = PBXBuildFile; fileRef = D93B82A12B53E6A20006B2B661117528 /* MGLModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		358BFE06A1B8E6AC63988F8CEAE6ACC3 /* RCTMGLMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0807EF6063E6BABED63C6C895DEFB3B9 /* RCTMGLMapView.m */; };
+		35ACD7B477BA31AB291987A2B1E5630B /* Conv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF81834F482E39282E7ED985661FEA03 /* Conv.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		384F450DE143F3C287BB32840BB96545 /* CameraMode.h in Headers */ = {isa = PBXBuildFile; fileRef = D231F7D1989EBD8C884A85B96DCEC668 /* CameraMode.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3AC41011A52D9A2A580BC92D932DB9B1 /* MGLUserLocationHeadingArrowLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0633409D9E789675FB12F0D25A262AF1 /* MGLUserLocationHeadingArrowLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3B757EAB917D367B289406D1E765210C /* bignum.cc in Sources */ = {isa = PBXBuildFile; fileRef = 729115E1CD5EB0D0015139431991D602 /* bignum.cc */; };
+		3C231943C24C1B68511D658EFDAA97BD /* RCTMGLEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 466AE7C5D57072E98BF61E840A4C249C /* RCTMGLEvent.m */; };
+		42F8493A53900CA2229E9862E0390C79 /* RCTMGLSymbolLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = FE666EAD5936D10D3F44D339FC5A54E6 /* RCTMGLSymbolLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		45870BB236587CEDAD33EE2E6E0A5558 /* RCTMGLCalloutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6FBFC9152C6D6078DBC83815136003 /* RCTMGLCalloutManager.m */; };
+		46437AEC213AB1AD1D1571AB37DFE98E /* RCTMGLFillExtrusionLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = AD0ACAE168DC8F71D94D26A9D5F3CB6D /* RCTMGLFillExtrusionLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4692018DC38DF3861E6E54054D3EA17F /* ieee.h in Headers */ = {isa = PBXBuildFile; fileRef = C6E9614C1D1D4A5DFFE928A648E59E0D /* ieee.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		47CC052BE0A0D0F5D95BBEEF971FDD4C /* fixed-dtoa.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4666198823A67FE9B446E31F02D78D33 /* fixed-dtoa.cc */; };
+		47E7A34126FFA0C2B5FB26BAD3710DEA /* raw_logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 72528247807A6482B7AC4BB9915F2E86 /* raw_logging.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4A44BB76A7C951DA75A1B93162E9A932 /* Demangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67C527B8A91B6589ED5455BEAD780D05 /* Demangle.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		4A6CA68C8C3DFFC1D29ACD49306BD0C3 /* RCTMGLEventTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AB398C2E6A7A84EB48BE03D19812782 /* RCTMGLEventTypes.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4A92AB01DC594B4F5EAE1F80859A0CC5 /* yoga-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 83528B0416709A931DDC98C87199F8D8 /* yoga-dummy.m */; };
+		4AEE56FA93E1C4398372793D5662D4E2 /* RCTMGLMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 687E1BADB994A3E4EA941267A8B47472 /* RCTMGLMapView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4EBF73249C8C4B26FF03ADBAAAF5883C /* fixed-dtoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 476DAB1411AD4F21B42C1B18D1E1E341 /* fixed-dtoa.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4FFCD38D02E1663C8247918A639902C8 /* RCTMGLRasterSourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C88ECD29F5B96E24E161184C44AE2730 /* RCTMGLRasterSourceManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5008A735DBBD45233F6ED681644C055D /* RCTMGLBackgroundLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4111A9591B90AD9914CFC413B20483 /* RCTMGLBackgroundLayerManager.m */; };
+		50A87287D3F02C1F50CEC85BE41BB2EC /* MGLSnapshotModule.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4617639030AE6C0F1BDCF0A4682109 /* MGLSnapshotModule.m */; };
+		5342A3E1CAB8BB1140560BD16FD6A731 /* MGLFaux3DUserLocationAnnotationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 09EFD5C4C25FA694EC6731D95D33B48D /* MGLFaux3DUserLocationAnnotationView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		53E72D1CECA9E8D5D15DB41964FC4936 /* YGMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 566817A028D1C46290A12E6114D4153D /* YGMacros.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		53F85020BBCD65E3F3AE3B2BADDDDC19 /* RCTMGLImageQueueOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = EA496EE743F605247FE13C722E72121B /* RCTMGLImageQueueOperation.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		54300A7A3F3FE0956B9CFB05D2340D5A /* ViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BA7C532C426D1FB49357F98AB22C4D49 /* ViewManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		544CF569BA771F8B239C0479B30E4DC3 /* CameraUpdateQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E9F86D307DA0FD775A68B2A18BCF89 /* CameraUpdateQueue.m */; };
+		55FEB9DC87E0D137CEFB673CF38C0A93 /* bignum-dtoa.cc in Sources */ = {isa = PBXBuildFile; fileRef = F2730CAF26DD402E2237F9651007DD4C /* bignum-dtoa.cc */; };
+		567112744A083C59087E7CF05837EFF2 /* RCTMGLRasterLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 77124C85A7B16684E383365A3A03B0B5 /* RCTMGLRasterLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		56DCA653B1E95E92E0BDF58760B3DBFE /* stl_logging.h in Headers */ = {isa = PBXBuildFile; fileRef = CBAC684FA993280045D7AD73D1D8D2D7 /* stl_logging.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		574612FF72399BA23BD56875F9EA958D /* json.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27DA0AEDC5BD00692AB1B721D4228774 /* json.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		57474D611A4DC5E555EFBB1BE1D3548D /* RCTMGLVectorSourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7369DEC172AD28E5B22A70491BBF3987 /* RCTMGLVectorSourceManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5851711A21B85A965DF98F9090422FCA /* dynamic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82CFAD8BA369101EF1214F0B9F58129A /* dynamic.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		5A21A44C30913D28A8EDDA0835EB337F /* RCTMGLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 052D4DE1593AC13C6D998ED5C2EAF81C /* RCTMGLLayer.m */; };
+		5A2AE825D4CCC7C80D2C4235CA7E200B /* RCTMGLCircleLayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 230FF409C8BFEE4720C48BB862171E22 /* RCTMGLCircleLayerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5C081677DAC5D1B377CF9491FA933A4E /* RCTMGLShapeSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDAA63788D45705B07BC3435FD41AAC /* RCTMGLShapeSourceManager.m */; };
+		5C2882396E51BC6527E40E89AE496356 /* symbolize.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3CEA219942418912AD43528D0A47ED12 /* symbolize.cc */; };
+		5F686B0D7310CE04839369E8EF07348B /* CameraUpdateQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 8759D85973E6B164234AA0E959631E9E /* CameraUpdateQueue.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		61336D37605703D306B513B3D68CEAEB /* RCTMGLCallout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F95891BCEF709BD35C63FB59BD48FD2 /* RCTMGLCallout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		61AEE5172CBE42133FC336D66D21B4BC /* MGLOfflineModule.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEE1D79373DF8B6422EF612A0CE92F8 /* MGLOfflineModule.m */; };
+		63F095DA02BE0B8AE532761256BB0D8A /* RCTMGLStyleValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 196449593BF0966C7D42E886051F4F4E /* RCTMGLStyleValue.m */; };
+		66FC064BC418622AC222E939C4AE581E /* RCTMGLPointAnnotationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E0B25AEF672D3B22353B8BF803BDA /* RCTMGLPointAnnotationManager.m */; };
+		67B9F827B375A4C9977845A549CAB581 /* MGLUserLocationHeadingArrowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2545585A3BD334A040805D79E5956E61 /* MGLUserLocationHeadingArrowLayer.m */; };
+		68CB8B16214C4BDE61096A4258D623FE /* RCTMGLFillLayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C517DA81EA853A8BE945DC1A7F4BD6E0 /* RCTMGLFillLayerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6AA80700665D4569156E974A0936C0E1 /* MGLUserLocationHeadingIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D7EA2A5022CE2B7E508DA4901DA91E0 /* MGLUserLocationHeadingIndicator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6AE9648818266960A66E1B394DB155A4 /* RCTMGLImageSourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B1940B8A5AF431B59DB288E442D25B9 /* RCTMGLImageSourceManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6B89601630AEDBC896EC21310D4F0580 /* RCTMGLRasterLayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 665BEA4C2569F831BE6DA4E34540BA9B /* RCTMGLRasterLayerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6C199B0B85EFD0B6FFD7879598AF83C5 /* Folly-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C9E06E2075F79938D35ADA10622C /* Folly-dummy.m */; };
+		6C4C7918B8E4B1523B8FAAF6129A9CA3 /* fast-dtoa.h in Headers */ = {isa = PBXBuildFile; fileRef = EAEB3C200BD4CABE09E308647D1F7CE0 /* fast-dtoa.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6C6465F5993B00013586D1BBD74D3217 /* CameraUpdateItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 437BD0D082D76D779CBC5DD87E10E0B4 /* CameraUpdateItem.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6C6B06E5AD893D3C488D8D61500B76F4 /* RCTConvert+Mapbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EDE71CEA903B368C04291A0D34421C /* RCTConvert+Mapbox.m */; };
+		6CDB6484EFECD0323F7A25F12347A854 /* FilterList.m in Sources */ = {isa = PBXBuildFile; fileRef = 084D3ED63543BC11F5702A69A3DAA8B8 /* FilterList.m */; };
+		6DE1D90FF02C422B0835FADE8BFFDA67 /* BitsFunctexcept.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A35AD1A873C720A6EC72015EA72028B4 /* BitsFunctexcept.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		6E17DED3F099C06AE980B2737159CA94 /* strtod.cc in Sources */ = {isa = PBXBuildFile; fileRef = 88394F11A6265FBFB702ECB161EAC1D3 /* strtod.cc */; };
+		6E6AD52414238BCC7F36A28327EC037F /* RCTMGLSymbolLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC547CF5A6DE6117AC1CE453E18EF9 /* RCTMGLSymbolLayer.m */; };
+		700DE6F92EA3EE2667695D493B2AC19A /* Unicode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A0AB32E8000D72EA52ACCC50221A5 /* Unicode.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		702D7846681E13612C000C925219FE49 /* RCTMGLPointAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = F8798171BF095F874B12B53AE366328C /* RCTMGLPointAnnotation.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		70DF3199AA4F6FB82AA6CC9909A9195E /* RCTMGLFillLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 090F3877E49B0A06364BF8329337246E /* RCTMGLFillLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		72C33B5A07B24118AEE1D8F3DEC4D539 /* RCTMGLLineLayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A28858D7D110C27DAB6F673C6CE52B29 /* RCTMGLLineLayerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7324E82E885EE9B6470029C9CF8B932F /* YGNodePrint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1148820B2C23C991189F8EF454AA6EAD /* YGNodePrint.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		73729ECEC40239B70FBFB1CBEBD820F6 /* YGEnums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDA185159F925EF3448C48B863B85DC0 /* YGEnums.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		74E7D5EBA08199F9D4DCA8229EF2894D /* RCTMGLSymbolLayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C43B0AE46E2CF351E248A8BE77434E3B /* RCTMGLSymbolLayerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		75EE2378F2F3723B026B92AEC8DA6717 /* RCTMGLCircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2E49D12C6EA26647094061F7564DD9 /* RCTMGLCircleLayer.m */; };
+		776695FF8C549845CC4339E751831372 /* RCTMGLStyleValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FAA53000030BEE63FEFC16D393D08F1 /* RCTMGLStyleValue.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		78089D1C45CBFA2FE85524EFB400C345 /* RCTMGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 8212DD9A856903584CFC85C0EC88FD39 /* RCTMGL.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7C75363C99559C3B474180A13AB2C18F /* RCTMGLImageQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 50365C4CCF26836EB493A107D2B97854 /* RCTMGLImageQueue.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7C7D88EFC98054C7BCEE8B953FB03BE2 /* double-conversion.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9C16647103014DD2937D0014E1ABCB9B /* double-conversion.cc */; };
+		7CD1170EF8524036EE354BCD7A20565B /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = D37452232A016DF061F577B62E1247F1 /* Utils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7F19ADD3D014A4E6AD946277192118AD /* RCTMGLMapTouchEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD765E386F957A0FEEEA71FB50E95A6 /* RCTMGLMapTouchEvent.m */; };
+		7F42A45D14AA50D1C07EEDBECBA30669 /* RCTMGLImageQueueOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F20B1CE13D2107185772577D9831D8B /* RCTMGLImageQueueOperation.m */; };
+		7F44AA93A6DD7A99C54C3D7F7F50946A /* FilterList.h in Headers */ = {isa = PBXBuildFile; fileRef = 43D0F5052AAEBC27E0C1269DE9D22379 /* FilterList.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		801DBCD0185D284762DA18DB8C88CD9A /* RCTMGLVectorSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28774082BC61BC5C11B58C81E70E5A11 /* RCTMGLVectorSourceManager.m */; };
+		809D71A8052A057CE8EDDDBBB2E69820 /* RCTMGLImageSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F12F003AFD3A8F43915091CE7E9DC61 /* RCTMGLImageSourceManager.m */; };
+		8126FE0DE46A1387EA8CE127B5A3E9E9 /* utilities.cc in Sources */ = {isa = PBXBuildFile; fileRef = 268E082632203A2619D39C5F7BF6B120 /* utilities.cc */; };
+		813C335AC37D5C17A9EDFBE48FC97B98 /* strtod.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D16CB5AE50AFB5B58A5598A9ABFFB8E /* strtod.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		84BDCA695C1EC8CA72E67207380F5671 /* logging.cc in Sources */ = {isa = PBXBuildFile; fileRef = 1C469995B8BB611D1EFB131A4A6CF51B /* logging.cc */; };
+		8612AD6774C51FCAB12F68BC8D974088 /* vlog_is_on.cc in Sources */ = {isa = PBXBuildFile; fileRef = 0F7965B90975B7FB13F79C3DC4F2D60C /* vlog_is_on.cc */; };
+		888A3DE72739C2A719C2F013F21710D7 /* bignum.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F63A432F26512C532AD0556C2CFDAC6 /* bignum.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		91D5BF4A5F2A6C4C662CD908C84B0C17 /* MGLUserLocationHeadingBeamLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 300FFAE695D76ED3E4A04E11EE44E383 /* MGLUserLocationHeadingBeamLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		935E3D3723D731E8DA7DF92DB8B6A7D5 /* RCTMGLStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = AC33CAA15BF0397A2C9FCCE52C2D2EB1 /* RCTMGLStyle.m */; };
+		93CFFC5B36F6E2C42A18AC89F88AB7C5 /* demangle.cc in Sources */ = {isa = PBXBuildFile; fileRef = 99C9C65EDE04C4AD2FEA90DB1024A7D5 /* demangle.cc */; };
+		940885FC58E3F950547179509EC60BFB /* react-native-mapbox-gl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BED083EE2C225C1D18298F40B1D1060B /* react-native-mapbox-gl-dummy.m */; };
+		949FAA195736630E5C94A8CAF76BEAF0 /* log_severity.h in Headers */ = {isa = PBXBuildFile; fileRef = E30AAD6FD5EB3B1E0BD2C265D70A91D8 /* log_severity.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		962DC53C846C77B37B04EAED7EBBC3A3 /* RCTMGLEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = EA8878A7809BF73DEC240F70552B57BF /* RCTMGLEvent.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9726B525DEE42F1FDEA87FD06971D2EC /* YGEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 57B005E481B7B5B6EFE142F7995848F8 /* YGEnums.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		99266245EBC429B446D658AC192741DE /* Pods-winebow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA7BB397F61F0FA0F114118CE8BEEEE /* Pods-winebow-dummy.m */; };
+		99C5E6328BC56C5D7FC39F339C1BEDFB /* RCTMGLImageQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FE51B2377930808E9B0E31766481C9 /* RCTMGLImageQueue.m */; };
+		9F24D91BC6703C584B5094990114B3CB /* MGLModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A531C2029F6F6550B49860C7B8E60288 /* MGLModule.m */; };
+		9F4D0D3F0DCC807DD60029B482B12A98 /* RCTMGLLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = E6BF0AC67598839994713272421FF31C /* RCTMGLLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9F6A47BF2673447B1D03371FBEB5BABB /* CameraMode.m in Sources */ = {isa = PBXBuildFile; fileRef = B84F63A8F252124F9F0709A07C88F16B /* CameraMode.m */; };
+		A04ACF4213F6015152F40F2F7C7A3D36 /* RCTMGLMapTouchEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 751A15DE219D30D4E1ECA04E0335836C /* RCTMGLMapTouchEvent.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A4FA537DC68880CF47BB15E3AE33B5B6 /* DoubleConversion-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D309B8138060A28ADC460DEF4C3F3A6D /* DoubleConversion-dummy.m */; };
+		A835A6479684F3A59D0025819595E52E /* signalhandler.cc in Sources */ = {isa = PBXBuildFile; fileRef = 25C4F997512B41A58EBCE9793B691FF5 /* signalhandler.cc */; };
+		A85CA4327843DBFD308B11D724B2E109 /* StringBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 367399D2A9E76F67B7B2B38CD3FD9243 /* StringBase.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		A97AB181B14195B4888B3BE6DC751391 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4130E467ACABA2FFAED7DA766768BE02 /* Utils.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		AB40483DA601A4E3F8EA8B01F2009ACC /* cached-powers.cc in Sources */ = {isa = PBXBuildFile; fileRef = 613ED9471918ED9B3015F49520B767E0 /* cached-powers.cc */; };
+		ABC139750F1639160E2854F0F26B90A9 /* RCTMGLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 25C9B194CB1508B5EC910FCEB850F5C7 /* RCTMGLUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		ACAD41609D8629558C90F62523E74038 /* FilterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B1966B7B0DE630BF94A81A73AD90E0 /* FilterParser.m */; };
+		AF2A6B05474DB6C8AEB6B7B072412BE4 /* RCTMGLLineLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = A9BE92AD105A162E8E5DE27407175B74 /* RCTMGLLineLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B0522F81E4C8ECDCB4F76FE0092C5089 /* RCTMGLImageSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 345393C42901F476A426C5242EC7D06B /* RCTMGLImageSource.m */; };
+		B169E0BA85432D8EC6C36E2960DB2453 /* RCTMGLLightManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB74EA6B8612CB0F83D9913416B78059 /* RCTMGLLightManager.m */; };
+		B2D5572231E6FFF26C620DF793417ED5 /* RCTMGLLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E59115FA51BE39330E989F4BCEF9A7D0 /* RCTMGLLineLayer.m */; };
+		B33362B58F884F4238974F8CAED12C97 /* Yoga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8085ACDEAF5A12B8F81A9AC5FEB0EB41 /* Yoga.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		B4F90523B906D25DB8BEC951B2C63389 /* RCTConvert+Mapbox.h in Headers */ = {isa = PBXBuildFile; fileRef = D8E486D357D738D017A7E8E9FFD35A54 /* RCTConvert+Mapbox.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B56ADFFEB5292DFC85665045A926E09C /* RCTMGLShapeSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D52B7308791F19EA1752F6F4220604B7 /* RCTMGLShapeSource.m */; };
+		B6378B7329014079AEF87D1A752CCC38 /* MGLUserLocationHeadingBeamLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A7E8A4A3E15A2C6435C82617061876 /* MGLUserLocationHeadingBeamLayer.m */; };
+		B65D1CA5D935E6F6B198DBBB976110B5 /* RCTMGLFillLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F20E057DDDDC9CB5879C8DD32A8C59A8 /* RCTMGLFillLayerManager.m */; };
+		B7D50C7121E8BD877382F92B2A8C4FCE /* RCTMGLVectorSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 40269D3A1FD3AB85D0BC32E469058032 /* RCTMGLVectorSource.m */; };
+		B88FAB3E6F972C8A0D943B52FE2A192B /* RCTMGLRasterSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BC97005B0A668BE31415B5CE134441F6 /* RCTMGLRasterSource.m */; };
+		BACCE8DAF28678BA4FF068CAC2866AC8 /* RCTMGLLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE09FAE4B7BDEC26BAE772A61A078C5 /* RCTMGLLight.m */; };
+		BB16D9675C4F78D75CF63A831C39E0D3 /* RCTMGLShapeSource.h in Headers */ = {isa = PBXBuildFile; fileRef = DE1D17944F262D5094881C3686019E37 /* RCTMGLShapeSource.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BED202D12DAC36BC8CBC2ED9448E6834 /* RCTMGLCalloutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EF168E6A6F28D40475EDCFDFCDE9C3CE /* RCTMGLCalloutManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C23F5B10AF000565448BA5B8B4406CD0 /* RCTMGLCircleLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E62E5052B017E0CE3386EEEB70E7E3B /* RCTMGLCircleLayerManager.m */; };
+		C30DBAA72B7FDF0D311F4C664F8378EB /* RCTMGLSymbolLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B7500FD4364910E7FE13CD5F0E21C /* RCTMGLSymbolLayerManager.m */; };
+		C3A8A1AA61B2750C19D0BFB339E71316 /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 34AF069A3BF78B3297505EDA3A06EE53 /* utils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C61801520C2ADED253286D5C845BC861 /* YGStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0764BD338C8A04E7A1D48AA14C953A1D /* YGStyle.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CB6CC38A3F0ED7245E97B367043D1D29 /* ViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5A7A8956C6F1F21C82F8E64F2C8EE0 /* ViewManager.m */; };
+		CD4D6BEC7F17737ACFE4E0CF30B2B9F1 /* RCTMGLCircleLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = A3563743205C770A15BE91AFBD86EE74 /* RCTMGLCircleLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CE6765FD04D45771FBD27FD6DE022A2B /* RCTMGLBackgroundLayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8A696DC070805C4A03B26051C34DCA /* RCTMGLBackgroundLayerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D0334955BB5425BFA0BA86C70A075322 /* RCTMGLBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D853EA033E59409A47F910ADF3A62ABA /* RCTMGLBackgroundLayer.m */; };
+		D46F79D3BD6A67749EF5FF97A4F57442 /* CameraStop.m in Sources */ = {isa = PBXBuildFile; fileRef = A314E659A7BBD39D01350D185B722709 /* CameraStop.m */; };
+		D6D790C55E947FF0C50589E898B9C263 /* YGStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 830DCA0A7108CB907D1ADFCF6B3D9DBC /* YGStyle.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		D7FC18C342A57636BB0945E2464F4E5E /* CameraStop.h in Headers */ = {isa = PBXBuildFile; fileRef = 010A31240632877450F41556E5F5B547 /* CameraStop.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D9BAB3E8E1E573DEFCFEE552F8C5174F /* YGConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 66FD5A09768EBF820FD4C49A98358CB7 /* YGConfig.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DCF70BD387B86818FE5ED4352D87D602 /* FilterParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 970ED7CF3F3C4ED966D0FE511EBA6610 /* FilterParser.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DD40F89715F9E6C0384261BEC50E6112 /* RCTMGLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3C4116E7DAE774805F2686ABF4859 /* RCTMGLUtils.m */; };
+		DE1CC8D7440D1B792F9B437D20E6D9FA /* RCTMGLStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = E0F29B776B67897FE825DDDC7B821983 /* RCTMGLStyle.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DE489E0DFA8CB9607385D02D70FB122D /* RCTMGLMapViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E5F66B10D36AA46DC3171052A33EB2 /* RCTMGLMapViewManager.m */; };
+		DE77F9F11E682963EDF52EF175E7C1B8 /* RCTMGLShapeSourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 444A918AFB2C2F32EB0D6A8901BEC606 /* RCTMGLShapeSourceManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DFDD9E3422DB58CBDB8FD923C3C05E15 /* RCTMGLRasterLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7802298F3FDF464834D57F6DCF6550 /* RCTMGLRasterLayer.m */; };
+		E1EB4CB70374DFF149CAAC30FFEFC9F9 /* RCTMGLSource.h in Headers */ = {isa = PBXBuildFile; fileRef = A68A46DE19583D4EB4F02881C6412841 /* RCTMGLSource.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E27B9CECF6057CEFF141F2C9157E1771 /* YGNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 0688CE90C20C5800F3F719E447FC209B /* YGNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E2E0492A002B2CB87AAE2C8AD9771CA7 /* RCTMGLVectorSource.h in Headers */ = {isa = PBXBuildFile; fileRef = FFB47880663DCAE290632F095EB00C8A /* RCTMGLVectorSource.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E6AAF62200ADC66063441FD3A7894671 /* RCTMGLEventProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6AB9B16F2E41FB24D20B1E815565CB /* RCTMGLEventProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E8A56BC38A022955CCB26C508AE5023C /* RCTMGLLightManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BE454AC2C1FA757B625BB463493DA0EE /* RCTMGLLightManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E9D86A6295A49386F61E2C5102387DB8 /* RCTMGLRasterLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 699AC0115F6AC1A0B6948CAAA85B521D /* RCTMGLRasterLayerManager.m */; };
+		EB891233313D824F11F854FE5A243EF9 /* RCTMGLFillExtrusionLayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FDCE3F28B3BA5149E067BB5E804B43E3 /* RCTMGLFillExtrusionLayerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EE3FAB68B2D8A1CAE390D2DE0AC4AA9C /* RCTMGLBackgroundLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1814F6C25289936537B7B7A11EBC0A8A /* RCTMGLBackgroundLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EEA95ED69F9F706304D6DA9DF97211E2 /* Yoga.h in Headers */ = {isa = PBXBuildFile; fileRef = 31639322FB6BFDAB45BC4D7DE43005BE /* Yoga.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EF82F4D4C6D6F84F486F1200FB2AA751 /* RCTMGLPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B0B51FE2BDB68ED11EA63ECACCAF4 /* RCTMGLPointAnnotation.m */; };
+		F11D009999480ECFEE65A7E2AB709673 /* CameraUpdateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E9618A3B2342B0A872FC66039D2839 /* CameraUpdateItem.m */; };
+		F132AF19890C27037C1A1E9C80D9AD22 /* RCTMGLImageSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 905F51901D9E7A187BB54DF8A87CCBD5 /* RCTMGLImageSource.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F20499663CF48E5FAB12E2C3A696C82F /* YGLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F909DD6881781926925E9067330D9F /* YGLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F28A473F394101350429F8C40660B7B8 /* RCTMGLPointAnnotationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B79F92C2255348A1559363F3578D9AD4 /* RCTMGLPointAnnotationManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F4510719A75EA277E6BB6F27BFB6E216 /* YGNodePrint.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F571F69C74F67AB121D03E36057081C /* YGNodePrint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F4B945969CFA278FA219D410A048DBDF /* fast-dtoa.cc in Sources */ = {isa = PBXBuildFile; fileRef = C222F54D615DE033B0BE6CBF188A24DC /* fast-dtoa.cc */; };
+		F7D64AB4D43E041E1E942CBEF56FD74F /* MallocImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8634294F051E043645C49A4BB538F5E8 /* MallocImpl.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1"; }; };
+		F87ADC1C60AE9E61FC32C50475813840 /* RNMBImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A1A7CFAA3C3855F60713FFA1663BEF /* RNMBImageUtils.m */; };
+		F97D388926A07F46B054698BCCDBB498 /* RCTMGLCallout.m in Sources */ = {isa = PBXBuildFile; fileRef = 300583971CC6CD680C140F8F72502B14 /* RCTMGLCallout.m */; };
+		FA9E93F237AC0F1C6F79D830C211EA79 /* logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 1910D7969125F09860E477500DBD7C65 /* logging.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FE60BF0645F53802F13F370289566C57 /* YGNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 157D43367DFDEFB7148874FB1979E92C /* YGNode.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		FED87FA1B739FFE6D7CE5F02499F111F /* MGLSnapshotModule.h in Headers */ = {isa = PBXBuildFile; fileRef = C5DB5DC056C09B3B65F380637BB869D6 /* MGLSnapshotModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2A9479D0FACC1BBEC23DA443861936C0 /* PBXContainerItemProxy */ = {
+		0542FB848528A217BF6ED1AFDF4CE710 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 24660DC01D439822D32FAA893FD505D2;
-			remoteInfo = yoga;
-		};
-		50813AE8B9432FD0D847460A27BDF73D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3CFAD96A62527F3303DEE3FDF4D321B8;
-			remoteInfo = DoubleConversion;
-		};
-		6D3297870AC765540B3D7D38FD7462ED /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3CFAD96A62527F3303DEE3FDF4D321B8;
-			remoteInfo = DoubleConversion;
-		};
-		90BF76DB9371F1A79F69B9E00B82E365 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 448947262A6315C155A8696BCEAE9969;
-			remoteInfo = glog;
-		};
-		C4A0DC5BA046505D3AC3E351C4CC76FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000003530;
-			remoteInfo = React;
-		};
-		CDDB521097B25A49CB360CE37CE0175F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 594DD2CC4687C4191E9E05AC962AC7A5;
-			remoteInfo = "react-native-mapbox-gl";
-		};
-		CDF96F96C0272E67D6925C4D2802E53C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FBEA1F67E02C62FAEECED485C0ED9E5A;
+			remoteGlobalIDString = 0304CF265B497DC80D989D97E17FB01C;
 			remoteInfo = Folly;
 		};
-		D44F167A9C1045985AA4F32D36EDBFB5 /* PBXContainerItemProxy */ = {
+		0E81D6720A4D9D88AAF5CCB29C9B4D44 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 000000003530;
+			remoteGlobalIDString = 5A93B49B207CB78C2D38F43189D782C3;
+			remoteInfo = glog;
+		};
+		2C3232FECE2DBDC0906C80D74DD8E9F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D82A31E8C89DCFDF86799BAFD9F3118;
+			remoteInfo = DoubleConversion;
+		};
+		45F998B956DC7CD3D6B1E232553CB10F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B7F5D7382A2D2A2B0802F6DADA6F7CD;
+			remoteInfo = "react-native-mapbox-gl";
+		};
+		69AC766D792693219B0588B57C73509A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D82A31E8C89DCFDF86799BAFD9F3118;
+			remoteInfo = DoubleConversion;
+		};
+		8340CA097B7CB30E82E38463417AE8D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000003540;
 			remoteInfo = React;
 		};
-		FFE3337213ABC6A6BF123F5AE0D67B81 /* PBXContainerItemProxy */ = {
+		A0F2760C2420DC6BF297CEEE2268377D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 448947262A6315C155A8696BCEAE9969;
+			remoteGlobalIDString = 5A93B49B207CB78C2D38F43189D782C3;
 			remoteInfo = glog;
+		};
+		AB6972AC859A27D57EA872FEC509C8E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000003540;
+			remoteInfo = React;
+		};
+		FF0AA11BA4291E279D3F3C53214A2C8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF8C72EE17E38DD79D138DB76B8D8DA1;
+			remoteInfo = yoga;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -1026,42 +1026,42 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3A186C3F7EF4702BC23D1CBB749AD8F3 /* Frameworks */ = {
+		2F3D7F6091100025304AC062B63A59B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6378CD02E32A0A9B19D7C7CD8FFFCB7C /* Frameworks */ = {
+		41DF4166C65116B8C3222D9D38B98CDF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6C2BC99728433AFEF2A95F6050A9111E /* Frameworks */ = {
+		754A4FCFE49C1D754E83B9282DFECF00 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8CDF607A759444F1E9F96FFD656B45D7 /* Frameworks */ = {
+		97EC9B827AC8BE40C6809ED27D41A9C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D8E1424F402EEDB898B46810686FA03 /* Frameworks */ = {
+		CDE392652A157C1FE64548D7ACC18965 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A62D8BB4755416ADF4F422D1FA75BA41 /* Frameworks */ = {
+		D7121C54CF96A06EFBE8D61A25517E0F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2423,184 +2423,179 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		5606F48CB762DD970B3ED5057D9A490A /* Headers */ = {
+		1BE0921385D3C20A2E980BA626D2EBF7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F94C6DBDE2C4AF82E130821C5F9A56C /* bignum-dtoa.h in Headers */,
-				C3EF552B51A8DF2146E45555F766C39D /* bignum.h in Headers */,
-				990F1007BA359B81BC583522329B3A6B /* cached-powers.h in Headers */,
-				DD77167993531CDFC0F1DC3FD0364085 /* diy-fp.h in Headers */,
-				A65D20868C4440C305CC66CD18413E73 /* double-conversion.h in Headers */,
-				346A9D824EFB2D0D209ADBA8C47A43E7 /* fast-dtoa.h in Headers */,
-				E776AD5B499AED958B191CE3FC7472C8 /* fixed-dtoa.h in Headers */,
-				FC19583DAEBC9A84D3C55A95A406AF63 /* ieee.h in Headers */,
-				FC8676468FA2D3D751CC1205C00C485F /* strtod.h in Headers */,
-				00968AAB52170AD563B64C064B5E1FB4 /* utils.h in Headers */,
+				24F51A4F1DA6E351DDF90F1F70CF2E88 /* bignum-dtoa.h in Headers */,
+				888A3DE72739C2A719C2F013F21710D7 /* bignum.h in Headers */,
+				1CD4534AEB6214E76E000EB152D3695A /* cached-powers.h in Headers */,
+				142C1BDE759ADA485A21705E44391D2B /* diy-fp.h in Headers */,
+				0CFADB80D43C8B0C05735F5DA3F7AECD /* double-conversion.h in Headers */,
+				6C4C7918B8E4B1523B8FAAF6129A9CA3 /* fast-dtoa.h in Headers */,
+				4EBF73249C8C4B26FF03ADBAAAF5883C /* fixed-dtoa.h in Headers */,
+				4692018DC38DF3861E6E54054D3EA17F /* ieee.h in Headers */,
+				813C335AC37D5C17A9EDFBE48FC97B98 /* strtod.h in Headers */,
+				C3A8A1AA61B2750C19D0BFB339E71316 /* utils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		684D5E5E7D87DB2A14EBCE573CDF3724 /* Headers */ = {
+		8AF85910EE62395AA93A2C52C60A0A39 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA955876D7E74642B8914E63AE52D998 /* CameraMode.h in Headers */,
-				F74026C50F520077D6D99350F7E6B8E3 /* CameraStop.h in Headers */,
-				EE498D5CBDFC9AA217A1CE8ADF5E440E /* CameraUpdateItem.h in Headers */,
-				BBEAD9A7138905F3F40C6CBC8634FF5D /* CameraUpdateQueue.h in Headers */,
-				670EBD0F02B929D44BF2B8E87A9CF317 /* FilterList.h in Headers */,
-				B83BFA1246BE69A2FC00B3DEA4698B14 /* FilterParser.h in Headers */,
-				E15A45B4E32928702461E83BC9CC2C7A /* MGLFaux3DUserLocationAnnotationView.h in Headers */,
-				BE0884982D8E1D0E723A56D172637840 /* MGLModule.h in Headers */,
-				B177BD95FBAFA38936BF8134758C9A4E /* MGLOfflineModule.h in Headers */,
-				DEF7C519FD8BEBD0C8897E8D29C404B2 /* MGLSnapshotModule.h in Headers */,
-				F8FCD5CA94A9C5673C936E30B5B49470 /* MGLUserLocationHeadingArrowLayer.h in Headers */,
-				7D34F38BB981C5FC6B124EFD27B5606A /* MGLUserLocationHeadingBeamLayer.h in Headers */,
-				2FE95085DB4F3D659AF3EBD21186DE28 /* MGLUserLocationHeadingIndicator.h in Headers */,
-				E14D4D9E3213D9FE91E894834FAD8C7D /* RCTConvert+Mapbox.h in Headers */,
-				4329D6844A85A2EB41B8B33362CB6714 /* RCTMGL.h in Headers */,
-				CB883D5E04A0DFA049AEB1D0E76D1181 /* RCTMGLBackgroundLayer.h in Headers */,
-				C025F6F9EAFB6A399BDA6A629ECD3869 /* RCTMGLBackgroundLayerManager.h in Headers */,
-				86439AAFB0F7DAFC02DD4E8626D0FCD5 /* RCTMGLCallout.h in Headers */,
-				7733A44DE685DFFEC3B84B679F668948 /* RCTMGLCalloutManager.h in Headers */,
-				F0426BF67338815DAFB8955F520B69DD /* RCTMGLCircleLayer.h in Headers */,
-				693991B7D8256B8CDB6AC8ECEB5E7DAC /* RCTMGLCircleLayerManager.h in Headers */,
-				A39BA95A106AE7B7E9F0EFF8BF82E499 /* RCTMGLEvent.h in Headers */,
-				7521F60568F92179F0C2D2C5FF0D586D /* RCTMGLEventProtocol.h in Headers */,
-				A309E8FC72B524C2C34103E9B947C313 /* RCTMGLEventTypes.h in Headers */,
-				D0B6D184143B2EDA022D3F4E8973932B /* RCTMGLFillExtrusionLayer.h in Headers */,
-				CF52F4B3DAF453AFB736429BBA66DED1 /* RCTMGLFillExtrusionLayerManager.h in Headers */,
-				B988EF5BE778F4F11DD95F505259B4F7 /* RCTMGLFillLayer.h in Headers */,
-				C370CC91D42BB517A8767ECED8C316F6 /* RCTMGLFillLayerManager.h in Headers */,
-				F942AB1D2E98D65F3B60F5E3544BC224 /* RCTMGLImageQueue.h in Headers */,
-				686FBE0030C7E683C03D6C29C0EEAA6C /* RCTMGLImageQueueOperation.h in Headers */,
-				8AC4AF3F7DB36944D70CD636983C6D09 /* RCTMGLImageSource.h in Headers */,
-				ED7B87800CF7FA43901C4B3E4E1058E3 /* RCTMGLImageSourceManager.h in Headers */,
-				FEAEABEF15738B649A2E4F7AF843EEB3 /* RCTMGLLayer.h in Headers */,
-				CA5279AB4FA90E1C4C33804397122747 /* RCTMGLLight.h in Headers */,
-				A57427A9A4AD05377FB4932B86637535 /* RCTMGLLightManager.h in Headers */,
-				6D8A8344D2090ECC0ADAC65C469502B0 /* RCTMGLLineLayer.h in Headers */,
-				DEF3604E5DE35660C8C15A00961F0593 /* RCTMGLLineLayerManager.h in Headers */,
-				39C09C0F8C237745D20DD07599A1A607 /* RCTMGLMapTouchEvent.h in Headers */,
-				94C8C4D181800831574BF825EB29CDD0 /* RCTMGLMapView.h in Headers */,
-				7B90AFBECBD1541E4D590044A71C8FE8 /* RCTMGLMapViewManager.h in Headers */,
-				A90B211D54295C670306963F24C08D8D /* RCTMGLPointAnnotation.h in Headers */,
-				5583ABB704FCF437CF6AC82EE3392B3A /* RCTMGLPointAnnotationManager.h in Headers */,
-				93B8B469419290E07079FE85DF046BE7 /* RCTMGLRasterLayer.h in Headers */,
-				5F595F8B9C90A234BC17B0205A1DD8ED /* RCTMGLRasterLayerManager.h in Headers */,
-				8C90D8B1034F43A96853EF094962485A /* RCTMGLRasterSource.h in Headers */,
-				0D71914EAF949F440094CC722008724F /* RCTMGLRasterSourceManager.h in Headers */,
-				5AB0F1D1483A6F469C96479703835D88 /* RCTMGLShapeSource.h in Headers */,
-				2F56D71D9AB20BA9AE20052F780BC12C /* RCTMGLShapeSourceManager.h in Headers */,
-				BE1100B5D752D5004CCCA809441461AA /* RCTMGLSource.h in Headers */,
-				B8E24DD8DB2663B12E009E5B6EC1EF9A /* RCTMGLStyle.h in Headers */,
-				1852E1A69CF3885BE12FDE3E83C0A5C3 /* RCTMGLStyleValue.h in Headers */,
-				B1652389AD5E6D0AB4D9FEC75F47DB60 /* RCTMGLSymbolLayer.h in Headers */,
-				FE8E661E85E7547BAB0D817069DF252E /* RCTMGLSymbolLayerManager.h in Headers */,
-				86EE02750E3575145BCC9AFD17A48817 /* RCTMGLUtils.h in Headers */,
-				408B18CF7AE22A526AB36D59943E5967 /* RCTMGLVectorSource.h in Headers */,
-				861A8F4849C18112A8ECE2F2F9D4AB46 /* RCTMGLVectorSourceManager.h in Headers */,
-				634F2BB85D6E2B907773F54164785EE7 /* RNMBImageUtils.h in Headers */,
-				0FF33E441FDCA61AE8B581198106107E /* ViewManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F0CA38A1E360C8DF33227DDE192C52FA /* Headers */ = {
+		BFC5D167FEF43270DD4877A35D9B99F4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03EADFBB446767DC9CEEA190CFA3698A /* log_severity.h in Headers */,
-				26976DC8A1659EE705AAD8A8BC4135F9 /* logging.h in Headers */,
-				F0889DA74C516D7161B7872542752680 /* raw_logging.h in Headers */,
-				CBF415FB7BC5BAB0427C4234F4305DF5 /* stl_logging.h in Headers */,
-				291645643DFB7C2BD8305E4B3B27252C /* vlog_is_on.h in Headers */,
+				7CD1170EF8524036EE354BCD7A20565B /* Utils.h in Headers */,
+				D9BAB3E8E1E573DEFCFEE552F8C5174F /* YGConfig.h in Headers */,
+				9726B525DEE42F1FDEA87FD06971D2EC /* YGEnums.h in Headers */,
+				2DB554F0462F4F405313655A6BB86674 /* YGFloatOptional.h in Headers */,
+				F20499663CF48E5FAB12E2C3A696C82F /* YGLayout.h in Headers */,
+				53E72D1CECA9E8D5D15DB41964FC4936 /* YGMacros.h in Headers */,
+				E27B9CECF6057CEFF141F2C9157E1771 /* YGNode.h in Headers */,
+				F4510719A75EA277E6BB6F27BFB6E216 /* YGNodePrint.h in Headers */,
+				C61801520C2ADED253286D5C845BC861 /* YGStyle.h in Headers */,
+				22B31EE82BFFF736FD2CD69A3F2AB5AE /* Yoga-internal.h in Headers */,
+				EEA95ED69F9F706304D6DA9DF97211E2 /* Yoga.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4EF2F622EADEB1B452917CEA56B9CBA /* Headers */ = {
+		DDDD2C302D3C271555916A2DEFB2BE8C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D456C3B155E79967F1B26852F9F70650 /* Utils.h in Headers */,
-				3EE2D35B56DE13D283D023F15AF30AC9 /* YGConfig.h in Headers */,
-				E7D6DF3DF30A76F2B61CFCE197948869 /* YGEnums.h in Headers */,
-				E07928ECAEBD83599F558A068F5F01B6 /* YGFloatOptional.h in Headers */,
-				1CCC9D57360DCB87DA4C03602A4CB30F /* YGLayout.h in Headers */,
-				863FE28B0D15B6800BCFBB5569F8CB16 /* YGMacros.h in Headers */,
-				DD89EBE219391D7B5414EE025F4F2551 /* YGNode.h in Headers */,
-				77C49E8E80E71F373A644797B6EE19B1 /* YGNodePrint.h in Headers */,
-				A95DE6E1568FA9B5F9DA0A75863C50E9 /* YGStyle.h in Headers */,
-				20E6B8501503BB9F1EE6BD9953FA2261 /* Yoga-internal.h in Headers */,
-				33512028B54100BFF01753F7DC40ECEB /* Yoga.h in Headers */,
+				384F450DE143F3C287BB32840BB96545 /* CameraMode.h in Headers */,
+				D7FC18C342A57636BB0945E2464F4E5E /* CameraStop.h in Headers */,
+				6C6465F5993B00013586D1BBD74D3217 /* CameraUpdateItem.h in Headers */,
+				5F686B0D7310CE04839369E8EF07348B /* CameraUpdateQueue.h in Headers */,
+				7F44AA93A6DD7A99C54C3D7F7F50946A /* FilterList.h in Headers */,
+				DCF70BD387B86818FE5ED4352D87D602 /* FilterParser.h in Headers */,
+				5342A3E1CAB8BB1140560BD16FD6A731 /* MGLFaux3DUserLocationAnnotationView.h in Headers */,
+				34B3AA64896D257483AE77EEA64531D9 /* MGLModule.h in Headers */,
+				0B50C129BCB9439CEC5DC12581089B5E /* MGLOfflineModule.h in Headers */,
+				FED87FA1B739FFE6D7CE5F02499F111F /* MGLSnapshotModule.h in Headers */,
+				3AC41011A52D9A2A580BC92D932DB9B1 /* MGLUserLocationHeadingArrowLayer.h in Headers */,
+				91D5BF4A5F2A6C4C662CD908C84B0C17 /* MGLUserLocationHeadingBeamLayer.h in Headers */,
+				6AA80700665D4569156E974A0936C0E1 /* MGLUserLocationHeadingIndicator.h in Headers */,
+				B4F90523B906D25DB8BEC951B2C63389 /* RCTConvert+Mapbox.h in Headers */,
+				78089D1C45CBFA2FE85524EFB400C345 /* RCTMGL.h in Headers */,
+				EE3FAB68B2D8A1CAE390D2DE0AC4AA9C /* RCTMGLBackgroundLayer.h in Headers */,
+				CE6765FD04D45771FBD27FD6DE022A2B /* RCTMGLBackgroundLayerManager.h in Headers */,
+				61336D37605703D306B513B3D68CEAEB /* RCTMGLCallout.h in Headers */,
+				BED202D12DAC36BC8CBC2ED9448E6834 /* RCTMGLCalloutManager.h in Headers */,
+				CD4D6BEC7F17737ACFE4E0CF30B2B9F1 /* RCTMGLCircleLayer.h in Headers */,
+				5A2AE825D4CCC7C80D2C4235CA7E200B /* RCTMGLCircleLayerManager.h in Headers */,
+				962DC53C846C77B37B04EAED7EBBC3A3 /* RCTMGLEvent.h in Headers */,
+				E6AAF62200ADC66063441FD3A7894671 /* RCTMGLEventProtocol.h in Headers */,
+				4A6CA68C8C3DFFC1D29ACD49306BD0C3 /* RCTMGLEventTypes.h in Headers */,
+				46437AEC213AB1AD1D1571AB37DFE98E /* RCTMGLFillExtrusionLayer.h in Headers */,
+				EB891233313D824F11F854FE5A243EF9 /* RCTMGLFillExtrusionLayerManager.h in Headers */,
+				70DF3199AA4F6FB82AA6CC9909A9195E /* RCTMGLFillLayer.h in Headers */,
+				68CB8B16214C4BDE61096A4258D623FE /* RCTMGLFillLayerManager.h in Headers */,
+				7C75363C99559C3B474180A13AB2C18F /* RCTMGLImageQueue.h in Headers */,
+				53F85020BBCD65E3F3AE3B2BADDDDC19 /* RCTMGLImageQueueOperation.h in Headers */,
+				F132AF19890C27037C1A1E9C80D9AD22 /* RCTMGLImageSource.h in Headers */,
+				6AE9648818266960A66E1B394DB155A4 /* RCTMGLImageSourceManager.h in Headers */,
+				9F4D0D3F0DCC807DD60029B482B12A98 /* RCTMGLLayer.h in Headers */,
+				098E7DB1FE4D2156C9F4AABC96D2C01D /* RCTMGLLight.h in Headers */,
+				E8A56BC38A022955CCB26C508AE5023C /* RCTMGLLightManager.h in Headers */,
+				AF2A6B05474DB6C8AEB6B7B072412BE4 /* RCTMGLLineLayer.h in Headers */,
+				72C33B5A07B24118AEE1D8F3DEC4D539 /* RCTMGLLineLayerManager.h in Headers */,
+				A04ACF4213F6015152F40F2F7C7A3D36 /* RCTMGLMapTouchEvent.h in Headers */,
+				4AEE56FA93E1C4398372793D5662D4E2 /* RCTMGLMapView.h in Headers */,
+				10E6B2B11CEF805800322A65DA206573 /* RCTMGLMapViewManager.h in Headers */,
+				702D7846681E13612C000C925219FE49 /* RCTMGLPointAnnotation.h in Headers */,
+				F28A473F394101350429F8C40660B7B8 /* RCTMGLPointAnnotationManager.h in Headers */,
+				567112744A083C59087E7CF05837EFF2 /* RCTMGLRasterLayer.h in Headers */,
+				6B89601630AEDBC896EC21310D4F0580 /* RCTMGLRasterLayerManager.h in Headers */,
+				2585119463C7AD4C7D2EE8B90C46D4FF /* RCTMGLRasterSource.h in Headers */,
+				4FFCD38D02E1663C8247918A639902C8 /* RCTMGLRasterSourceManager.h in Headers */,
+				BB16D9675C4F78D75CF63A831C39E0D3 /* RCTMGLShapeSource.h in Headers */,
+				DE77F9F11E682963EDF52EF175E7C1B8 /* RCTMGLShapeSourceManager.h in Headers */,
+				E1EB4CB70374DFF149CAAC30FFEFC9F9 /* RCTMGLSource.h in Headers */,
+				DE1CC8D7440D1B792F9B437D20E6D9FA /* RCTMGLStyle.h in Headers */,
+				776695FF8C549845CC4339E751831372 /* RCTMGLStyleValue.h in Headers */,
+				42F8493A53900CA2229E9862E0390C79 /* RCTMGLSymbolLayer.h in Headers */,
+				74E7D5EBA08199F9D4DCA8229EF2894D /* RCTMGLSymbolLayerManager.h in Headers */,
+				ABC139750F1639160E2854F0F26B90A9 /* RCTMGLUtils.h in Headers */,
+				E2E0492A002B2CB87AAE2C8AD9771CA7 /* RCTMGLVectorSource.h in Headers */,
+				57474D611A4DC5E555EFBB1BE1D3548D /* RCTMGLVectorSourceManager.h in Headers */,
+				01EA4C5AF0C883C0D4F29DD3055BA3CC /* RNMBImageUtils.h in Headers */,
+				54300A7A3F3FE0956B9CFB05D2340D5A /* ViewManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4AC6C39EB9AD514C4DC6BDA016B3C88 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				949FAA195736630E5C94A8CAF76BEAF0 /* log_severity.h in Headers */,
+				FA9E93F237AC0F1C6F79D830C211EA79 /* logging.h in Headers */,
+				47E7A34126FFA0C2B5FB26BAD3710DEA /* raw_logging.h in Headers */,
+				56DCA653B1E95E92E0BDF58760B3DBFE /* stl_logging.h in Headers */,
+				2934F8A63251615A9BD9A3AD5DFE69DB /* vlog_is_on.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB832003CF351B9AEF04D94B62FEAB46 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		13F41FEC2FE9AC84AC1A1C3F2EF0F26C /* Pods-winebow */ = {
+		0304CF265B497DC80D989D97E17FB01C /* Folly */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3CF74872301480B489A383A301D9FF62 /* Build configuration list for PBXNativeTarget "Pods-winebow" */;
+			buildConfigurationList = 1522CA8615F1528D77566ABC1F87A424 /* Build configuration list for PBXNativeTarget "Folly" */;
 			buildPhases = (
-				3AA85FE0A6EBDC6FE7405721F00229FF /* Sources */,
-				A62D8BB4755416ADF4F422D1FA75BA41 /* Frameworks */,
+				8AF85910EE62395AA93A2C52C60A0A39 /* Headers */,
+				37DAE739295BD2C48075E2F401F317C1 /* Sources */,
+				754A4FCFE49C1D754E83B9282DFECF00 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0F08B552B36B9D4D994FEC3142B4B5DB /* PBXTargetDependency */,
-				636DBB1C8123C7C22E72B0E6FFEF3B7F /* PBXTargetDependency */,
-				C8AB1337DA7A766F44A7998C759C951E /* PBXTargetDependency */,
-				66BDDA4DFFAC9D5CED9778BD5EEFE54D /* PBXTargetDependency */,
-				42987B8CE1E2F6F0FFFA4059EB882E26 /* PBXTargetDependency */,
-				6E8229FC089F71515167C392294FDE0D /* PBXTargetDependency */,
+				CB481563B2BA5399A2A0038EDD5185DA /* PBXTargetDependency */,
+				53538D0178683BF426E47110A384FEF0 /* PBXTargetDependency */,
 			);
-			name = "Pods-winebow";
-			productName = "Pods-winebow";
-			productReference = 6313C6460D0A77C09FEDCB08A2046D0B /* libPods-winebow.a */;
+			name = Folly;
+			productName = Folly;
+			productReference = 0A3B2814D0FB4AED483A22FE21051A17 /* libFolly.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		24660DC01D439822D32FAA893FD505D2 /* yoga */ = {
+		2B7F5D7382A2D2A2B0802F6DADA6F7CD /* react-native-mapbox-gl */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AEE4DA7A1554707E451687A8F738FE72 /* Build configuration list for PBXNativeTarget "yoga" */;
+			buildConfigurationList = 8EF58D0ED8F994B0F04BF1991F6626E0 /* Build configuration list for PBXNativeTarget "react-native-mapbox-gl" */;
 			buildPhases = (
-				E979ADA9F3DDFDB103CFA6F50B9F225A /* Sources */,
-				8CDF607A759444F1E9F96FFD656B45D7 /* Frameworks */,
-				F4EF2F622EADEB1B452917CEA56B9CBA /* Headers */,
+				DDDD2C302D3C271555916A2DEFB2BE8C /* Headers */,
+				1E7C93C2C7A836FE94538863790F8FFF /* Sources */,
+				CDE392652A157C1FE64548D7ACC18965 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2902AB259F41AEC40B2BB7DE0C288085 /* PBXTargetDependency */,
 			);
-			name = yoga;
-			productName = yoga;
-			productReference = 616106898F49D4B71358CD134A9EC480 /* libyoga.a */;
+			name = "react-native-mapbox-gl";
+			productName = "react-native-mapbox-gl";
+			productReference = A4CE5DF56EED605FCA1672E067FD1E4A /* libreact-native-mapbox-gl.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		3CFAD96A62527F3303DEE3FDF4D321B8 /* DoubleConversion */ = {
+		5A93B49B207CB78C2D38F43189D782C3 /* glog */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B28197FCAA3C1C689407F2D8B716ADD8 /* Build configuration list for PBXNativeTarget "DoubleConversion" */;
+			buildConfigurationList = DAEF3C2F06072934BC2197AE221363C1 /* Build configuration list for PBXNativeTarget "glog" */;
 			buildPhases = (
-				256BC0B266411E62BC4E35A7489BE591 /* Sources */,
-				3A186C3F7EF4702BC23D1CBB749AD8F3 /* Frameworks */,
-				5606F48CB762DD970B3ED5057D9A490A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DoubleConversion;
-			productName = DoubleConversion;
-			productReference = 72E1AFBBE515A477BBBACD101E5A7685 /* libDoubleConversion.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		448947262A6315C155A8696BCEAE9969 /* glog */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 25605D4D17B50A9F42CF33ECB09E4655 /* Build configuration list for PBXNativeTarget "glog" */;
-			buildPhases = (
-				601A809E10174EFB7055B8AD6BB26D20 /* Sources */,
-				9D8E1424F402EEDB898B46810686FA03 /* Frameworks */,
-				F0CA38A1E360C8DF33227DDE192C52FA /* Headers */,
+				F4AC6C39EB9AD514C4DC6BDA016B3C88 /* Headers */,
+				83D90BAD6514D148028EA80BB6E8A52A /* Sources */,
+				97EC9B827AC8BE40C6809ED27D41A9C5 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2611,40 +2606,61 @@
 			productReference = 476D297A0CD2F4123302A0F182C8EC02 /* libglog.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		594DD2CC4687C4191E9E05AC962AC7A5 /* react-native-mapbox-gl */ = {
+		5D82A31E8C89DCFDF86799BAFD9F3118 /* DoubleConversion */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F3209CD976CA2854D117BC589EE267B2 /* Build configuration list for PBXNativeTarget "react-native-mapbox-gl" */;
+			buildConfigurationList = 174E976B55A43CEAC180DBBD321AD201 /* Build configuration list for PBXNativeTarget "DoubleConversion" */;
 			buildPhases = (
-				8ED7C9446219B33E4124DBBE70B4D379 /* Sources */,
-				6378CD02E32A0A9B19D7C7CD8FFFCB7C /* Frameworks */,
-				684D5E5E7D87DB2A14EBCE573CDF3724 /* Headers */,
+				1BE0921385D3C20A2E980BA626D2EBF7 /* Headers */,
+				E27BD1AAD9CB636719933254484BA823 /* Sources */,
+				2F3D7F6091100025304AC062B63A59B4 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BDBAB347A74A188A0FF4159CC8B7E0EE /* PBXTargetDependency */,
 			);
-			name = "react-native-mapbox-gl";
-			productName = "react-native-mapbox-gl";
-			productReference = A4CE5DF56EED605FCA1672E067FD1E4A /* libreact-native-mapbox-gl.a */;
+			name = DoubleConversion;
+			productName = DoubleConversion;
+			productReference = 72E1AFBBE515A477BBBACD101E5A7685 /* libDoubleConversion.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		FBEA1F67E02C62FAEECED485C0ED9E5A /* Folly */ = {
+		E89F8D8E0BF052F6402C9EA0A2965DA8 /* Pods-winebow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0789EFABE2E8DEC752570F844D883165 /* Build configuration list for PBXNativeTarget "Folly" */;
+			buildConfigurationList = EE71C7D150BCAEACB2C43A2A39BDFA59 /* Build configuration list for PBXNativeTarget "Pods-winebow" */;
 			buildPhases = (
-				1EC31BF2F220C44F6B5B240F54AFB859 /* Sources */,
-				6C2BC99728433AFEF2A95F6050A9111E /* Frameworks */,
+				FB832003CF351B9AEF04D94B62FEAB46 /* Headers */,
+				19206B906405BA1A800FCC28C40E8896 /* Sources */,
+				41DF4166C65116B8C3222D9D38B98CDF /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1936F4B9EF9538D680E871D707B3D56D /* PBXTargetDependency */,
-				04D6696017E75A813940B9DA2816AF0B /* PBXTargetDependency */,
+				682293933DF175674C8AB9E4C9EE7948 /* PBXTargetDependency */,
+				8DEE8305DB883E896B52E3209EB36611 /* PBXTargetDependency */,
+				A3321EF5327FAAC32C171C76DF765EAF /* PBXTargetDependency */,
+				01C9A4D5633EE61393AF0EFD02016F93 /* PBXTargetDependency */,
+				B5CA885E102626474CC2BB1F8ACEEE3F /* PBXTargetDependency */,
+				0D921DB6450ADC3A74435E044447CABE /* PBXTargetDependency */,
 			);
-			name = Folly;
-			productName = Folly;
-			productReference = 0A3B2814D0FB4AED483A22FE21051A17 /* libFolly.a */;
+			name = "Pods-winebow";
+			productName = "Pods-winebow";
+			productReference = 6313C6460D0A77C09FEDCB08A2046D0B /* libPods-winebow.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EF8C72EE17E38DD79D138DB76B8D8DA1 /* yoga */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E11A03A92FD2FC6B837B85ECEBCC26D /* Build configuration list for PBXNativeTarget "yoga" */;
+			buildPhases = (
+				BFC5D167FEF43270DD4877A35D9B99F4 /* Headers */,
+				35B378553415732E065385EACF88D93D /* Sources */,
+				D7121C54CF96A06EFBE8D61A25517E0F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = yoga;
+			productName = yoga;
+			productReference = 616106898F49D4B71358CD134A9EC480 /* libyoga.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -2668,213 +2684,351 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3CFAD96A62527F3303DEE3FDF4D321B8 /* DoubleConversion */,
-				FBEA1F67E02C62FAEECED485C0ED9E5A /* Folly */,
-				448947262A6315C155A8696BCEAE9969 /* glog */,
-				13F41FEC2FE9AC84AC1A1C3F2EF0F26C /* Pods-winebow */,
-				594DD2CC4687C4191E9E05AC962AC7A5 /* react-native-mapbox-gl */,
-				24660DC01D439822D32FAA893FD505D2 /* yoga */,
+				5D82A31E8C89DCFDF86799BAFD9F3118 /* DoubleConversion */,
+				0304CF265B497DC80D989D97E17FB01C /* Folly */,
+				5A93B49B207CB78C2D38F43189D782C3 /* glog */,
+				E89F8D8E0BF052F6402C9EA0A2965DA8 /* Pods-winebow */,
+				2B7F5D7382A2D2A2B0802F6DADA6F7CD /* react-native-mapbox-gl */,
+				EF8C72EE17E38DD79D138DB76B8D8DA1 /* yoga */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1EC31BF2F220C44F6B5B240F54AFB859 /* Sources */ = {
+		19206B906405BA1A800FCC28C40E8896 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31E0DED3C17288F2DA39CA16B2EA2E48 /* Bits.cpp in Sources */,
-				8ECF9844A5E6A34C6F02862477127998 /* BitsFunctexcept.cpp in Sources */,
-				C5D266F989E380648A84E051F0F38576 /* Conv.cpp in Sources */,
-				989D48A51051A9BAF425F714590724EE /* Demangle.cpp in Sources */,
-				D6E5F35851CCA5931BA610D097B312F8 /* dynamic.cpp in Sources */,
-				F89E1E212E797FF2613CDBB79714BE68 /* Folly-dummy.m in Sources */,
-				C73F4A73A51BEF6D5100F09989EC2A47 /* json.cpp in Sources */,
-				716A66280180A58DEEE8FD98B58557D9 /* MallocImpl.cpp in Sources */,
-				6BEC8D440751B334001D53D446F7D79E /* StringBase.cpp in Sources */,
-				A17FBB25D8BD5B00DE9C776D4548B771 /* Unicode.cpp in Sources */,
+				99266245EBC429B446D658AC192741DE /* Pods-winebow-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		256BC0B266411E62BC4E35A7489BE591 /* Sources */ = {
+		1E7C93C2C7A836FE94538863790F8FFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2959EE9D7A5990DFDD17825629C0042 /* bignum-dtoa.cc in Sources */,
-				10BFBADAA94BF65C795ECB9ED9A05142 /* bignum.cc in Sources */,
-				96A5928DCA28A7AAA655936010A9B701 /* cached-powers.cc in Sources */,
-				5C644207925BA75F815588A267D7D413 /* diy-fp.cc in Sources */,
-				0647B36E60B72A167A8B10296A080BFE /* double-conversion.cc in Sources */,
-				BAFF3781E5B3A748F808079369CA2203 /* DoubleConversion-dummy.m in Sources */,
-				D9B381BF1DE72A9FEC0FEEE1138FFE09 /* fast-dtoa.cc in Sources */,
-				3E75CE82A75638357D63F42E6F79E5ED /* fixed-dtoa.cc in Sources */,
-				8E3506A9012CD326CC7209BDD772EBA2 /* strtod.cc in Sources */,
+				9F6A47BF2673447B1D03371FBEB5BABB /* CameraMode.m in Sources */,
+				D46F79D3BD6A67749EF5FF97A4F57442 /* CameraStop.m in Sources */,
+				F11D009999480ECFEE65A7E2AB709673 /* CameraUpdateItem.m in Sources */,
+				544CF569BA771F8B239C0479B30E4DC3 /* CameraUpdateQueue.m in Sources */,
+				6CDB6484EFECD0323F7A25F12347A854 /* FilterList.m in Sources */,
+				ACAD41609D8629558C90F62523E74038 /* FilterParser.m in Sources */,
+				0055A0667B531674B803545EED2F650E /* MGLFaux3DUserLocationAnnotationView.m in Sources */,
+				9F24D91BC6703C584B5094990114B3CB /* MGLModule.m in Sources */,
+				61AEE5172CBE42133FC336D66D21B4BC /* MGLOfflineModule.m in Sources */,
+				50A87287D3F02C1F50CEC85BE41BB2EC /* MGLSnapshotModule.m in Sources */,
+				67B9F827B375A4C9977845A549CAB581 /* MGLUserLocationHeadingArrowLayer.m in Sources */,
+				B6378B7329014079AEF87D1A752CCC38 /* MGLUserLocationHeadingBeamLayer.m in Sources */,
+				6C6B06E5AD893D3C488D8D61500B76F4 /* RCTConvert+Mapbox.m in Sources */,
+				05C6B60D7042DBB931FA0603F26E562F /* RCTMGL.m in Sources */,
+				D0334955BB5425BFA0BA86C70A075322 /* RCTMGLBackgroundLayer.m in Sources */,
+				5008A735DBBD45233F6ED681644C055D /* RCTMGLBackgroundLayerManager.m in Sources */,
+				F97D388926A07F46B054698BCCDBB498 /* RCTMGLCallout.m in Sources */,
+				45870BB236587CEDAD33EE2E6E0A5558 /* RCTMGLCalloutManager.m in Sources */,
+				75EE2378F2F3723B026B92AEC8DA6717 /* RCTMGLCircleLayer.m in Sources */,
+				C23F5B10AF000565448BA5B8B4406CD0 /* RCTMGLCircleLayerManager.m in Sources */,
+				3C231943C24C1B68511D658EFDAA97BD /* RCTMGLEvent.m in Sources */,
+				11A6E9534C0E349BA1203A38BB0F81B2 /* RCTMGLEventTypes.m in Sources */,
+				24A703DB1BB759EE22B5BB833959BFF0 /* RCTMGLFillExtrusionLayer.m in Sources */,
+				315CF4D1770B02A307CD657DDA39BAE2 /* RCTMGLFillExtrusionLayerManager.m in Sources */,
+				1310CF9D278BC05E7752C6FC1B1C29D1 /* RCTMGLFillLayer.m in Sources */,
+				B65D1CA5D935E6F6B198DBBB976110B5 /* RCTMGLFillLayerManager.m in Sources */,
+				99C5E6328BC56C5D7FC39F339C1BEDFB /* RCTMGLImageQueue.m in Sources */,
+				7F42A45D14AA50D1C07EEDBECBA30669 /* RCTMGLImageQueueOperation.m in Sources */,
+				B0522F81E4C8ECDCB4F76FE0092C5089 /* RCTMGLImageSource.m in Sources */,
+				809D71A8052A057CE8EDDDBBB2E69820 /* RCTMGLImageSourceManager.m in Sources */,
+				5A21A44C30913D28A8EDDA0835EB337F /* RCTMGLLayer.m in Sources */,
+				BACCE8DAF28678BA4FF068CAC2866AC8 /* RCTMGLLight.m in Sources */,
+				B169E0BA85432D8EC6C36E2960DB2453 /* RCTMGLLightManager.m in Sources */,
+				B2D5572231E6FFF26C620DF793417ED5 /* RCTMGLLineLayer.m in Sources */,
+				22E7A9A286FF4632853D595170A09E0A /* RCTMGLLineLayerManager.m in Sources */,
+				7F19ADD3D014A4E6AD946277192118AD /* RCTMGLMapTouchEvent.m in Sources */,
+				358BFE06A1B8E6AC63988F8CEAE6ACC3 /* RCTMGLMapView.m in Sources */,
+				DE489E0DFA8CB9607385D02D70FB122D /* RCTMGLMapViewManager.m in Sources */,
+				EF82F4D4C6D6F84F486F1200FB2AA751 /* RCTMGLPointAnnotation.m in Sources */,
+				66FC064BC418622AC222E939C4AE581E /* RCTMGLPointAnnotationManager.m in Sources */,
+				DFDD9E3422DB58CBDB8FD923C3C05E15 /* RCTMGLRasterLayer.m in Sources */,
+				E9D86A6295A49386F61E2C5102387DB8 /* RCTMGLRasterLayerManager.m in Sources */,
+				B88FAB3E6F972C8A0D943B52FE2A192B /* RCTMGLRasterSource.m in Sources */,
+				09CAA2CED2F02E36DD54F007CE37E908 /* RCTMGLRasterSourceManager.m in Sources */,
+				B56ADFFEB5292DFC85665045A926E09C /* RCTMGLShapeSource.m in Sources */,
+				5C081677DAC5D1B377CF9491FA933A4E /* RCTMGLShapeSourceManager.m in Sources */,
+				0782A019B9A9D40E1146C06008C0AE7D /* RCTMGLSource.m in Sources */,
+				935E3D3723D731E8DA7DF92DB8B6A7D5 /* RCTMGLStyle.m in Sources */,
+				63F095DA02BE0B8AE532761256BB0D8A /* RCTMGLStyleValue.m in Sources */,
+				6E6AD52414238BCC7F36A28327EC037F /* RCTMGLSymbolLayer.m in Sources */,
+				C30DBAA72B7FDF0D311F4C664F8378EB /* RCTMGLSymbolLayerManager.m in Sources */,
+				DD40F89715F9E6C0384261BEC50E6112 /* RCTMGLUtils.m in Sources */,
+				B7D50C7121E8BD877382F92B2A8C4FCE /* RCTMGLVectorSource.m in Sources */,
+				801DBCD0185D284762DA18DB8C88CD9A /* RCTMGLVectorSourceManager.m in Sources */,
+				940885FC58E3F950547179509EC60BFB /* react-native-mapbox-gl-dummy.m in Sources */,
+				F87ADC1C60AE9E61FC32C50475813840 /* RNMBImageUtils.m in Sources */,
+				CB6CC38A3F0ED7245E97B367043D1D29 /* ViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3AA85FE0A6EBDC6FE7405721F00229FF /* Sources */ = {
+		35B378553415732E065385EACF88D93D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CC1F6F523A999010B0341473E44B634 /* Pods-winebow-dummy.m in Sources */,
+				A97AB181B14195B4888B3BE6DC751391 /* Utils.cpp in Sources */,
+				02DACB07B74143F0BCEB7C206EA15CFC /* YGConfig.cpp in Sources */,
+				73729ECEC40239B70FBFB1CBEBD820F6 /* YGEnums.cpp in Sources */,
+				077472FA8C12EFF42FD4A5AA09FC9B75 /* YGFloatOptional.cpp in Sources */,
+				1681D7AF6AEFF4B955C15CC27BED1D60 /* YGLayout.cpp in Sources */,
+				FE60BF0645F53802F13F370289566C57 /* YGNode.cpp in Sources */,
+				7324E82E885EE9B6470029C9CF8B932F /* YGNodePrint.cpp in Sources */,
+				D6D790C55E947FF0C50589E898B9C263 /* YGStyle.cpp in Sources */,
+				4A92AB01DC594B4F5EAE1F80859A0CC5 /* yoga-dummy.m in Sources */,
+				B33362B58F884F4238974F8CAED12C97 /* Yoga.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		601A809E10174EFB7055B8AD6BB26D20 /* Sources */ = {
+		37DAE739295BD2C48075E2F401F317C1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20DF98AF7C06B61D6DDE60B3BA271EC1 /* demangle.cc in Sources */,
-				CAE68D0FA3363055D565C15B42CEBE8F /* glog-dummy.m in Sources */,
-				0D60E7088C1747E8579E2830BA3EB796 /* logging.cc in Sources */,
-				DCE6D61587F65864FB1D513CB6CAD6D6 /* raw_logging.cc in Sources */,
-				265517E635394A11C39AFEDE51DAB28E /* signalhandler.cc in Sources */,
-				B32323E05D7CEED5F3E5EA01DC4F6805 /* symbolize.cc in Sources */,
-				07A6705A61E31BA55CAA908D3EB407F7 /* utilities.cc in Sources */,
-				29A5B934AAE49BCE58D2867FC691771F /* vlog_is_on.cc in Sources */,
+				193D9AEAC70A9CDD1C4AA681CCB59026 /* Bits.cpp in Sources */,
+				6DE1D90FF02C422B0835FADE8BFFDA67 /* BitsFunctexcept.cpp in Sources */,
+				35ACD7B477BA31AB291987A2B1E5630B /* Conv.cpp in Sources */,
+				4A44BB76A7C951DA75A1B93162E9A932 /* Demangle.cpp in Sources */,
+				5851711A21B85A965DF98F9090422FCA /* dynamic.cpp in Sources */,
+				6C199B0B85EFD0B6FFD7879598AF83C5 /* Folly-dummy.m in Sources */,
+				574612FF72399BA23BD56875F9EA958D /* json.cpp in Sources */,
+				F7D64AB4D43E041E1E942CBEF56FD74F /* MallocImpl.cpp in Sources */,
+				A85CA4327843DBFD308B11D724B2E109 /* StringBase.cpp in Sources */,
+				700DE6F92EA3EE2667695D493B2AC19A /* Unicode.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8ED7C9446219B33E4124DBBE70B4D379 /* Sources */ = {
+		83D90BAD6514D148028EA80BB6E8A52A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D658A9669CE3866311813D5777D67558 /* CameraMode.m in Sources */,
-				73A9936349F8B81E7810985C6B3C3BE8 /* CameraStop.m in Sources */,
-				C888C74972178724F09C3A6799616CF0 /* CameraUpdateItem.m in Sources */,
-				DB6CA44915D76E2919FD838918171154 /* CameraUpdateQueue.m in Sources */,
-				D9A0B2C24D1ECFFB118FFBDB93D444D0 /* FilterList.m in Sources */,
-				007BA7A8C20F66C23AB84252BD666C21 /* FilterParser.m in Sources */,
-				194AB06DF16AEA33DDDF5C00F99A3396 /* MGLFaux3DUserLocationAnnotationView.m in Sources */,
-				94F3C37724B2B9C6FF249FBFA7D5D75F /* MGLModule.m in Sources */,
-				AF2C610180178A11FB092AB99A2FA911 /* MGLOfflineModule.m in Sources */,
-				EFAF34D62A9FD5E2D9836EE12A8EAC58 /* MGLSnapshotModule.m in Sources */,
-				C5CEFF000E048A7B6819CD6BFA4342D9 /* MGLUserLocationHeadingArrowLayer.m in Sources */,
-				52DE6C4591B10C70808BF7190A987442 /* MGLUserLocationHeadingBeamLayer.m in Sources */,
-				5B375F85991E4620F8320D0876AEBDA7 /* RCTConvert+Mapbox.m in Sources */,
-				4B8A4A674F2ABFC571F6996DE71E7FE3 /* RCTMGL.m in Sources */,
-				DF66F8F373A8982125F44B3A30E7745F /* RCTMGLBackgroundLayer.m in Sources */,
-				634E855136F89F4E1F7A9C55B632C694 /* RCTMGLBackgroundLayerManager.m in Sources */,
-				36245DBEF9BC43213A2E207689F396E4 /* RCTMGLCallout.m in Sources */,
-				975AF349096C0C5F3602AC086664FCB6 /* RCTMGLCalloutManager.m in Sources */,
-				A140C3C4947EA12022BF5EEEEFEB9238 /* RCTMGLCircleLayer.m in Sources */,
-				6C93AE33EAD1EE797561A88A1A845EFD /* RCTMGLCircleLayerManager.m in Sources */,
-				EFCC6383C9526EDBF9B91AA1E22C297B /* RCTMGLEvent.m in Sources */,
-				6C1D27D0976D88CF27729B87CA03C74E /* RCTMGLEventTypes.m in Sources */,
-				98758D9C266747295D420A8644A58C1B /* RCTMGLFillExtrusionLayer.m in Sources */,
-				F4734E3A825EC4B63DB0A4945204636C /* RCTMGLFillExtrusionLayerManager.m in Sources */,
-				5EDE80FA46D14D918ED9EBFE7215BFA8 /* RCTMGLFillLayer.m in Sources */,
-				A30DFF55EFFEE860C896D2666F3F682A /* RCTMGLFillLayerManager.m in Sources */,
-				1DE6D2E83BE92A3256CB4501129E3479 /* RCTMGLImageQueue.m in Sources */,
-				E8C74830573A64DBFC838AEC290A36BA /* RCTMGLImageQueueOperation.m in Sources */,
-				2559E805CC64561BE7DAECE135197494 /* RCTMGLImageSource.m in Sources */,
-				21ACD4967FABBF74822B9716777608E7 /* RCTMGLImageSourceManager.m in Sources */,
-				AAC1A397EA43B1BDA3321F43667D2D46 /* RCTMGLLayer.m in Sources */,
-				DE2661160E38621493C3AE93CA969B4F /* RCTMGLLight.m in Sources */,
-				84D7B67D8CABDCAF51C79E5BE7B31BC9 /* RCTMGLLightManager.m in Sources */,
-				2B1B1B68895999B6051513A79C327823 /* RCTMGLLineLayer.m in Sources */,
-				C3F1064A2D6EF6DBC0362B857135D9E4 /* RCTMGLLineLayerManager.m in Sources */,
-				26B784C31936BDF7B02875B2DD8B1DBA /* RCTMGLMapTouchEvent.m in Sources */,
-				88C27E666A38F8011CB36A68F7CA66EF /* RCTMGLMapView.m in Sources */,
-				CE83760A8C87B5DD06DAB8025F9EBDF9 /* RCTMGLMapViewManager.m in Sources */,
-				ABEE393BFBC3A2A88D0490EEF44D0CC1 /* RCTMGLPointAnnotation.m in Sources */,
-				FAD10086B36A94C4118846E37AAB7BD1 /* RCTMGLPointAnnotationManager.m in Sources */,
-				0FD2DCC5A8DA5059131028F04BE5E62F /* RCTMGLRasterLayer.m in Sources */,
-				D9984539E6BD2C0A7531E8D4A8B68960 /* RCTMGLRasterLayerManager.m in Sources */,
-				009163122DE22D16202326A794CAAD89 /* RCTMGLRasterSource.m in Sources */,
-				8D06504174096E16B183F0C406A889C2 /* RCTMGLRasterSourceManager.m in Sources */,
-				BF20903FCE4AA6D10B661B7F3B7B5327 /* RCTMGLShapeSource.m in Sources */,
-				2B1E7DD0BC8F877174765FD7A2690DD4 /* RCTMGLShapeSourceManager.m in Sources */,
-				2C3C85F0A81E9E9C24D649B3BCB503D1 /* RCTMGLSource.m in Sources */,
-				3182E057FAC4C1D6DE4C16379B644FF8 /* RCTMGLStyle.m in Sources */,
-				BE797B79306D3DB5C0065CDFF4BD3693 /* RCTMGLStyleValue.m in Sources */,
-				8AC9A2361D18D5BA2E492EB54720D595 /* RCTMGLSymbolLayer.m in Sources */,
-				56CCD5EAA9AFFB4469F85BA2873FD402 /* RCTMGLSymbolLayerManager.m in Sources */,
-				4CD82ABF24B6B18F733E4E11C057FCFF /* RCTMGLUtils.m in Sources */,
-				2773E3CB1D8D46DC13FC842CE4A2E856 /* RCTMGLVectorSource.m in Sources */,
-				CCC333C9CF73C76908817E680DB945E2 /* RCTMGLVectorSourceManager.m in Sources */,
-				36224A27E92C521E6B4EF933D3C72DAB /* react-native-mapbox-gl-dummy.m in Sources */,
-				E98E9C6BFF87332EE8E239F22BE61622 /* RNMBImageUtils.m in Sources */,
-				1BABC3F06BF5B47BD6BD4E8182B77226 /* ViewManager.m in Sources */,
+				93CFFC5B36F6E2C42A18AC89F88AB7C5 /* demangle.cc in Sources */,
+				25C427AA2CC959CB0B875A3F205E8C98 /* glog-dummy.m in Sources */,
+				84BDCA695C1EC8CA72E67207380F5671 /* logging.cc in Sources */,
+				2122456E55DF9A0A295B77E51C19A494 /* raw_logging.cc in Sources */,
+				A835A6479684F3A59D0025819595E52E /* signalhandler.cc in Sources */,
+				5C2882396E51BC6527E40E89AE496356 /* symbolize.cc in Sources */,
+				8126FE0DE46A1387EA8CE127B5A3E9E9 /* utilities.cc in Sources */,
+				8612AD6774C51FCAB12F68BC8D974088 /* vlog_is_on.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E979ADA9F3DDFDB103CFA6F50B9F225A /* Sources */ = {
+		E27BD1AAD9CB636719933254484BA823 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D7F1DF56E7708DE2F4DD1954951BA81 /* Utils.cpp in Sources */,
-				34E4DBC519DA259F5AAF22BB99DBBDC6 /* YGConfig.cpp in Sources */,
-				E9BCDC479BAAC94DB6A3E29C7D8DBA32 /* YGEnums.cpp in Sources */,
-				6887D3E0CE12AC444B62FC164CCC367D /* YGFloatOptional.cpp in Sources */,
-				1283453D5BDBDFAA23BB2ED6281464AC /* YGLayout.cpp in Sources */,
-				D1F1F2B44AF9D5C0A066145AB2565950 /* YGNode.cpp in Sources */,
-				71511CAAB0502B347329DA5755D7C95C /* YGNodePrint.cpp in Sources */,
-				5201CE1390F1062E0AE3A648B4EED0F8 /* YGStyle.cpp in Sources */,
-				4F233435E6CD0FE164769BB2A3CDA927 /* yoga-dummy.m in Sources */,
-				60DE16338D1ED8B3DDE849041EF561F9 /* Yoga.cpp in Sources */,
+				55FEB9DC87E0D137CEFB673CF38C0A93 /* bignum-dtoa.cc in Sources */,
+				3B757EAB917D367B289406D1E765210C /* bignum.cc in Sources */,
+				AB40483DA601A4E3F8EA8B01F2009ACC /* cached-powers.cc in Sources */,
+				2F0CB23EE249AD23440EB003FED158BB /* diy-fp.cc in Sources */,
+				7C7D88EFC98054C7BCEE8B953FB03BE2 /* double-conversion.cc in Sources */,
+				A4FA537DC68880CF47BB15E3AE33B5B6 /* DoubleConversion-dummy.m in Sources */,
+				F4B945969CFA278FA219D410A048DBDF /* fast-dtoa.cc in Sources */,
+				47CC052BE0A0D0F5D95BBEEF971FDD4C /* fixed-dtoa.cc in Sources */,
+				6E17DED3F099C06AE980B2737159CA94 /* strtod.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		04D6696017E75A813940B9DA2816AF0B /* PBXTargetDependency */ = {
+		01C9A4D5633EE61393AF0EFD02016F93 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = glog;
-			target = 448947262A6315C155A8696BCEAE9969 /* glog */;
-			targetProxy = 90BF76DB9371F1A79F69B9E00B82E365 /* PBXContainerItemProxy */;
+			target = 5A93B49B207CB78C2D38F43189D782C3 /* glog */;
+			targetProxy = 0E81D6720A4D9D88AAF5CCB29C9B4D44 /* PBXContainerItemProxy */;
 		};
-		0F08B552B36B9D4D994FEC3142B4B5DB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DoubleConversion;
-			target = 3CFAD96A62527F3303DEE3FDF4D321B8 /* DoubleConversion */;
-			targetProxy = 50813AE8B9432FD0D847460A27BDF73D /* PBXContainerItemProxy */;
-		};
-		1936F4B9EF9538D680E871D707B3D56D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DoubleConversion;
-			target = 3CFAD96A62527F3303DEE3FDF4D321B8 /* DoubleConversion */;
-			targetProxy = 6D3297870AC765540B3D7D38FD7462ED /* PBXContainerItemProxy */;
-		};
-		42987B8CE1E2F6F0FFFA4059EB882E26 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "react-native-mapbox-gl";
-			target = 594DD2CC4687C4191E9E05AC962AC7A5 /* react-native-mapbox-gl */;
-			targetProxy = CDDB521097B25A49CB360CE37CE0175F /* PBXContainerItemProxy */;
-		};
-		636DBB1C8123C7C22E72B0E6FFEF3B7F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Folly;
-			target = FBEA1F67E02C62FAEECED485C0ED9E5A /* Folly */;
-			targetProxy = CDF96F96C0272E67D6925C4D2802E53C /* PBXContainerItemProxy */;
-		};
-		66BDDA4DFFAC9D5CED9778BD5EEFE54D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = glog;
-			target = 448947262A6315C155A8696BCEAE9969 /* glog */;
-			targetProxy = FFE3337213ABC6A6BF123F5AE0D67B81 /* PBXContainerItemProxy */;
-		};
-		6E8229FC089F71515167C392294FDE0D /* PBXTargetDependency */ = {
+		0D921DB6450ADC3A74435E044447CABE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = yoga;
-			target = 24660DC01D439822D32FAA893FD505D2 /* yoga */;
-			targetProxy = 2A9479D0FACC1BBEC23DA443861936C0 /* PBXContainerItemProxy */;
+			target = EF8C72EE17E38DD79D138DB76B8D8DA1 /* yoga */;
+			targetProxy = FF0AA11BA4291E279D3F3C53214A2C8B /* PBXContainerItemProxy */;
 		};
-		BDBAB347A74A188A0FF4159CC8B7E0EE /* PBXTargetDependency */ = {
+		2902AB259F41AEC40B2BB7DE0C288085 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = React;
-			targetProxy = C4A0DC5BA046505D3AC3E351C4CC76FA /* PBXContainerItemProxy */;
+			targetProxy = AB6972AC859A27D57EA872FEC509C8E6 /* PBXContainerItemProxy */;
 		};
-		C8AB1337DA7A766F44A7998C759C951E /* PBXTargetDependency */ = {
+		53538D0178683BF426E47110A384FEF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = glog;
+			target = 5A93B49B207CB78C2D38F43189D782C3 /* glog */;
+			targetProxy = A0F2760C2420DC6BF297CEEE2268377D /* PBXContainerItemProxy */;
+		};
+		682293933DF175674C8AB9E4C9EE7948 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DoubleConversion;
+			target = 5D82A31E8C89DCFDF86799BAFD9F3118 /* DoubleConversion */;
+			targetProxy = 69AC766D792693219B0588B57C73509A /* PBXContainerItemProxy */;
+		};
+		8DEE8305DB883E896B52E3209EB36611 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Folly;
+			target = 0304CF265B497DC80D989D97E17FB01C /* Folly */;
+			targetProxy = 0542FB848528A217BF6ED1AFDF4CE710 /* PBXContainerItemProxy */;
+		};
+		A3321EF5327FAAC32C171C76DF765EAF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = React;
-			targetProxy = D44F167A9C1045985AA4F32D36EDBFB5 /* PBXContainerItemProxy */;
+			targetProxy = 8340CA097B7CB30E82E38463417AE8D8 /* PBXContainerItemProxy */;
+		};
+		B5CA885E102626474CC2BB1F8ACEEE3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "react-native-mapbox-gl";
+			target = 2B7F5D7382A2D2A2B0802F6DADA6F7CD /* react-native-mapbox-gl */;
+			targetProxy = 45F998B956DC7CD3D6B1E232553CB10F /* PBXContainerItemProxy */;
+		};
+		CB481563B2BA5399A2A0038EDD5185DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DoubleConversion;
+			target = 5D82A31E8C89DCFDF86799BAFD9F3118 /* DoubleConversion */;
+			targetProxy = 2C3232FECE2DBDC0906C80D74DD8E9F6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1C6043B8CEE9B934C1129E3D1588BEB3 /* Release */ = {
+		112CDF1CC597D8C10A34D92164AB7742 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 347AFC69945802ECC8CDF8623166C7DE /* Pods-winebow.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F2F9DF207333E966639463B6B5E059A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC0222420CC7B849DEFB02C3AEA78D3E /* DoubleConversion.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/DoubleConversion/DoubleConversion-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = DoubleConversion;
+				PRODUCT_NAME = DoubleConversion;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		60C3F591622C679195F12F2DBD61DB7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 280C606BDAFEC6C9B87C2F95716B6EA8 /* react-native-mapbox-gl.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/react-native-mapbox-gl/react-native-mapbox-gl-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = react_native_mapbox_gl;
+				PRODUCT_NAME = "react-native-mapbox-gl";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67B21DD9AF36670DE59427A3855AC983 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF4A83F29DBD7EBB512048892C5171C5 /* Pods-winebow.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6FA67E7D5EBBECD82478B6CD4F0C0F2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21FC810F30EDE274989427DD8AFD535E /* glog.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/glog/glog-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = glog;
+				PRODUCT_NAME = glog;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		73603669542590B20D2AB6793B7C21A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE81B408D845DB8719CED0B45F2BE83C /* Folly.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Folly/Folly-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = folly;
+				PRODUCT_NAME = Folly;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A23948F05C650AA697FE4264400ACF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AC0222420CC7B849DEFB02C3AEA78D3E /* DoubleConversion.xcconfig */;
 			buildSettings = {
@@ -2898,54 +3052,7 @@
 			};
 			name = Release;
 		};
-		1E37BF9B298AE1A023F25CC16A956504 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 280C606BDAFEC6C9B87C2F95716B6EA8 /* react-native-mapbox-gl.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/react-native-mapbox-gl/react-native-mapbox-gl-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = react_native_mapbox_gl;
-				PRODUCT_NAME = "react-native-mapbox-gl";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		1F2534E450EF5A66A03E1AF827AE032B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 926F90A5E11E85994FD99BC50BE88BAF /* yoga.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/yoga/yoga-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = yoga;
-				PRODUCT_NAME = yoga;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		2C317FB9AD0267F8CFFD8A04E914EF36 /* Release */ = {
+		82418C583507711FA50DF94C5823D2E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 21FC810F30EDE274989427DD8AFD535E /* glog.xcconfig */;
 			buildSettings = {
@@ -2969,7 +3076,54 @@
 			};
 			name = Release;
 		};
-		553022A828EE1991F07D2D73F565AEF8 /* Debug */ = {
+		B2800700E9DD9F560F6C1174D73091A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 926F90A5E11E85994FD99BC50BE88BAF /* yoga.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/yoga/yoga-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = yoga;
+				PRODUCT_NAME = yoga;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C38361C25AB698A2C1DCA5EAFD7484F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 926F90A5E11E85994FD99BC50BE88BAF /* yoga.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/yoga/yoga-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = yoga;
+				PRODUCT_NAME = yoga;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C92782E717C52E3633C9A5F211E7987A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -3023,7 +3177,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -3032,7 +3187,54 @@
 			};
 			name = Debug;
 		};
-		58CE816B060A41D32CEC095441D0E3E0 /* Release */ = {
+		DC835776DE06EB7E6D1D017796D8A4FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 280C606BDAFEC6C9B87C2F95716B6EA8 /* react-native-mapbox-gl.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/react-native-mapbox-gl/react-native-mapbox-gl-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = react_native_mapbox_gl;
+				PRODUCT_NAME = "react-native-mapbox-gl";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDD25B47543071A1951AE88999CAA64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE81B408D845DB8719CED0B45F2BE83C /* Folly.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Folly/Folly-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = folly;
+				PRODUCT_NAME = Folly;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA8C7AF90938697605468604B2A17B9F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -3084,214 +3286,30 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		6D6EB130D9D30E3BF244B53DCA7E8D35 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE81B408D845DB8719CED0B45F2BE83C /* Folly.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/Folly/Folly-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = folly;
-				PRODUCT_NAME = Folly;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		8B0BECFCCB3CBA9DAEE336CDCCA786F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21FC810F30EDE274989427DD8AFD535E /* glog.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/glog/glog-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = glog;
-				PRODUCT_NAME = glog;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		94087A7888E53C9A69B21433D4B69817 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF4A83F29DBD7EBB512048892C5171C5 /* Pods-winebow.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		AFCF3FA139323BE0298730AFC40EAFBC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 280C606BDAFEC6C9B87C2F95716B6EA8 /* react-native-mapbox-gl.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/react-native-mapbox-gl/react-native-mapbox-gl-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = react_native_mapbox_gl;
-				PRODUCT_NAME = "react-native-mapbox-gl";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		CC45BE5250A97B7583A4A175CF2F0CA9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 347AFC69945802ECC8CDF8623166C7DE /* Pods-winebow.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		D95AB96DF707800B6E92D5080054BADB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 926F90A5E11E85994FD99BC50BE88BAF /* yoga.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/yoga/yoga-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = yoga;
-				PRODUCT_NAME = yoga;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		E822C113B82865F0797B55250A2F6A60 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE81B408D845DB8719CED0B45F2BE83C /* Folly.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/Folly/Folly-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = folly;
-				PRODUCT_NAME = Folly;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		F452A981E40FF6C58166E5AECD4F6632 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC0222420CC7B849DEFB02C3AEA78D3E /* DoubleConversion.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/DoubleConversion/DoubleConversion-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = DoubleConversion;
-				PRODUCT_NAME = DoubleConversion;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0789EFABE2E8DEC752570F844D883165 /* Build configuration list for PBXNativeTarget "Folly" */ = {
+		1522CA8615F1528D77566ABC1F87A424 /* Build configuration list for PBXNativeTarget "Folly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6D6EB130D9D30E3BF244B53DCA7E8D35 /* Debug */,
-				E822C113B82865F0797B55250A2F6A60 /* Release */,
+				DDD25B47543071A1951AE88999CAA64F /* Debug */,
+				73603669542590B20D2AB6793B7C21A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		25605D4D17B50A9F42CF33ECB09E4655 /* Build configuration list for PBXNativeTarget "glog" */ = {
+		174E976B55A43CEAC180DBBD321AD201 /* Build configuration list for PBXNativeTarget "DoubleConversion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8B0BECFCCB3CBA9DAEE336CDCCA786F6 /* Debug */,
-				2C317FB9AD0267F8CFFD8A04E914EF36 /* Release */,
+				4F2F9DF207333E966639463B6B5E059A /* Debug */,
+				7A23948F05C650AA697FE4264400ACF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3299,44 +3317,44 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				553022A828EE1991F07D2D73F565AEF8 /* Debug */,
-				58CE816B060A41D32CEC095441D0E3E0 /* Release */,
+				C92782E717C52E3633C9A5F211E7987A /* Debug */,
+				EA8C7AF90938697605468604B2A17B9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3CF74872301480B489A383A301D9FF62 /* Build configuration list for PBXNativeTarget "Pods-winebow" */ = {
+		6E11A03A92FD2FC6B837B85ECEBCC26D /* Build configuration list for PBXNativeTarget "yoga" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				94087A7888E53C9A69B21433D4B69817 /* Debug */,
-				CC45BE5250A97B7583A4A175CF2F0CA9 /* Release */,
+				C38361C25AB698A2C1DCA5EAFD7484F7 /* Debug */,
+				B2800700E9DD9F560F6C1174D73091A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AEE4DA7A1554707E451687A8F738FE72 /* Build configuration list for PBXNativeTarget "yoga" */ = {
+		8EF58D0ED8F994B0F04BF1991F6626E0 /* Build configuration list for PBXNativeTarget "react-native-mapbox-gl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1F2534E450EF5A66A03E1AF827AE032B /* Debug */,
-				D95AB96DF707800B6E92D5080054BADB /* Release */,
+				60C3F591622C679195F12F2DBD61DB7B /* Debug */,
+				DC835776DE06EB7E6D1D017796D8A4FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B28197FCAA3C1C689407F2D8B716ADD8 /* Build configuration list for PBXNativeTarget "DoubleConversion" */ = {
+		DAEF3C2F06072934BC2197AE221363C1 /* Build configuration list for PBXNativeTarget "glog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F452A981E40FF6C58166E5AECD4F6632 /* Debug */,
-				1C6043B8CEE9B934C1129E3D1588BEB3 /* Release */,
+				6FA67E7D5EBBECD82478B6CD4F0C0F2B /* Debug */,
+				82418C583507711FA50DF94C5823D2E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F3209CD976CA2854D117BC589EE267B2 /* Build configuration list for PBXNativeTarget "react-native-mapbox-gl" */ = {
+		EE71C7D150BCAEACB2C43A2A39BDFA59 /* Build configuration list for PBXNativeTarget "Pods-winebow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AFCF3FA139323BE0298730AFC40EAFBC /* Debug */,
-				1E37BF9B298AE1A023F25CC16A956504 /* Release */,
+				67B21DD9AF36670DE59427A3855AC983 /* Debug */,
+				112CDF1CC597D8C10A34D92164AB7742 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

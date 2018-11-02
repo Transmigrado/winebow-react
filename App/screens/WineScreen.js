@@ -1,11 +1,16 @@
 import React, {Component} from 'react'
 import { StyleSheet, View} from 'react-native'
-import parser  from 'react-native-html-parser'
-import WineyardDetail from '../components/WineyardDetail'
+import WineYardDetail from '../components/WineYardDetail'
+import Header from '../components/Header'
+import { withNavigation } from 'react-navigation'
+import PropTypes from 'prop-types'
 
-const DomParser = parser.DOMParser
+class WineScreen extends Component {
 
-export default class WineScreen extends Component {
+  static propTypes = {
+    navigation: PropTypes.object
+ }
+
 
 
   static navigationOptions = ({ navigation }) => ({
@@ -15,17 +20,16 @@ export default class WineScreen extends Component {
 
   render() {
 
-    const { navigation } = this.props;
-    const item = navigation.getParam('item', {});
+    const { navigation } = this.props
+    const item = navigation.getParam('item', {})
 
     return <View style={styles.container}>
-            <WineyardDetail item={item} />
+          <WineYardDetail item={item} />
     </View>
   }
 }
 
-
-
+export default withNavigation(WineScreen)
 
 const styles = StyleSheet.create({
   container: {

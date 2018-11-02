@@ -31,6 +31,8 @@ class RegionDetail extends Component {
     renderHeader = ()=>{
         
         const { path, item } = this.props
+
+        console.log(item)
         return  <View style={styles.titleContent}>
                 <View style={{flexDirection:'row', paddingBottom: 10, justifyContent:'flex-end'}}>
                 <BackButton onPress={this._onBack} style={{marginTop: 10}} />
@@ -40,17 +42,17 @@ class RegionDetail extends Component {
                 <View style={{width: '100%', height:160}}>
                     <Image
                     style={[styles.itemImage,{position:'absolute', width: '100%', height:160}]}
-                    source={require('./assets/chile.jpg')}
+                    source={{uri:item.image.replace('images','')}}
                     />
                     <View style={[styles.itemContent,{width: '100%', height: 160, top:0, left:0}]}>
                     <Text style={[styles.text,styles.textBold]}>{item.name}</Text>
-                    <Text style={styles.text}>{`${item.Wineries.length} wineries`}</Text>
+                    <Text style={styles.text}>{`0 wineries`}</Text>
                     
                 </View>
                 </View>
                 <View>
                     <Breadcump path={path} style={{marginTop:10, marginBottom:10}} />
-                    <Text>{item.description.replace('<p>','').replace('</p>','').replace('&nbsp;','')}</Text>
+                    <Text>{item.description}</Text>
                     <WineyardHeader />
                 </View>
                 
@@ -64,7 +66,7 @@ class RegionDetail extends Component {
         return <View style={styles.container}>
                 <FlatList
                     ListHeaderComponent = {this.renderHeader()}
-                    data={item.Wineries}
+                    data={[]}
                     renderItem={({item, index}) => this.renderItem({item, index})}
                     numColumns={1}
                     style={{marginBottom:160}}

@@ -4,10 +4,11 @@ import * as module from '../modules/store'
 import Detail from '../components/Detail'
 
 const mapStateToProps = (state, ownProps) => ({
-    regions: module.getRegions(state, ownProps.path[1])
+    regions: module.getRegionsFilter(state, ownProps.item),
+    wineries: module.getWineries(state)
 })
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
     onMount: () => {
         
     },

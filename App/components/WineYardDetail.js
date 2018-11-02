@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
-import { StyleSheet, View, FlatList, Platform, Dimensions, TouchableOpacity, Image, Text} from 'react-native'
+import { StyleSheet, View, FlatList, Text} from 'react-native'
 import * as store from '../modules/store'
 import Header from '../components/Header'
 import Pager from '../components/Pager'
@@ -39,8 +39,7 @@ componentDidMount(){
 
   Object.keys(doc.childNodes).forEach( key => {
     const obj = doc.childNodes[key]
-    
-    console.log(obj)
+  
 
     if(typeof obj === "object" && obj !== null){
         const { nodeName } = obj
@@ -52,7 +51,7 @@ componentDidMount(){
     }
   })
 
-  console.log(elements)
+
  
 }
 

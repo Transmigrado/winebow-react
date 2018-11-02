@@ -20,21 +20,20 @@ export default class List extends Component {
     }
     _onPress = index =>{
         const country = this.props.countries[index]
-        this.props.onSelect(1, country.name)
+        this.props.onSelect(1, country.name, country)
     }
     renderItem = ({item, index}) => {
         
-        const { name, slug, count } = item
+        const { name, slug, count, image } = item
         const width =  (Device.isTablet) ? 200 : Math.floor((Dimensions.get('window').width / 2))
         const itemStyle = (Device.isTablet) ? {} : ((index % 2 == 0)? {left:20} : {left:5})
 
-        
-       
        return  <TouchableOpacity key={slug} onPress={()=>{this._onPress(index)}} style={[{width: width, height: width},styles.item, itemStyle]}>
-                   <Image
+                   {image !== undefined && <Image
                 style={[styles.itemImage,{width: width - 25, height: width - 25}]}
-                source={require('./assets/chile.jpg')}
-                />
+                source={{uri: image.replace('images/','')}}
+                cache="only-if-cached"
+                />}
                 <View style={[styles.itemContent,{width: width - 25, height: width - 25}]}>
                     <Text style={[styles.text,styles.textBold]}>{name}</Text>
                     <Text style={styles.text}>{`${count} wineries`}</Text>

@@ -31,7 +31,7 @@ class WineyardItem extends Component {
                 <Image
                         resizeMode="contain"
                         style={{width: 100, height: 100, borderRadius: 6, }}
-                        source={{uri:item.logo}}
+                        source={{uri:item.image}}
                         />
             </Card>
             <View style={{marginTop: 10, marginRight: 100}}>

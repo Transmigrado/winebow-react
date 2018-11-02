@@ -9,19 +9,18 @@ export default class Detail extends Component {
     static propTypes = {
        onSelect: PropTypes.func,
        path: PropTypes.array,
-       regions: PropTypes.object,
+       regions: PropTypes.array,
+       wineries: PropTypes.array,
     }
 
     static defaultProps = {
-        regions: {
-            regions : [],
-            wineries: []
-        }
+        regions: [],
+        wineries: []
     }
     
     _onPress = index =>{
         
-        this.props.onSelect(2, this.props.regions.regions[index].name, this.props.regions.regions[index])
+        this.props.onSelect(2, this.props.regions[index].name, this.props.regions[index])
     }
     
     _onBack = ()=>{
@@ -40,18 +39,19 @@ export default class Detail extends Component {
        return  <TouchableOpacity onPress={()=>{this._onPress(index)}} style={[{width: width, height: 130},styles.item]}>
                    <Image
                 style={[styles.itemImage,{width: '100%', height: 120, top:5, left:20 }]}
-                source={require('./assets/chile.jpg')}
+                source={{uri:item.image.replace('images/','')}}
+                cache="only-if-cached"
                 />
                  <View style={[styles.itemContent,{width: '100%', height: 120, top:5, left:0}]}>
                     <Text style={[styles.text,styles.textBold]}>{item.name}</Text>
-                    <Text style={styles.text}>{`${item.Wineries.length} wineries`}</Text>
+                    <Text style={styles.text}>{`0 wineries`}</Text>
                 </View>
            </TouchableOpacity>
     }
 
     renderHeader = index =>{
 
-        const { path } = this.props
+        const { item } = this.props
 
         if(index === 1){
             return  <View style={styles.titleContent}>
@@ -60,22 +60,23 @@ export default class Detail extends Component {
            </View>
         }
         return  <View style={[styles.titleContent, { flexDirection:'row', justifyContent: 'space-between'}]}>
-                <Text style={styles.title}>{path[1]}</Text>
+                <Text style={styles.title}>{item.name}</Text>
                 <BackButton onPress={this._onBack} style={{marginTop: 10}} />
        </View>
     }
 
     render() {
         
-        const { regions } = this.props
+        const { regions, wineries } = this.props
+
 
         return <View style={styles.container}>
                 <SectionList
   renderItem={({item, index, section}) => this.renderItem({item, index, section})}
   renderSectionHeader={({section:{index}}) => this.renderHeader(index)}
   sections={[
-    {index:0, data: regions.regions},
-    {index:1, data: regions.wineries},
+    {index:0, data: regions},
+    {index:1, data: wineries},
   ]}
   keyExtractor={(item, index) => item + index}
   style={{marginBottom: 170}}

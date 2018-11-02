@@ -7,6 +7,11 @@ import Header from '../components/Header'
 import ModalContainer from '../containers/ModalContainer'
 import Sidebar from '../components/Sidebar'
 import WineScreen from '../screens/WineScreen'
+import Device from 'react-native-device-detection'
+import { connect } from 'react-redux'
+import { compose } from 'redux'
+import * as store from '../modules/store'
+
 
 Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB01GxzIm44_FlvyFQ')
 
@@ -16,19 +21,34 @@ class MainScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
     gesturesEnabled: true,
     header: <Header navigation={navigation} />
-})
-
+  })
 
   static propTypes = {
-    navigation: PropTypes.object
- }
+    navigation: PropTypes.object,
+    countries: PropTypes.array,
+    wineries: PropTypes.array,
+  }
+  state= {
+    zoomLevel:1.4
+  }
 
-  renderAnnotations () {
+  componentDidMount(){
+    const { onMount } = this.props
+    onMount()
+}
+
+onRegionDidChange = regionFeature=>{
+    this.setState({zoomLevel: regionFeature.properties.zoomLevel})
+}
+
+  renderAnnotations = winery => {
+
+    const wineryId = 'winery' + winery.id
     return (
       <Mapbox.PointAnnotation
-        key='pointAnnotation'
-        id='pointAnnotation'
-        coordinate={[11.254, 43.772]}>
+        key={wineryId}
+        id={wineryId}
+        coordinate={[parseFloat(winery.longitude), parseFloat(winery.latitude)]}>
 
         <View style={styles.annotationContainer}>
           <View style={styles.annotationFill} />
@@ -38,30 +58,79 @@ class MainScreen extends Component {
     )
   }
 
+  renderCountryLayer = country =>{
+
+    if(country.geojson == null){
+      return null
+    }
+
+    const style = {
+      fillAntialias: true,
+      fillColor: country.geojson.features[0].properties.fill,
+      fillOpacity: country.geojson.features[0].properties['fill-opacity'],
+      fillOutlineColor: 'rgba(136, 149, 107, 0.84)',
+    }
+
+    const fillId = 'winebow'+country.id.toString()
+    
+    return <Mapbox.ShapeSource key={fillId} id={fillId} shape={country.geojson.features[0]}>
+    <Mapbox.FillLayer
+      id={fillId}
+      style={style}
+    />
+  </Mapbox.ShapeSource>
+ 
+
+  }
+
   render() {
+
+    const { countries, regions, wineries } = this.props
+    const { zoomLevel } = this.state
+
     return <View style={styles.container}>
+      
          <Mapbox.MapView
-            zoomLevel={1.4}
+          onStyleLoad={ ref => this.map = ref } 
+            zoomLevel={zoomLevel}
             centerCoordinate={[-30,0]}
             styleURL='asset://style.json'
+            onRegionDidChange={this.onRegionDidChange}
             style={styles.container}>
            
-             <Mapbox.ShapeSource id="smileyFaceSource" shape={require('../../App/geosjon.json')}>
-            <Mapbox.FillLayer
-              id="smileyFaceFill"
-              style={layerStyles.smileyFace}
-            />
-          </Mapbox.ShapeSource>
+           {zoomLevel < 5 && countries.map(this.renderCountryLayer)}
+           {zoomLevel >= 5 && regions.map(this.renderCountryLayer)}
+           {zoomLevel >= 6 && wineries.map(this.renderAnnotations)}
+
         </Mapbox.MapView>
         <ModalContainer />
-        <Sidebar>
+        {Device.isTablet && <Sidebar>
           <WineScreen />
-        </Sidebar>
+        </Sidebar>}
     </View>
   }
 }
 
-export default withNavigation(MainScreen)
+
+const mapStateToProps = (state) => ({
+    countries: store.getCountries(state),
+    regions: store.getRegions(state),
+    wineries: store.getWineries(state)
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    onMount: () => {
+      store.fetchCountriesThunk(dispatch)
+      store.fetchRegionsThunk(dispatch)
+      store.fetchWineriesThunk(dispatch)
+    }
+})
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+  withNavigation
+)(MainScreen)
+
 
 const styles = StyleSheet.create({
   container: {
