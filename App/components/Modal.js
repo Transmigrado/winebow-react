@@ -3,7 +3,7 @@ import { StyleSheet, View, Animated, Dimensions } from 'react-native'
 import Draggable from './Draggable'
 import List from './List'
 import DetailContainer from '../containers/DetailContainer'
-import RegionDetail from './RegionDetail'
+import RegionDetailContainer from '../containers/RegionDetailContainer'
 import Trip from './Trip'
 import PropTypes from 'prop-types'
 import Device from 'react-native-device-detection'
@@ -68,14 +68,14 @@ export default class Modal extends Component {
         const { mode, y, expanded, item } = this.state
         const widthScreen = Dimensions.get('window').width
         const style = ( Device.isTablet) ? { marginLeft: 20, marginRigth: 20, width: widthScreen - 40} : {width: widthScreen}
-     console.log('item',item)
+     
         return <React.Fragment>
            
             <Animated.View style={[styles.content, style,{ top : y }]}>
                 <Trip expanded={expanded} style={{}} />
                 {mode == 0 && <List countries={countries} onSelect={this.onSelect} />}
                 {mode == 1 && <DetailContainer item={item} path={path} onSelect={this.onSelect} />}
-                {mode == 2 && <RegionDetail item={item} path={path} onSelect={this.onSelect} />}
+                {mode == 2 && <RegionDetailContainer item={item} path={path} onSelect={this.onSelect} />}
             </Animated.View>
             <Draggable 
                 onDraggedEnd={this._onDraggedEnd} 

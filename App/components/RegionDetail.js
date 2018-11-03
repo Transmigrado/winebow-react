@@ -14,7 +14,8 @@ class RegionDetail extends Component {
        onSelect: PropTypes.func,
        navigation: PropTypes.object,
        path: PropTypes.array,
-       item: PropTypes.object
+       item: PropTypes.object,
+       wineries: PropTypes.array
     }
     _onPress = ()=>{
        this.props.navigation.navigate('WineDetail')
@@ -32,7 +33,6 @@ class RegionDetail extends Component {
         
         const { path, item } = this.props
 
-        console.log(item)
         return  <View style={styles.titleContent}>
                 <View style={{flexDirection:'row', paddingBottom: 10, justifyContent:'flex-end'}}>
                 <BackButton onPress={this._onBack} style={{marginTop: 10}} />
@@ -60,13 +60,13 @@ class RegionDetail extends Component {
     }
 
     render() {
-        const {  item } = this.props
+        const {  wineries } = this.props
      
 
         return <View style={styles.container}>
                 <FlatList
                     ListHeaderComponent = {this.renderHeader()}
-                    data={[]}
+                    data={wineries}
                     renderItem={({item, index}) => this.renderItem({item, index})}
                     numColumns={1}
                     style={{marginBottom:160}}

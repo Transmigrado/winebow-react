@@ -2,6 +2,7 @@ import { createStore } from 'redux'
 import loadCountries from '../api/ApiCountry'
 import loadRegions from '../api/ApiRegion'
 import loadWineries from '../api/ApiWineries'
+import loadWines from '../api/ApiWines'
 
 const ACTION = {
   LOAD : 'store.loaded',
@@ -9,8 +10,24 @@ const ACTION = {
   FETCH: 'store.fetch',
   FETCH_REGION: 'store.fetch.region',
   FETCH_WINERY: 'store.fetch.winery',
+  FETCH_WINES: 'store.fetch.wines',
   SELECT : 'store.select'
 }
+
+export const fetchWinesThunk = dispatch => {
+  function success(response){
+    const { data } = response
+    dispatch({type:ACTION.FETCH_WINES, data})
+  }
+
+  function error(error){
+    console.log(error)
+  }
+  loadWines()
+  .then(success)
+  .catch(error)
+}
+
 export const fetchCountriesThunk = dispatch => {
 
   function success(response){
@@ -71,7 +88,8 @@ const INITIAL_STATE = {
   path: ['World'],
   countries:[],
   regions:[],
-  wineries: []
+  wineries: [],
+  wines:[]
 }
 
 reducer = (state = INITIAL_STATE, action) => {
@@ -84,6 +102,8 @@ reducer = (state = INITIAL_STATE, action) => {
       return {...state, regions:action.data}
     case ACTION.FETCH_WINERY:
       return {...state, wineries:action.data}
+    case ACTION.FETCH_WINES:
+      return {...state, wines:action.data}
     case ACTION.FETCH:
       return {...state, countries:action.data}
     case ACTION.LOAD:
@@ -113,9 +133,13 @@ export const getPath = state => state.path
 
 export const getRegions = state => state.regions
 
+
 export const getRegionsFilter =(state, country) => state.regions.filter(region => {
   return region.country_id === country.id
 })
+
+export const getWines = state => state.wines
+
 export const store = createStore(
                   reducer, 
                   [ ],

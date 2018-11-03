@@ -1,40 +1,42 @@
-import { View, Text, Image} from 'react-native';
-import React, {Component} from 'react';
-import { IndicatorViewPager, PagerDotIndicator} from 'rn-viewpager';
+import { View, Text, Image} from 'react-native'
+import React, {Component} from 'react'
+import { IndicatorViewPager, PagerDotIndicator} from 'rn-viewpager'
+import PropTypes from 'prop-types'
 
 export default class Pager extends Component {
+
+    static propTypes = {
+        images: PropTypes.array
+     }
+
+     renderImage = image => {
+         return <View style={{backgroundColor:'white'}}>
+         <Image
+style={{width: '100%', height: '100%'}}
+source={{uri:image.url}}
+/>  
+    </View>
+     }
+
     render() {
+
+        const { images } = this.props
+
         return <View style={{flex:1, height:200}}>
                 <IndicatorViewPager
                     style={{height:200}}
-                    indicator={this._renderDotIndicator()}
+                    indicator={this._renderDotIndicator(images.length)}
                 >
-                    <View style={{backgroundColor:'cadetblue'}}>
-                         <Image
-                style={{width: '100%', height: '100%'}}
-                source={require('./assets/chile.jpg')}
-                />  
-                    </View>
-                    <View style={{backgroundColor:'cornflowerblue'}}>
-                    <Image
-                style={{width: '100%', height: '100%'}}
-                source={require('./assets/chile.jpg')}
-                />  
-                    </View>
-                    <View style={{backgroundColor:'#1AA094'}}>
-                    <Image
-                style={{width: '100%', height: '100%'}}
-                source={require('./assets/chile.jpg')}
-                />  
-                    </View>
+                    {images.map(this.renderImage)}
+                    
                 </IndicatorViewPager>
 
             
             </View>
     }
 
-    _renderDotIndicator() {
-        return <PagerDotIndicator pageCount={3} />;
+    _renderDotIndicator(count) {
+        return <PagerDotIndicator pageCount={count} />
     }
     
     

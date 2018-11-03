@@ -16,15 +16,14 @@ export default class WineItem extends Component {
 
     render() {
         const { item } = this.props
-
         return <TouchableOpacity onPress={this._onPress} style={styles.container}>
             <View style={styles.content}>
                     <Card style={{width:'100%',height:200}}>
-                <Image
+                {item.image !== undefined && <Image
                         resizeMode="contain"
                         style={{width: '100%', height: 200, borderRadius: 6, }}
-                        source={{uri:item.logo}}
-                        />
+                        source={{uri:item.image}}
+                        />}
             </Card>
             <View style={{paddingHorizontal: 20, marginTop: 20}}>
                 <Text style={{ color: '#AB3F66', fontWeight:'bold'}}>{item.name}</Text>

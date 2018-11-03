@@ -71,7 +71,7 @@ class Header extends React.Component {
                         <Image source={require('./assets/logo.png')} />
                     </View>
                     <View style={styles.right}>
-                        { this.renderRight(this.props.right, this.props.onPressRight)}
+                        { this.renderRight(this.props.onPressRight)}
                     </View>
                 </View>
             </SafeAreaView>

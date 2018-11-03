@@ -17,7 +17,9 @@ class WineyardDetail extends Component {
 
   static propTypes = {
     navigation: PropTypes.object,
-    path: PropTypes.array
+    path: PropTypes.array,
+    item: PropTypes.object,
+    wines: PropTypes.array,
  }
 
   static navigationOptions = ({ navigation }) => ({
@@ -30,8 +32,7 @@ state = {
 }
 
 componentDidMount(){
-  const { navigation } = this.props
-  const item = navigation.getParam('item', {})
+  const { item } = this.props
   const doc = new DomParser().parseFromString(item.description,'text/html')
 
   const elements = []
@@ -62,13 +63,13 @@ renderItem = ({item, index}) => {
 
 renderHeader = ()=>{
   
-  const { navigation, path } = this.props
-  const item = navigation.getParam('item', {})
+  const { path, item } = this.props
+
   const { description } = this.state
 
  
   return  <View>
-       <Pager />
+       <Pager images={item.images} />
     <Breadcump path={path} style={{margin:10}} />
         <WineyardItem bigTitle={true} item={item} />
         <View style={{paddingHorizontal: 20, marginTop: 10}}>
@@ -81,15 +82,13 @@ renderHeader = ()=>{
 
   render() {
 
-    const { navigation } = this.props;
-    const item = navigation.getParam('item', {});
-    
+    const { wines } = this.props
 
     return <View style={styles.container}>
      
         <FlatList
             ListHeaderComponent = {this.renderHeader()}
-            data={item.Wines}
+            data={wines}
             renderItem={({item, index}) => this.renderItem({item, index})}
             numColumns={2}
             />

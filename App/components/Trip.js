@@ -21,8 +21,8 @@ export default class Trip extends Component {
 
 
     render() {
-        const { isShadowless, expanded } = this.props
-        const borderStyle = isShadowless ? defaultStyles.shadowlessCard : defaultStyles.card
+        const { expanded } = this.props
+        const borderStyle =defaultStyles.card
         return <View style={[defaultStyles.container, this.props.containerStyle]}>
             <View style={[defaultStyles.card, borderStyle, this.props.cardStyle]}>
                 <Text style={defaultStyles.title}>Regions</Text>
@@ -37,34 +37,17 @@ export default class Trip extends Component {
 
 const defaultStyles = StyleSheet.create({
     container: {
-        flex: 1,
         paddingHorizontal: 20,
-        paddingTop: 10,
-        paddingBottom: 15,
-        alignItems:'center'
+        paddingVertical: 8,
+        alignItems:'center',
+        borderBottomColor:'#CCC',
+        borderBottomWidth: StyleSheet.hairlineWidth
     },
     card: {
         width: 152,
         height: 30,
-        borderTopLeftRadius: 6,
-        borderTopRightRadius: 6 ,
-        shadowColor: '#010101',
-        shadowRadius: 6,
-        shadowOpacity: 0.1,
-        shadowOffset: { width: 0, height: -5 },
-        elevation: 5,
-        backgroundColor: 'white',
-        marginTop: -40,
         flexDirection:"row",
         justifyContent:"space-between"
-    },
-    shadowlessCard: {
-        shadowRadius: 0,
-        shadowOpacity: 0,
-        shadowOffset: { },
-        elevation: 0,
-        borderColor: '#DEDEDE',
-        borderWidth: 1
     },
     title:{
         fontSize: 16,

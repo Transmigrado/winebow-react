@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, Image, SectionList, TouchableOpacity, Dimensions } from 'react-native'
 import PropTypes from 'prop-types'
 import WineyardItem from './Item/WineyardItem'
-import BackButton from '../components/BackButton'
+
 export default class Detail extends Component {
     
 
@@ -61,7 +61,7 @@ export default class Detail extends Component {
         }
         return  <View style={[styles.titleContent, { flexDirection:'row', justifyContent: 'space-between'}]}>
                 <Text style={styles.title}>{item.name}</Text>
-                <BackButton onPress={this._onBack} style={{marginTop: 10}} />
+             
        </View>
     }
 

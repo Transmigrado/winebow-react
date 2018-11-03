@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { StyleSheet, View} from 'react-native'
-import WineYardDetail from '../components/WineYardDetail'
+import WineYardDetailContainer from '../containers/WineYardDetailContainer'
 import Header from '../components/Header'
 import { withNavigation } from 'react-navigation'
 import PropTypes from 'prop-types'
@@ -20,11 +20,11 @@ class WineScreen extends Component {
 
   render() {
 
-    const { navigation } = this.props
+    const { navigation } = this.props   
     const item = navigation.getParam('item', {})
 
     return <View style={styles.container}>
-          <WineYardDetail item={item} />
+          <WineYardDetailContainer item={item} />
     </View>
   }
 }
