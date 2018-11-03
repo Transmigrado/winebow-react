@@ -13,15 +13,15 @@ class RegionDetail extends Component {
     static propTypes = {
        onSelect: PropTypes.func,
        navigation: PropTypes.object,
-       item: PropTypes.object,
-       wineries: PropTypes.array
+       item: PropTypes.object
     }
     _onPress = ()=>{
        this.props.navigation.navigate('WineDetail')
     }
 
     _onBack = ()=>{
-        this.props.onSelect(1, null, this.props.item)
+        const { item , onSelect} = this.props
+        onSelect(1, item)
     }
 
     renderItem = ({item, index}) => {
@@ -58,13 +58,13 @@ class RegionDetail extends Component {
     }
 
     render() {
-        const {  wineries } = this.props
+        const {  item } = this.props
      
 
         return <View style={styles.container}>
                 <FlatList
                     ListHeaderComponent = {this.renderHeader()}
-                    data={wineries}
+                    data={item.wineries}
                     renderItem={({item, index}) => this.renderItem({item, index})}
                     numColumns={1}
                     style={{marginBottom:160}}

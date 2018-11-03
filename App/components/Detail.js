@@ -9,7 +9,7 @@ export default class Detail extends Component {
     static propTypes = {
        onSelect: PropTypes.func,
        regions: PropTypes.array,
-       wineries: PropTypes.array,
+       item:PropTypes.object
     }
 
     static defaultProps = {
@@ -19,7 +19,7 @@ export default class Detail extends Component {
     
     _onPress = index =>{
         
-        this.props.onSelect(2, this.props.regions[index].name, this.props.regions[index])
+        this.props.onSelect(2, this.props.regions[index])
     }
     
     _onBack = ()=>{
@@ -68,8 +68,9 @@ export default class Detail extends Component {
 
     render() {
         
-        const { regions, wineries } = this.props
+        const { regions, item } = this.props
 
+      
 
         return <View style={styles.container}>
                 <SectionList
@@ -77,7 +78,7 @@ export default class Detail extends Component {
   renderSectionHeader={({section:{index}}) => this.renderHeader(index)}
   sections={[
     {index:0, data: regions},
-    {index:1, data: wineries},
+    {index:1, data: item.wineries},
   ]}
   keyExtractor={(item, index) => item + index}
   style={{marginBottom: 170}}

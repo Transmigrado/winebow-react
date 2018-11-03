@@ -20,7 +20,7 @@ export default class List extends Component {
     }
     _onPress = index =>{
         const country = this.props.countries[index]
-        this.props.onSelect(1, country.name, country)
+        this.props.onSelect(1, country)
     }
     renderItem = ({item, index}) => {
         

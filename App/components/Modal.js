@@ -27,9 +27,17 @@ export default class Modal extends Component {
         onMount()
     }
 
-    onSelect = (mode, path, item) =>{
+    onSelect = (mode, item) =>{
+        if(mode === 1){
+            this.setState({ mode, itemCountry: item })
+        }else if(mode === 2){
+            this.setState({ mode, itemWineyard: item })
+        }else{
+            this.setState({ mode})
+        }
 
-        this.setState({ mode, item })
+
+        
     }
 
     onBack = mode => {
@@ -60,8 +68,8 @@ export default class Modal extends Component {
 
     render() {
 
-        const { countries, path  } = this.props
-        const { mode, y, expanded, item } = this.state
+        const { countries  } = this.props
+        const { mode, y, expanded, itemCountry, itemWineyard } = this.state
         const widthScreen = Dimensions.get('window').width
         const style = ( Device.isTablet) ? { marginLeft: 20, marginRigth: 20, width: widthScreen - 40} : {width: widthScreen}
      
@@ -71,8 +79,8 @@ export default class Modal extends Component {
          
                 <Trip mode={mode} onPress={this.onBack} expanded={expanded} style={{}} />
                 {mode == 0 && <List countries={countries} onSelect={this.onSelect} />}
-                {mode == 1 && <DetailContainer item={item} onSelect={this.onSelect} />}
-                {mode == 2 && <RegionDetailContainer item={item} onSelect={this.onSelect} />}
+                {mode == 1 && <DetailContainer item={itemCountry} onSelect={this.onSelect} />}
+                {mode == 2 && <RegionDetailContainer item={itemWineyard} onSelect={this.onSelect} />}
             </Animated.View>
             <Draggable 
                 onDraggedEnd={this._onDraggedEnd} 

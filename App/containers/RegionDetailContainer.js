@@ -4,7 +4,7 @@ import * as module from '../modules/store'
 import RegionDetail from '../components/RegionDetail'
 
 const mapStateToProps = (state, ownProps) => ({
-    wineries: module.getWineries(state)
+   
 })
 
 const mapDispatchToProps = dispatch => ({
