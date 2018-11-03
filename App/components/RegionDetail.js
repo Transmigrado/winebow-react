@@ -5,7 +5,7 @@ import { withNavigation} from 'react-navigation'
 import WineyardItem from './Item/WineyardItem'
 import Breadcump from './Breadcump'
 import WineyardHeader from '../components/Item/WineyardHeader'
-import BackButton from '../components/BackButton'
+
 
 class RegionDetail extends Component {
     
@@ -13,7 +13,6 @@ class RegionDetail extends Component {
     static propTypes = {
        onSelect: PropTypes.func,
        navigation: PropTypes.object,
-       path: PropTypes.array,
        item: PropTypes.object,
        wineries: PropTypes.array
     }
@@ -31,13 +30,12 @@ class RegionDetail extends Component {
 
     renderHeader = ()=>{
         
-        const { path, item } = this.props
+        const { item } = this.props
+
+        const path = ['World',item.country, item.name]
 
         return  <View style={styles.titleContent}>
-                <View style={{flexDirection:'row', paddingBottom: 10, justifyContent:'flex-end'}}>
-                <BackButton onPress={this._onBack} style={{marginTop: 10}} />
-
-                </View>
+                
                
                 <View style={{width: '100%', height:160}}>
                     <Image
@@ -82,7 +80,6 @@ const styles = StyleSheet.create({
         flex: 1,
         width:'100%',
         height:'100%',
-        position:'absolute',
         backgroundColor:'transparent'
     },
     content: {

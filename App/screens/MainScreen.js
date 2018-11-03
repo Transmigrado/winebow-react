@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { StyleSheet, View, Linking} from 'react-native'
+import { StyleSheet, View, Linking, Image} from 'react-native'
 import Mapbox from '@mapbox/react-native-mapbox-gl'
 import { withNavigation } from 'react-navigation'
 import PropTypes from 'prop-types'
@@ -21,7 +21,6 @@ class MainScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
     gesturesEnabled: true,
     header: <Header navigation={navigation} onPressRight={()=>{
-      console.log('ON')
       Linking.openURL('https://api.winebow.us/storage/IpAr9HS9HvGTPYDdYINcA9KtlzpnjqaHG7MPtlYd.pdf')
     }} />
   })
@@ -54,9 +53,9 @@ onRegionDidChange = regionFeature=>{
         coordinate={[parseFloat(winery.longitude), parseFloat(winery.latitude)]}>
 
         <View style={styles.annotationContainer}>
-          <View style={styles.annotationFill} />
+          <Image source={require('../components/assets/pin.png')} />
         </View>
-        <Mapbox.Callout title='Look! An annotation!' />
+       
       </Mapbox.PointAnnotation>
     )
   }
@@ -124,9 +123,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     onMount: () => {
       store.fetchCountriesThunk(dispatch)
-      store.fetchRegionsThunk(dispatch)
-      store.fetchWineriesThunk(dispatch)
-      store.fetchWinesThunk(dispatch)
+      
     }
 })
 

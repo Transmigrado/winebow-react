@@ -8,7 +8,6 @@ export default class Detail extends Component {
 
     static propTypes = {
        onSelect: PropTypes.func,
-       path: PropTypes.array,
        regions: PropTypes.array,
        wineries: PropTypes.array,
     }
@@ -35,6 +34,8 @@ export default class Detail extends Component {
         if(section.index === 1){
             return <WineyardItem item={item} />
         }
+
+        const wineryCount = item.wineryCount || 0
        
        return  <TouchableOpacity onPress={()=>{this._onPress(index)}} style={[{width: width, height: 130},styles.item]}>
                    <Image
@@ -44,7 +45,7 @@ export default class Detail extends Component {
                 />
                  <View style={[styles.itemContent,{width: '100%', height: 120, top:5, left:0}]}>
                     <Text style={[styles.text,styles.textBold]}>{item.name}</Text>
-                    <Text style={styles.text}>{`0 wineries`}</Text>
+                    <Text style={styles.text}>{`${wineryCount} wineries`}</Text>
                 </View>
            </TouchableOpacity>
     }
@@ -90,7 +91,6 @@ const styles = StyleSheet.create({
         flex: 1,
         width:'100%',
         height:'100%',
-        position:'absolute',
         backgroundColor:'transparent'
     },
     content: {

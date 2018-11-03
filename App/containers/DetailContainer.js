@@ -11,9 +11,6 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
     onMount: () => {
         
-    },
-    addPath: path => {
-       
     }
 })
 

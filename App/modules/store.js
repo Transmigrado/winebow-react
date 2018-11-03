@@ -11,7 +11,6 @@ const ACTION = {
   FETCH_REGION: 'store.fetch.region',
   FETCH_WINERY: 'store.fetch.winery',
   FETCH_WINES: 'store.fetch.wines',
-  SELECT : 'store.select'
 }
 
 export const fetchWinesThunk = dispatch => {
@@ -33,6 +32,8 @@ export const fetchCountriesThunk = dispatch => {
   function success(response){
     const { data } = response
     dispatch({type:ACTION.FETCH, data})
+    fetchRegionsThunk(dispatch)
+    
   }
 
   function error(error){
@@ -48,6 +49,8 @@ export const fetchRegionsThunk = dispatch => {
   function success(response){
     const { data } = response
     dispatch({type:ACTION.FETCH_REGION, data})
+    fetchWineriesThunk(dispatch)
+
   }
 
   function error(error){
@@ -63,6 +66,7 @@ export const fetchWineriesThunk = dispatch => {
   function success(response){
     const { data } = response
     dispatch({type:ACTION.FETCH_WINERY, data})
+    fetchWinesThunk(dispatch)
   }
 
   function error(error){
@@ -79,29 +83,73 @@ export const fetchDataThunk = dispatch => {
   dispatch({type:ACTION.LOAD, data})
 }
 
-export const addPath = (dispatch, path) => {
-  dispatch({type:ACTION.SELECT, path})
-}
-
 const INITIAL_STATE = {
   data : [],
-  path: ['World'],
   countries:[],
   regions:[],
   wineries: [],
   wines:[]
 }
 
+const getCountry = (state, region) =>{
+  let countryName = ""
+  state.countries.forEach(country => {
+    if(country.id === region.country_id){
+      countryName = country.name
+    }
+  })
+
+  return countryName
+}
+
+const getWineryCount = (wineries, region) => {
+
+  let count = 0
+  wineries.forEach( winery => {
+    if(winery.region_id === region.id){
+      count++
+    }
+  })
+  return count
+}
+
+const getWineryCountForCountry = (regions, country) => {
+  let count = 0
+  regions.forEach( region => {
+    if(region.country_id === country.id){
+      count += region.wineryCount
+    }
+  })
+  return count
+}
+
 reducer = (state = INITIAL_STATE, action) => {
+  
+  let regions = null
+
   switch (action.type) {
-    case ACTION.SELECT:
-      const path = state.path
-      path.push(action.path)
-      return {...state, path}
     case ACTION.FETCH_REGION:
+     
+      regions = action.data.map(region => {
+        return {...region, country: getCountry(state, region)}
+      })
+
       return {...state, regions:action.data}
     case ACTION.FETCH_WINERY:
-      return {...state, wineries:action.data}
+      const wineries = action.data
+      
+      regions = state.regions.map(region => {
+        return {...region, wineryCount: getWineryCount(wineries, region)}
+      })
+
+      countries = state.countries.map(country => {
+        return {...country, wineryCount: getWineryCountForCountry(regions, country)}
+      })
+
+      console.log(countries)
+  
+
+      return {...state, wineries, regions, countries}
     case ACTION.FETCH_WINES:
       return {...state, wines:action.data}
     case ACTION.FETCH:
@@ -129,7 +177,6 @@ export const getWineries = state => {
  return []
 }
 
-export const getPath = state => state.path
 
 export const getRegions = state => state.regions
 
@@ -138,7 +185,9 @@ export const getRegionsFilter =(state, country) => state.regions.filter(region =
   return region.country_id === country.id
 })
 
-export const getWines = state => state.wines
+export const getWines = (state, item) => state.wines.filter(wine => {
+  return wine.winery_id === item.id
+})
 
 export const store = createStore(
                   reducer, 

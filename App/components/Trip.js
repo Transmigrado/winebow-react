@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text,Image } from 'react-native'
+import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
 import { PropTypes } from 'prop-types'
 
 export default class Trip extends Component {
@@ -9,6 +9,8 @@ export default class Trip extends Component {
         cardStyle: PropTypes.any,
         isShadowless: PropTypes.bool,
         expanded: PropTypes.bool,
+        mode: PropTypes.number,
+        onPress: PropTypes.func
     }
 
     renderUpArrow = ()=>{
@@ -21,9 +23,10 @@ export default class Trip extends Component {
 
 
     render() {
-        const { expanded } = this.props
+        const { expanded , mode, onPress} = this.props
         const borderStyle =defaultStyles.card
         return <View style={[defaultStyles.container, this.props.containerStyle]}>
+                 
             <View style={[defaultStyles.card, borderStyle, this.props.cardStyle]}>
                 <Text style={defaultStyles.title}>Regions</Text>
                 <View style={{width: 20, height: 30, justifyContent:'center'}}>
@@ -31,6 +34,11 @@ export default class Trip extends Component {
                     {!expanded && this.renderUpArrow()}
                 </View>
             </View>
+            {mode > 0 && <TouchableOpacity onPress={()=>{
+                       onPress(mode - 1)
+                   }} style={{position:'absolute', zIndex:99999, left:20, top: 15 }}>
+                    <Image source={require('./assets/back.png')} style={{tintColor:"#9C093D"}} />
+                </TouchableOpacity>}
         </View>
     }
 }

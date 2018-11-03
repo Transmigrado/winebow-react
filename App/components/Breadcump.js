@@ -10,11 +10,15 @@ export default class BreadCump extends Component {
         path: PropTypes.array,
         style: PropTypes.object
     }
+
+    static defaultProps = {
+        path:[]
+    }
     
     renderPath = (text, index) => {
         const isLast = index >= this.props.path.length - 1
         const style = (isLast) ? styles.lastText :  styles.text
-        return <View style={styles.path} key={text}>
+        return <View key={index} style={styles.path} key={text}>
              <Text style={style} >{text}</Text>
              {!isLast &&<Text style={styles.arrow}>></Text>}
         </View>

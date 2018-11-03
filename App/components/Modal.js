@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Animated, Dimensions } from 'react-native'
+import { StyleSheet, TouchableOpacity, Image, Animated, Dimensions } from 'react-native'
 import Draggable from './Draggable'
 import List from './List'
 import DetailContainer from '../containers/DetailContainer'
@@ -13,14 +13,12 @@ export default class Modal extends Component {
    
     static propTypes = {
        onMount : PropTypes.func,
-       addPath : PropTypes.func,
-       path: PropTypes.array,
        countries: PropTypes.array
     }
 
     state = {
         mode: 0,
-        y: new Animated.Value(Dimensions.get('window').height - 80),
+        y: new Animated.Value(Dimensions.get('window').height - 120),
         animated: false
     }
 
@@ -31,13 +29,11 @@ export default class Modal extends Component {
 
     onSelect = (mode, path, item) =>{
 
-        if(path != null){
-            const { addPath } = this.props
-            addPath(path)
-    
-        }
-        
         this.setState({ mode, item })
+    }
+
+    onBack = mode => {
+        this.setState({ mode })
     }
 
     _onDragged = y =>{
@@ -56,7 +52,7 @@ export default class Modal extends Component {
         Animated.timing(                  
             this.state.y,            
             {
-              toValue: (expanded)? ((Device.isTablet)? Dimensions.get('window').height - 560: 100) : Dimensions.get('window').height - 80,                   
+              toValue: (expanded)? ((Device.isTablet)? Dimensions.get('window').height - 560: 100) : Dimensions.get('window').height - 120,                   
               duration: 500,              
             }
           ).start();   
@@ -72,10 +68,11 @@ export default class Modal extends Component {
         return <React.Fragment>
            
             <Animated.View style={[styles.content, style,{ top : y }]}>
-                <Trip expanded={expanded} style={{}} />
+         
+                <Trip mode={mode} onPress={this.onBack} expanded={expanded} style={{}} />
                 {mode == 0 && <List countries={countries} onSelect={this.onSelect} />}
-                {mode == 1 && <DetailContainer item={item} path={path} onSelect={this.onSelect} />}
-                {mode == 2 && <RegionDetailContainer item={item} path={path} onSelect={this.onSelect} />}
+                {mode == 1 && <DetailContainer item={item} onSelect={this.onSelect} />}
+                {mode == 2 && <RegionDetailContainer item={item} onSelect={this.onSelect} />}
             </Animated.View>
             <Draggable 
                 onDraggedEnd={this._onDraggedEnd} 

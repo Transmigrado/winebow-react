@@ -101,15 +101,12 @@ renderHeader = ()=>{
 
 
 const mapStateToProps = (state, ownProps) => ({
-    path: store.getPath(state)
+  
 })
 
 const mapDispatchToProps = (dispatch) => ({
     onMount: () => {
         
-    },
-    addPath: path => {
-       
     }
 })
 

@@ -24,7 +24,7 @@ export default class List extends Component {
     }
     renderItem = ({item, index}) => {
         
-        const { name, slug, count, image } = item
+        const { name, slug, wineryCount, image } = item
         const width =  (Device.isTablet) ? 200 : Math.floor((Dimensions.get('window').width / 2))
         const itemStyle = (Device.isTablet) ? {} : ((index % 2 == 0)? {left:20} : {left:5})
 
@@ -36,7 +36,7 @@ export default class List extends Component {
                 />}
                 <View style={[styles.itemContent,{width: width - 25, height: width - 25}]}>
                     <Text style={[styles.text,styles.textBold]}>{name}</Text>
-                    <Text style={styles.text}>{`${count} wineries`}</Text>
+                    {wineryCount && <Text style={styles.text}>{`${wineryCount} wineries`}</Text>}
                 </View>
            </TouchableOpacity>
     }
@@ -69,6 +69,7 @@ export default class List extends Component {
                     renderItem={({item, index}) => this.renderItem({item, index})}
                     style={{marginBottom:160}}
                     horizontal={Platform.isPad}
+                    keyExtractor={(item, index) => item.id}
                     {...props}
                     />
                 </View>

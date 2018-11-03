@@ -10,7 +10,7 @@ export default class Pager extends Component {
      }
 
      renderImage = image => {
-         return <View style={{backgroundColor:'white'}}>
+         return <View key={image.url} style={{backgroundColor:'white'}}>
          <Image
 style={{width: '100%', height: '100%'}}
 source={{uri:image.url}}

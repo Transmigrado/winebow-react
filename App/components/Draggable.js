@@ -67,7 +67,7 @@ export default class Draggable extends Component {
     const panStyle = {
       transform: this.state.pan.getTranslateTransform()
     }
-    const top =  (expanded) ? ((Device.isTablet) ? heightScreen - 590 : 50) : (heightScreen - 120)
+    const top =  (expanded) ? ((Device.isTablet) ? heightScreen - 590 : 100) : (heightScreen - 120)
     const myStyle = {...styles.container, ...{ top }}
 
     return (
@@ -84,10 +84,10 @@ export default class Draggable extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    width:'100%',
+    width:  Dimensions.get('window').width - 40,
     height: 40,
     position: 'absolute',
-    left: 0,
+    left: 40,
     top: heightScreen - 120
   },
 })
