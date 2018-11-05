@@ -123,6 +123,16 @@ const getWineriesForCountry = (regions, country) => {
   return wineries
 }
 
+const getRegionName = (regions, winery)=>{
+  let regionName = ""
+  regions.forEach(region => {
+    if(winery.region_id === region.id){
+      regionName = region.name
+    }
+  })
+  return regionName
+}
+
 reducer = (state = INITIAL_STATE, action) => {
   
   let regions = null
@@ -136,7 +146,9 @@ reducer = (state = INITIAL_STATE, action) => {
 
       return {...state, regions}
     case ACTION.FETCH_WINERY:
-      const wineries = action.data
+      const wineries = action.data.map(winery => {
+        return {...winery, regionName: getRegionName(state.regions,winery)}
+      })
       
       regions = state.regions.map(region => {
         const myWineries = getWineriesForRegion(wineries, region)
@@ -147,9 +159,6 @@ reducer = (state = INITIAL_STATE, action) => {
         const myWineries = getWineriesForCountry(regions, country)
         return {...country, wineryCount: myWineries.length, wineries:myWineries}
       })
-
-      console.log(countries)
-
       return {...state, wineries, regions, countries}
     case ACTION.FETCH_WINES:
       return {...state, wines:action.data}

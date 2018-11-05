@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { StyleSheet, View, FlatList, Text} from 'react-native'
-import * as store from '../modules/store'
 import Header from '../components/Header'
 import Pager from '../components/Pager'
 import Breadcump from '../components/Breadcump'
@@ -10,6 +9,7 @@ import WineyardItem from '../components/Item/WineyardItem'
 import PropTypes from 'prop-types'
 import WineItem from '../components/Item/WineItem'
 import parser  from 'react-native-html-parser'
+import ExpandContent from '../components/ExpandContent'
 
 const DomParser = parser.DOMParser
 
@@ -64,17 +64,21 @@ renderItem = ({item, index}) => {
 renderHeader = ()=>{
   
   const { path, item } = this.props
-
-  const { description } = this.state
-
+  const content = [
+        {description:item.description},
+        {description:item.philosophy, title:'Philosophy'},
+        {description:item.wineyard_location, title:'Wineyard Location'}
+      ]
  
   return  <View>
        <Pager images={item.images} />
     <Breadcump path={path} style={{margin:10}} />
         <WineyardItem bigTitle={true} item={item} />
-        <View style={{paddingHorizontal: 20, marginTop: 10}}>
-        <Text>{description}</Text>
-        <Text style={{fontSize: 30,marginTop:10, fontWeight:'bold'}}>Wines</Text>
+        <View>
+          <ExpandContent content={content} />
+          <View style={{paddingHorizontal: 20, marginTop: 10}}>
+            <Text style={{fontSize: 30,marginTop:10, fontWeight:'bold'}}>Wines</Text>
+          </View>
         </View>
         
  </View>
@@ -120,4 +124,4 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor:'white'
   },
-});
+})

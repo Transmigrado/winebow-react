@@ -44,7 +44,7 @@ class RegionDetail extends Component {
                     />
                     <View style={[styles.itemContent,{width: '100%', height: 160, top:0, left:0}]}>
                     <Text style={[styles.text,styles.textBold]}>{item.name}</Text>
-                    <Text style={styles.text}>{`0 wineries`}</Text>
+                    <Text style={styles.text}>{`${item.wineryCount} wineries`}</Text>
                     
                 </View>
                 </View>
