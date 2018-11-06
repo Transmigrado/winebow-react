@@ -9,6 +9,7 @@ import { withNavigation } from 'react-navigation'
 import validateEmail from '../utils/validate'
 import signup from '../api/ApiSignup'
 import LoadingDialog from '../components/LoadingDialog'
+import Device from 'react-native-device-detection'
 
 Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB01GxzIm44_FlvyFQ')
 
@@ -121,13 +122,14 @@ class SignScreen extends Component {
 
   render() {
     const { loading, finish} = this.state
-    
+    const styleBox = (Device.isTablet)? {width: 400} : {}
 
     return <View style={styles.container}>
-         <Image source={require('../components/assets/background.png')} style={{position:'absolute', width:'100%', height:'100%'}} />
+         {!Device.isTablet && <Image source={require('../components/assets/background.png')} style={{position:'absolute', width:'100%', height:'100%'}} />}
+         {Device.isTablet && <Image source={require('../components/assets/backgroundBig.png')} style={{position:'absolute', width:'100%', height:'100%'}} />}
         <View style={styles.content}>
        
-            <View style={styles.box}>
+            <View style={[styles.box,styleBox]}>
                {finish && this.renderSuccess()}
                {!finish && this.renderForm()}
             </View>

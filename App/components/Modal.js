@@ -13,7 +13,8 @@ export default class Modal extends Component {
     static propTypes = {
        onMount : PropTypes.func,
        countries: PropTypes.array,
-       onSelect: PropTypes.func
+       onSelect: PropTypes.func,
+       emitter: PropTypes.object
     }
 
     state = {
@@ -23,6 +24,7 @@ export default class Modal extends Component {
     }
 
     componentDidMount(){
+       
         const { onMount } = this.props
         onMount()
     }
@@ -69,19 +71,19 @@ export default class Modal extends Component {
 
     render() {
 
-        const { countries  } = this.props
+        const { countries, emitter  } = this.props
         const { mode, y, expanded, itemCountry, itemWineyard } = this.state
         const widthScreen = Dimensions.get('window').width
         const style = ( Device.isTablet) ? { marginLeft: 20, marginRigth: 20, width: widthScreen - 40} : {width: widthScreen}
-     
+
         return <React.Fragment>
            
             <Animated.View style={[styles.content, style,{ top : y }]}>
          
                 <Trip mode={mode} onPress={this.onBack} expanded={expanded} style={{}} />
-                {mode == 0 && <List countries={countries} onSelect={this.onSelect} />}
-                {mode == 1 && <DetailContainer item={itemCountry} onSelect={this.onSelect} />}
-                {mode == 2 && <RegionDetailContainer item={itemWineyard} onSelect={this.onSelect} />}
+                {mode == 0 && <List emitter={emitter} countries={countries} onSelect={this.onSelect} />}
+                {mode == 1 && <DetailContainer emitter={emitter} item={itemCountry} onSelect={this.onSelect} />}
+                {mode == 2 && <RegionDetailContainer emitter={emitter} item={itemWineyard} onSelect={this.onSelect} />}
             </Animated.View>
             <Draggable 
                 onDraggedEnd={this._onDraggedEnd} 

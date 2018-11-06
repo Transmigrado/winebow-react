@@ -8,7 +8,8 @@ import PropTypes from 'prop-types'
 class WineScreen extends Component {
 
   static propTypes = {
-    navigation: PropTypes.object
+    navigation: PropTypes.object,
+    item: PropTypes.object
  }
 
 
@@ -20,11 +21,11 @@ class WineScreen extends Component {
 
   render() {
 
-    const { navigation } = this.props   
-    const item = navigation.getParam('item', {})
+    const { navigation, item } = this.props   
+    const currentItem = item || navigation.getParam('item', {})
 
     return <View style={styles.container}>
-          <WineYardDetailContainer item={item} />
+          <WineYardDetailContainer item={currentItem} />
     </View>
   }
 }

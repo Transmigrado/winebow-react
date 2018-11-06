@@ -8,6 +8,8 @@ import { withNavigation } from 'react-navigation'
 import LoadingDialog from '../components/LoadingDialog'
 import login from '../api/ApiLogin'
 import validateEmail  from '../utils/validate'
+import Device from 'react-native-device-detection'
+
 class LoginScreen extends Component {
 
   static navigationOptions = ({ navigation }) => ({
@@ -70,11 +72,14 @@ onChangeText = value =>{
   render() {
     const { loading , value} = this.state
 
+    const styleBox = (Device.isTablet)? {width: 400} : {}
+
     return <View style={styles.container}>
-         <Image source={require('../components/assets/background.png')} style={{position:'absolute', width:'100%', height:'100%'}} />
+         {!Device.isTablet && <Image source={require('../components/assets/background.png')} style={{position:'absolute', width:'100%', height:'100%'}} />}
+         {Device.isTablet && <Image source={require('../components/assets/backgroundBig.png')} style={{position:'absolute', width:'100%', height:'100%'}} />}
         <View style={styles.content}>
         <Image source={require('../components/assets/mainlogo.png')} style={{marginBottom: 40}} />
-            <View style={styles.box}>
+            <View style={[styles.box, styleBox]}>
                 <InputText onChangeText={this.onChangeText} placeholder="Email" />
                 <LigthButton disabled={!validateEmail(value)}  onPress={this.onPressLogin}  style={{marginTop: 20, marginBottom:10}}>
                 Login

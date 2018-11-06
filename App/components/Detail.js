@@ -2,14 +2,15 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, Image, SectionList, TouchableOpacity, Dimensions } from 'react-native'
 import PropTypes from 'prop-types'
 import WineyardItem from './Item/WineyardItem'
-
+import Device from 'react-native-device-detection'
 export default class Detail extends Component {
     
 
     static propTypes = {
        onSelect: PropTypes.func,
        regions: PropTypes.array,
-       item:PropTypes.object
+       item:PropTypes.object,
+       emitter: PropTypes.object
     }
 
     static defaultProps = {
@@ -28,11 +29,14 @@ export default class Detail extends Component {
 
 
     renderItem = ({item, index, section}) => {
+        const { emitter } = this.props
+
+       
 
         const width = Dimensions.get('window').width
         
         if(section.index === 1){
-            return <WineyardItem item={item} />
+            return <WineyardItem emitter={emitter} item={item} />
         }
 
         const wineryCount = item.wineryCount || 0

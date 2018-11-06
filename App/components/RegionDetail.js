@@ -5,7 +5,7 @@ import { withNavigation} from 'react-navigation'
 import WineyardItem from './Item/WineyardItem'
 import Breadcump from './Breadcump'
 import WineyardHeader from '../components/Item/WineyardHeader'
-
+import Device from 'react-native-device-detection'
 
 class RegionDetail extends Component {
     
@@ -28,13 +28,16 @@ class RegionDetail extends Component {
         return <WineyardItem item={item}  />
     }
 
-    renderHeader = ()=>{
-        
+    renderHeader = () =>{
+       
+
         const { item } = this.props
 
         const path = ['World',item.country, item.name]
+        const width = Dimensions.get('window').width - 650
+        const style = (Device.isTablet) ? {width} : {  }
 
-        return  <View style={styles.titleContent}>
+        return  <View style={[styles.titleContent, style]}>
                 
                
                 <View style={{width: '100%', height:160}}>
@@ -51,22 +54,35 @@ class RegionDetail extends Component {
                 <View>
                     <Breadcump path={path} style={{marginTop:10, marginBottom:10}} />
                     <Text>{item.description}</Text>
-                    <WineyardHeader />
+                    {!Device.isTablet && <WineyardHeader />}
                 </View>
                 
        </View>
     }
 
+    renderHeaderTablet = ()=>{
+        const { item } = this.props
+     
+        return  <View style={[styles.titleContent,{flex:1, width:300}]}>
+                
+            <WineyardHeader />
+       </View>
+    }
+
     render() {
         const {  item } = this.props
+
+        const flatListProps = (Device.isTablet)?{ListHeaderComponent: this.renderHeaderTablet} : { ListHeaderComponent: this.renderHeader }
+        
      
 
         return <View style={styles.container}>
+                {Device.isTablet && this.renderHeader()}
                 <FlatList
-                    ListHeaderComponent = {this.renderHeader()}
+                   {...flatListProps}
                     data={item.wineries}
                     renderItem={({item, index}) => this.renderItem({item, index})}
-                    numColumns={1}
+                    numColumns={(Device.isTablet) ? 2 : 1}
                     style={{marginBottom:160}}
                     />
                 </View>
@@ -80,7 +96,8 @@ const styles = StyleSheet.create({
         flex: 1,
         width:'100%',
         height:'100%',
-        backgroundColor:'transparent'
+        backgroundColor:'transparent',
+        flexDirection:'row'
     },
     content: {
         flex:1,

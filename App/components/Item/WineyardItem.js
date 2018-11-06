@@ -9,7 +9,8 @@ class WineyardItem extends Component {
     static propTypes = {
         navigation: PropTypes.object,
         item: PropTypes.object,
-        bigTitle: PropTypes.bool
+        bigTitle: PropTypes.bool,
+        emitter: PropTypes.object
      }
 
 
@@ -17,13 +18,14 @@ class WineyardItem extends Component {
         bigTitle: false
     }
     _onPress = ()=>{
-        const { item, navigation } = this.props
-        navigation.navigate('WineDetail', { item })
+        const { item, emitter } = this.props
+        emitter.emit('SelectItem', item)
     }
 
     render() {
-        const { item, bigTitle } = this.props
+        const { item, bigTitle, emitter} = this.props
         const titleStyle = (bigTitle) ? { fontSize: 24, fontWeight: 'bold'} : {}
+
 
         return <TouchableOpacity onPress={this._onPress} style={styles.container}>
             <View style={styles.content}>
@@ -50,6 +52,7 @@ export default withNavigation(WineyardItem)
 const styles = StyleSheet.create({
     container:{
         paddingHorizontal: 20,
+        maxWidth : 300
     },
     content: {
         flex:1,

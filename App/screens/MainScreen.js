@@ -11,7 +11,7 @@ import Device from 'react-native-device-detection'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import * as store from '../modules/store'
-
+import EventEmitter from 'events'
 
 Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB01GxzIm44_FlvyFQ')
 
@@ -35,8 +35,18 @@ class MainScreen extends Component {
   }
 
   componentDidMount(){
-    const { onMount } = this.props
+    const { onMount, navigation } = this.props
     onMount()
+
+    this._emitter = new EventEmitter()
+
+    this._emitter.addListener('SelectItem', item => {
+       if(Device.isTablet){
+        this.setState({selectItem : item})
+       }else{
+        navigation.navigate('WineDetail', { item })
+       }
+    });
 }
 
 onRegionDidChange = regionFeature => {
@@ -100,14 +110,28 @@ onRegionDidChange = regionFeature => {
    
   }
 
+  isNumber(num){
+    return !isNaN(parseFloat(num)) && isFinite(num);
+    }
+
   getAverage = data => {
+
     let latitude = 0
     let longitude = 0
     let countData = 0
 
-   
+    let mapData = []
 
-    data.forEach(coordinates => {
+    if(data[0][0].length == 2 && this.isNumber(data[0][0][0]) && this.isNumber(data[0][0][1])){
+      mapData = mapData.concat(data)
+    }else{
+      data.forEach( d => {
+        mapData = mapData.concat(d)
+      })
+    
+    }
+
+    mapData.forEach(coordinates => {
       countData += coordinates.length
       coordinates.forEach(coordinate => {
   
@@ -150,10 +174,12 @@ onRegionDidChange = regionFeature => {
 
     const fillId = 'winebow'+country.id.toString()
     const markerId = 'marker-'+fillId
+
+    const { zoomLevel } = this.state
     
  
     return <React.Fragment>
-            <Mapbox.PointAnnotation
+            {zoomLevel >= 5 && <Mapbox.PointAnnotation
         key={markerId}
         id={markerId}
         coordinate={[latitude,longitude]}>
@@ -162,7 +188,7 @@ onRegionDidChange = regionFeature => {
           <Text>{country.name}</Text>
         </View>
        
-      </Mapbox.PointAnnotation>
+      </Mapbox.PointAnnotation>}
       
       <Mapbox.ShapeSource 
     hitbox={{ width: 100, height: 100 }}
@@ -307,26 +333,14 @@ onRegionDidChange = regionFeature => {
 
     onSelect = item => {
       if(item.geojson !== undefined){
-       
-        let coordinatesMain = []
-
-        item.geojson.features[0].geometry.coordinates.forEach(coordinates => {
-          coordinatesMain = coordinatesMain.concat(coordinates)
-        })
-
-        console.log(coordinatesMain)
-
-        
-        /*
-      this.map.setCamera({
-        centerCoordinate: [latitude, longitude],
-        zoom: 4,
-        duration: 2000,
-      })
-      */
-  
       
-      
+        const { latitude, longitude } = this.getAverage(item.geojson.features[0].geometry.coordinates)
+
+          this.map.setCamera({
+            centerCoordinate: [latitude, longitude],
+            zoom: 4,
+            duration: 2000,
+          })
       }
     }
 
@@ -334,7 +348,10 @@ onRegionDidChange = regionFeature => {
     
   
     const { countries, regions, wineries } = this.props
-    const { zoomLevel } = this.state
+    const { zoomLevel, selectItem } = this.state
+
+
+    console.log('EMITTER MAIN', this._emitter)
 
     return <View style={styles.container}>
       
@@ -354,11 +371,12 @@ onRegionDidChange = regionFeature => {
 
         </Mapbox.MapView>
         
-        <ModalContainer onSelect={ this.onSelect } />
+        <ModalContainer emitter={this._emitter} onSelect={ this.onSelect } />
 
-        {Device.isTablet && <Sidebar>
-          <WineScreen />
+        {Device.isTablet && selectItem !== undefined && <Sidebar>
+          <WineScreen item = {selectItem} />
         </Sidebar>}
+       
     </View>
   }
 }

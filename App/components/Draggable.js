@@ -85,6 +85,7 @@ export default class Draggable extends Component {
 const styles = StyleSheet.create({
   container: {
     width:  Dimensions.get('window').width - 40,
+    backgroundColor:'red',
     height: 40,
     position: 'absolute',
     left: 40,
