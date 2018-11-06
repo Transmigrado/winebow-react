@@ -40,7 +40,6 @@ class MainScreen extends Component {
 }
 
 onRegionDidChange = regionFeature => {
-  console.log(regionFeature)
     this.setState({zoomLevel: regionFeature.properties.zoomLevel})
 }
 
@@ -89,7 +88,6 @@ onRegionDidChange = regionFeature => {
       center[0] = center[0] / countryRegions.length
       center[1] = center[1] / countryRegions.length
   
-      console.log(center)
   
       this.map.setCamera({
         centerCoordinate: center,
@@ -100,6 +98,33 @@ onRegionDidChange = regionFeature => {
      
     }
    
+  }
+
+  getAverage = data => {
+    let latitude = 0
+    let longitude = 0
+    let countData = 0
+
+   
+
+    data.forEach(coordinates => {
+      countData += coordinates.length
+      coordinates.forEach(coordinate => {
+  
+        if(Number.isNaN(Number(coordinate[0])) === false){
+          latitude += Number(coordinate[0])
+          longitude += Number(coordinate[1])
+        }else{
+          countData--
+        }
+       
+      })
+    })
+
+    latitude /= (countData !== 0) ? countData : 1
+    longitude /= (countData !== 0) ? countData : 1
+
+    return { latitude, longitude}
   }
 
   renderCountryLayer = country =>{
@@ -120,31 +145,8 @@ onRegionDidChange = regionFeature => {
       fillOutlineColor: 'rgba(136, 149, 107, 0.84)',
     }
 
-  
 
-    let latitude = 0
-    let longitude = 0
-    let countData = 0
-
-    data.geometry.coordinates.forEach(coordinates => {
-      countData += coordinates.length
-      coordinates.forEach(coordinate => {
-      
-        if(Number.isNaN(Number(coordinate[0])) === false){
-          latitude += Number(coordinate[0])
-          longitude += Number(coordinate[1])
-        }else{
-          countData--
-        }
-       
-      })
-    })
-
-
-    
-
-    latitude /= (countData !== 0) ? countData : 1
-    longitude /= (countData !== 0) ? countData : 1
+    const { latitude, longitude } = this.getAverage( data.geometry.coordinates)
 
     const fillId = 'winebow'+country.id.toString()
     const markerId = 'marker-'+fillId
@@ -303,6 +305,31 @@ onRegionDidChange = regionFeature => {
       </React.Fragment>
   }
 
+    onSelect = item => {
+      if(item.geojson !== undefined){
+       
+        let coordinatesMain = []
+
+        item.geojson.features[0].geometry.coordinates.forEach(coordinates => {
+          coordinatesMain = coordinatesMain.concat(coordinates)
+        })
+
+        console.log(coordinatesMain)
+
+        
+        /*
+      this.map.setCamera({
+        centerCoordinate: [latitude, longitude],
+        zoom: 4,
+        duration: 2000,
+      })
+      */
+  
+      
+      
+      }
+    }
+
   render() {
     
   
@@ -326,7 +353,9 @@ onRegionDidChange = regionFeature => {
            {zoomLevel >= 6 && wineries.map(this.renderAnnotations)}
 
         </Mapbox.MapView>
-        <ModalContainer />
+        
+        <ModalContainer onSelect={ this.onSelect } />
+
         {Device.isTablet && <Sidebar>
           <WineScreen />
         </Sidebar>}

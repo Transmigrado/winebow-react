@@ -36,8 +36,8 @@ class WineyardItem extends Component {
             </Card>
             <View style={{marginTop: 10, marginRight: 100}}>
                 <Text style={titleStyle}>{item.name}</Text>
-                <Text>Country: Chile</Text>
-                <Text>{`Region:${item.regionName}`}</Text>
+                <Text>{`Country: ${item.countryName}`}</Text>
+                <Text>{`Region: ${item.regionName}`}</Text>
             </View>
         </View>
          <View style={styles.bottomLine}></View>

@@ -59,7 +59,7 @@ export default class InputText extends React.Component {
         const { unmaskLabel, maskLabel, style, ...inputProps } = this.props
        
 
-        return <View  style={styles.inputContainer }>
+        return <View  style={[styles.inputContainer, style] }>
                 <TextInput
                     underlineColorAndroid='transparent'
                     {...inputProps}

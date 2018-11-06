@@ -7,6 +7,7 @@ import TextButton from '../components/TextButton'
 import { withNavigation } from 'react-navigation'
 import LoadingDialog from '../components/LoadingDialog'
 import login from '../api/ApiLogin'
+import validateEmail  from '../utils/validate'
 class LoginScreen extends Component {
 
   static navigationOptions = ({ navigation }) => ({
@@ -23,12 +24,9 @@ class LoginScreen extends Component {
    loading: false
  }
 
- validateEmail(email) {
-  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-}
-
+ 
 showAlert = message => {
+  setTimeout(()=>{
   Alert.alert(
     'Login',
     message,
@@ -36,12 +34,12 @@ showAlert = message => {
       {text: 'OK', onPress: () => console.log('OK Pressed')},
     ],
     { cancelable: false }
-  )
+  )},100)
 }
 
  onPressLogin = ()=>{
     const { value } = this.state
-   if( this.validateEmail(value)){
+
     this.setState({loading:true})
     login(value)
     .then(response => {
@@ -49,22 +47,14 @@ showAlert = message => {
       if(response.status === 200){
        this.props.navigation.navigate('Main')
       }else if(response.status === 404){
-       setTimeout(()=>{
         this.showAlert('User not found')
-       }, 100)
       }else{
-        setTimeout(()=>{
-          this.showAlert('Something went wrong, Try again.')
-         }, 100)
+        this.showAlert('Something went wrong, Try again.')
       }
     }).catch(error => {
-      setTimeout(()=>{
-        this.showAlert('Something went wrong, Try again.')
-       }, 100)
+      this.showAlert('Something went wrong, Try again.')
     })
-   }else{
 
-   }
   }
    
     
@@ -79,14 +69,14 @@ onChangeText = value =>{
 
   render() {
     const { loading , value} = this.state
-    console.log('loading', loading)
+
     return <View style={styles.container}>
          <Image source={require('../components/assets/background.png')} style={{position:'absolute', width:'100%', height:'100%'}} />
         <View style={styles.content}>
         <Image source={require('../components/assets/mainlogo.png')} style={{marginBottom: 40}} />
             <View style={styles.box}>
                 <InputText onChangeText={this.onChangeText} placeholder="Email" />
-                <LigthButton disabled={!this.validateEmail(value)}  onPress={this.onPressLogin}  style={{marginTop: 20, marginBottom:10}}>
+                <LigthButton disabled={!validateEmail(value)}  onPress={this.onPressLogin}  style={{marginTop: 20, marginBottom:10}}>
                 Login
                 </LigthButton>
                 <TextButton onPress={this.onPressSign}>

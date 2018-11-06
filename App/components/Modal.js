@@ -12,7 +12,8 @@ export default class Modal extends Component {
    
     static propTypes = {
        onMount : PropTypes.func,
-       countries: PropTypes.array
+       countries: PropTypes.array,
+       onSelect: PropTypes.func
     }
 
     state = {
@@ -26,17 +27,18 @@ export default class Modal extends Component {
         onMount()
     }
 
-    onSelect = (mode, item) =>{
+    onSelect = (mode, item) => {
+        
+        const { onSelect } = this.props
+
         if(mode === 1){
+            onSelect(item)
             this.setState({ mode, itemCountry: item })
         }else if(mode === 2){
             this.setState({ mode, itemWineyard: item })
         }else{
             this.setState({ mode})
         }
-
-
-        
     }
 
     onBack = mode => {

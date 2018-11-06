@@ -9,7 +9,6 @@ export default class LoadingDialog extends React.Component {
     }
 
     render() {
-        console.log('RENDER')
         return <Modal animationType="fade"
             transparent={true}
             presentationStyle='overFullScreen'
