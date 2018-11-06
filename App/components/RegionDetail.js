@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, Image, FlatList, TouchableOpacity, Dimensions } from 'react-native'
+import { StyleSheet, View, Text, Image, FlatList, Dimensions } from 'react-native'
 import PropTypes from 'prop-types'
 import { withNavigation} from 'react-navigation'
 import WineyardItem from './Item/WineyardItem'

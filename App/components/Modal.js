@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions, Animated } from 'react-native'
 import Draggable from './Draggable'
 import List from './List'
 import DetailContainer from '../containers/DetailContainer'
 import RegionDetailContainer from '../containers/RegionDetailContainer'
 import Trip from './Trip'
 import PropTypes from 'prop-types'
-
+import Device from 'react-native-device-detection'
 
 export default class Modal extends Component {
    
@@ -48,7 +48,7 @@ export default class Modal extends Component {
         Animated.timing(                  
             this.state.y,            
             {
-              toValue:  y + 40 ,                   
+              toValue:  y  ,                   
               duration: 0,              
             }
           ).start();   
