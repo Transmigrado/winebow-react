@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
-import { StyleSheet, View, Image} from 'react-native'
+import { StyleSheet, View, Image, Alert} from 'react-native'
 import PropTypes from 'prop-types'
 import LigthButton from '../components/LigthButton'
 import InputText from '../components/InputText'
 import TextButton from '../components/TextButton'
 import { withNavigation } from 'react-navigation'
 import LoadingDialog from '../components/LoadingDialog'
-
+import login from '../api/ApiLogin'
 class LoginScreen extends Component {
 
   static navigationOptions = ({ navigation }) => ({
@@ -28,10 +28,40 @@ class LoginScreen extends Component {
   return re.test(String(email).toLowerCase());
 }
 
+showAlert = message => {
+  Alert.alert(
+    'Login',
+    message,
+    [
+      {text: 'OK', onPress: () => console.log('OK Pressed')},
+    ],
+    { cancelable: false }
+  )
+}
+
  onPressLogin = ()=>{
     const { value } = this.state
    if( this.validateEmail(value)){
     this.setState({loading:true})
+    login(value)
+    .then(response => {
+      this.setState({loading:false})
+      if(response.status === 200){
+       this.props.navigation.navigate('Main')
+      }else if(response.status === 404){
+       setTimeout(()=>{
+        this.showAlert('User not found')
+       }, 100)
+      }else{
+        setTimeout(()=>{
+          this.showAlert('Something went wrong, Try again.')
+         }, 100)
+      }
+    }).catch(error => {
+      setTimeout(()=>{
+        this.showAlert('Something went wrong, Try again.')
+       }, 100)
+    })
    }else{
 
    }
