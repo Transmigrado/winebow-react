@@ -45,7 +45,8 @@ export default class InputText extends React.Component {
    
 
     onChangeText = value => {
-       
+       this.setState({value})
+       this.props.onChangeText(value)
     }
 
     render() {
@@ -68,6 +69,7 @@ export default class InputText extends React.Component {
                     autoFocus={false}
                     blurOnSubmit={false}
                     onChangeText={this.onChangeText}
+                    value ={value}
                     placeholder={placeholder}
                     ref={ref => this.textInputRef = ref}
                 />

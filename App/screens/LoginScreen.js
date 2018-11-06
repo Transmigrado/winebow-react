@@ -5,7 +5,7 @@ import LigthButton from '../components/LigthButton'
 import InputText from '../components/InputText'
 import TextButton from '../components/TextButton'
 import { withNavigation } from 'react-navigation'
-
+import LoadingDialog from '../components/LoadingDialog'
 
 class LoginScreen extends Component {
 
@@ -18,30 +18,54 @@ class LoginScreen extends Component {
     navigation: PropTypes.object
  }
 
- onPressLogin = ()=>{
-    this.props.navigation.navigate('Main')
+ state ={
+   value : '',
+   loading: false
  }
 
+ validateEmail(email) {
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
+ onPressLogin = ()=>{
+    const { value } = this.state
+   if( this.validateEmail(value)){
+    this.setState({loading:true})
+   }else{
+
+   }
+  }
+   
+    
+
  onPressSign = ()=>{
-  this.props.navigation.navigate('Sign')
+    this.props.navigation.navigate('Sign')
+}
+
+onChangeText = value =>{
+  this.setState({value})
 }
 
   render() {
+    const { loading , value} = this.state
+    console.log('loading', loading)
     return <View style={styles.container}>
          <Image source={require('../components/assets/background.png')} style={{position:'absolute', width:'100%', height:'100%'}} />
         <View style={styles.content}>
         <Image source={require('../components/assets/mainlogo.png')} style={{marginBottom: 40}} />
             <View style={styles.box}>
-                <InputText placeholder="Email" />
-                <LigthButton onPress={this.onPressLogin}  style={{marginTop: 20, marginBottom:10}}>
+                <InputText onChangeText={this.onChangeText} placeholder="Email" />
+                <LigthButton disabled={!this.validateEmail(value)}  onPress={this.onPressLogin}  style={{marginTop: 20, marginBottom:10}}>
                 Login
                 </LigthButton>
                 <TextButton onPress={this.onPressSign}>
                 Doesn't have and account?
-                    </TextButton>
+                </TextButton>
             </View>
            
         </View>
+        {loading && <LoadingDialog text="Loading" />}
     </View>
   }
 }

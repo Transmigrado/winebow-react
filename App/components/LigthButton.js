@@ -6,14 +6,17 @@ export default class LigthButton extends Component {
     static propTypes = {
        style:  PropTypes.object,
        children: PropTypes.any,
-       onPress: PropTypes.func
+       onPress: PropTypes.func,
+       disabled: PropTypes.bool
     }
 
     render() {
-       const { style, children, onPress } = this.props
+       const { style, children, onPress, disabled } = this.props
+
+       const disabledStyle = (disabled) ? {backgroundColor : "#CCC", shadowColor:'#CCC'} : {}
 
         return <View style={[styles.container, style]}>
-            <TouchableOpacity onPress={onPress} style={styles.button}>
+            <TouchableOpacity disabled={disabled} onPress={onPress} style={[styles.button,disabledStyle]}>
                 <Text style={styles.text}>
                     {children}
                 </Text>
