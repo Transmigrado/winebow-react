@@ -9,7 +9,8 @@ class WineScreen extends Component {
 
   static propTypes = {
     navigation: PropTypes.object,
-    item: PropTypes.object
+    item: PropTypes.object,
+    onBack: PropTypes.object
  }
 
 
@@ -21,11 +22,11 @@ class WineScreen extends Component {
 
   render() {
 
-    const { navigation, item } = this.props   
+    const { navigation, item,onBack } = this.props   
     const currentItem = item || navigation.getParam('item', {})
 
     return <View style={styles.container}>
-          <WineYardDetailContainer item={currentItem} />
+          <WineYardDetailContainer onBack={onBack} item={currentItem} />
     </View>
   }
 }

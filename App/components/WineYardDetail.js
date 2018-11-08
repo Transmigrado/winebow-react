@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
-import { StyleSheet, View, FlatList, Text} from 'react-native'
+import { StyleSheet, View, FlatList, Text, TouchableOpacity, Image} from 'react-native'
 import Header from '../components/Header'
 import Pager from '../components/Pager'
 import Breadcump from '../components/Breadcump'
@@ -10,8 +10,9 @@ import PropTypes from 'prop-types'
 import WineItem from '../components/Item/WineItem'
 import parser  from 'react-native-html-parser'
 import ExpandContent from '../components/ExpandContent'
+import Device from 'react-native-device-detection'
 
-const DomParser = parser.DOMParser
+
 
 class WineyardDetail extends Component {
 
@@ -20,6 +21,7 @@ class WineyardDetail extends Component {
     path: PropTypes.array,
     item: PropTypes.object,
     wines: PropTypes.array,
+    onBack: PropTypes.func
  }
 
   static navigationOptions = ({ navigation }) => ({
@@ -29,31 +31,6 @@ class WineyardDetail extends Component {
 
 state = {
   description: ''
-}
-
-componentDidMount(){
-  const { item } = this.props
-  const doc = new DomParser().parseFromString(item.description,'text/html')
-
-  const elements = []
-  const current = {content:[], title:''}
-
-  Object.keys(doc.childNodes).forEach( key => {
-    const obj = doc.childNodes[key]
-  
-
-    if(typeof obj === "object" && obj !== null){
-        const { nodeName } = obj
-        if(nodeName == "h4"){
-          elements.push({...current})
-        }
-    }else{
-      elements.push({...current})
-    }
-  })
-
-
- 
 }
 
 renderItem = ({item, index}) => {
@@ -71,8 +48,14 @@ renderHeader = ()=>{
       ]
  
   return  <View>
-       <Pager images={item.images} />
-    <Breadcump path={path} style={{margin:10}} />
+        <View>
+        <Pager images={item.images} />
+          {Device.isTablet && <TouchableOpacity onPress={this.props.onBack} style={styles.backButton}>
+            <Image source={require('../components/assets/back.png')} />
+          </TouchableOpacity>}
+        </View>
+      
+      <Breadcump path={path} style={{margin:10}} />
         <WineyardItem bigTitle={true} item={item} />
         <View>
           <ExpandContent content={content} />
@@ -124,4 +107,16 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor:'white'
   },
+  backButton:{
+    position:'absolute', 
+    left:10, 
+    top:10, 
+    backgroundColor:'rgba(0,0,0,0.3)', 
+    width:30, 
+    height:30,
+    borderRadius:15,
+    alignItems:'center',
+    justifyContent:'center'
+  }
+
 })

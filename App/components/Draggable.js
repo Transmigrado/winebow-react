@@ -48,7 +48,7 @@ export default class Draggable extends Component {
       },
       onPanResponderRelease: () => {
 
-        const expanded = (Device.isTablet) ? heightScreen - this.y > 400: this.y < 200
+        const expanded = (Device.isTablet) ? heightScreen - this.y > 300 : this.y < 200
 
         this.setState({expanded})
         this.props.onDraggedEnd(expanded)
@@ -67,27 +67,23 @@ export default class Draggable extends Component {
     const panStyle = {
       transform: this.state.pan.getTranslateTransform()
     }
-    const top =  (expanded) ? ((Device.isTablet) ? heightScreen - 590 : 100) : (heightScreen - 120)
+    const top =  (expanded) ? ((Device.isTablet) ? heightScreen - 600 : 100) : ((Device.isTablet) ? heightScreen - 170 : heightScreen - 120)
     const myStyle = {...styles.container, ...{ top }}
 
-    return (
-        <Animated.View
-          {...this.panResponder.panHandlers}
-          style={[myStyle, panStyle]}
-          ref= {ref => this.view = ref}
-        >
-
-        </Animated.View>
-    );
+    return <Animated.View
+    {...this.panResponder.panHandlers}
+    style={[myStyle, panStyle]}
+    ref= {ref => this.view = ref}
+  />
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    width:  Dimensions.get('window').width - 40,
+    width:  (Device.isTablet) ? Dimensions.get('window').width - 160 : Dimensions.get('window').width - 80,
     height: 40,
     position: 'absolute',
-    left: 40,
+    left: (Device.isTablet) ? 80 : 40,
     top: heightScreen - 120
   },
 })

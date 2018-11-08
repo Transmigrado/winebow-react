@@ -18,16 +18,28 @@ class WineyardItem extends Component {
         bigTitle: false
     }
     _onPress = ()=>{
+     
         const { item, emitter } = this.props
         emitter.emit('SelectItem', item)
+    }
+
+    getRoot = ()=>{
+        const {  bigTitle } = this.props
+
+        if(bigTitle) {
+            return View
+        }
+
+        return TouchableOpacity
     }
 
     render() {
         const { item, bigTitle, emitter} = this.props
         const titleStyle = (bigTitle) ? { fontSize: 24, fontWeight: 'bold'} : {}
+        const Root = this.getRoot()
+        const style = (bigTitle) ? {} : { maxWidth : 300}
 
-
-        return <TouchableOpacity onPress={this._onPress} style={styles.container}>
+        return <Root onPress={this._onPress} style={[styles.container,style]}>
             <View style={styles.content}>
                     <Card style={{width:140,height:120, marginLeft:-20}}>
                 <Image
@@ -43,7 +55,7 @@ class WineyardItem extends Component {
             </View>
         </View>
          <View style={styles.bottomLine}></View>
-        </TouchableOpacity>
+        </Root>
     }
 }
 
@@ -52,7 +64,6 @@ export default withNavigation(WineyardItem)
 const styles = StyleSheet.create({
     container:{
         paddingHorizontal: 20,
-        maxWidth : 300
     },
     content: {
         flex:1,

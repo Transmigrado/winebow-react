@@ -12,6 +12,7 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import * as store from '../modules/store'
 import EventEmitter from 'events'
+import Breadcump from '../components/Breadcump'
 
 Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB01GxzIm44_FlvyFQ')
 
@@ -31,7 +32,8 @@ class MainScreen extends Component {
     wineries: PropTypes.array,
   }
   state= {
-    zoomLevel:1.4
+    zoomLevel:1.4,
+    path: ['World']
   }
 
   componentDidMount(){
@@ -40,7 +42,14 @@ class MainScreen extends Component {
 
     this._emitter = new EventEmitter()
 
-    this._emitter.addListener('SelectItem', this.triggerItem);
+    this._emitter.addListener('SelectItem', this.triggerItem)
+    this._emitter.addListener('SelectCountry', country => {
+      this.setState({path : ['World', country.name]})
+    })
+
+    this._emitter.addListener('SelectRegion', region => {
+      this.setState({path : ['World', region.country, region.name]})
+    })
 }
 
 triggerItem = item => {
@@ -353,6 +362,17 @@ onRegionDidChange = regionFeature => {
       }
     }
 
+    _onBackItem= ()=>{
+      
+      this.setState({selectItem:undefined, path:['World']})
+    }
+
+  renderFooter = ()=>{
+    return <View style={styles.footer}>
+          <Breadcump path={this.state.path} big={true} />
+    </View>
+  }
+
   render() {
     
   
@@ -424,11 +444,15 @@ onRegionDidChange = regionFeature => {
 
         </Mapbox.MapView>
         
-        <ModalContainer emitter={this._emitter} onSelect={ this.onSelect } />
+        {selectItem === undefined && <ModalContainer emitter={this._emitter} onSelect={ this.onSelect } />}
 
-        {Device.isTablet && selectItem !== undefined && <Sidebar>
-          <WineScreen item = {selectItem} />
+       
+        {Device.isTablet && this.renderFooter()}
+
+         {Device.isTablet && selectItem !== undefined && <Sidebar>
+          <WineScreen onBack={this._onBackItem} item = {selectItem} />
         </Sidebar>}
+
        
     </View>
   }
@@ -466,6 +490,19 @@ const styles = StyleSheet.create({
   },
   annotationContainer:{
     alignItems:'center'
+  },
+  footer:{
+    width:'100%',
+    height:50,
+    position:'absolute',
+    bottom:0,
+    backgroundColor:'white',
+    shadowColor: '#9C093D',
+    shadowRadius: 6,
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 0, height: -4 },
+    elevation: 5,
+    padding:10
   }
 });
 

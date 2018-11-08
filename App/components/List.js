@@ -60,6 +60,8 @@ export default class List extends Component {
             props.horizontal = true
             delete props.numColumns
         }
+
+        const contentInset = (Device.isTablet) ? { left : 20 } : {}
         
         return <View style={styles.container}>
                 {Device.isTablet && this.renderHeader(true)}
@@ -71,6 +73,8 @@ export default class List extends Component {
                     horizontal={Platform.isPad}
                     keyExtractor={(item, index) => item.id}
                     {...props}
+                    contentInset={contentInset}
+                    automaticallyAdjustContentInsets={true}
                     />
                 </View>
     }

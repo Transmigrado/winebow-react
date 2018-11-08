@@ -8,19 +8,24 @@ export default class BreadCump extends Component {
     
     static propTypes = {
         path: PropTypes.array,
-        style: PropTypes.object
+        style: PropTypes.object,
+        big: PropTypes.bool
     }
 
     static defaultProps = {
-        path:[]
+        path:[],
+        big: false
     }
     
     renderPath = (text, index) => {
+        const { big } = this.props
         const isLast = index >= this.props.path.length - 1
         const style = (isLast) ? styles.lastText :  styles.text
+        const fontSize = (big) ? {fontSize: 24} : {fontSize:16}
+
         return <View key={index} style={styles.path} key={text}>
-             <Text style={style} >{text}</Text>
-             {!isLast &&<Text style={styles.arrow}>></Text>}
+             <Text style={[style, fontSize]} >{text}</Text>
+             {!isLast &&<Text style={[styles.arrow, fontSize]}>></Text>}
         </View>
     }
  
@@ -41,11 +46,9 @@ const styles = StyleSheet.create({
     },
     text:{
         color: '#AB3F66',
-        fontSize: 16
     },
     lastText:{
         color:'#737373',
-        fontSize: 16
     },
     path:{
         flexDirection: 'row'
