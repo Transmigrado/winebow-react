@@ -13,7 +13,8 @@ class RegionDetail extends Component {
     static propTypes = {
        onSelect: PropTypes.func,
        navigation: PropTypes.object,
-       item: PropTypes.object
+       item: PropTypes.object,
+       emitter: PropTypes.object
     }
     _onPress = ()=>{
        this.props.navigation.navigate('WineDetail')
@@ -25,7 +26,9 @@ class RegionDetail extends Component {
     }
 
     renderItem = ({item, index}) => {
-        return <WineyardItem item={item}  />
+        const { emitter } = this.props
+     
+        return <WineyardItem emitter={emitter} item={item}  />
     }
 
     renderHeader = () =>{

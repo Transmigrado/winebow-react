@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { StyleSheet, View, Linking, Image, Text} from 'react-native'
+import { StyleSheet, View, Linking, Image, Text, TouchableOpacity} from 'react-native'
 import Mapbox from '@mapbox/react-native-mapbox-gl'
 import { withNavigation } from 'react-navigation'
 import PropTypes from 'prop-types'
@@ -40,13 +40,15 @@ class MainScreen extends Component {
 
     this._emitter = new EventEmitter()
 
-    this._emitter.addListener('SelectItem', item => {
-       if(Device.isTablet){
-        this.setState({selectItem : item})
-       }else{
-        navigation.navigate('WineDetail', { item })
-       }
-    });
+    this._emitter.addListener('SelectItem', this.triggerItem);
+}
+
+triggerItem = item => {
+  if(Device.isTablet){
+    this.setState({selectItem : item})
+   }else{
+    navigation.navigate('WineDetail', { item })
+   }
 }
 
 onRegionDidChange = regionFeature => {
@@ -56,16 +58,23 @@ onRegionDidChange = regionFeature => {
   renderAnnotations = winery => {
 
     const wineryId = 'winery' + winery.id
+    const {zoomLevel} = this.state
     return <Mapbox.PointAnnotation
         key={wineryId}
         id={wineryId}
         cluster
-        clusterMaxZoomLevel={6}
-        coordinate={[parseFloat(winery.longitude), parseFloat(winery.latitude)]}>
+            clusterRadius={50}
+            clusterMaxZoom={14}
+        coordinate={[parseFloat(winery.longitude), parseFloat(winery.latitude)]}
+        
+        >
 
-        <View style={styles.annotationContainer}>
+        <TouchableOpacity onPress={()=>{
+          this.triggerItem(winery)
+        }} style={styles.annotationContainer}>
           <Image source={require('../components/assets/pin.png')} />
-        </View>
+          {zoomLevel >=7 && <Text>{winery.name}</Text>}
+        </TouchableOpacity>
        
       </Mapbox.PointAnnotation>
 
@@ -351,7 +360,23 @@ onRegionDidChange = regionFeature => {
     const { zoomLevel, selectItem } = this.state
 
 
-    console.log('EMITTER MAIN', this._emitter)
+    const data = {
+        "type":"FeatureCollection",
+        "metadata":{},
+        "features":[]
+    }
+
+    wineries.forEach(winery => {
+      const point = {
+        "type":"Feature",
+        "geometry":{
+          "type":"Point",
+          "coordinates":[parseFloat(winery.longitude), parseFloat(winery.latitude),4.45],
+        },
+        "id":`winery-${winery.id}`
+      }
+      data.features.push(point)
+    })
 
     return <View style={styles.container}>
       
@@ -367,7 +392,35 @@ onRegionDidChange = regionFeature => {
            {zoomLevel < 5 && countries.map(this.renderCountryLayer)}
            {this.renderEcuatorLines()}
            {zoomLevel >= 5 && regions.map(this.renderCountryLayer)}
-           {zoomLevel >= 6 && wineries.map(this.renderAnnotations)}
+           {zoomLevel >= 8 && wineries.map(this.renderAnnotations)}
+
+           {zoomLevel >= 6 && zoomLevel < 8 &&<Mapbox.ShapeSource
+            id="earthquakes"
+            cluster
+            clusterRadius={50}
+            clusterMaxZoom={14}
+            shape={data}>
+            
+            <Mapbox.SymbolLayer
+              id="pointCount"
+              style={layerStyles.clusterCount}
+            />
+
+            <Mapbox.CircleLayer
+              id="clusteredPoints"
+              belowLayerID="pointCount"
+              filter={['has', 'point_count']}
+              style={layerStyles.clusteredPoints}
+            />
+
+            <Mapbox.CircleLayer
+              id="singlePoint"
+              filter={['!has', 'point_count']}
+              style={layerStyles.singlePoint}
+            />
+
+            
+          </Mapbox.ShapeSource>}
 
         </Mapbox.MapView>
         
@@ -411,13 +464,50 @@ const styles = StyleSheet.create({
     backgroundColor: 'orange',
     transform: [{ scale: 0.6 }],
   },
-  
+  annotationContainer:{
+    alignItems:'center'
+  }
 });
 
 const layerStyles = Mapbox.StyleSheet.create({
-  smileyFace: {
-    fillAntialias: true,
-    fillColor: 'rgba(136, 149, 107, 0.84)',
-    fillOutlineColor: 'rgba(136, 149, 107, 0.84)',
+  singlePoint: {
+    circleColor: '#23370B',
+    circleOpacity: 0.84,
+    circleStrokeWidth: 2,
+    circleStrokeColor: 'white',
+    circleRadius: 5,
+    circlePitchAlignment: 'map',
+  },
+
+  clusteredPoints: {
+    circlePitchAlignment: 'map',
+    circleColor: Mapbox.StyleSheet.source(
+      [
+        [25, 'yellow'],
+        [50, 'red'],
+        [75, 'blue'],
+        [100, 'orange'],
+        [300, 'pink'],
+        [750, 'white'],
+      ],
+      'point_count',
+      Mapbox.InterpolationMode.Exponential,
+    ),
+
+    circleRadius: Mapbox.StyleSheet.source(
+      [[0, 15], [100, 20], [750, 30]],
+      'point_count',
+      Mapbox.InterpolationMode.Exponential,
+    ),
+
+    circleOpacity: 0.84,
+    circleStrokeWidth: 2,
+    circleStrokeColor: 'white',
+  },
+
+  clusterCount: {
+    textField: '{point_count}',
+    textSize: 12,
+    textPitchAlignment: 'map',
   },
 });
