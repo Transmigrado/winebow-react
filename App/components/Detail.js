@@ -18,13 +18,30 @@ export default class Detail extends Component {
         wineries: []
     }
     
-    _onPress = index =>{
+    _onPress = item =>{
         
-        this.props.onSelect(2, this.props.regions[index])
+        this.props.onSelect(2, item)
     }
     
     _onBack = ()=>{
         this.props.onSelect(0)
+    }
+
+    renderItemRegion = ({ item, index}) => {
+        const width = Dimensions.get('window').width
+        const wineryCount = item.wineryCount || 0
+
+        return  <TouchableOpacity onPress={()=>{this._onPress(item)}} style={[{width: width, height: 130},styles.item]}>
+        <Image
+     style={[styles.itemImage,{width: '100%', height: 120, top:5, left:20 }]}
+     source={{uri:item.image.replace('images/','')}}
+     cache="only-if-cached"
+     />
+      <View style={[styles.itemContent,{width: '100%', height: 120, top:5, left:0}]}>
+         <Text style={[styles.text,styles.textBold]}>{item.name}</Text>
+         <Text style={styles.text}>{`${wineryCount} wineries`}</Text>
+     </View>
+</TouchableOpacity>
     }
 
 
@@ -32,26 +49,28 @@ export default class Detail extends Component {
         const { emitter } = this.props
 
        
-
-        const width = Dimensions.get('window').width
-        
         if(section.index === 1){
+            if(Device.isTablet){
+                return <View style={{width:'100%', flexDirection:'row'}}>
+                        {item.map(subitem=>{
+                             return <WineyardItem emitter={emitter} item={subitem} />
+                        })}
+                </View>
+            }
             return <WineyardItem emitter={emitter} item={item} />
         }
 
-        const wineryCount = item.wineryCount || 0
+      
        
-       return  <TouchableOpacity onPress={()=>{this._onPress(index)}} style={[{width: width, height: 130},styles.item]}>
-                   <Image
-                style={[styles.itemImage,{width: '100%', height: 120, top:5, left:20 }]}
-                source={{uri:item.image.replace('images/','')}}
-                cache="only-if-cached"
-                />
-                 <View style={[styles.itemContent,{width: '100%', height: 120, top:5, left:0}]}>
-                    <Text style={[styles.text,styles.textBold]}>{item.name}</Text>
-                    <Text style={styles.text}>{`${wineryCount} wineries`}</Text>
-                </View>
-           </TouchableOpacity>
+        if(Device.isTablet){
+            return <View style={{width:'100%', flexDirection:'row'}}>
+            {item.map(subitem=>{
+                 return this.renderItemRegion({item:subitem,index})
+            })}
+    </View>
+        }
+       
+        return this.renderItemRegion({item, item})
     }
 
     renderHeader = index =>{
@@ -73,7 +92,34 @@ export default class Detail extends Component {
     render() {
         
         const { regions, item } = this.props
+        let wineries = []
+        let regionsData = []
 
+        if(Device.isTablet){
+            let currentItem = []
+            item.wineries.forEach(winery => {
+                currentItem.push(winery)
+                if(currentItem.length === 3){
+                    wineries.push(currentItem)
+                    currentItem = []
+                }
+            })
+
+            let currentItemRegions = []
+            regions.forEach( region => {
+                currentItemRegions.push(region)
+                if(currentItemRegions.length === 2){
+                    regionsData.push(currentItemRegions)
+                    currentItemRegions = []
+                }
+            })
+
+        }else{
+            wineries = item.wineries
+            regionsData = regions
+        }
+
+        const styleMargin = (Device.isTablet) ? {marginBottom: 300} : {marginBottom: 170}
       
 
         return <View style={styles.container}>
@@ -81,11 +127,11 @@ export default class Detail extends Component {
   renderItem={({item, index, section}) => this.renderItem({item, index, section})}
   renderSectionHeader={({section:{index}}) => this.renderHeader(index)}
   sections={[
-    {index:0, data: regions},
-    {index:1, data: item.wineries},
+    {index:0, data: regionsData},
+    {index:1, data: wineries},
   ]}
-  keyExtractor={(item, index) => item + index}
-  style={{marginBottom: 170}}
+  keyExtractor={(item, index) => 'item' + index}
+  style={styleMargin}
 />
                 </View>
     }

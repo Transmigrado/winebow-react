@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { StyleSheet, View, Text, Image, Alert} from 'react-native'
+import { StyleSheet, View, Text, Image, Alert, KeyboardAvoidingView} from 'react-native'
 import Mapbox from '@mapbox/react-native-mapbox-gl'
 import PropTypes from 'prop-types'
 import LigthButton from '../components/LigthButton'
@@ -106,10 +106,10 @@ class SignScreen extends Component {
   
   renderSuccess = () => {
     return <React.Fragment>
-          <Text style={{fontSize: 30, textAlign:'center', marginBottom: 10}}>
+          <Text style={{fontSize: 30, textAlign:'center', marginBottom: 10, fontFamily:'IBMPlexSans-Bold'}}>
           Form Submitted Successfully
                 </Text>
-                <Text style={{fontSize: 14, textAlign:'center',marginTop: 10, marginBottom: 30}}>
+                <Text style={{fontSize: 14, textAlign:'center',marginTop: 10, marginBottom: 30, fontFamily:'IBMPlexSans'}}>
                 We have received your request access. Soon, our team will contact you and send your access data to your email.
                 </Text>
                 
@@ -124,7 +124,7 @@ class SignScreen extends Component {
     const { loading, finish} = this.state
     const styleBox = (Device.isTablet)? {width: 400} : {}
 
-    return <View style={styles.container}>
+    return<KeyboardAvoidingView style={styles.container} behavior="height" keyboardVerticalOffset={0}>
          {!Device.isTablet && <Image source={require('../components/assets/background.png')} style={{position:'absolute', width:'100%', height:'100%'}} />}
          {Device.isTablet && <Image source={require('../components/assets/backgroundBig.png')} style={{position:'absolute', width:'100%', height:'100%'}} />}
         <View style={styles.content}>
@@ -136,7 +136,7 @@ class SignScreen extends Component {
            
         </View>
         {loading && <LoadingDialog text="Loading" />}
-    </View>
+    </KeyboardAvoidingView>
   }
 }
 

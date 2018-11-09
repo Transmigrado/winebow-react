@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 import PropTypes from 'prop-types'
-
-
+import Device from 'react-native-device-detection'
 
 export default class BreadCump extends Component {
     
@@ -20,12 +19,15 @@ export default class BreadCump extends Component {
     renderPath = (text, index) => {
         const { big } = this.props
         const isLast = index >= this.props.path.length - 1
-        const style = (isLast) ? styles.lastText :  styles.text
-        const fontSize = (big) ? {fontSize: 24} : {fontSize:16}
+        const style = (isLast || !Device.isTablet) ? styles.lastText :  styles.text
+        const fontSize = (big) ? {fontSize: 17, marginLeft: 5, marginRight:5} : {fontSize:15}
+        const title = (big) ? text.toUpperCase() : text
+        const symbol = (big) ? "/" : ">"
+        const fontFamily = (big) ? 'IBMPlexSans-SemiBold' : 'IBMPlexSans'
 
         return <View key={index} style={styles.path} key={text}>
-             <Text style={[style, fontSize]} >{text}</Text>
-             {!isLast &&<Text style={[styles.arrow, fontSize]}>></Text>}
+             <Text style={[style, fontSize,  {fontFamily}]} >{title}</Text>
+             {!isLast &&<Text style={[styles.arrow, fontSize, {fontFamily}]}>{symbol}</Text>}
         </View>
     }
  
@@ -45,10 +47,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     text:{
-        color: '#AB3F66',
+       
+        color:'#737373'
     },
     lastText:{
-        color:'#737373',
+        color: '#AB3F66',
     },
     path:{
         flexDirection: 'row'

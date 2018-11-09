@@ -23,4 +23,4 @@ export default createSwitchNavigator({
     Main: { screen: Main },
     Auth:{ screen : Auth}
     }
-    ,{ initialRouteName:"Main" })
+    ,{ initialRouteName:"Auth" })

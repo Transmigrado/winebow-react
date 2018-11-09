@@ -14,7 +14,10 @@ import * as store from '../modules/store'
 import EventEmitter from 'events'
 import Breadcump from '../components/Breadcump'
 
+
 Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB01GxzIm44_FlvyFQ')
+
+const PIN_ICON = require('../components/assets/pin.png')
 
 class MainScreen extends Component {
 
@@ -42,7 +45,9 @@ class MainScreen extends Component {
 
     this._emitter = new EventEmitter()
 
-    this._emitter.addListener('SelectItem', this.triggerItem)
+    this._emitter.addListener('SelectItem', item => {
+      this.triggerItem(item)
+    })
     this._emitter.addListener('SelectCountry', country => {
       this.setState({path : ['World', country.name]})
     })
@@ -53,6 +58,9 @@ class MainScreen extends Component {
 }
 
 triggerItem = item => {
+
+  const { navigation } = this.props
+
   if(Device.isTablet){
     this.setState({selectItem : item})
    }else{
@@ -81,7 +89,7 @@ onRegionDidChange = regionFeature => {
         <TouchableOpacity onPress={()=>{
           this.triggerItem(winery)
         }} style={styles.annotationContainer}>
-          <Image source={require('../components/assets/pin.png')} />
+          <Image source={PIN_ICON} />
           {zoomLevel >=7 && <Text>{winery.name}</Text>}
         </TouchableOpacity>
        
@@ -92,6 +100,7 @@ onRegionDidChange = regionFeature => {
   onSourceLayerPress = (e) =>  {
     const { zoomLevel } = this.state
     if(zoomLevel < 5){
+
       const feature = e.nativeEvent.payload
       const { properties } = feature
       const { metadataId } = properties
@@ -194,19 +203,29 @@ onRegionDidChange = regionFeature => {
     const markerId = 'marker-'+fillId
 
     const { zoomLevel } = this.state
+    const fontSizeStyle = (zoomLevel < 7) ? {fontSize : 10} : {fontSize:16}
+
     
  
     return <React.Fragment>
-            {zoomLevel >= 5 && <Mapbox.PointAnnotation
+             <Mapbox.PointAnnotation
         key={markerId}
         id={markerId}
         coordinate={[latitude,longitude]}>
 
-        <View style={styles.annotationContainer}>
-          <Text>{country.name}</Text>
-        </View>
+        <TouchableOpacity onPress={()=>{
+          this.moveCamera({latitude,longitude})
+          if(country.geojson.features[0].properties.type === "Sovereign country"){
+           this._emitter.emit('SelectCountryFromMap', country)
+          }else{
+            this._emitter.emit('SelectRegionFromMap', country)
+          }
+         
+        }} style={[styles.annotationContainer,{width:100,height:100,borderRadius:50, justifyContent:'center'}]}>
+          {zoomLevel >= 5 &&<Text style={fontSizeStyle}>{country.name}</Text>}
+        </TouchableOpacity>
        
-      </Mapbox.PointAnnotation>}
+      </Mapbox.PointAnnotation>
       
       <Mapbox.ShapeSource 
     hitbox={{ width: 100, height: 100 }}
@@ -319,7 +338,7 @@ onRegionDidChange = regionFeature => {
     coordinate={[-120,42]}>
 
     <View style={styles.annotationContainer}>
-      <Text style={styleText}>40º</Text>
+      <Text style={styleText}>40º N</Text>
     </View>
    
   </Mapbox.PointAnnotation>
@@ -331,7 +350,7 @@ onRegionDidChange = regionFeature => {
     coordinate={[-120,2]}>
 
     <View style={styles.annotationContainer}>
-      <Text style={styleText}>Ecuator</Text>
+      <Text style={styleText}>0º Equator</Text>
     </View>
    
   </Mapbox.PointAnnotation>
@@ -342,24 +361,34 @@ onRegionDidChange = regionFeature => {
     coordinate={[-120,-38]}>
 
     <View style={styles.annotationContainer}>
-      <Text style={styleText}>40º</Text>
+      <Text style={styleText}>40º S</Text>
     </View>
    
   </Mapbox.PointAnnotation>
       </React.Fragment>
   }
 
-    onSelect = item => {
+    onSelect = (item, zoom) => {
+    
       if(item.geojson !== undefined){
       
         const { latitude, longitude } = this.getAverage(item.geojson.features[0].geometry.coordinates)
 
           this.map.setCamera({
             centerCoordinate: [latitude, longitude],
-            zoom: 4,
+            zoom: zoom,
             duration: 2000,
           })
       }
+    }
+
+    moveCamera = ({latitude, longitude})=>{
+
+      this.map.setCamera({
+        centerCoordinate: [latitude, longitude],
+        zoom: 6.5,
+        duration: 2000,
+      })
     }
 
     _onBackItem= ()=>{
@@ -393,6 +422,10 @@ onRegionDidChange = regionFeature => {
           "type":"Point",
           "coordinates":[parseFloat(winery.longitude), parseFloat(winery.latitude),4.45],
         },
+        "properties":{
+          "name":winery.name,
+          "item":winery
+        },
         "id":`winery-${winery.id}`
       }
       data.features.push(point)
@@ -406,19 +439,30 @@ onRegionDidChange = regionFeature => {
             centerCoordinate={[-30,0]}
             animated = {true}
             styleURL='asset://style.json'
+            rotateEnabled={false}
+            pitchEnabled={false}
+            compassEnabled ={false}
             onRegionDidChange={this.onRegionDidChange}
             style={styles.container}>
            
-           {zoomLevel < 5 && countries.map(this.renderCountryLayer)}
            {this.renderEcuatorLines()}
-           {zoomLevel >= 5 && regions.map(this.renderCountryLayer)}
-           {zoomLevel >= 8 && wineries.map(this.renderAnnotations)}
 
-           {zoomLevel >= 6 && zoomLevel < 8 &&<Mapbox.ShapeSource
+           {zoomLevel < 5 && countries.map(this.renderCountryLayer)}
+           {zoomLevel >= 5 && regions.map(this.renderCountryLayer)}
+          
+
+           {zoomLevel >= 6  &&<Mapbox.ShapeSource
             id="earthquakes"
             cluster
-            clusterRadius={50}
+            clusterRadius={80}
             clusterMaxZoom={14}
+            onPress = { ({nativeEvent}) => {
+            
+              if(nativeEvent.payload.properties.item !== undefined){
+                this.triggerItem(nativeEvent.payload.properties.item)
+              }
+              
+            }}
             shape={data}>
             
             <Mapbox.SymbolLayer
@@ -433,11 +477,13 @@ onRegionDidChange = regionFeature => {
               style={layerStyles.clusteredPoints}
             />
 
-            <Mapbox.CircleLayer
-              id="singlePoint"
-              filter={['!has', 'point_count']}
-              style={layerStyles.singlePoint}
+ 
+ <Mapbox.SymbolLayer
+                id="singlePoint"
+                filter={['!has', 'point_count']}
+                style={layerStyles.singlePoint}
             />
+
 
             
           </Mapbox.ShapeSource>}
@@ -447,11 +493,13 @@ onRegionDidChange = regionFeature => {
         {selectItem === undefined && <ModalContainer emitter={this._emitter} onSelect={ this.onSelect } />}
 
        
-        {Device.isTablet && this.renderFooter()}
-
+       
          {Device.isTablet && selectItem !== undefined && <Sidebar>
           <WineScreen onBack={this._onBackItem} item = {selectItem} />
         </Sidebar>}
+
+         {Device.isTablet && this.renderFooter()}
+
 
        
     </View>
@@ -497,7 +545,7 @@ const styles = StyleSheet.create({
     position:'absolute',
     bottom:0,
     backgroundColor:'white',
-    shadowColor: '#9C093D',
+    shadowColor: '#CCC',
     shadowRadius: 6,
     shadowOpacity: 0.2,
     shadowOffset: { width: 0, height: -4 },
@@ -508,24 +556,22 @@ const styles = StyleSheet.create({
 
 const layerStyles = Mapbox.StyleSheet.create({
   singlePoint: {
-    circleColor: '#23370B',
-    circleOpacity: 0.84,
-    circleStrokeWidth: 2,
-    circleStrokeColor: 'white',
-    circleRadius: 5,
-    circlePitchAlignment: 'map',
+    iconImage: PIN_ICON,
+    textField: '{name}',
+    textOffset:[0, 1.4],
+    textSize: 12
   },
 
   clusteredPoints: {
     circlePitchAlignment: 'map',
     circleColor: Mapbox.StyleSheet.source(
       [
-        [25, 'yellow'],
-        [50, 'red'],
-        [75, 'blue'],
-        [100, 'orange'],
-        [300, 'pink'],
-        [750, 'white'],
+        [25, '#253071'],
+        [50, '#253071'],
+        [75, '#253071'],
+        [100, '#253071'],
+        [300, '#253071'],
+        [750, '#253071'],
       ],
       'point_count',
       Mapbox.InterpolationMode.Exponential,
@@ -539,12 +585,14 @@ const layerStyles = Mapbox.StyleSheet.create({
 
     circleOpacity: 0.84,
     circleStrokeWidth: 2,
-    circleStrokeColor: 'white',
+    textColor:'#FFFFFF',
+    circleStrokeColor: '#253071',
   },
 
   clusterCount: {
     textField: '{point_count}',
     textSize: 12,
+    textColor:'#FFFFFF',
     textPitchAlignment: 'map',
   },
 });

@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     width:  (Device.isTablet) ? Dimensions.get('window').width - 160 : Dimensions.get('window').width - 80,
     height: 40,
     position: 'absolute',
+    backgroundColor:'red',
     left: (Device.isTablet) ? 80 : 40,
     top: heightScreen - 120
   },

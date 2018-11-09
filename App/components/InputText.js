@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#696969',
         padding: 0,
+        fontFamily: "IBMPlexSans",
     },
 
     bottomLine:{

@@ -27,26 +27,60 @@ export default class Modal extends Component {
        
         const { onMount } = this.props
         onMount()
+
     }
+
+    componentWillReceiveProps(){
+        const { emitter } = this.props
+        
+        if(emitter !== undefined){
+            emitter.addListener('SelectCountryFromMap', country => {
+                this.onSelect(1, country)
+            })
+    
+            emitter.addListener('SelectRegionFromMap', region => {
+                this.onSelect(2, region)
+            })
+        }
+       
+    }
+
 
     onSelect = (mode, item) => {
         
         const { onSelect, emitter } = this.props
 
         if(mode === 1){
-            onSelect(item)
-            emitter.emit('SelectCountry', item)
+            onSelect(item, 4)
+            
+            if(Device.isTablet){
+                emitter.emit('SelectCountry', item)
+            }
+           
+
             this.setState({ mode, itemCountry: item })
         }else if(mode === 2){
-            emitter.emit('SelectRegion', item)
+            if(Device.isTablet){
+                emitter.emit('SelectRegion', item)
+            }
+            onSelect(item, 6)
             this.setState({ mode, itemWineyard: item })
         }else{
             this.setState({ mode})
         }
     }
 
-    onBack = mode => {
-        this.setState({ mode })
+    onBack = () => {
+        const { itemCountry, mode } = this.state
+       
+        if(mode === 2){
+            if(itemCountry === undefined){
+                this.setState({ mode : 0 })
+                return
+            }
+        }
+
+        this.setState({ mode: mode - 1 })
     }
 
     _onDragged = y =>{
@@ -62,13 +96,37 @@ export default class Modal extends Component {
     
     getValue = expanded => {
 
+        const { mode } = this.state
+
         if(Device.isTablet){
 
-            if(expanded) {
-                return Dimensions.get('window').height - 600
-            } 
-    
-            return Dimensions.get('window').height - 170
+
+            if(mode === 2){
+
+                if(expanded) {
+                    return Dimensions.get('window').height - 600
+                } 
+        
+                return Dimensions.get('window').height - 170
+
+            }else if(mode === 1){
+
+                if(expanded) {
+                    return Dimensions.get('window').height - 600
+                } 
+        
+                return Dimensions.get('window').height - 170
+
+            }else{
+
+                if(expanded) {
+                    return Dimensions.get('window').height - 450
+                } 
+        
+                return Dimensions.get('window').height - 170
+            }
+
+            
         }
 
         if(expanded) {

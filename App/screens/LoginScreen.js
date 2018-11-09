@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { StyleSheet, View, Image, Alert} from 'react-native'
+import { StyleSheet, View, Image, Alert, KeyboardAvoidingView} from 'react-native'
 import PropTypes from 'prop-types'
 import LigthButton from '../components/LigthButton'
 import InputText from '../components/InputText'
@@ -74,7 +74,7 @@ onChangeText = value =>{
 
     const styleBox = (Device.isTablet)? {width: 400} : {}
 
-    return <View style={styles.container}>
+    return <KeyboardAvoidingView style={styles.container} behavior="height" keyboardVerticalOffset={0}>
          {!Device.isTablet && <Image source={require('../components/assets/background.png')} style={{position:'absolute', width:'100%', height:'100%'}} />}
          {Device.isTablet && <Image source={require('../components/assets/backgroundBig.png')} style={{position:'absolute', width:'100%', height:'100%'}} />}
         <View style={styles.content}>
@@ -91,7 +91,7 @@ onChangeText = value =>{
            
         </View>
         {loading && <LoadingDialog text="Loading" />}
-    </View>
+    </KeyboardAvoidingView>
   }
 }
 

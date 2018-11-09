@@ -34,9 +34,7 @@ export default class Trip extends Component {
                     {!expanded && this.renderUpArrow()}
                 </View>
             </View>
-            {mode > 0 && <TouchableOpacity onPress={()=>{
-                       onPress(mode - 1)
-                   }} style={{position:'absolute', zIndex:99999, left:20, top: 15 }}>
+            {mode > 0 && <TouchableOpacity onPress={onPress} style={{position:'absolute', zIndex:99999, left:20, top: 15 }}>
                     <Image source={require('./assets/back.png')} style={{tintColor:"#9C093D"}} />
                 </TouchableOpacity>}
         </View>
@@ -61,6 +59,7 @@ const defaultStyles = StyleSheet.create({
         fontSize: 16,
         color: '#AB3F66',
         marginTop: 5,
-        marginLeft:5 
+        marginLeft:5 ,
+        fontFamily: "IBMPlexSans-SemiBold",
     }
 })

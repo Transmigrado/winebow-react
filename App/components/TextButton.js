@@ -25,7 +25,8 @@ const styles = StyleSheet.create({
     },
     text:{
         color:'#636363', 
-        fontSize: 12
+        fontSize: 12,
+        fontFamily: "IBMPlexSans",
     },
     button:{
         justifyContent:'center',

@@ -29,9 +29,9 @@ const styles = StyleSheet.create({
     container: {
     },
     text:{
-        color:'white', 
-        fontWeight: 'bold',
-        fontSize: 16
+        color:'white',
+        fontSize: 16,
+        fontFamily: "IBMPlexSans-SemiBold",
     },
     button:{
         backgroundColor:'#9C093D',

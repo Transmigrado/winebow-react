@@ -99,7 +99,8 @@ const styles = StyleSheet.create({
         paddingBottom: 12
     },
     title:{
-        fontSize: 30
+        fontSize: 30,
+        fontFamily: "IBMPlexSans-Bold",
     },
     item:{
         flex:1
@@ -119,9 +120,11 @@ const styles = StyleSheet.create({
     },
     text:{
         color:'white',
-        fontSize:16
+        fontSize:16,
+        fontFamily: "IBMPlexSans",
     },
     textBold:{
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontFamily: "IBMPlexSans-SemiBold",
     }
 })

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, Image, FlatList, Dimensions } from 'react-native'
+import { StyleSheet, View, Text, Image, FlatList, Dimensions, ScrollView } from 'react-native'
 import PropTypes from 'prop-types'
 import { withNavigation} from 'react-navigation'
 import WineyardItem from './Item/WineyardItem'
@@ -31,6 +31,14 @@ class RegionDetail extends Component {
         return <WineyardItem emitter={emitter} item={item}  />
     }
 
+    getRoot = ()=>{
+        if(Device.isTablet){
+            return ScrollView
+        }
+
+        return View
+    }
+
     renderHeader = () =>{
        
 
@@ -40,7 +48,9 @@ class RegionDetail extends Component {
         const width = Dimensions.get('window').width - 650
         const style = (Device.isTablet) ? {width} : {  }
 
-        return  <View style={[styles.titleContent, style]}>
+        const Root = this.getRoot()
+
+        return  <Root style={[styles.titleContent, style]}>
                 
                
                 <View style={{width: '100%', height:160}}>
@@ -60,16 +70,15 @@ class RegionDetail extends Component {
                     {!Device.isTablet && <WineyardHeader />}
                 </View>
                 
-       </View>
+       </Root>
     }
 
     renderHeaderTablet = ()=>{
         const { item } = this.props
      
-        return  <View style={[styles.titleContent,{flex:1, width:300}]}>
-                
+        return  <ScrollView style={[styles.titleContent,{flex:1, width:300}]}>
             <WineyardHeader />
-       </View>
+       </ScrollView>
     }
 
     render() {
