@@ -14,13 +14,15 @@ export default class Modal extends Component {
        onMount : PropTypes.func,
        countries: PropTypes.array,
        onSelect: PropTypes.func,
-       emitter: PropTypes.object
+       emitter: PropTypes.object,
+       isLoading: PropTypes.bool
     }
 
     state = {
         mode: 0,
         y: new Animated.Value((Device.isTablet) ? Dimensions.get('window').height - 170 : Dimensions.get('window').height - 120),
-        animated: false
+        animated: false,
+        expanded: false
     }
 
     componentDidMount(){
@@ -45,10 +47,45 @@ export default class Modal extends Component {
        
     }
 
+    /*
+     <Draggable 
+                mode={mode}
+                onDraggedEnd={this._onDraggedEnd} 
+                onDragged={this._onDragged} />
+    */
 
-    onSelect = (mode, item) => {
+
+    onSelect = (mode, item, prevMode) => {
         
         const { onSelect, emitter } = this.props
+
+        console.log('MODE',mode)
+        console.log('prevMode',prevMode)
+
+
+        if(Device.isTablet){
+        if(prevMode === 0){
+            
+                Animated.timing(                  
+                    this.state.y,            
+                    {
+                      toValue:  Dimensions.get('window').height - 700,                   
+                      duration: 500,              
+                    }
+                  ).start()
+          
+        }else if(prevMode === 1){
+          
+                Animated.timing(                  
+                    this.state.y,            
+                    {
+                      toValue:  Dimensions.get('window').height - 600,                   
+                      duration: 500,              
+                    }
+                  ).start()
+          
+        }
+    }
 
         if(mode === 1){
             onSelect(item, 4)
@@ -65,13 +102,23 @@ export default class Modal extends Component {
             }
             onSelect(item, 6)
             this.setState({ mode, itemWineyard: item })
+
+           
+              
         }else{
             this.setState({ mode})
+
+           
+            
+          
+
         }
     }
 
     onBack = () => {
         const { itemCountry, mode } = this.state
+
+   
        
         if(mode === 2){
             if(itemCountry === undefined){
@@ -80,7 +127,55 @@ export default class Modal extends Component {
             }
         }
 
+        if(Device.isTablet){
+            if(mode - 1 === 0){
+                Animated.timing(                  
+                    this.state.y,            
+                    {
+                      toValue:  Dimensions.get('window').height - 450,                   
+                      duration: 500,              
+                    }
+                  ).start()
+            }else if(mode -1 === 1){
+                Animated.timing(                  
+                    this.state.y,            
+                    {
+                      toValue:  Dimensions.get('window').height - 700,                   
+                      duration: 500,              
+                    }
+                  ).start()
+            }
+        }
+
+      
+
         this.setState({ mode: mode - 1 })
+    }
+
+    onExpand = ()=>{
+        const { expanded } = this.state
+        
+        if(expanded){
+            Animated.timing(                  
+                this.state.y,            
+                {
+                  toValue: this.getValue(!expanded),                   
+                  duration: 500,              
+                }
+              ).start()
+        }
+        
+
+        Animated.timing(                  
+            this.state.y,            
+            {
+              toValue: this.getValue(!expanded),                   
+              duration: 500,              
+            }
+          ).start()
+          
+          this.setState({expanded:!expanded})
+
     }
 
     _onDragged = y =>{
@@ -112,7 +207,7 @@ export default class Modal extends Component {
             }else if(mode === 1){
 
                 if(expanded) {
-                    return Dimensions.get('window').height - 600
+                    return Dimensions.get('window').height - 700
                 } 
         
                 return Dimensions.get('window').height - 170
@@ -149,23 +244,22 @@ export default class Modal extends Component {
 
     render() {
 
-        const { countries, emitter  } = this.props
+        const { countries, emitter, isLoading  } = this.props
         const { mode, y, expanded, itemCountry, itemWineyard } = this.state
         const widthScreen = Dimensions.get('window').width
         const style = ( Device.isTablet) ? { marginLeft: 20, marginRigth: 20, width: widthScreen - 40} : {width: widthScreen}
 
+       
         return <React.Fragment>
            
             <Animated.View style={[styles.content, style,{ top : y }]}>
          
-                <Trip mode={mode} onPress={this.onBack} expanded={expanded} style={{}} />
-                {mode == 0 && <List emitter={emitter} countries={countries} onSelect={this.onSelect} />}
+                <Trip onExpand={this.onExpand} mode={mode} onPress={this.onBack} expanded={expanded} style={{}} />
+                {mode == 0 && <List isLoading={isLoading} emitter={emitter} countries={countries} onSelect={this.onSelect} />}
                 {mode == 1 && <DetailContainer emitter={emitter} item={itemCountry} onSelect={this.onSelect} />}
                 {mode == 2 && <RegionDetailContainer emitter={emitter} item={itemWineyard} onSelect={this.onSelect} />}
             </Animated.View>
-            <Draggable 
-                onDraggedEnd={this._onDraggedEnd} 
-                onDragged={this._onDragged} />
+           
         </React.Fragment>
     }
 }

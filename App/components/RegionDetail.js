@@ -6,6 +6,7 @@ import WineyardItem from './Item/WineyardItem'
 import Breadcump from './Breadcump'
 import WineyardHeader from '../components/Item/WineyardHeader'
 import Device from 'react-native-device-detection'
+import Description from './Description'
 
 class RegionDetail extends Component {
     
@@ -46,7 +47,7 @@ class RegionDetail extends Component {
 
         const path = ['World',item.country, item.name]
         const width = Dimensions.get('window').width - 650
-        const style = (Device.isTablet) ? {width} : {  }
+        const style = (Device.isTablet) ? {width, marginBottom:100} : {  }
 
         const Root = this.getRoot()
 
@@ -66,7 +67,7 @@ class RegionDetail extends Component {
                 </View>
                 <View>
                     <Breadcump path={path} style={{marginTop:10, marginBottom:10}} />
-                    <Text>{item.description}</Text>
+                    <Description text={item.description} />
                     {!Device.isTablet && <WineyardHeader />}
                 </View>
                 
@@ -76,9 +77,9 @@ class RegionDetail extends Component {
     renderHeaderTablet = ()=>{
         const { item } = this.props
      
-        return  <ScrollView style={[styles.titleContent,{flex:1, width:300}]}>
+        return  <View  style={[styles.titleContent,{flex:1}]}>
             <WineyardHeader />
-       </ScrollView>
+       </View>
     }
 
     render() {
@@ -95,7 +96,6 @@ class RegionDetail extends Component {
                     data={item.wineries}
                     renderItem={({item, index}) => this.renderItem({item, index})}
                     numColumns={(Device.isTablet) ? 2 : 1}
-                    style={{marginBottom:160}}
                     />
                 </View>
     }

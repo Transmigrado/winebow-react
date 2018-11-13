@@ -9,6 +9,10 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.4)
+  - lottie-ios (2.5.0)
+  - lottie-react-native (2.5.10):
+    - lottie-ios
+    - React
   - React (0.57.4):
     - React/Core (= 0.57.4)
   - react-native-mapbox-gl (6.1.3):
@@ -58,6 +62,8 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
+  - lottie-ios (from `../node_modules/lottie-ios`)
+  - lottie-react-native (from `../node_modules/lottie-react-native`)
   - "react-native-mapbox-gl (from `../node_modules/@mapbox/react-native-mapbox-gl`)"
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
@@ -82,6 +88,10 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Folly:
     :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
+  lottie-ios:
+    :path: "../node_modules/lottie-ios"
+  lottie-react-native:
+    :path: "../node_modules/lottie-react-native"
   React:
     :path: "../node_modules/react-native"
   react-native-mapbox-gl:
@@ -96,10 +106,12 @@ SPEC CHECKSUMS:
   Fabric: f8d42c893bb187326a7968b62abe55c36a987a46
   Folly: c89ac2d5c6ab169cd7397ef27485c44f35f742c7
   glog: 1de0bb937dccdc981596d3b5825ebfb765017ded
+  lottie-ios: 9f24be3ecb13412223b6ac70d97437742b0e3de1
+  lottie-react-native: db4bd75685428c4ad0ec2f913145abff3d38b640
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
   react-native-mapbox-gl: b42480060cdcc515dfa3d8e403fb4dd32466a1b9
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: 466a751f93d39c3cbbdc48c2e155795706b6ca82
+PODFILE CHECKSUM: 0aeaab7a221c906039d033b91bb8c12435a5f9a7
 
 COCOAPODS: 1.5.3

@@ -10,7 +10,8 @@ export default class Trip extends Component {
         isShadowless: PropTypes.bool,
         expanded: PropTypes.bool,
         mode: PropTypes.number,
-        onPress: PropTypes.func
+        onPress: PropTypes.func,
+        onExpand: PropTypes.func,
     }
 
     renderUpArrow = ()=>{
@@ -23,18 +24,21 @@ export default class Trip extends Component {
 
 
     render() {
-        const { expanded , mode, onPress} = this.props
+        const { expanded , mode, onPress, onExpand} = this.props
         const borderStyle =defaultStyles.card
         return <View style={[defaultStyles.container, this.props.containerStyle]}>
                  
-            <View style={[defaultStyles.card, borderStyle, this.props.cardStyle]}>
-                <Text style={defaultStyles.title}>Regions</Text>
-                <View style={{width: 20, height: 30, justifyContent:'center'}}>
-                    {expanded && this.renderDownArrow()}
-                    {!expanded && this.renderUpArrow()}
-                </View>
-            </View>
-            {mode > 0 && <TouchableOpacity onPress={onPress} style={{position:'absolute', zIndex:99999, left:20, top: 15 }}>
+            <TouchableOpacity onPress={onExpand} style={[defaultStyles.card, borderStyle, this.props.cardStyle]}>
+               
+                    <Text style={defaultStyles.title}>Regions</Text>
+                    <View style={{width: 20, height: 30, justifyContent:'center'}}>
+                        {expanded && this.renderDownArrow()}
+                        {!expanded && this.renderUpArrow()}
+                    </View>
+    
+               
+            </TouchableOpacity>
+            {mode > 0 && <TouchableOpacity onPress={onPress} style={{position:'absolute', width:44, height:44, zIndex:99999, left:20, alignItems:'center', justifyContent:'center' }}>
                     <Image source={require('./assets/back.png')} style={{tintColor:"#9C093D"}} />
                 </TouchableOpacity>}
         </View>

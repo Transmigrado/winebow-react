@@ -34,8 +34,10 @@ class WineyardItem extends Component {
     }
 
     render() {
+
+        //onst fontFamily = (big) ? 'IBMPlexSans-SemiBold' : 'IBMPlexSans'
         const { item, bigTitle, emitter} = this.props
-        const titleStyle = (bigTitle) ? { fontSize: 24, fontWeight: 'bold'} : {}
+        const titleStyle = (bigTitle) ? { fontSize: 24, fontFamily:'IBMPlexSans-SemiBold'} : {fontFamily:'IBMPlexSans-SemiBold'}
         const Root = this.getRoot()
         const style = (bigTitle) ? {} : { maxWidth : 300}
 
@@ -44,14 +46,14 @@ class WineyardItem extends Component {
                     <Card style={{width:140,height:120, marginLeft:-20}}>
                 <Image
                         resizeMode="contain"
-                        style={{width: 100, height: 100, borderRadius: 6, }}
+                        style={{width: 90, height: 90, marginLeft:5, marginTop:5 }}
                         source={{uri:item.image}}
                         />
             </Card>
             <View style={{marginTop: 10, marginRight: 100}}>
                 <Text style={titleStyle}>{item.name}</Text>
-                <Text>{`Country: ${item.countryName}`}</Text>
-                <Text>{`Region: ${item.regionName}`}</Text>
+                <Text style={{fontFamily:'IBMPlexSans'}}>{`Country: ${item.countryName}`}</Text>
+                <Text style={{fontFamily:'IBMPlexSans'}}>{`Region: ${item.regionName}`}</Text>
             </View>
         </View>
          <View style={styles.bottomLine}></View>
@@ -78,7 +80,7 @@ const styles = StyleSheet.create({
         paddingBottom: 12
     },
     title:{
-        fontSize: 30
+        fontSize: 30,
     },
     item:{
         flex:1,

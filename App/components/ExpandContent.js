@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native'
 import PropTypes from 'prop-types'
 
-
+import Description from '../components/Description'
 
 export default class ExpandContent extends Component {
     
@@ -29,10 +29,26 @@ export default class ExpandContent extends Component {
     renderContent = (content, index) => {
 
         if(index === 0){
-            return  <Text style={{ paddingHorizontal: 20 }}>{content.description}</Text>
+            return <Description style={{padding:20}} text={content.description}></Description>
         }
 
         const { expand } = this.state
+        const style= {
+            width:'100%',
+            borderBottomColor:'#CCC',
+            borderBottomWidth: StyleSheet.hairlineWidth,
+           
+            flexDirection:"row",
+            alignItems:"space-between",
+            justifyContent:"space-between",
+            }
+
+        
+
+        if(index === 1 || expand[index - 2]){
+            style.borderTopColor = '#CCC'
+            style.borderTopWidth = StyleSheet.hairlineWidth
+        }
 
         return <View>
             <TouchableOpacity
@@ -40,22 +56,15 @@ export default class ExpandContent extends Component {
                 expand[index - 1] =  !expand[index - 1] 
                 this.setState({expand})
             }}
-            style={{
-        width:'100%',
-        borderBottomColor:'#CCC',
-        borderBottomWidth: StyleSheet.hairlineWidth,
-        flexDirection:"row",
-        alignItems:"space-between",
-        justifyContent:"space-between",
-        }}>
-                <Text style={{ fontSize: 20, marginTop:20, marginBottom: 10, paddingHorizontal: 20, fontWeight:'300'}}>{content.title}</Text>
+            style={style}>
+                <Text style={{ fontSize: 20, marginTop:10, marginBottom: 10, paddingHorizontal: 20, fontWeight:'300', fontFamily:'IBMPlexSans'}}>{content.title}</Text>
 
                 <View style={{ width: 20, height: 40, justifyContent:'center'}}>
                     {!expand[index - 1] && this.renderDownArrow()}
                     {expand[index - 1] && this.renderUpArrow()}
                 </View>
             </TouchableOpacity>
-            {expand[index - 1] && <Text style={{marginTop: 10, marginBottom: 10, paddingHorizontal: 20}}>{content.description}</Text>}
+            {expand[index - 1] && <Description style={{padding:20}} text={content.description}></Description>}
         </View>
     }
     

@@ -9,7 +9,7 @@ import LoadingDialog from '../components/LoadingDialog'
 import login from '../api/ApiLogin'
 import validateEmail  from '../utils/validate'
 import Device from 'react-native-device-detection'
-
+import { AsyncStorage } from "react-native"
 class LoginScreen extends Component {
 
   static navigationOptions = ({ navigation }) => ({
@@ -26,6 +26,30 @@ class LoginScreen extends Component {
    loading: false
  }
 
+ componentWillMount(){
+  this._retrieveData()
+ }
+
+ _retrieveData = async () => {
+  try {
+    const value = await AsyncStorage.getItem('user')
+    if (value !== null) {
+      console.log('VALUE', value)
+      this.props.navigation.navigate('Main')
+    }
+   } catch (error) {
+    console.log('ERROR GET', error)
+   }
+}
+
+_storeData = async value => {
+  try {
+    await AsyncStorage.setItem('user', value)
+  } catch (error) {
+    console.log('ERROR', error)
+  }
+}
+
  
 showAlert = message => {
   setTimeout(()=>{
@@ -39,6 +63,9 @@ showAlert = message => {
   )},100)
 }
 
+
+
+
  onPressLogin = ()=>{
     const { value } = this.state
 
@@ -46,6 +73,9 @@ showAlert = message => {
     login(value)
     .then(response => {
       this.setState({loading:false})
+
+      this._storeData(value)
+
       if(response.status === 200){
        this.props.navigation.navigate('Main')
       }else if(response.status === 404){

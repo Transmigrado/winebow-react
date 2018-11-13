@@ -36,7 +36,7 @@ const defaultStyles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowOffset: { width: 0, height: 5 },
         backgroundColor: 'white',
-        elevation: 5
+        elevation: 5,
     },
     shadowlessCard: {
         shadowRadius: 0,

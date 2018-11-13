@@ -10,7 +10,7 @@ class WineScreen extends Component {
   static propTypes = {
     navigation: PropTypes.object,
     item: PropTypes.object,
-    onBack: PropTypes.object
+    onBack: PropTypes.object,
  }
 
 

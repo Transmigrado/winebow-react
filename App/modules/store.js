@@ -88,7 +88,8 @@ const INITIAL_STATE = {
   countries:[],
   regions:[],
   wineries: [],
-  wines:[]
+  wines:[],
+  isLoading:true
 }
 
 const getCountry = (state, region) =>{
@@ -177,7 +178,7 @@ reducer = (state = INITIAL_STATE, action) => {
       })
       return {...state, wineries, regions, countries}
     case ACTION.FETCH_WINES:
-      return {...state, wines:action.data}
+      return {...state, wines:action.data, isLoading:false}
     case ACTION.FETCH:
       return {...state, countries:action.data}
     case ACTION.LOAD:
@@ -214,6 +215,8 @@ export const getRegionsFilter =(state, country) => state.regions.filter(region =
 export const getWines = (state, item) => state.wines.filter(wine => {
   return wine.winery_id === item.id
 })
+
+export const getLoading = (state) => state.isLoading
 
 export const store = createStore(
                   reducer, 

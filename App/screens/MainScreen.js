@@ -214,11 +214,13 @@ onRegionDidChange = regionFeature => {
         coordinate={[latitude,longitude]}>
 
         <TouchableOpacity onPress={()=>{
-          this.moveCamera({latitude,longitude})
+          
           if(country.geojson.features[0].properties.type === "Sovereign country"){
            this._emitter.emit('SelectCountryFromMap', country)
+           this.moveCamera({latitude,longitude, zoomLevel:6})
           }else{
             this._emitter.emit('SelectRegionFromMap', country)
+            this.moveCamera({latitude,longitude, zoomLevel:8})
           }
          
         }} style={[styles.annotationContainer,{width:100,height:100,borderRadius:50, justifyContent:'center'}]}>
@@ -382,13 +384,17 @@ onRegionDidChange = regionFeature => {
       }
     }
 
-    moveCamera = ({latitude, longitude})=>{
-
+    moveCamera = ({latitude, longitude, zoomLevel})=>{
+      console.log('MOVE CAMERA')
       this.map.setCamera({
         centerCoordinate: [latitude, longitude],
-        zoom: 6.5,
-        duration: 2000,
+        zoomLevel,
+        duration: 1000,
       })
+
+      setTimeout(()=>{
+        this.setState({zoomLevel})
+      },1000)
     }
 
     _onBackItem= ()=>{
@@ -405,7 +411,7 @@ onRegionDidChange = regionFeature => {
   render() {
     
   
-    const { countries, regions, wineries } = this.props
+    const { countries, regions, wineries, isLoading } = this.props
     const { zoomLevel, selectItem } = this.state
 
 
@@ -430,8 +436,12 @@ onRegionDidChange = regionFeature => {
       }
       data.features.push(point)
     })
+   
+
+    console.log("ZOOM LEVEL", zoomLevel)
 
     return <View style={styles.container}>
+      <View style={styles.container}>
       
          <Mapbox.MapView
             ref={ ref => this.map = ref } 
@@ -460,6 +470,8 @@ onRegionDidChange = regionFeature => {
             
               if(nativeEvent.payload.properties.item !== undefined){
                 this.triggerItem(nativeEvent.payload.properties.item)
+              }else{
+                this.setState({zoomLevel:9})
               }
               
             }}
@@ -490,19 +502,19 @@ onRegionDidChange = regionFeature => {
 
         </Mapbox.MapView>
         
-        {selectItem === undefined && <ModalContainer emitter={this._emitter} onSelect={ this.onSelect } />}
+        {selectItem === undefined && <ModalContainer isLoading={isLoading} emitter={this._emitter} onSelect={ this.onSelect } />}
 
-       
+  
        
          {Device.isTablet && selectItem !== undefined && <Sidebar>
-          <WineScreen onBack={this._onBackItem} item = {selectItem} />
+          <WineScreen  onBack={this._onBackItem} item = {selectItem} />
         </Sidebar>}
 
-         {Device.isTablet && this.renderFooter()}
-
-
+    
        
     </View>
+    {Device.isTablet && this.renderFooter()}
+      </View>
   }
 }
 
@@ -510,7 +522,8 @@ onRegionDidChange = regionFeature => {
 const mapStateToProps = (state) => ({
     countries: store.getCountries(state),
     regions: store.getRegions(state),
-    wineries: store.getWineries(state)
+    wineries: store.getWineries(state),
+    isLoading: store.getLoading(state)
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -542,7 +555,6 @@ const styles = StyleSheet.create({
   footer:{
     width:'100%',
     height:50,
-    position:'absolute',
     bottom:0,
     backgroundColor:'white',
     shadowColor: '#CCC',

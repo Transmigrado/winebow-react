@@ -20,11 +20,11 @@ export default class Detail extends Component {
     
     _onPress = item =>{
         
-        this.props.onSelect(2, item)
+        this.props.onSelect(2, item, 1)
     }
     
     _onBack = ()=>{
-        this.props.onSelect(0)
+        this.props.onSelect(0,null)
     }
 
     renderItemRegion = ({ item, index}) => {
@@ -119,7 +119,7 @@ export default class Detail extends Component {
             regionsData = regions
         }
 
-        const styleMargin = (Device.isTablet) ? {marginBottom: 300} : {marginBottom: 170}
+        const styleMargin = (Device.isTablet) ? {marginBottom: 170} : {marginBottom: 170}
       
 
         return <View style={styles.container}>

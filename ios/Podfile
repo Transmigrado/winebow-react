@@ -29,6 +29,10 @@ pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-map
 pod 'Fabric'
 pod 'Crashlytics'
 
+pod 'lottie-ios', :path => '../node_modules/lottie-ios'
+
+pod 'lottie-react-native', :path => '../node_modules/lottie-react-native'
+
 post_install do |installer|
     installer.pods_project.targets.each do |target|
         if target.name == "React"

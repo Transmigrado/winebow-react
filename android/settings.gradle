@@ -1,4 +1,6 @@
 rootProject.name = 'winebow'
+include ':lottie-react-native'
+project(':lottie-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/lottie-react-native/src/android')
 include ':@mapbox_react-native-mapbox-gl'
 project(':@mapbox_react-native-mapbox-gl').projectDir = new File(rootProject.projectDir, '../node_modules/@mapbox/react-native-mapbox-gl/android/rctmgl')
 

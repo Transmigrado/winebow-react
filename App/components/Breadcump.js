@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 import PropTypes from 'prop-types'
 import Device from 'react-native-device-detection'
 
@@ -15,6 +15,10 @@ export default class BreadCump extends Component {
         path:[],
         big: false
     }
+
+    onPress = ()=>{
+
+    }
     
     renderPath = (text, index) => {
         const { big } = this.props
@@ -24,6 +28,13 @@ export default class BreadCump extends Component {
         const title = (big) ? text.toUpperCase() : text
         const symbol = (big) ? "/" : ">"
         const fontFamily = (big) ? 'IBMPlexSans-SemiBold' : 'IBMPlexSans'
+
+        if(big && !isLast){
+            return <TouchableOpacity onPress={()=>{this.onPress(index)}} key={index} style={styles.path} key={text}>
+            <Text style={[style, fontSize,  {fontFamily}]} >{title}</Text>
+            {!isLast &&<Text style={[styles.arrow, fontSize, {fontFamily}]}>{symbol}</Text>}
+       </TouchableOpacity>
+        }
 
         return <View key={index} style={styles.path} key={text}>
              <Text style={[style, fontSize,  {fontFamily}]} >{title}</Text>
