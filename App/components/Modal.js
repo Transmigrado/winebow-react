@@ -59,9 +59,6 @@ export default class Modal extends Component {
         
         const { onSelect, emitter } = this.props
 
-        console.log('MODE',mode)
-        console.log('prevMode',prevMode)
-
 
         if(Device.isTablet){
         if(prevMode === 0){
@@ -88,7 +85,7 @@ export default class Modal extends Component {
     }
 
         if(mode === 1){
-            onSelect(item, 4)
+            onSelect(item, 6)
             
             if(Device.isTablet){
                 emitter.emit('SelectCountry', item)

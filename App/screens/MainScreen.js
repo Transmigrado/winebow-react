@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { StyleSheet, View, Linking, Image, Text, TouchableOpacity} from 'react-native'
+import { StyleSheet, View, Linking, Image, Text, TouchableOpacity, Animated} from 'react-native'
 import Mapbox from '@mapbox/react-native-mapbox-gl'
 import { withNavigation } from 'react-navigation'
 import PropTypes from 'prop-types'
@@ -13,7 +13,7 @@ import { compose } from 'redux'
 import * as store from '../modules/store'
 import EventEmitter from 'events'
 import Breadcump from '../components/Breadcump'
-
+import LoadingDialog from '../components/LoadingDialog'
 
 Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB01GxzIm44_FlvyFQ')
 
@@ -35,7 +35,7 @@ class MainScreen extends Component {
     wineries: PropTypes.array,
   }
   state= {
-    zoomLevel:1.4,
+    zoomLevel: new Animated.Value(1.4),
     path: ['World']
   }
 
@@ -75,7 +75,9 @@ onRegionDidChange = regionFeature => {
   renderAnnotations = winery => {
 
     const wineryId = 'winery' + winery.id
-    const {zoomLevel} = this.state
+    const zoomLevel = this.state.zoomLevel._value
+
+
     return <Mapbox.PointAnnotation
         key={wineryId}
         id={wineryId}
@@ -178,7 +180,7 @@ onRegionDidChange = regionFeature => {
     return { latitude, longitude}
   }
 
-  renderCountryLayer = country =>{
+  renderRegionLayer = country =>{
 
     if(country.geojson == null){
       return null
@@ -186,7 +188,9 @@ onRegionDidChange = regionFeature => {
 
  
     let data = {...country.geojson.features[0]}
-      data.properties = {...data.properties,  metadataId : country.id}
+    data.properties = {...data.properties,  metadataId : country.id}
+
+    console.log('DATA', country.geojson)
 
    
     const style = {
@@ -217,14 +221,71 @@ onRegionDidChange = regionFeature => {
           
           if(country.geojson.features[0].properties.type === "Sovereign country"){
            this._emitter.emit('SelectCountryFromMap', country)
-           this.moveCamera({latitude,longitude, zoomLevel:6})
           }else{
             this._emitter.emit('SelectRegionFromMap', country)
-            this.moveCamera({latitude,longitude, zoomLevel:8})
           }
          
-        }} style={[styles.annotationContainer,{width:100,height:100,borderRadius:50, justifyContent:'center'}]}>
-          {zoomLevel >= 5 &&<Text style={fontSizeStyle}>{country.name}</Text>}
+        }} style={[styles.annotationContainer,{width:100,height:100,borderRadius:50,  justifyContent:'center'}]}>
+         <Text style={fontSizeStyle}>{country.name}</Text>
+        </TouchableOpacity>
+       
+      </Mapbox.PointAnnotation>
+      
+      <Mapbox.ShapeSource 
+    hitbox={{ width: 100, height: 100 }}
+    onPress={this.onSourceLayerPress} 
+    key={fillId} id={fillId} shape={country.geojson}>
+    <Mapbox.FillLayer
+      id={fillId}
+      style={style}
+    />
+  </Mapbox.ShapeSource>
+  </React.Fragment>
+ 
+
+  }
+
+  renderCountryLayer = country =>{
+
+    if(country.geojson == null){
+      return null
+    }
+
+  
+ 
+    let data = {...country.geojson.features[0]}
+      data.properties = {...data.properties,  metadataId : country.id}
+
+   
+    const style = {
+      fillAntialias: true,
+      fillColor: data.properties.fill,
+      fillOpacity: data.properties['fill-opacity'],
+      fillOutlineColor: 'rgba(136, 149, 107, 0.84)',
+    }
+
+    const center = (country.center !== undefined) ? country.center : [0,0]
+
+   
+    const fillId = 'winebow'+country.id.toString()
+    const markerId = 'marker-'+fillId
+
+    const { zoomLevel } = this.state
+    const fontSizeStyle = (zoomLevel < 7) ? {fontSize : 10} : {fontSize:16}
+
+    
+ 
+    return <React.Fragment>
+             <Mapbox.PointAnnotation
+        key={markerId}
+        id={markerId}
+        coordinate={center}>
+
+        <TouchableOpacity onPress={()=>{
+           this._emitter.emit('SelectCountryFromMap', country)
+         
+        }} style={[styles.annotationContainer,{width:60,height:60,borderRadius:30,  justifyContent:'center'}]}>
+        
         </TouchableOpacity>
        
       </Mapbox.PointAnnotation>
@@ -375,26 +436,15 @@ onRegionDidChange = regionFeature => {
       if(item.geojson !== undefined){
       
         const { latitude, longitude } = this.getAverage(item.geojson.features[0].geometry.coordinates)
+        const center = (item.center !== undefined)?item.center : [latitude,longitude]
+
 
           this.map.setCamera({
-            centerCoordinate: [latitude, longitude],
+            centerCoordinate: center,
             zoom: zoom,
             duration: 2000,
           })
       }
-    }
-
-    moveCamera = ({latitude, longitude, zoomLevel})=>{
-      console.log('MOVE CAMERA')
-      this.map.setCamera({
-        centerCoordinate: [latitude, longitude],
-        zoomLevel,
-        duration: 1000,
-      })
-
-      setTimeout(()=>{
-        this.setState({zoomLevel})
-      },1000)
     }
 
     _onBackItem= ()=>{
@@ -438,8 +488,6 @@ onRegionDidChange = regionFeature => {
     })
    
 
-    console.log("ZOOM LEVEL", zoomLevel)
-
     return <View style={styles.container}>
       <View style={styles.container}>
       
@@ -458,11 +506,11 @@ onRegionDidChange = regionFeature => {
            {this.renderEcuatorLines()}
 
            {zoomLevel < 5 && countries.map(this.renderCountryLayer)}
-           {zoomLevel >= 5 && regions.map(this.renderCountryLayer)}
+           {zoomLevel >= 5 && regions.map(this.renderRegionLayer)}
           
 
            {zoomLevel >= 6  &&<Mapbox.ShapeSource
-            id="earthquakes"
+            id="regions"
             cluster
             clusterRadius={80}
             clusterMaxZoom={14}
@@ -504,16 +552,16 @@ onRegionDidChange = regionFeature => {
         
         {selectItem === undefined && <ModalContainer isLoading={isLoading} emitter={this._emitter} onSelect={ this.onSelect } />}
 
-  
-       
+
          {Device.isTablet && selectItem !== undefined && <Sidebar>
           <WineScreen  onBack={this._onBackItem} item = {selectItem} />
-        </Sidebar>}
-
-    
+        </Sidebar>}    
        
     </View>
     {Device.isTablet && this.renderFooter()}
+
+     {isLoading && <LoadingDialog text="Loading" />}
+
       </View>
   }
 }
@@ -570,8 +618,9 @@ const layerStyles = Mapbox.StyleSheet.create({
   singlePoint: {
     iconImage: PIN_ICON,
     textField: '{name}',
-    textOffset:[0, 1.4],
-    textSize: 12
+    textOffset:[0, 1.6],
+    textSize: 15,
+    textColor: '#253071',
   },
 
   clusteredPoints: {

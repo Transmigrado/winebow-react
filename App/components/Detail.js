@@ -186,9 +186,10 @@ const styles = StyleSheet.create({
     },
     text:{
         color:'white',
-        fontSize:16
+        fontSize:16,
+        fontFamily: 'IBMPlexSans'
     },
     textBold:{
-        fontWeight: 'bold'
+        fontFamily:'IBMPlexSans-SemiBold'
     }
 })

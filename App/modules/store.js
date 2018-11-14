@@ -150,6 +150,46 @@ const getCountryName = (countries, regions,  winery) => {
     return countryName
 }
 
+const isNumber = num => {
+  return !isNaN(parseFloat(num)) && isFinite(num);
+  }
+const getAverage = data => {
+
+  let latitude = 0
+  let longitude = 0
+  let countData = 0
+
+  let mapData = []
+
+  if(data[0][0].length == 2 && isNumber(data[0][0][0]) && isNumber(data[0][0][1])){
+    mapData = mapData.concat(data)
+  }else{
+    data.forEach( d => {
+      mapData = mapData.concat(d)
+    })
+  
+  }
+
+  mapData.forEach(coordinates => {
+    countData += coordinates.length
+    coordinates.forEach(coordinate => {
+
+      if(Number.isNaN(Number(coordinate[0])) === false){
+        latitude += Number(coordinate[0])
+        longitude += Number(coordinate[1])
+      }else{
+        countData--
+      }
+     
+    })
+  })
+
+  latitude /= (countData !== 0) ? countData : 1
+  longitude /= (countData !== 0) ? countData : 1
+
+  return { latitude, longitude}
+}
+
 reducer = (state = INITIAL_STATE, action) => {
   
   let regions = null
@@ -174,7 +214,28 @@ reducer = (state = INITIAL_STATE, action) => {
 
       countries = state.countries.map(country => {
         const myWineries = getWineriesForCountry(regions, country)
-        return {...country, wineryCount: myWineries.length, wineries:myWineries}
+        const center = [0,0]
+        let count = 0
+
+         regions.forEach(region => {
+          if(region.country_id === country.id){
+            if(region.geojson !== undefined && region.geojson !== null){
+              const average = getAverage(region.geojson.features[0].geometry.coordinates)
+              center[0] += average.latitude
+              center[1] += average.longitude
+              count ++
+             
+            }
+          }
+        })
+
+        if(count > 0){
+          center[0] /= count
+          center[1] /= count
+        }
+       
+
+        return {...country,center, wineryCount: myWineries.length, wineries:myWineries}
       })
       return {...state, wineries, regions, countries}
     case ACTION.FETCH_WINES:

@@ -34,11 +34,11 @@ class LoginScreen extends Component {
   try {
     const value = await AsyncStorage.getItem('user')
     if (value !== null) {
-      console.log('VALUE', value)
+      
       this.props.navigation.navigate('Main')
     }
    } catch (error) {
-    console.log('ERROR GET', error)
+   
    }
 }
 
