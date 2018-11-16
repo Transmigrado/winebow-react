@@ -7,6 +7,7 @@ import MainScreen from '../screens/MainScreen'
 import WineScreen from '../screens/WineScreen'
 import LoginScreen from '../screens/LoginScreen'
 import SignScreen from '../screens/SignScreen'
+import LoadingScreen from '../screens/LoadingScreen'
 
 
 const Main = createStackNavigator({
@@ -20,7 +21,8 @@ const Auth = createStackNavigator({
   },{ initialRouteName:"Login" })
 
 export default createSwitchNavigator({
-    Main: { screen: Main },
-    Auth:{ screen : Auth}
+    MainScreen: { screen: Main },
+    Auth:{ screen : Auth},
+    Loading: {screen: LoadingScreen}
     }
-    ,{ initialRouteName:"Auth" })
+    ,{ initialRouteName:"Loading" })

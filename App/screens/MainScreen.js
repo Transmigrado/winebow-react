@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { StyleSheet, View, Linking, Image, Text, TouchableOpacity, Animated} from 'react-native'
+import { StyleSheet, View, Linking, Image, Text, TouchableOpacity, Alert} from 'react-native'
 import Mapbox from '@mapbox/react-native-mapbox-gl'
 import { withNavigation } from 'react-navigation'
 import PropTypes from 'prop-types'
@@ -33,14 +33,16 @@ class MainScreen extends Component {
     navigation: PropTypes.object,
     countries: PropTypes.array,
     wineries: PropTypes.array,
+    isLoading: PropTypes.bool
   }
   state= {
-    zoomLevel: new Animated.Value(1.4),
+    zoomLevel: 1.4,
     path: ['World']
   }
 
   componentDidMount(){
-    const { onMount, navigation } = this.props
+    
+    const { onMount } = this.props
     onMount()
 
     this._emitter = new EventEmitter()
@@ -55,14 +57,23 @@ class MainScreen extends Component {
     this._emitter.addListener('SelectRegion', region => {
       this.setState({path : ['World', region.country, region.name]})
     })
+  
+
+   
 }
 
 triggerItem = item => {
 
   const { navigation } = this.props
 
+
   if(Device.isTablet){
-    this.setState({selectItem : item})
+
+    this.modal.getWrappedInstance().close()
+    setTimeout(()=>{
+      this.setState({selectItem : item})
+    }, 500)
+    
    }else{
     navigation.navigate('WineDetail', { item })
    }
@@ -75,7 +86,7 @@ onRegionDidChange = regionFeature => {
   renderAnnotations = winery => {
 
     const wineryId = 'winery' + winery.id
-    const zoomLevel = this.state.zoomLevel._value
+    const zoomLevel = this.state.zoomLevel
 
 
     return <Mapbox.PointAnnotation
@@ -189,9 +200,6 @@ onRegionDidChange = regionFeature => {
  
     let data = {...country.geojson.features[0]}
     data.properties = {...data.properties,  metadataId : country.id}
-
-    console.log('DATA', country.geojson)
-
    
     const style = {
       fillAntialias: true,
@@ -275,7 +283,7 @@ onRegionDidChange = regionFeature => {
 
     
  
-    return <React.Fragment>
+    return <React.Fragment key={markerId}>
              <Mapbox.PointAnnotation
         key={markerId}
         id={markerId}
@@ -448,8 +456,12 @@ onRegionDidChange = regionFeature => {
     }
 
     _onBackItem= ()=>{
-      
-      this.setState({selectItem:undefined, path:['World']})
+      this.sidebar.close()
+  
+
+      setTimeout(()=>{
+        this.setState({selectItem:undefined, path:['World']})
+      }, 500)
     }
 
   renderFooter = ()=>{
@@ -506,8 +518,9 @@ onRegionDidChange = regionFeature => {
            {this.renderEcuatorLines()}
 
            {zoomLevel < 5 && countries.map(this.renderCountryLayer)}
-           {zoomLevel >= 5 && regions.map(this.renderRegionLayer)}
+           
           
+           {zoomLevel >= 5 && regions.map(this.renderRegionLayer)}
 
            {zoomLevel >= 6  &&<Mapbox.ShapeSource
             id="regions"
@@ -519,7 +532,8 @@ onRegionDidChange = regionFeature => {
               if(nativeEvent.payload.properties.item !== undefined){
                 this.triggerItem(nativeEvent.payload.properties.item)
               }else{
-                this.setState({zoomLevel:9})
+                //this.map.zoomTo(9, 100)
+               // this.setState({zoomLevel:9})
               }
               
             }}
@@ -529,6 +543,8 @@ onRegionDidChange = regionFeature => {
               id="pointCount"
               style={layerStyles.clusterCount}
             />
+
+         
 
             <Mapbox.CircleLayer
               id="clusteredPoints"
@@ -548,12 +564,14 @@ onRegionDidChange = regionFeature => {
             
           </Mapbox.ShapeSource>}
 
+           
+
         </Mapbox.MapView>
         
-        {selectItem === undefined && <ModalContainer isLoading={isLoading} emitter={this._emitter} onSelect={ this.onSelect } />}
+        {selectItem === undefined && <ModalContainer ref={ref=>this.modal=ref} isLoading={isLoading} emitter={this._emitter} onSelect={ this.onSelect } />}
 
 
-         {Device.isTablet && selectItem !== undefined && <Sidebar>
+         {Device.isTablet && selectItem !== undefined && <Sidebar ref={ref => this.sidebar = ref}>
           <WineScreen  onBack={this._onBackItem} item = {selectItem} />
         </Sidebar>}    
        

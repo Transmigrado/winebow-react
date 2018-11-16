@@ -13,14 +13,48 @@ const ACTION = {
   FETCH_WINES: 'store.fetch.wines',
 }
 
+import { AsyncStorage } from 'react-native'
+
+
+
+const storageData = async (key,data) => {
+    try {
+        await AsyncStorage.setItem(key, JSON.stringify(data))
+    } catch (error) {
+        return Promise.reject(error)
+    }
+
+    return Promise.resolve(data)
+}
+
+const retrieveData = async key => {
+    try {
+        const value = await AsyncStorage.getItem(key)
+        if (value !== null) {
+            return Promise.resolve(JSON.parse(value))
+        }
+        return Promise.reject('Empty Data')
+    } catch (error) {
+        return Promise.reject(error)
+    }
+}
+
+
+
 export const fetchWinesThunk = dispatch => {
   function success(response){
     const { data } = response
     dispatch({type:ACTION.FETCH_WINES, data})
+    //storageData('wines', data)
   }
 
   function error(error){
-    console.log(error)
+    /*
+    retrieveData('wines').then(data => {
+      dispatch({type:ACTION.FETCH_WINES, data})
+      
+    })
+    */
   }
   loadWines()
   .then(success)
@@ -34,11 +68,23 @@ export const fetchCountriesThunk = dispatch => {
     dispatch({type:ACTION.FETCH, data})
     fetchRegionsThunk(dispatch)
     
+    //storageData('countries', data)
+
   }
 
   function error(error){
-    console.log(error)
+   
+    /*
+  retrieveData('countries').then(data => {
+    dispatch({type:ACTION.FETCH, data})
+    fetchRegionsThunk(dispatch)
+  })
+  */
+
   }
+
+
+
   loadCountries()
   .then(success)
   .catch(error)
@@ -51,10 +97,16 @@ export const fetchRegionsThunk = dispatch => {
     dispatch({type:ACTION.FETCH_REGION, data})
     fetchWineriesThunk(dispatch)
 
+    //storageData('regions', data)
   }
 
   function error(error){
-    console.log(error)
+    /*
+    retrieveData('regions').then(data => {
+      dispatch({type:ACTION.FETCH_REGION, data})
+      fetchWineriesThunk(dispatch)
+    })
+    */
   }
   loadRegions()
   .then(success)
@@ -67,10 +119,17 @@ export const fetchWineriesThunk = dispatch => {
     const { data } = response
     dispatch({type:ACTION.FETCH_WINERY, data})
     fetchWinesThunk(dispatch)
+
+    //storageData('wineries', data)
   }
 
   function error(error){
-    console.log(error)
+    /*
+    retrieveData('wineries').then(data => {
+      dispatch({type:ACTION.FETCH_WINERY, data})
+      fetchWinesThunk(dispatch)
+    })
+    */
   }
   loadWineries()
   .then(success)

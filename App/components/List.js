@@ -57,7 +57,7 @@ export default class List extends Component {
 
     render() {
 
-        const { countries, isLoading } = this.props
+        const { countries } = this.props
        
         const props = { numColumns: 2}
 
@@ -66,19 +66,20 @@ export default class List extends Component {
             delete props.numColumns
         }
 
-        const contentInset = (Device.isTablet) ? { left : 20 } : {bottom:160}
+        const style = (Device.isTablet) ? { marginLeft: 20} : {}
         
         return <View style={styles.container}>
                 {Device.isTablet && this.renderHeader(true)}
                 <FlatList
+
                     ListHeaderComponent = {this.renderHeader(!Device.isTablet)}
                     data={countries}
                     renderItem={({item, index}) => this.renderItem({item, index})}
                     horizontal={Platform.isPad}
-                    keyExtractor={(item, index) => item.id}
+                    keyExtractor={(item, index) => `${item.id}-${index}`}
                     {...props}
-                    contentInset={contentInset}
-                    automaticallyAdjustContentInsets={true}
+                    style={style}
+                   
                     />
                 </View>
     }
