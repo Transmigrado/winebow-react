@@ -31,7 +31,7 @@ export default class Detail extends Component {
         const width = Dimensions.get('window').width
         const wineryCount = item.wineryCount || 0
 
-        return  <TouchableOpacity onPress={()=>{this._onPress(item)}} style={[{width: width, height: 130},styles.item]}>
+        return  <TouchableOpacity key={`key-${index}`} onPress={()=>{this._onPress(item)}} style={[{width: width, height: 130},styles.item]}>
         <Image
      style={[styles.itemImage,{width: '100%', height: 120, top:5, left:20 }]}
      source={{uri:item.image.replace('images/','')}}
