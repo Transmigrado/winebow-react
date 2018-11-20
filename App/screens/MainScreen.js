@@ -69,7 +69,10 @@ triggerItem = item => {
 
   if(Device.isTablet){
 
-    this.modal.getWrappedInstance().close()
+    if(this.modal != undefined){
+      this.modal.getWrappedInstance().close()
+    }
+   
     setTimeout(()=>{
       this.setState({selectItem : item})
     }, 500)
