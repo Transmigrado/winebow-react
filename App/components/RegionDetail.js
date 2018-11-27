@@ -42,6 +42,7 @@ class RegionDetail extends Component {
 
     renderHeader = () =>{
        
+
         const { item } = this.props
 
         const path = ['World',item.country, item.name]
@@ -52,6 +53,7 @@ class RegionDetail extends Component {
 
         return  <Root style={[styles.titleContent, style]}>
                 
+               
                 <View style={{width: '100%', height:160}}>
                     <Image
                     style={[styles.itemImage,{position:'absolute', width: '100%', height:160}]}
@@ -84,10 +86,10 @@ class RegionDetail extends Component {
         const {  item } = this.props
 
         const flatListProps = (Device.isTablet)?{ListHeaderComponent: this.renderHeaderTablet} : { ListHeaderComponent: this.renderHeader }
-        const style = (Device.isTablet) ? {} : {marginBottom: 160}
+        
      
 
-        return <View style={[styles.container, style]}>
+        return <View style={styles.container}>
                 {Device.isTablet && this.renderHeader()}
                 <FlatList
                    {...flatListProps}
@@ -139,11 +141,10 @@ const styles = StyleSheet.create({
     },
     text:{
         color:'white',
-        fontSize:16,
-        fontFamily: 'IBMPlexSans'
+        fontSize:16
     },
     textBold:{
-        fontSize: 32,
-        fontFamily:'IBMPlexSans-SemiBold'
+        fontWeight: 'bold',
+        fontSize: 32
     }
 })

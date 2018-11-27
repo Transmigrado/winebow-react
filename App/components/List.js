@@ -32,6 +32,7 @@ export default class List extends Component {
         const skeletonStyle = {width, height: width, marginLeft: 20}
         const { isLoading }= this.props
 
+        console.log("ISLOADING", isLoading)
 
        return    <TouchableOpacity key={slug} onPress={()=>{this._onPress(index)}} style={[{width: width, height: width},styles.item, itemStyle]}>
        {image !== undefined && <Image

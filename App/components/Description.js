@@ -23,7 +23,7 @@ export default class Description extends Component {
         const { text,style } = this.props
         const { expanded } = this.state
 
-        const contentText = (expanded) ? text : ((text === undefined || text=== null) ? 'No description':text.split(' ').slice(0, 45).join(' ') + "...")
+        const contentText = (expanded) ? text : text.split(' ').slice(0, 45).join(' ') + "..."
         const callToAction = (expanded) ? "SEE LESS" : "READ ALL"
 
         return <View style={[styles.container, style]}>
