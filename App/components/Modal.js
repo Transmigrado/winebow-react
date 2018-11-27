@@ -20,16 +20,23 @@ export default class Modal extends Component {
 
     state = {
         mode: 0,
-        y: new Animated.Value((Device.isTablet) ? Dimensions.get('window').height - 170 : Dimensions.get('window').height - 120),
+        y: new Animated.Value(Dimensions.get('window').height),
         animated: false,
         expanded: false
     }
+
+    close = ()=>{
+        const y =  Dimensions.get('window').height
+         Animated.timing(this.state.y,{toValue:y,duration:500}).start()
+    }	    
 
     componentDidMount(){
        
         const { onMount } = this.props
         onMount()
 
+        const y = (Device.isTablet) ? Dimensions.get('window').height - 170 : Dimensions.get('window').height - 120
+        Animated.timing(this.state.y,{toValue:y,duration:500}).start()
     }
 
     componentWillReceiveProps(){

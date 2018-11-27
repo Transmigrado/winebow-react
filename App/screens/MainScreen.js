@@ -185,12 +185,9 @@ onRegionDidChange = regionFeature => {
     if(country.geojson == null){
       return null
     }
-
  
     let data = {...country.geojson.features[0]}
     data.properties = {...data.properties,  metadataId : country.id}
-
-    console.log('DATA', country.geojson)
 
    
     const style = {

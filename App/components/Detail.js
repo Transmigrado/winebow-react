@@ -99,7 +99,7 @@ export default class Detail extends Component {
             let currentItem = []
             item.wineries.forEach(winery => {
                 currentItem.push(winery)
-                if(currentItem.length === 3){
+                if(currentItem.length ===  Math.min(3, item.wineries.length)){
                     wineries.push(currentItem)
                     currentItem = []
                 }
@@ -108,7 +108,7 @@ export default class Detail extends Component {
             let currentItemRegions = []
             regions.forEach( region => {
                 currentItemRegions.push(region)
-                if(currentItemRegions.length === 2){
+                if(currentItemRegions.length === Math.min(2, regions.length)){
                     regionsData.push(currentItemRegions)
                     currentItemRegions = []
                 }
