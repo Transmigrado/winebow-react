@@ -32,7 +32,6 @@ export default class List extends Component {
         const skeletonStyle = {width, height: width, marginLeft: 20}
         const { isLoading }= this.props
 
-        console.log("ISLOADING", isLoading)
 
        return    <TouchableOpacity key={slug} onPress={()=>{this._onPress(index)}} style={[{width: width, height: width},styles.item, itemStyle]}>
        {image !== undefined && <Image
@@ -58,7 +57,7 @@ export default class List extends Component {
 
     render() {
 
-        const { countries } = this.props
+        const { countries, isLoading } = this.props
        
         const props = { numColumns: 2}
 
@@ -67,20 +66,19 @@ export default class List extends Component {
             delete props.numColumns
         }
 
-        const style = (Device.isTablet) ? { marginLeft: 20} : {}
+        const contentInset = (Device.isTablet) ? { left : 20 } : {bottom:160}
         
         return <View style={styles.container}>
                 {Device.isTablet && this.renderHeader(true)}
                 <FlatList
-
                     ListHeaderComponent = {this.renderHeader(!Device.isTablet)}
                     data={countries}
                     renderItem={({item, index}) => this.renderItem({item, index})}
                     horizontal={Platform.isPad}
-                    keyExtractor={(item, index) => `${item.id}-${index}`}
+                    keyExtractor={(item, index) => item.id}
                     {...props}
-                    style={style}
-                   
+                    contentInset={contentInset}
+                    automaticallyAdjustContentInsets={true}
                     />
                 </View>
     }

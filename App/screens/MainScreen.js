@@ -1,13 +1,5 @@
 import React, {Component} from 'react'
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { StyleSheet, View, Linking, Image, Text, TouchableOpacity, Alert} from 'react-native'
-=======
-import { StyleSheet, View, Linking, Image, Text, TouchableOpacity} from 'react-native'
->>>>>>> parent of 8624903... fix region zoom
-=======
-import { StyleSheet, View, Linking, Image, Text, TouchableOpacity} from 'react-native'
->>>>>>> parent of 8624903... fix region zoom
+import { StyleSheet, View, Linking, Image, Text, TouchableOpacity, Animated} from 'react-native'
 import Mapbox from '@mapbox/react-native-mapbox-gl'
 import { withNavigation } from 'react-navigation'
 import PropTypes from 'prop-types'
@@ -21,7 +13,7 @@ import { compose } from 'redux'
 import * as store from '../modules/store'
 import EventEmitter from 'events'
 import Breadcump from '../components/Breadcump'
-
+import LoadingDialog from '../components/LoadingDialog'
 
 Mapbox.setAccessToken('pk.eyJ1IjoidHJhbnNtaWdyYWRvIiwiYSI6InZaSDVNVk0ifQ.XbzDhB01GxzIm44_FlvyFQ')
 
@@ -41,24 +33,14 @@ class MainScreen extends Component {
     navigation: PropTypes.object,
     countries: PropTypes.array,
     wineries: PropTypes.array,
-    isLoading: PropTypes.bool
   }
   state= {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    zoomLevel: 1.4,
-=======
-    zoomLevel:1.4,
->>>>>>> parent of 8624903... fix region zoom
-=======
-    zoomLevel:1.4,
->>>>>>> parent of 8624903... fix region zoom
+    zoomLevel: new Animated.Value(1.4),
     path: ['World']
   }
 
   componentDidMount(){
-    
-    const { onMount } = this.props
+    const { onMount, navigation } = this.props
     onMount()
 
     this._emitter = new EventEmitter()
@@ -73,26 +55,14 @@ class MainScreen extends Component {
     this._emitter.addListener('SelectRegion', region => {
       this.setState({path : ['World', region.country, region.name]})
     })
-  
-
-   
 }
 
 triggerItem = item => {
 
   const { navigation } = this.props
 
-
   if(Device.isTablet){
-
-    if(this.modal != undefined){
-      this.modal.getWrappedInstance().close()
-    }
-   
-    setTimeout(()=>{
-      this.setState({selectItem : item})
-    }, 500)
-    
+    this.setState({selectItem : item})
    }else{
     navigation.navigate('WineDetail', { item })
    }
@@ -105,17 +75,9 @@ onRegionDidChange = regionFeature => {
   renderAnnotations = winery => {
 
     const wineryId = 'winery' + winery.id
-<<<<<<< HEAD
-<<<<<<< HEAD
-    const zoomLevel = this.state.zoomLevel
+    const zoomLevel = this.state.zoomLevel._value
 
 
-=======
-    const {zoomLevel} = this.state
->>>>>>> parent of 8624903... fix region zoom
-=======
-    const {zoomLevel} = this.state
->>>>>>> parent of 8624903... fix region zoom
     return <Mapbox.PointAnnotation
         key={wineryId}
         id={wineryId}
@@ -218,7 +180,7 @@ onRegionDidChange = regionFeature => {
     return { latitude, longitude}
   }
 
-  renderCountryLayer = country =>{
+  renderRegionLayer = country =>{
 
     if(country.geojson == null){
       return null
@@ -226,17 +188,10 @@ onRegionDidChange = regionFeature => {
 
  
     let data = {...country.geojson.features[0]}
-<<<<<<< HEAD
-<<<<<<< HEAD
     data.properties = {...data.properties,  metadataId : country.id}
-=======
-      data.properties = {...data.properties,  metadataId : country.id}
 
->>>>>>> parent of 8624903... fix region zoom
-=======
-      data.properties = {...data.properties,  metadataId : country.id}
+    console.log('DATA', country.geojson)
 
->>>>>>> parent of 8624903... fix region zoom
    
     const style = {
       fillAntialias: true,
@@ -266,14 +221,10 @@ onRegionDidChange = regionFeature => {
           
           if(country.geojson.features[0].properties.type === "Sovereign country"){
            this._emitter.emit('SelectCountryFromMap', country)
-           this.moveCamera({latitude,longitude, zoomLevel:6})
           }else{
             this._emitter.emit('SelectRegionFromMap', country)
-            this.moveCamera({latitude,longitude, zoomLevel:8})
           }
          
-<<<<<<< HEAD
-<<<<<<< HEAD
         }} style={[styles.annotationContainer,{width:100,height:100,borderRadius:50,  justifyContent:'center'}]}>
          <Text style={fontSizeStyle}>{country.name}</Text>
         </TouchableOpacity>
@@ -324,7 +275,7 @@ onRegionDidChange = regionFeature => {
 
     
  
-    return <React.Fragment key={markerId}>
+    return <React.Fragment>
              <Mapbox.PointAnnotation
         key={markerId}
         id={markerId}
@@ -335,14 +286,6 @@ onRegionDidChange = regionFeature => {
          
         }} style={[styles.annotationContainer,{width:60,height:60,borderRadius:30,  justifyContent:'center'}]}>
         
-=======
-        }} style={[styles.annotationContainer,{width:100,height:100,borderRadius:50, justifyContent:'center'}]}>
-          {zoomLevel >= 5 &&<Text style={fontSizeStyle}>{country.name}</Text>}
->>>>>>> parent of 8624903... fix region zoom
-=======
-        }} style={[styles.annotationContainer,{width:100,height:100,borderRadius:50, justifyContent:'center'}]}>
-          {zoomLevel >= 5 &&<Text style={fontSizeStyle}>{country.name}</Text>}
->>>>>>> parent of 8624903... fix region zoom
         </TouchableOpacity>
        
       </Mapbox.PointAnnotation>
@@ -493,35 +436,20 @@ onRegionDidChange = regionFeature => {
       if(item.geojson !== undefined){
       
         const { latitude, longitude } = this.getAverage(item.geojson.features[0].geometry.coordinates)
+        const center = (item.center !== undefined)?item.center : [latitude,longitude]
+
 
           this.map.setCamera({
-            centerCoordinate: [latitude, longitude],
+            centerCoordinate: center,
             zoom: zoom,
             duration: 2000,
           })
       }
     }
 
-    moveCamera = ({latitude, longitude, zoomLevel})=>{
-      console.log('MOVE CAMERA')
-      this.map.setCamera({
-        centerCoordinate: [latitude, longitude],
-        zoomLevel,
-        duration: 1000,
-      })
-
-      setTimeout(()=>{
-        this.setState({zoomLevel})
-      },1000)
-    }
-
     _onBackItem= ()=>{
-      this.sidebar.close()
-  
-
-      setTimeout(()=>{
-        this.setState({selectItem:undefined, path:['World']})
-      }, 500)
+      
+      this.setState({selectItem:undefined, path:['World']})
     }
 
   renderFooter = ()=>{
@@ -560,8 +488,6 @@ onRegionDidChange = regionFeature => {
     })
    
 
-    console.log("ZOOM LEVEL", zoomLevel)
-
     return <View style={styles.container}>
       <View style={styles.container}>
       
@@ -580,15 +506,11 @@ onRegionDidChange = regionFeature => {
            {this.renderEcuatorLines()}
 
            {zoomLevel < 5 && countries.map(this.renderCountryLayer)}
-<<<<<<< HEAD
            {zoomLevel >= 5 && regions.map(this.renderRegionLayer)}
-=======
-           {zoomLevel >= 5 && regions.map(this.renderCountryLayer)}
           
->>>>>>> parent of 8624903... fix region zoom
 
            {zoomLevel >= 6  &&<Mapbox.ShapeSource
-            id="earthquakes"
+            id="regions"
             cluster
             clusterRadius={80}
             clusterMaxZoom={14}
@@ -597,8 +519,7 @@ onRegionDidChange = regionFeature => {
               if(nativeEvent.payload.properties.item !== undefined){
                 this.triggerItem(nativeEvent.payload.properties.item)
               }else{
-                //this.map.zoomTo(9, 100)
-               // this.setState({zoomLevel:9})
+                this.setState({zoomLevel:9})
               }
               
             }}
@@ -608,8 +529,6 @@ onRegionDidChange = regionFeature => {
               id="pointCount"
               style={layerStyles.clusterCount}
             />
-
-         
 
             <Mapbox.CircleLayer
               id="clusteredPoints"
@@ -629,26 +548,20 @@ onRegionDidChange = regionFeature => {
             
           </Mapbox.ShapeSource>}
 
-           
-
         </Mapbox.MapView>
         
-<<<<<<< HEAD
-        {selectItem === undefined && <ModalContainer ref={ref=>this.modal=ref} isLoading={isLoading} emitter={this._emitter} onSelect={ this.onSelect } />}
-=======
         {selectItem === undefined && <ModalContainer isLoading={isLoading} emitter={this._emitter} onSelect={ this.onSelect } />}
->>>>>>> parent of 8624903... fix region zoom
 
-  
-       
+
          {Device.isTablet && selectItem !== undefined && <Sidebar>
           <WineScreen  onBack={this._onBackItem} item = {selectItem} />
-        </Sidebar>}
-
-    
+        </Sidebar>}    
        
     </View>
     {Device.isTablet && this.renderFooter()}
+
+     {isLoading && <LoadingDialog text="Loading" />}
+
       </View>
   }
 }
@@ -705,8 +618,9 @@ const layerStyles = Mapbox.StyleSheet.create({
   singlePoint: {
     iconImage: PIN_ICON,
     textField: '{name}',
-    textOffset:[0, 1.4],
-    textSize: 12
+    textOffset:[0, 1.6],
+    textSize: 15,
+    textColor: '#253071',
   },
 
   clusteredPoints: {

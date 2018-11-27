@@ -31,7 +31,7 @@ export default class Detail extends Component {
         const width = Dimensions.get('window').width
         const wineryCount = item.wineryCount || 0
 
-        return  <TouchableOpacity key={`key-${index}`} onPress={()=>{this._onPress(item)}} style={[{width: width, height: 130},styles.item]}>
+        return  <TouchableOpacity onPress={()=>{this._onPress(item)}} style={[{width: width, height: 130},styles.item]}>
         <Image
      style={[styles.itemImage,{width: '100%', height: 120, top:5, left:20 }]}
      source={{uri:item.image.replace('images/','')}}
@@ -99,7 +99,7 @@ export default class Detail extends Component {
             let currentItem = []
             item.wineries.forEach(winery => {
                 currentItem.push(winery)
-                if(currentItem.length === Math.min(3, item.wineries.length)){
+                if(currentItem.length === 3){
                     wineries.push(currentItem)
                     currentItem = []
                 }
@@ -108,7 +108,7 @@ export default class Detail extends Component {
             let currentItemRegions = []
             regions.forEach( region => {
                 currentItemRegions.push(region)
-                if(currentItemRegions.length === Math.min(2, regions.length)){
+                if(currentItemRegions.length === 2){
                     regionsData.push(currentItemRegions)
                     currentItemRegions = []
                 }
@@ -118,8 +118,6 @@ export default class Detail extends Component {
             wineries = item.wineries
             regionsData = regions
         }
-
-        console.log('wineries', wineries)
 
         const styleMargin = (Device.isTablet) ? {marginBottom: 170} : {marginBottom: 170}
       
@@ -188,9 +186,10 @@ const styles = StyleSheet.create({
     },
     text:{
         color:'white',
-        fontSize:16
+        fontSize:16,
+        fontFamily: 'IBMPlexSans'
     },
     textBold:{
-        fontWeight: 'bold'
+        fontFamily:'IBMPlexSans-SemiBold'
     }
 })

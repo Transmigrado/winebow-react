@@ -26,17 +26,19 @@ class LoginScreen extends Component {
    loading: false
  }
 
- 
+ componentWillMount(){
+  this._retrieveData()
+ }
 
  _retrieveData = async () => {
   try {
     const value = await AsyncStorage.getItem('user')
     if (value !== null) {
-      console.log('VALUE', value)
+      
       this.props.navigation.navigate('Main')
     }
    } catch (error) {
-    console.log('ERROR GET', error)
+   
    }
 }
 
@@ -44,7 +46,7 @@ _storeData = async value => {
   try {
     await AsyncStorage.setItem('user', value)
   } catch (error) {
-  
+    console.log('ERROR', error)
   }
 }
 
@@ -72,10 +74,9 @@ showAlert = message => {
     .then(response => {
       this.setState({loading:false})
 
-     
-     
+      this._storeData(value)
+
       if(response.status === 200){
-        this._storeData(value)
        this.props.navigation.navigate('Main')
       }else if(response.status === 404){
         this.showAlert('User not found')
@@ -83,9 +84,6 @@ showAlert = message => {
         this.showAlert('Something went wrong, Try again.')
       }
     }).catch(error => {
-
-      this.setState({loading:false})
-
       this.showAlert('Something went wrong, Try again.')
     })
 

@@ -78,7 +78,6 @@ renderHeader = ()=>{
             data={wines}
             renderItem={({item, index}) => this.renderItem({item, index})}
             numColumns={2}
-            keyExtractor={(item, index) => `key-${index}`}
             />
       
     </View>

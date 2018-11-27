@@ -33,7 +33,7 @@ export default class SkeletonAnimation extends Component {
 
     render() {
         const { children, isLoading } = this.props
-        console.log("SKElETON", isLoading)
+
         return <React.Fragment>
             {isLoading && this.renderSkeleton()}
             {!isLoading && children}
