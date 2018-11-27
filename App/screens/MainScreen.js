@@ -204,7 +204,7 @@ onRegionDidChange = regionFeature => {
     const markerId = 'marker-'+fillId
 
     const { zoomLevel } = this.state
-    const fontSizeStyle = (zoomLevel < 7) ? {fontSize : 10} : {fontSize:16}
+    const fontSizeStyle = (zoomLevel < 7) ? {fontSize : 15,  color: '#253071'} : {fontSize:16  , color: '#253071'}
 
     
  
@@ -216,14 +216,18 @@ onRegionDidChange = regionFeature => {
 
         <TouchableOpacity onPress={()=>{
           
+        
+
           if(country.geojson.features[0].properties.type === "Sovereign country"){
            this._emitter.emit('SelectCountryFromMap', country)
           }else{
+             
+
             this._emitter.emit('SelectRegionFromMap', country)
           }
          
         }} style={[styles.annotationContainer,{width:100,height:100,borderRadius:50,  justifyContent:'center'}]}>
-         <Text style={fontSizeStyle}>{country.name}</Text>
+         {zoomLevel <= 7 && <Text style={fontSizeStyle}>{country.name}</Text>}
         </TouchableOpacity>
        
       </Mapbox.PointAnnotation>
@@ -502,21 +506,29 @@ onRegionDidChange = regionFeature => {
            
            {this.renderEcuatorLines()}
 
-           {zoomLevel < 5 && countries.map(this.renderCountryLayer)}
+           {zoomLevel < 14 && countries.map(this.renderCountryLayer)}
            {zoomLevel >= 5 && regions.map(this.renderRegionLayer)}
           
 
-           {zoomLevel >= 6  &&<Mapbox.ShapeSource
+           {zoomLevel >= 8  && <Mapbox.ShapeSource
             id="regions"
             cluster
-            clusterRadius={80}
+            clusterRadius={60}
             clusterMaxZoom={14}
             onPress = { ({nativeEvent}) => {
             
               if(nativeEvent.payload.properties.item !== undefined){
                 this.triggerItem(nativeEvent.payload.properties.item)
               }else{
-                this.setState({zoomLevel:9})
+               
+              
+                this.map.setCamera({
+                  centerCoordinate: nativeEvent.payload.geometry.coordinates,
+                  zoom: 11,
+                  duration: 2000,
+                })
+            
+              
               }
               
             }}
@@ -535,7 +547,7 @@ onRegionDidChange = regionFeature => {
             />
 
  
- <Mapbox.SymbolLayer
+                <Mapbox.SymbolLayer
                 id="singlePoint"
                 filter={['!has', 'point_count']}
                 style={layerStyles.singlePoint}
@@ -615,7 +627,11 @@ const layerStyles = Mapbox.StyleSheet.create({
   singlePoint: {
     iconImage: PIN_ICON,
     textField: '{name}',
-    textOffset:[0, 1.6],
+    textFont: [
+      'Open Sans Semibold',
+      'Arial Unicode MS Bold',
+  ],
+    textOffset:[0, 1.8],
     textSize: 15,
     textColor: '#253071',
   },

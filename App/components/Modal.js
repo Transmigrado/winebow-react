@@ -54,14 +54,6 @@ export default class Modal extends Component {
        
     }
 
-    /*
-     <Draggable 
-                mode={mode}
-                onDraggedEnd={this._onDraggedEnd} 
-                onDragged={this._onDragged} />
-    */
-
-
     onSelect = (mode, item, prevMode) => {
         
         const { onSelect, emitter } = this.props
@@ -104,7 +96,7 @@ export default class Modal extends Component {
             if(Device.isTablet){
                 emitter.emit('SelectRegion', item)
             }
-            onSelect(item, 6)
+            onSelect(item, 8)
             this.setState({ mode, itemWineyard: item })
 
            

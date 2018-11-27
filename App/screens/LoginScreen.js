@@ -46,7 +46,7 @@ _storeData = async value => {
   try {
     await AsyncStorage.setItem('user', value)
   } catch (error) {
-    console.log('ERROR', error)
+    
   }
 }
 
