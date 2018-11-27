@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { StyleSheet, View, Linking, Image, Text, TouchableOpacity, Alert} from 'react-native'
+=======
+import { StyleSheet, View, Linking, Image, Text, TouchableOpacity} from 'react-native'
+>>>>>>> parent of 8624903... fix region zoom
 =======
 import { StyleSheet, View, Linking, Image, Text, TouchableOpacity} from 'react-native'
 >>>>>>> parent of 8624903... fix region zoom
@@ -41,7 +45,11 @@ class MainScreen extends Component {
   }
   state= {
 <<<<<<< HEAD
+<<<<<<< HEAD
     zoomLevel: 1.4,
+=======
+    zoomLevel:1.4,
+>>>>>>> parent of 8624903... fix region zoom
 =======
     zoomLevel:1.4,
 >>>>>>> parent of 8624903... fix region zoom
@@ -98,9 +106,13 @@ onRegionDidChange = regionFeature => {
 
     const wineryId = 'winery' + winery.id
 <<<<<<< HEAD
+<<<<<<< HEAD
     const zoomLevel = this.state.zoomLevel
 
 
+=======
+    const {zoomLevel} = this.state
+>>>>>>> parent of 8624903... fix region zoom
 =======
     const {zoomLevel} = this.state
 >>>>>>> parent of 8624903... fix region zoom
@@ -215,7 +227,12 @@ onRegionDidChange = regionFeature => {
  
     let data = {...country.geojson.features[0]}
 <<<<<<< HEAD
+<<<<<<< HEAD
     data.properties = {...data.properties,  metadataId : country.id}
+=======
+      data.properties = {...data.properties,  metadataId : country.id}
+
+>>>>>>> parent of 8624903... fix region zoom
 =======
       data.properties = {...data.properties,  metadataId : country.id}
 
@@ -255,6 +272,7 @@ onRegionDidChange = regionFeature => {
             this.moveCamera({latitude,longitude, zoomLevel:8})
           }
          
+<<<<<<< HEAD
 <<<<<<< HEAD
         }} style={[styles.annotationContainer,{width:100,height:100,borderRadius:50,  justifyContent:'center'}]}>
          <Text style={fontSizeStyle}>{country.name}</Text>
@@ -317,6 +335,10 @@ onRegionDidChange = regionFeature => {
          
         }} style={[styles.annotationContainer,{width:60,height:60,borderRadius:30,  justifyContent:'center'}]}>
         
+=======
+        }} style={[styles.annotationContainer,{width:100,height:100,borderRadius:50, justifyContent:'center'}]}>
+          {zoomLevel >= 5 &&<Text style={fontSizeStyle}>{country.name}</Text>}
+>>>>>>> parent of 8624903... fix region zoom
 =======
         }} style={[styles.annotationContainer,{width:100,height:100,borderRadius:50, justifyContent:'center'}]}>
           {zoomLevel >= 5 &&<Text style={fontSizeStyle}>{country.name}</Text>}
@@ -558,7 +580,12 @@ onRegionDidChange = regionFeature => {
            {this.renderEcuatorLines()}
 
            {zoomLevel < 5 && countries.map(this.renderCountryLayer)}
+<<<<<<< HEAD
            {zoomLevel >= 5 && regions.map(this.renderRegionLayer)}
+=======
+           {zoomLevel >= 5 && regions.map(this.renderCountryLayer)}
+          
+>>>>>>> parent of 8624903... fix region zoom
 
            {zoomLevel >= 6  &&<Mapbox.ShapeSource
             id="earthquakes"
@@ -606,7 +633,11 @@ onRegionDidChange = regionFeature => {
 
         </Mapbox.MapView>
         
+<<<<<<< HEAD
         {selectItem === undefined && <ModalContainer ref={ref=>this.modal=ref} isLoading={isLoading} emitter={this._emitter} onSelect={ this.onSelect } />}
+=======
+        {selectItem === undefined && <ModalContainer isLoading={isLoading} emitter={this._emitter} onSelect={ this.onSelect } />}
+>>>>>>> parent of 8624903... fix region zoom
 
   
        
