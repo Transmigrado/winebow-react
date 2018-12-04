@@ -29,10 +29,7 @@ export default class List extends Component {
         const { name, slug, wineryCount, image } = item
         const width =  (Device.isTablet) ? 200 : Math.floor((Dimensions.get('window').width / 2))
         const itemStyle = (Device.isTablet) ? {} : ((index % 2 == 0)? {left:20} : {left:5})
-        const skeletonStyle = {width, height: width, marginLeft: 20}
-        const { isLoading }= this.props
-
-
+   
        return    <TouchableOpacity key={slug} onPress={()=>{this._onPress(index)}} style={[{width: width, height: width},styles.item, itemStyle]}>
        {image !== undefined && <Image
     style={[styles.itemImage,{width: width - 25, height: width - 25}]}
@@ -57,7 +54,7 @@ export default class List extends Component {
 
     render() {
 
-        const { countries, isLoading } = this.props
+        const { countries } = this.props
        
         const props = { numColumns: 2}
 
@@ -78,6 +75,7 @@ export default class List extends Component {
                     keyExtractor={(item, index) => item.id}
                     {...props}
                     contentInset={contentInset}
+                    contentOffset={{x: -20}}
                     automaticallyAdjustContentInsets={true}
                     />
                 </View>

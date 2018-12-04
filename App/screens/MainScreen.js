@@ -35,7 +35,7 @@ class MainScreen extends Component {
     wineries: PropTypes.array,
   }
   state= {
-    zoomLevel: new Animated.Value(1.4),
+    zoomLevel: 1.4,
     path: ['World']
   }
 
@@ -75,7 +75,7 @@ onRegionDidChange = regionFeature => {
   renderAnnotations = winery => {
 
     const wineryId = 'winery' + winery.id
-    const zoomLevel = this.state.zoomLevel._value
+    const zoomLevel = this.state.zoomLevel
 
 
     return <Mapbox.PointAnnotation
@@ -114,7 +114,6 @@ onRegionDidChange = regionFeature => {
   
       const center = [0,0]
   
-  
       if(feature != null){
         countryRegions.forEach(region => {
           if(region.geojson !== null){
@@ -143,42 +142,51 @@ onRegionDidChange = regionFeature => {
     return !isNaN(parseFloat(num)) && isFinite(num);
     }
 
-  getAverage = data => {
-
-    let latitude = 0
-    let longitude = 0
-    let countData = 0
-
-    let mapData = []
-
-    if(data[0][0].length == 2 && this.isNumber(data[0][0][0]) && this.isNumber(data[0][0][1])){
-      mapData = mapData.concat(data)
-    }else{
-      data.forEach( d => {
-        mapData = mapData.concat(d)
-      })
+    getAverage = data => {
     
-    }
+      let mapData = []
+
+      if(data[0][0].length == 2 && this.isNumber(data[0][0][0]) && this.isNumber(data[0][0][1])){
+        mapData = mapData.concat(data)
+      }else{
+        data.forEach( d => {
+          mapData = mapData.concat(d)
+        })
+      
+      }
+
+    const lastData = []
+      
 
     mapData.forEach(coordinates => {
-      countData += coordinates.length
+    
       coordinates.forEach(coordinate => {
-  
+        //
         if(Number.isNaN(Number(coordinate[0])) === false){
-          latitude += Number(coordinate[0])
-          longitude += Number(coordinate[1])
-        }else{
-          countData--
+          lastData.push({latitude: Number(coordinate[0]), longitude: Number(coordinate[1])})
         }
-       
+        //
       })
     })
 
-    latitude /= (countData !== 0) ? countData : 1
-    longitude /= (countData !== 0) ? countData : 1
 
-    return { latitude, longitude}
-  }
+        let x = lastData.map(c => c.latitude)
+        let y = lastData.map(c => c.longitude)
+
+       
+      
+        let minX = Math.min.apply(null, x)
+        let maxX = Math.max.apply(null, x)
+      
+        let minY = Math.min.apply(null, y)
+        let maxY = Math.max.apply(null, y)
+      
+        return {
+          latitude: (minX + maxX) / 2,
+          longitude: (minY + maxY) / 2
+        }
+      
+    }
 
   renderRegionLayer = country =>{
 
@@ -204,10 +212,8 @@ onRegionDidChange = regionFeature => {
     const markerId = 'marker-'+fillId
 
     const { zoomLevel } = this.state
-    const fontSizeStyle = (zoomLevel < 7) ? {fontSize : 15,  color: '#253071'} : {fontSize:16  , color: '#253071'}
-
-    
- 
+    const fontSizeStyle = (zoomLevel < 7) ? {fontSize : 15, textAlign: 'center',  fontWeight: '500',  color: '#253071'} : {fontSize:16,  textAlign: 'center',   fontWeight: '500'  , color: '#253071'}
+    const widthImage = (zoomLevel < 6 ) ? 30 : 20
     return <React.Fragment>
              <Mapbox.PointAnnotation
         key={markerId}
@@ -216,8 +222,6 @@ onRegionDidChange = regionFeature => {
 
         <TouchableOpacity onPress={()=>{
           
-        
-
           if(country.geojson.features[0].properties.type === "Sovereign country"){
            this._emitter.emit('SelectCountryFromMap', country)
           }else{
@@ -227,6 +231,7 @@ onRegionDidChange = regionFeature => {
           }
          
         }} style={[styles.annotationContainer,{width:100,height:100,borderRadius:50,  justifyContent:'center'}]}>
+        {zoomLevel <= 7 && <Image source={PIN_ICON} style={{width:widthImage,height:widthImage}} />}
          {zoomLevel <= 7 && <Text style={fontSizeStyle}>{country.name}</Text>}
         </TouchableOpacity>
        
@@ -251,9 +256,7 @@ onRegionDidChange = regionFeature => {
     if(country.geojson == null){
       return null
     }
-
-  
- 
+    
     let data = {...country.geojson.features[0]}
       data.properties = {...data.properties,  metadataId : country.id}
 
@@ -267,14 +270,8 @@ onRegionDidChange = regionFeature => {
 
     const center = (country.center !== undefined) ? country.center : [0,0]
 
-   
     const fillId = 'winebow'+country.id.toString()
     const markerId = 'marker-'+fillId
-
-    const { zoomLevel } = this.state
-    const fontSizeStyle = (zoomLevel < 7) ? {fontSize : 10} : {fontSize:16}
-
-    
  
     return <React.Fragment>
              <Mapbox.PointAnnotation
@@ -546,7 +543,7 @@ onRegionDidChange = regionFeature => {
               style={layerStyles.clusteredPoints}
             />
 
- 
+            
                 <Mapbox.SymbolLayer
                 id="singlePoint"
                 filter={['!has', 'point_count']}
