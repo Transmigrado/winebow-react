@@ -63,9 +63,11 @@ triggerItem = item => {
 
   if(Device.isTablet){
     this.setState({selectItem : item})
-   }else{
+  }else{
     navigation.navigate('WineDetail', { item })
-   }
+  }
+
+  this.setState({path : ['World',item.countryName,item.regionName, item.name]})
 }
 
 onRegionDidChange = regionFeature => {
@@ -466,7 +468,10 @@ onRegionDidChange = regionFeature => {
         this.setState({zoomLevel : 1.4})
        }, 1000)
        
+      
+       this.modal.wrappedInstance.close()
 
+       this._onBackItem()
         if(this.sidebar !== undefined){
           try{
             this.sidebar.close()
@@ -584,7 +589,7 @@ onRegionDidChange = regionFeature => {
 
         </Mapbox.MapView>
         
-        {selectItem === undefined && <ModalContainer isLoading={isLoading} emitter={this._emitter} onSelect={ this.onSelect } />}
+        {selectItem === undefined && <ModalContainer ref={ref => this.modal = ref} isLoading={isLoading} emitter={this._emitter} onSelect={ this.onSelect } />}
 
 
          {Device.isTablet && selectItem !== undefined && <Sidebar ref={ref => this.sidebar  = ref}>

@@ -25,11 +25,7 @@ export default class Modal extends Component {
         expanded: false
     }
 
-    close = ()=>{
-        const y =  Dimensions.get('window').height
-         Animated.timing(this.state.y,{toValue:y,duration:500}).start()
-    }	    
-
+ 
     componentDidMount(){
        
         const { onMount } = this.props
@@ -146,6 +142,16 @@ export default class Modal extends Component {
       
 
         this.setState({ mode: mode - 1 })
+    }
+    
+    close = ()=>{
+        const { expanded } = this.state
+        
+        if(expanded){
+            this.onExpand()
+        }
+    
+        this.setState({mode : 0})
     }
 
     onExpand = ()=>{
