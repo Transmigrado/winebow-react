@@ -263,7 +263,7 @@ export default class Modal extends Component {
 const styles = StyleSheet.create({
     content: {
         flex:1,
-        height:Dimensions.get('window').height,
+        height: Dimensions.get('window').height,
         position:'absolute',
         backgroundColor:'white',
         borderTopLeftRadius: 10,

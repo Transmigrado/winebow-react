@@ -119,7 +119,7 @@ export default class Detail extends Component {
             regionsData = regions
         }
 
-        const styleMargin = (Device.isTablet) ? {marginBottom: 170} : {marginBottom: 170}
+        const styleMargin = (Device.isTablet) ? {marginBottom: Dimensions.get('window').height - 580} : {marginBottom: 170}
       
 
         return <View style={styles.container}>

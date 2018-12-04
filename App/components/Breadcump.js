@@ -7,6 +7,7 @@ export default class BreadCump extends Component {
     
     static propTypes = {
         path: PropTypes.array,
+        onPress: PropTypes.func,
         style: PropTypes.object,
         big: PropTypes.bool
     }
@@ -15,11 +16,16 @@ export default class BreadCump extends Component {
         path:[],
         big: false
     }
-
-    onPress = ()=>{
-
-    }
     
+    state  = {
+        path : []
+    }
+
+    onPress = index =>{
+        const { onPress } = this.props
+        onPress(index)
+    }
+
     renderPath = (text, index) => {
         const { big } = this.props
         const isLast = index >= this.props.path.length - 1
@@ -58,10 +64,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     text:{
-       
+        letterSpacing:3,
+        marginTop:3,
         color:'#737373'
     },
     lastText:{
+        letterSpacing:3,
+        marginTop:3,
         color: '#AB3F66',
     },
     path:{

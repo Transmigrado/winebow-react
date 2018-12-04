@@ -69,6 +69,7 @@ triggerItem = item => {
 }
 
 onRegionDidChange = regionFeature => {
+
     this.setState({zoomLevel: regionFeature.properties.zoomLevel})
 }
 
@@ -450,9 +451,36 @@ onRegionDidChange = regionFeature => {
       this.setState({selectItem:undefined, path:['World']})
     }
 
+    _onPress = index => {
+
+      const { path } = this.state
+
+      this.setState({path : path.slice(0, index + 1)})
+
+      if(index === 0){
+        // move to 
+       
+        this.map.moveTo([-30, 0])
+     
+       setTimeout(()=>{
+        this.setState({zoomLevel : 1.4})
+       }, 1000)
+       
+
+        if(this.sidebar !== undefined){
+          try{
+            this.sidebar.close()
+          }catch(e){}
+          
+        }
+
+
+      }
+    }
+
   renderFooter = ()=>{
     return <View style={styles.footer}>
-          <Breadcump path={this.state.path} big={true} />
+          <Breadcump onPress={this._onPress} path={this.state.path} big={true} />
     </View>
   }
 
@@ -559,8 +587,8 @@ onRegionDidChange = regionFeature => {
         {selectItem === undefined && <ModalContainer isLoading={isLoading} emitter={this._emitter} onSelect={ this.onSelect } />}
 
 
-         {Device.isTablet && selectItem !== undefined && <Sidebar>
-          <WineScreen  onBack={this._onBackItem} item = {selectItem} />
+         {Device.isTablet && selectItem !== undefined && <Sidebar ref={ref => this.sidebar  = ref}>
+          <WineScreen onBack={this._onBackItem} item = {selectItem} />
         </Sidebar>}    
        
     </View>

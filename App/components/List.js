@@ -58,13 +58,15 @@ export default class List extends Component {
        
         const props = { numColumns: 2}
 
+        const contentInset = (Device.isTablet) ? { left : 20 } : {bottom:160}
+        
         if(Device.isTablet){
             props.horizontal = true
+            props.contentOffset= {x: -20}
             delete props.numColumns
         }
 
-        const contentInset = (Device.isTablet) ? { left : 20 } : {bottom:160}
-        
+      
         return <View style={styles.container}>
                 {Device.isTablet && this.renderHeader(true)}
                 <FlatList
@@ -75,7 +77,7 @@ export default class List extends Component {
                     keyExtractor={(item, index) => item.id}
                     {...props}
                     contentInset={contentInset}
-                    contentOffset={{x: -20}}
+                   
                     automaticallyAdjustContentInsets={true}
                     />
                 </View>

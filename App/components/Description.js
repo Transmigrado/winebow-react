@@ -28,7 +28,7 @@ export default class Description extends Component {
 
         return <View style={[styles.container, style]}>
               <Text style={styles.text}>{contentText}</Text>
-              <View style={{padding:10, alignItems:'flex-end'}}>
+              <View style={{padding:10, marginBottom: 20, alignItems:'flex-end'}}>
                   <TouchableOpacity onPress={this.onPress}>
                       <Text style={styles.textButton}>{callToAction}</Text>
                   </TouchableOpacity>

@@ -84,7 +84,7 @@ class RegionDetail extends Component {
         const {  item } = this.props
 
         const flatListProps = (Device.isTablet)?{ListHeaderComponent: this.renderHeaderTablet} : { ListHeaderComponent: this.renderHeader }
-        const style = (Device.isTablet) ? {} : {marginBottom: 160}
+        const style = (Device.isTablet) ? {marginBottom: Dimensions.get('window').height - 580} : {marginBottom: 160}
      
 
         return <View style={[styles.container, style]}>
