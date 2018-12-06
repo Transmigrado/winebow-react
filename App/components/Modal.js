@@ -15,7 +15,8 @@ export default class Modal extends Component {
        countries: PropTypes.array,
        onSelect: PropTypes.func,
        emitter: PropTypes.object,
-       isLoading: PropTypes.bool
+       isLoading: PropTypes.bool,
+       onPressBreadCump: PropTypes.func
     }
 
     state = {
@@ -253,6 +254,10 @@ export default class Modal extends Component {
           ).start();   
     }
 
+    _onPressBreadCump = index =>{
+        this.props.onPressBreadCump(index)
+    }
+
     render() {
 
         const { countries, emitter, isLoading  } = this.props
@@ -268,7 +273,7 @@ export default class Modal extends Component {
                 <Trip onExpand={this.onExpand} mode={mode} onPress={this.onBack} expanded={expanded} style={{}} />
                 {mode == 0 && <List isLoading={isLoading} emitter={emitter} countries={countries} onSelect={this.onSelect} />}
                 {mode == 1 && <DetailContainer emitter={emitter} item={itemCountry} onSelect={this.onSelect} />}
-                {mode == 2 && <RegionDetailContainer emitter={emitter} item={itemWineyard} onSelect={this.onSelect} />}
+                {mode == 2 && <RegionDetailContainer onPressBreadCump={this._onPressBreadCump} emitter={emitter} item={itemWineyard} onSelect={this.onSelect} />}
             </Animated.View>
            
         </React.Fragment>

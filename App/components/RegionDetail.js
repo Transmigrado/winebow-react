@@ -15,7 +15,8 @@ class RegionDetail extends Component {
        onSelect: PropTypes.func,
        navigation: PropTypes.object,
        item: PropTypes.object,
-       emitter: PropTypes.object
+       emitter: PropTypes.object,
+       onPressBreadCump: PropTypes.func
     }
     _onPress = ()=>{
        this.props.navigation.navigate('WineDetail')
@@ -24,6 +25,10 @@ class RegionDetail extends Component {
     _onBack = ()=>{
         const { item , onSelect} = this.props
         onSelect(1, item)
+    }
+
+    _onPressBreadCump = index => {
+        this.props.onPressBreadCump(index)
     }
 
     renderItem = ({item, index}) => {
@@ -64,7 +69,7 @@ class RegionDetail extends Component {
                 </View>
                 </View>
                 <View>
-                    <Breadcump path={path} style={{marginTop:10, marginBottom:10}} />
+                    <Breadcump onPress={this._onPressBreadCump} path={path} style={{marginTop:10, marginBottom:10}} />
                     <Description text={item.description} />
                     {!Device.isTablet && <WineyardHeader />}
                 </View>

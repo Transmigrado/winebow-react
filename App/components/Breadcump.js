@@ -29,7 +29,7 @@ export default class BreadCump extends Component {
     renderPath = (text, index) => {
         const { big } = this.props
         const isLast = index >= this.props.path.length - 1
-        const style = (isLast || !Device.isTablet) ? styles.lastText :  styles.text
+        const style = (isLast) ? styles.lastText :  styles.text
         const fontSize = (big) ? {fontSize: 17, marginLeft: 5, marginRight:5} : {fontSize:15}
         const title = (big) ? text.toUpperCase() : text
         const symbol = (big) ? "/" : ">"
@@ -42,10 +42,12 @@ export default class BreadCump extends Component {
        </TouchableOpacity>
         }
 
-        return <View key={index} style={styles.path} key={text}>
+        console.log([style, fontSize,  {fontFamily}])
+
+        return <TouchableOpacity onPress={()=>{this.onPress(index)}} key={index} style={styles.path} key={text}>
              <Text style={[style, fontSize,  {fontFamily}]} >{title}</Text>
              {!isLast &&<Text style={[styles.arrow, fontSize, {fontFamily}]}>{symbol}</Text>}
-        </View>
+        </TouchableOpacity>
     }
  
     render() {
@@ -64,12 +66,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     text:{
-        letterSpacing:3,
+        letterSpacing:  (Device.isTablet) ? 3 : 1,
         marginTop:3,
         color:'#737373'
     },
     lastText:{
-        letterSpacing:3,
+        letterSpacing: (Device.isTablet) ? 3 : 1,
         marginTop:3,
         color: '#AB3F66',
     },

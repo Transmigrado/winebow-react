@@ -464,6 +464,8 @@ onRegionDidChange = regionFeature => {
 
     _onPress = index => {
 
+      console.log(index)
+
       const { path } = this.state
 
       this.setState({path : path.slice(0, index + 1)})
@@ -488,35 +490,41 @@ onRegionDidChange = regionFeature => {
           }
       }else if(index === 1){
 
-        const name = path[index]
-        const { countries } = this.props
-        let selectItem = null
-        countries.forEach(item => {
-            if(item.name === name){
-              selectItem = item
+          if(Device.isTablet){
+
+            const name = path[index]
+            const { countries } = this.props
+            let selectItem = null
+            countries.forEach(item => {
+                if(item.name === name){
+                  selectItem = item
+                }
+            })
+
+            this.setState({selectItem:undefined})
+            if(this.sidebar !== undefined){
+              try{
+                this.sidebar.close()
+              }catch(e){}
             }
-        })
 
-        this.setState({selectItem:undefined})
-        if(this.sidebar !== undefined){
-          try{
-            this.sidebar.close()
-          }catch(e){}
-        }
-
-        setTimeout(()=>{
-        if(selectItem !== null){
-         
-          this._emitter.emit('SelectCountry', selectItem)
-          if( this.modal !== null){
-           
-            this.modal.wrappedInstance.onSelect(1, selectItem)
-            this.modal.wrappedInstance.open()
+            setTimeout(()=>{
+            if(selectItem !== null){
+            
+              this._emitter.emit('SelectCountry', selectItem)
+              if( this.modal !== null){
+              
+                this.modal.wrappedInstance.onSelect(1, selectItem)
+                this.modal.wrappedInstance.open()
+              }
+              
+            }
+          }, 600)
+          
+          }else{
+            this.modal.wrappedInstance.onBack()
           }
           
-        }
-      }, 600)
-        
 
         
       } else if (index === 2){
@@ -660,7 +668,7 @@ onRegionDidChange = regionFeature => {
 
         </Mapbox.MapView>
         
-        {selectItem === undefined && <ModalContainer ref={ref => this.modal = ref} isLoading={isLoading} emitter={this._emitter} onSelect={ this.onSelect } />}
+        {selectItem === undefined && <ModalContainer onPressBreadCump={this._onPress} ref={ref => this.modal = ref} isLoading={isLoading} emitter={this._emitter} onSelect={ this.onSelect } />}
 
 
          {Device.isTablet && selectItem !== undefined && <Sidebar ref={ref => this.sidebar  = ref}>
