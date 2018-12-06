@@ -154,6 +154,15 @@ export default class Modal extends Component {
         this.setState({mode : 0})
     }
 
+    open = ()=>{
+        const { expanded } = this.state
+        
+        if(!expanded){
+            this.onExpand()
+        }
+    
+    }
+
     onExpand = ()=>{
         const { expanded } = this.state
         

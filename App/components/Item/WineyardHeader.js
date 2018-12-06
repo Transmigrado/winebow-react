@@ -6,7 +6,7 @@ export default class WineyardHeader extends Component {
     render() {
       
         return <View style={styles.titleContent}>
-        <Text style={styles.subtitle}>Wineyards and Wineries</Text>
+        <Text style={styles.subtitle}>Vineyards and Wineries</Text>
         <View style={styles.bottomLine}></View>
 </View>
     }

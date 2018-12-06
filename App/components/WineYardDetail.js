@@ -44,7 +44,7 @@ renderHeader = ()=>{
   const content = [
         {description:item.description},
         {description:item.philosophy, title:'Philosophy'},
-        {description:item.wineyard_location, title:'Wineyard Location'}
+        {description:item.wineyard_location, title:'Vineyard Location'}
       ]
  
   return  <View>

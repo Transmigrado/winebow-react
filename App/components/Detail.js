@@ -60,9 +60,15 @@ export default class Detail extends Component {
             return <WineyardItem emitter={emitter} item={item} />
         }
 
-      
-       
         if(Device.isTablet){
+            if(item.length === 1){
+                return <View style={{width:'50%', flexDirection:'row'}}>
+                {item.map(subitem=>{
+                     return this.renderItemRegion({item:subitem,index})
+                })}
+        </View>
+            }
+
             return <View style={{width:'100%', flexDirection:'row'}}>
             {item.map(subitem=>{
                  return this.renderItemRegion({item:subitem,index})
@@ -79,7 +85,7 @@ export default class Detail extends Component {
 
         if(index === 1){
             return  <View style={styles.titleContent}>
-                    <Text style={styles.subtitle}>Wineyards and Wineries</Text>
+                    <Text style={styles.subtitle}>Vineyards and Wineries</Text>
                     <View style={styles.bottomLine}></View>
            </View>
         }
@@ -105,6 +111,10 @@ export default class Detail extends Component {
                 }
             })
 
+            if(currentItem.length > 0){
+                wineries.push(currentItem)
+            }
+
             let currentItemRegions = []
             regions.forEach( region => {
                 currentItemRegions.push(region)
@@ -114,6 +124,10 @@ export default class Detail extends Component {
                 }
             })
 
+            if(currentItemRegions.length > 0){
+                regionsData.push(currentItemRegions)
+            }
+
         }else{
             wineries = item.wineries
             regionsData = regions
@@ -121,7 +135,6 @@ export default class Detail extends Component {
 
         const styleMargin = (Device.isTablet) ? {marginBottom: Dimensions.get('window').height - 580} : {marginBottom: 170}
       
-
         return <View style={styles.container}>
                 <SectionList
   renderItem={({item, index, section}) => this.renderItem({item, index, section})}

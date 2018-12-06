@@ -25,7 +25,15 @@ class MainScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
     gesturesEnabled: true,
     header: <Header navigation={navigation} onPressRight={()=>{
-      Linking.openURL('https://api.winebow.us/storage/IpAr9HS9HvGTPYDdYINcA9KtlzpnjqaHG7MPtlYd.pdf')
+
+      const ENDPOINT = 'https://api.winebow.us/api/files?token=f8Mudw7MQe6i7698JVim8Zh4HVAnee2g'
+      fetch(ENDPOINT)
+          .then(response => response.json())
+          .then(data => {
+        
+            Linking.openURL(data.data[0].file)
+          })
+     
     }} />
   })
 
@@ -445,6 +453,7 @@ onRegionDidChange = regionFeature => {
             zoom: zoom,
             duration: 2000,
           })
+
       }
     }
 
@@ -462,23 +471,85 @@ onRegionDidChange = regionFeature => {
       if(index === 0){
         // move to 
        
-        this.map.moveTo([-30, 0])
+          this.map.moveTo([-30, 0])
      
-       setTimeout(()=>{
-        this.setState({zoomLevel : 1.4})
-       }, 1000)
+          setTimeout(()=>{
+            this.setState({zoomLevel : 1.4})
+          }, 1000)
        
       
-       this.modal.wrappedInstance.close()
+          this.modal.wrappedInstance.close()
+          this._onBackItem()
 
-       this._onBackItem()
+          if(this.sidebar !== undefined){
+            try{
+              this.sidebar.close()
+            }catch(e){}
+          }
+      }else if(index === 1){
+
+        const name = path[index]
+        const { countries } = this.props
+        let selectItem = null
+        countries.forEach(item => {
+            if(item.name === name){
+              selectItem = item
+            }
+        })
+
+        this.setState({selectItem:undefined})
         if(this.sidebar !== undefined){
           try{
             this.sidebar.close()
           }catch(e){}
-          
         }
 
+        setTimeout(()=>{
+        if(selectItem !== null){
+         
+          this._emitter.emit('SelectCountry', selectItem)
+          if( this.modal !== null){
+           
+            this.modal.wrappedInstance.onSelect(1, selectItem)
+            this.modal.wrappedInstance.open()
+          }
+          
+        }
+      }, 600)
+        
+
+        
+      } else if (index === 2){
+        
+        const name = path[index]
+        const { regions } = this.props
+        let selectItem = null
+        regions.forEach(item => {
+            if(item.name === name){
+              selectItem = item
+            }
+        })
+
+        this.setState({selectItem:undefined})
+        if(this.sidebar !== undefined){
+          try{
+            this.sidebar.close()
+          }catch(e){}
+        }
+
+        setTimeout(()=>{
+          if(selectItem !== null){
+         
+         
+            if( this.modal !== null){
+              
+              this.modal.wrappedInstance.onSelect(2, selectItem)
+              this.modal.wrappedInstance.open()
+            }
+            
+          }
+        }, 600)
+        
 
       }
     }
@@ -585,7 +656,7 @@ onRegionDidChange = regionFeature => {
 
 
             
-          </Mapbox.ShapeSource>}
+          </Mapbox.ShapeSource>} 
 
         </Mapbox.MapView>
         
