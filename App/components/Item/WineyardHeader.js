@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: StyleSheet.hairlineWidth,
     },
     subtitle:{
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: 'IBMPlexSans'
     },
 })

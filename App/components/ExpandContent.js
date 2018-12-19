@@ -94,11 +94,13 @@ const styles = StyleSheet.create({
     },
     text:{
         color: '#AB3F66',
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: 'IBMPlexSans'
     },
     lastText:{
         color:'#737373',
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: 'IBMPlexSans'
     },
     path:{
         flexDirection: 'row'

@@ -10,8 +10,7 @@ import { StyleSheet,
 
 import PropTypes from 'prop-types'
 import Device from 'react-native-device-detection'
-import SkeletonAnimation from '../components/SkeletonAnimation'
-
+import { CachedImage } from 'react-native-cached-image'
 export default class List extends Component {
     
 
@@ -31,10 +30,9 @@ export default class List extends Component {
         const itemStyle = (Device.isTablet) ? {} : ((index % 2 == 0)? {left:20} : {left:5})
    
        return    <TouchableOpacity key={slug} onPress={()=>{this._onPress(index)}} style={[{width: width, height: width},styles.item, itemStyle]}>
-       {image !== undefined && <Image
-    style={[styles.itemImage,{width: width - 25, height: width - 25}]}
+       {image !== undefined && <CachedImage 
+    style={[styles.itemImage,{width: width - 25, height: width - 25, marginTop:-6}]}
     source={{uri: image.replace('images/','')}}
-    cache="only-if-cached"
     />}
     <View style={[styles.itemContent,{width: width - 25, height: width - 25}]}>
         <Text style={[styles.text,styles.textBold]}>{name}</Text>

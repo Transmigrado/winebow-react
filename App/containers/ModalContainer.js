@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     onMount: () => {
-        module.fetchDataThunk(dispatch)
+        
     }
 })
 

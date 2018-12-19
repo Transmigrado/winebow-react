@@ -60,7 +60,7 @@ renderHeader = ()=>{
         <View>
           <ExpandContent content={content} />
           <View style={{paddingHorizontal: 20, marginTop: 10}}>
-            <Text style={{fontSize: 30,marginTop:10, fontWeight:'bold'}}>Wines</Text>
+            <Text style={{fontSize: 30,marginTop:10, fontWeight:'bold', fontFamily: 'IBMPlexSans'}}>Wines</Text>
           </View>
         </View>
         

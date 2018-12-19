@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-fetch-blob')
     compile project(':lottie-react-native')
     compile project(':@mapbox_react-native-mapbox-gl')
     implementation fileTree(dir: "libs", include: ["*.jar"])

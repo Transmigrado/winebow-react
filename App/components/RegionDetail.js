@@ -126,7 +126,8 @@ const styles = StyleSheet.create({
         paddingBottom: 12
     },
     title:{
-        fontSize: 30
+        fontSize: 30,
+        fontFamily: 'IBMPlexSans'
     },
     item:{
         flex:1,

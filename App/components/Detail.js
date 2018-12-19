@@ -170,10 +170,12 @@ const styles = StyleSheet.create({
         backgroundColor:'white'
     },
     title:{
-        fontSize: 30
+        fontSize: 30,
+        fontFamily: 'IBMPlexSans'
     },
     subtitle:{
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: 'IBMPlexSans'
     },
     item:{
         flex:1,

@@ -14,7 +14,7 @@ export default class LoadingDialog extends React.Component {
             presentationStyle='overFullScreen'
             onRequestClose={() => { }}><View style={styles.loading}>
                 <ActivityIndicator size="large" color="#9C093D" />
-                <Text>
+                <Text style={{fontFamily: 'IBMPlexSans'}}>
                     {this.props.text}
                 </Text>
             </View></Modal>

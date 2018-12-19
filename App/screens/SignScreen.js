@@ -85,10 +85,10 @@ class SignScreen extends Component {
     const disabled = !validateEmail(emailValue) || nameValue.length < 2
 
     return <React.Fragment>
-      <Text style={{fontSize: 30, textAlign:'center', marginBottom: 10}}>
+      <Text style={{fontSize: 30, textAlign:'center', marginBottom: 10, fontFamily: 'IBMPlexSans'}}>
                     Request Access
                 </Text>
-                <Text style={{fontSize: 14, textAlign:'center',marginTop: 10, marginBottom: 30}}>
+                <Text style={{fontSize: 14, textAlign:'center',marginTop: 10, marginBottom: 30, fontFamily: 'IBMPlexSans'}}>
                 To require access enter your data and our team will contact you
                 </Text>
                 

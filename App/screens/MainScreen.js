@@ -207,15 +207,14 @@ onRegionDidChange = regionFeature => {
  
     let data = {...country.geojson.features[0]}
     data.properties = {...data.properties,  metadataId : country.id}
-
+    
    
     const style = {
       fillAntialias: true,
       fillColor: data.properties.fill,
       fillOpacity: data.properties['fill-opacity'],
-      fillOutlineColor: 'rgba(136, 149, 107, 0.84)',
+      fillOutlineColor: data.properties["stroke"] || "rgba(0,0,0,0)"
     }
-
 
     const { latitude, longitude } = this.getAverage( data.geometry.coordinates)
 
@@ -225,7 +224,9 @@ onRegionDidChange = regionFeature => {
     const { zoomLevel } = this.state
     const fontSizeStyle = (zoomLevel < 7) ? {fontSize : 15, textAlign: 'center',  fontWeight: '500',  color: '#253071'} : {fontSize:16,  textAlign: 'center',   fontWeight: '500'  , color: '#253071'}
     const widthImage = (zoomLevel < 6 ) ? 30 : 20
+    
     return <React.Fragment>
+             
              <Mapbox.PointAnnotation
         key={markerId}
         id={markerId}
@@ -242,12 +243,10 @@ onRegionDidChange = regionFeature => {
           }
          
         }} style={[styles.annotationContainer,{width:100,height:100,borderRadius:50,  justifyContent:'center'}]}>
-        {zoomLevel <= 7 && <Image source={PIN_ICON} style={{width:widthImage,height:widthImage}} />}
-         {zoomLevel <= 7 && <Text style={fontSizeStyle}>{country.name}</Text>}
+              <Text style={fontSizeStyle}>{country.name}</Text>
         </TouchableOpacity>
        
       </Mapbox.PointAnnotation>
-      
       <Mapbox.ShapeSource 
     hitbox={{ width: 100, height: 100 }}
     onPress={this.onSourceLayerPress} 
@@ -581,7 +580,15 @@ onRegionDidChange = regionFeature => {
         "features":[]
     }
 
+    const dataRegion = {
+      "type":"FeatureCollection",
+      "metadata":{},
+      "features":[]
+    }
+
     wineries.forEach(winery => {
+
+   
       const point = {
         "type":"Feature",
         "geometry":{
@@ -596,7 +603,30 @@ onRegionDidChange = regionFeature => {
       }
       data.features.push(point)
     })
-   
+
+    /*
+    regions.forEach(region => {
+
+      let data = {...region.geojson.features[0]}
+      data.properties = {...data.properties,  metadataId : region.id}
+      const { latitude, longitude } = this.getAverage( data.geometry.coordinates)
+
+
+      const point = {
+        "type":"Feature",
+        "geometry":{
+          "type":"Point",
+          "coordinates":[parseFloat(latitude), parseFloat(longitude),4.45],
+        },
+        "properties":{
+          "name":region.name,
+          "item":region
+        },
+        "id":`region -${region.id}`
+      }
+      dataRegion.features.push(point)
+    })
+    */
 
     return <View style={styles.container}>
       <View style={styles.container}>
@@ -615,10 +645,47 @@ onRegionDidChange = regionFeature => {
            
            {this.renderEcuatorLines()}
 
-           {zoomLevel < 14 && countries.map(this.renderCountryLayer)}
+  {zoomLevel < 14 && countries.map(this.renderCountryLayer)}
            {zoomLevel >= 5 && regions.map(this.renderRegionLayer)}
-          
 
+            {zoomLevel >= 5 && zoomLevel< 8 && <Mapbox.ShapeSource
+            id="regions"
+            cluster
+            clusterRadius={60}
+            clusterMaxZoom={5}
+            onPress = { ({nativeEvent}) => {
+            
+
+              
+            }}
+            shape={dataRegion}>
+            
+            <Mapbox.SymbolLayer
+              id="pointCount"
+              style={layerStyles.clusterCount}
+            />
+
+            <Mapbox.CircleLayer
+              id="clusteredPoints"
+              belowLayerID="pointCount"
+              filter={['has', 'point_count']}
+              style={layerStyles.clusteredPoints}
+            />
+
+            
+                <Mapbox.SymbolLayer
+                id="singlePoint"
+                filter={['!has', 'point_count']}
+                style={layerStyles.singlePoint}
+            />
+
+
+            
+          </Mapbox.ShapeSource>
+            }
+
+           
+          
            {zoomLevel >= 8  && <Mapbox.ShapeSource
             id="regions"
             cluster
