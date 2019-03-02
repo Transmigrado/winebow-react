@@ -13,7 +13,7 @@ export default class LoadingDialog extends React.Component {
             transparent={true}
             presentationStyle='overFullScreen'
             onRequestClose={() => { }}><View style={styles.loading}>
-                <ActivityIndicator size="large" color="#9C093D" />
+                <ActivityIndicator size="large" color="#1D386D" />
                 <Text style={{fontFamily: 'IBMPlexSans'}}>
                     {this.props.text}
                 </Text>

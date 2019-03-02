@@ -2,7 +2,7 @@ import { View, Text, Image} from 'react-native'
 import React, {Component} from 'react'
 import { IndicatorViewPager, PagerDotIndicator} from 'rn-viewpager'
 import PropTypes from 'prop-types'
-
+import { CachedImage } from 'react-native-cached-image'
 export default class Pager extends Component {
 
     static propTypes = {
@@ -11,7 +11,7 @@ export default class Pager extends Component {
 
      renderImage = image => {
          return <View key={image.url} style={{backgroundColor:'white'}}>
-         <Image
+         <CachedImage
 style={{width: '100%', height: '100%'}}
 source={{uri:image.url}}
 />  

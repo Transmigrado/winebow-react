@@ -15,11 +15,11 @@ export default class Trip extends Component {
     }
 
     renderUpArrow = ()=>{
-        return <Image style={{width:12,height:8}} source={require('./assets/up_arrow.png')} />
+        return <Image style={{width:12,height:8, tintColor:"#1D386D"}} source={require('./assets/up_arrow.png')} />
     }
 
     renderDownArrow = ()=>{
-        return <Image style={{width:12,height:8}} source={require('./assets/down_arrow.png')} />
+        return <Image style={{width:12,height:8, tintColor:"#1D386D"}} source={require('./assets/down_arrow.png')} />
     }
 
 
@@ -39,7 +39,7 @@ export default class Trip extends Component {
                
             </TouchableOpacity>
             {mode > 0 && <TouchableOpacity onPress={onPress} style={{position:'absolute', width:44, height:44, zIndex:99999, left:20, alignItems:'center', justifyContent:'center' }}>
-                    <Image source={require('./assets/back.png')} style={{tintColor:"#9C093D"}} />
+                    <Image source={require('./assets/back.png')} style={{tintColor:"#1D386D"}} />
                 </TouchableOpacity>}
         </View>
     }
@@ -61,7 +61,7 @@ const defaultStyles = StyleSheet.create({
     },
     title:{
         fontSize: 16,
-        color: '#AB3F66',
+        color: '#1D386D',
         marginTop: 5,
         marginLeft:5 ,
         fontFamily: "IBMPlexSans-SemiBold",

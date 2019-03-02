@@ -47,6 +47,6 @@ const styles = StyleSheet.create({
     },
     textButton:{
         fontFamily: 'IBMPlexSans',
-        color: '#AB3F66',
+        color: '#1D386D',
     }
 })

@@ -3,6 +3,7 @@ import loadCountries from '../api/ApiCountry'
 import loadRegions from '../api/ApiRegion'
 import loadWineries from '../api/ApiWineries'
 import loadWines from '../api/ApiWines'
+import persistence from './persistence'
 
 const ACTION = {
   LOAD : 'store.loaded',
@@ -17,11 +18,18 @@ export const fetchWinesThunk = dispatch => {
   function success(response){
     const { data } = response
     dispatch({type:ACTION.FETCH_WINES, data})
+    persistence.storageData("wines",data)
   }
 
   function error(error){
     console.log(error)
   }
+
+  persistence.retrieveData("wines")
+  .then(data => {
+    dispatch({type:ACTION.FETCH_WINES, data})
+  })
+
   loadWines()
   .then(success)
   .catch(error)
@@ -33,12 +41,19 @@ export const fetchCountriesThunk = dispatch => {
     const { data } = response
     dispatch({type:ACTION.FETCH, data})
     fetchRegionsThunk(dispatch)
-    
+    persistence.storageData("countries",data)
   }
 
   function error(error){
     console.log(error)
   }
+
+  persistence.retrieveData("countries")
+  .then(data => {
+    dispatch({type:ACTION.FETCH, data})
+    fetchRegionsThunk(dispatch)
+  })
+
   loadCountries()
   .then(success)
   .catch(error)
@@ -50,12 +65,19 @@ export const fetchRegionsThunk = dispatch => {
     const { data } = response
     dispatch({type:ACTION.FETCH_REGION, data})
     fetchWineriesThunk(dispatch)
-
+    persistence.storageData("regions",data)
   }
 
   function error(error){
     console.log(error)
   }
+
+  persistence.retrieveData("regions")
+  .then(data => {
+    dispatch({type:ACTION.FETCH_REGION, data})
+    fetchWineriesThunk(dispatch)
+  })
+
   loadRegions()
   .then(success)
   .catch(error)
@@ -67,11 +89,18 @@ export const fetchWineriesThunk = dispatch => {
     const { data } = response
     dispatch({type:ACTION.FETCH_WINERY, data})
     fetchWinesThunk(dispatch)
+    persistence.storageData("wineries",data)
   }
 
   function error(error){
     console.log(error)
   }
+
+  persistence.retrieveData("wineries")
+  .then(data => {
+    dispatch({type:ACTION.FETCH_WINERY, data})
+    fetchWinesThunk(dispatch)
+  })
   loadWineries()
   .then(success)
   .catch(error)

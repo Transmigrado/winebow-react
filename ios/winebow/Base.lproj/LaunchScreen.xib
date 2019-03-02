@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,25 +15,25 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="i46-Ic-S5J">
-                    <rect key="frame" x="120" y="120" width="240" height="240"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="i46-Ic-S5J">
+                    <rect key="frame" x="76" y="142" width="328" height="197"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="240" id="h4z-mN-3uD"/>
-                        <constraint firstAttribute="height" constant="240" id="mYg-jG-DoQ"/>
+                        <constraint firstAttribute="width" constant="328" id="h4z-mN-3uD"/>
+                        <constraint firstAttribute="height" constant="197" id="mYg-jG-DoQ"/>
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.61960784313725492" green="0.0078431372549019607" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="i46-Ic-S5J" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8jG-6x-zs4"/>
                 <constraint firstItem="i46-Ic-S5J" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qG7-Ss-mZG"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="548" y="455"/>
+            <point key="canvasLocation" x="547.20000000000005" y="454.27286356821594"/>
         </view>
     </objects>
     <resources>
-        <image name="logo" width="512" height="512"/>
+        <image name="logo" width="340" height="175"/>
     </resources>
 </document>

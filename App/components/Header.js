@@ -31,7 +31,7 @@ class Header extends React.Component {
         onPressRight: () => { },
         onPressLeft: undefined,
         isBorderless: false,
-        backgroundColor: '#88002E',
+        backgroundColor: '#1D386D',
         tintColor: '#000000',
         backgroundImage: undefined
     }

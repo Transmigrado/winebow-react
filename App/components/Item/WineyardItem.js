@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
 import PropTypes from 'prop-types'
 import Card from '../Card'
 import { withNavigation } from 'react-navigation'
-
+import { CachedImage } from 'react-native-cached-image'
 class WineyardItem extends Component {
     
     static propTypes = {
@@ -44,9 +44,9 @@ class WineyardItem extends Component {
         return <Root onPress={this._onPress} style={[styles.container,style]}>
             <View style={styles.content}>
                     <Card style={{width:140,height:120, marginLeft:-20}}>
-                <Image
+                <CachedImage
                         resizeMode="contain"
-                        style={{width: 90, height: 90, marginLeft:5, marginTop:5 }}
+                        style={{width: 90, height: 90, marginLeft: 4 , marginTop:0}}
                         source={{uri:item.image}}
                         />
             </Card>

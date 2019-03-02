@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, Image, SectionList, TouchableOpacity, Dimension
 import PropTypes from 'prop-types'
 import WineyardItem from './Item/WineyardItem'
 import Device from 'react-native-device-detection'
+import { CachedImage } from 'react-native-cached-image'
 export default class Detail extends Component {
     
 
@@ -32,8 +33,8 @@ export default class Detail extends Component {
         const wineryCount = item.wineryCount || 0
 
         return  <TouchableOpacity onPress={()=>{this._onPress(item)}} style={[{width: width, height: 130},styles.item]}>
-        <Image
-     style={[styles.itemImage,{width: '100%', height: 120, top:5, left:20 }]}
+        <CachedImage
+     style={[styles.itemImage,{width: '100%', height: 120, top: 2, left:10 }]}
      source={{uri:item.image.replace('images/','')}}
      cache="only-if-cached"
      />

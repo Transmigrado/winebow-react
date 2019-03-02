@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, Image, TouchableOpacity, Linking } from 'react-native'
 import PropTypes from 'prop-types'
 import Card from '../Card'
-
+import { CachedImage } from 'react-native-cached-image'
 export default class WineItem extends Component {
     
     static propTypes = {
@@ -19,14 +19,14 @@ export default class WineItem extends Component {
         return <TouchableOpacity onPress={this._onPress} style={styles.container}>
             <View style={styles.content}>
                     <Card style={{width:200,height:200}}>
-                {item.image !== undefined && <Image
+                {item.image !== undefined && <CachedImage
                         resizeMode="contain"
                         style={{width: 160, height: 170, marginTop: 5, marginBottom:5, borderRadius: 6 }}
                         source={{uri:item.image}}
                         />}
             </Card>
             <View style={{paddingHorizontal: 20, marginTop: 20}}>
-                <Text style={{ color: '#AB3F66', fontFamily:'IBMPlexSans-SemiBold'}}>{item.name}</Text>
+                <Text style={{ color: '#1D386D', fontFamily:'IBMPlexSans-SemiBold'}}>{item.name}</Text>
                 <Text style={{fontFamily:'IBMPlexSans', marginTop:5}}>{item.variety}</Text>
             </View>
         </View>

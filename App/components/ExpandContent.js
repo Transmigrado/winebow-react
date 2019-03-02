@@ -19,11 +19,11 @@ export default class ExpandContent extends Component {
     }
 
     renderUpArrow = ()=>{
-        return <Image style={{width:12,height:8}} source={require('./assets/up_arrow.png')} />
+        return <Image  source={require('./assets/up_arrow.png')} style={{width:12,height:8, tintColor:"#1D386D"}} />
     }
 
     renderDownArrow = ()=>{
-        return <Image style={{width:12,height:8}} source={require('./assets/down_arrow.png')} />
+        return <Image  source={require('./assets/down_arrow.png')} style={{width:12,height:8,  tintColor:"#1D386D"}} />
     }
 
     renderContent = (content, index) => {
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column'
     },
     text:{
-        color: '#AB3F66',
+        color: '#1D386D',
         fontSize: 16,
         fontFamily: 'IBMPlexSans'
     },

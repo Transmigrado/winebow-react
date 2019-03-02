@@ -641,7 +641,7 @@ onRegionDidChange = regionFeature => {
             pitchEnabled={false}
             compassEnabled ={false}
             onRegionDidChange={this.onRegionDidChange}
-            style={styles.container}>
+            style={styles.containerMap}>
            
            {this.renderEcuatorLines()}
 
@@ -734,13 +734,14 @@ onRegionDidChange = regionFeature => {
           </Mapbox.ShapeSource>} 
 
         </Mapbox.MapView>
-        
+     
         {selectItem === undefined && <ModalContainer onPressBreadCump={this._onPress} ref={ref => this.modal = ref} isLoading={isLoading} emitter={this._emitter} onSelect={ this.onSelect } />}
 
 
          {Device.isTablet && selectItem !== undefined && <Sidebar ref={ref => this.sidebar  = ref}>
           <WineScreen onBack={this._onBackItem} item = {selectItem} />
         </Sidebar>}    
+      
        
     </View>
     {Device.isTablet && this.renderFooter()}
@@ -774,6 +775,10 @@ export default compose(
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  containerMap:{
+    width:'100%',
+    height:'100%'
   },
   annotationFill: {
     width: 30,

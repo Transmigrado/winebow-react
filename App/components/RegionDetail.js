@@ -7,7 +7,7 @@ import Breadcump from './Breadcump'
 import WineyardHeader from '../components/Item/WineyardHeader'
 import Device from 'react-native-device-detection'
 import Description from './Description'
-
+import { CachedImage } from 'react-native-cached-image'
 class RegionDetail extends Component {
     
 
@@ -58,7 +58,7 @@ class RegionDetail extends Component {
         return  <Root style={[styles.titleContent, style]}>
                 
                 <View style={{width: '100%', height:160}}>
-                    <Image
+                    <CachedImage
                     style={[styles.itemImage,{position:'absolute', width: '100%', height:160}]}
                     source={{uri:item.image.replace('images','')}}
                     />

@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     lastText:{
         letterSpacing: (Device.isTablet) ? 3 : 1,
         marginTop:3,
-        color: '#AB3F66',
+        color: '#1D386D',
     },
     path:{
         flexDirection: 'row'
